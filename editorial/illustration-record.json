@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-03",
+  "asset": "assets/illustrations/offline-preparation.png",
+  "method": "image_gen new generation, transparent background",
+  "prompt": "Use case illustration-story. Create one small horizontal textbook vignette, transparent background, no text anywhere. Crisp old Korean 1990s PC adventure-game pixel art, deliberately large clean square pixels, limited muted navy teal cream ochre palette, stippled dithering, no blur and no smooth 3D shading. Scene: a Korean woman university lab assistant with short dark bob hair, a plain light work vest and dark trousers, standing at the left of a low wheeled equipment cart in an electronics teaching laboratory. Her face is visible in a natural front three-quarter view. She is inspecting one disconnected blue Ethernet patch cable, holding its single free RJ45 plug in her right hand slightly above the cart; left hand rests clearly on the cart edge. The other end of that blue cable is visibly coiled on the cart, not plugged into anything. One closed compact laptop and one small rugged external storage drive lie on the cart. A small shelving unit with two labeled-but-unlettered storage boxes behind them suggests a laboratory storage area; not an office desk. Technical meaning is preparing offline log analysis before connecting equipment. Exactly two arms and two hands; continuous shoulders to elbows to wrists. Natural standing posture, both feet on ground, solid supporting cart, no floating objects. No headset, no weapons, no hoodie, no screen UI, no words, letters, symbols or numbers. Keep substantial transparent padding all around. Wide 3:2 overall composition. This is a modest inline book illustration, not a cover.",
+  "reference": "https://m.blog.naver.com/studygir/220961448822",
+  "reference_access": "Page could not be fetched; followed the user's explicit pixel-style instructions.",
+  "review": {
+    "original": true,
+    "docx_page": 1,
+    "arms": 2,
+    "hands": 2,
+    "anatomy": "Continuous shoulders, elbows, wrists and hands; right hand holds plug, left hand rests on cart.",
+    "perspective": "Front three-quarter face; closed laptop; no reversed screen or document.",
+    "objects": "Cable, laptop, drive and cart are supported; no passthrough.",
+    "layout": "85 mm width; aspect ratio preserved; transparent padding; actual embedded image."
+  }
+}

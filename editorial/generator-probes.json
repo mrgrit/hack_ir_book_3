@@ -1,0 +1,905 @@
+{
+  "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+  "anchor": "2026-11-01T00:00:00+09:00",
+  "method": "Called attack() for 13 rounds at 4 periods; streamed 4 rounds at scale 0.005. No Indexer, socket, replay, HTTP or PCAP execution.",
+  "scenario_windows": [
+    {
+      "round": "r01",
+      "days": 7,
+      "scenario_events": 608,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 608
+      }
+    },
+    {
+      "round": "r02",
+      "days": 7,
+      "scenario_events": 1533,
+      "before_window": 780,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "kt66-nft": 768,
+        "json": 12,
+        "web-accesslog": 753
+      }
+    },
+    {
+      "round": "r03",
+      "days": 7,
+      "scenario_events": 1484,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 514,
+        "web-accesslog": 970
+      }
+    },
+    {
+      "round": "r04",
+      "days": 7,
+      "scenario_events": 173,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 22,
+        "syscheck_new_entry": 2,
+        "auditd": 142,
+        "json": 1,
+        "useradd": 1,
+        "syscheck_integrity_changed": 5
+      }
+    },
+    {
+      "round": "r05",
+      "days": 7,
+      "scenario_events": 116,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sudo": 7,
+        "auditd": 105,
+        "syscheck_deleted": 3,
+        "syscheck_integrity_changed": 1
+      }
+    },
+    {
+      "round": "r06",
+      "days": 7,
+      "scenario_events": 3660,
+      "before_window": 366,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 2009,
+        "json": 1611,
+        "kt66-mailgw": 40
+      }
+    },
+    {
+      "round": "r07",
+      "days": 7,
+      "scenario_events": 135,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sshd": 16,
+        "json": 106,
+        "sudo": 6,
+        "windows_eventchannel": 7
+      }
+    },
+    {
+      "round": "r08",
+      "days": 7,
+      "scenario_events": 1048,
+      "before_window": 600,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 148,
+        "kt66-dns": 900
+      }
+    },
+    {
+      "round": "r09",
+      "days": 7,
+      "scenario_events": 842,
+      "before_window": 835,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 300,
+        "web-accesslog": 505,
+        "syscheck_new_entry": 2,
+        "auditd": 13,
+        "sudo": 5,
+        "useradd": 1,
+        "syscheck_integrity_changed": 1,
+        "sshd": 8,
+        "json": 4,
+        "syscheck_deleted": 3
+      }
+    },
+    {
+      "round": "r10",
+      "days": 7,
+      "scenario_events": 2494,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 59,
+        "kt66-dns": 4,
+        "syscheck_integrity_changed": 1,
+        "syscheck_new_entry": 1230,
+        "syscheck_deleted": 1200
+      }
+    },
+    {
+      "round": "r12",
+      "days": 7,
+      "scenario_events": 74,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 41,
+        "json": 33
+      }
+    },
+    {
+      "round": "r13",
+      "days": 7,
+      "scenario_events": 601,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 541,
+        "modsecurity": 40,
+        "json": 2,
+        "auditd": 12,
+        "sshd": 6
+      }
+    },
+    {
+      "round": "r15",
+      "days": 7,
+      "scenario_events": 1238,
+      "before_window": 602,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 312,
+        "kt66-mailgw": 12,
+        "windows_eventchannel": 2,
+        "sshd": 1,
+        "sudo": 1,
+        "kt66-dns": 500,
+        "web-accesslog": 410
+      }
+    },
+    {
+      "round": "r01",
+      "days": 30,
+      "scenario_events": 1153,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 1153
+      }
+    },
+    {
+      "round": "r02",
+      "days": 30,
+      "scenario_events": 1542,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "kt66-nft": 783,
+        "json": 12,
+        "web-accesslog": 747
+      }
+    },
+    {
+      "round": "r03",
+      "days": 30,
+      "scenario_events": 1490,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 516,
+        "web-accesslog": 974
+      }
+    },
+    {
+      "round": "r04",
+      "days": 30,
+      "scenario_events": 735,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 27,
+        "syscheck_new_entry": 2,
+        "auditd": 699,
+        "json": 1,
+        "useradd": 1,
+        "syscheck_integrity_changed": 5
+      }
+    },
+    {
+      "round": "r05",
+      "days": 30,
+      "scenario_events": 119,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sudo": 7,
+        "auditd": 108,
+        "syscheck_deleted": 3,
+        "syscheck_integrity_changed": 1
+      }
+    },
+    {
+      "round": "r06",
+      "days": 30,
+      "scenario_events": 3633,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 1991,
+        "json": 1602,
+        "kt66-mailgw": 40
+      }
+    },
+    {
+      "round": "r07",
+      "days": 30,
+      "scenario_events": 135,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sshd": 16,
+        "json": 106,
+        "sudo": 6,
+        "windows_eventchannel": 7
+      }
+    },
+    {
+      "round": "r08",
+      "days": 30,
+      "scenario_events": 1903,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 1003,
+        "kt66-dns": 900
+      }
+    },
+    {
+      "round": "r09",
+      "days": 30,
+      "scenario_events": 842,
+      "before_window": 826,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 300,
+        "web-accesslog": 505,
+        "syscheck_new_entry": 2,
+        "auditd": 13,
+        "sudo": 5,
+        "useradd": 1,
+        "syscheck_integrity_changed": 1,
+        "sshd": 8,
+        "json": 4,
+        "syscheck_deleted": 3
+      }
+    },
+    {
+      "round": "r10",
+      "days": 30,
+      "scenario_events": 2711,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 266,
+        "kt66-dns": 14,
+        "syscheck_integrity_changed": 1,
+        "syscheck_new_entry": 1230,
+        "syscheck_deleted": 1200
+      }
+    },
+    {
+      "round": "r12",
+      "days": 30,
+      "scenario_events": 237,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 120,
+        "json": 117
+      }
+    },
+    {
+      "round": "r13",
+      "days": 30,
+      "scenario_events": 661,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 601,
+        "modsecurity": 40,
+        "json": 2,
+        "auditd": 12,
+        "sshd": 6
+      }
+    },
+    {
+      "round": "r15",
+      "days": 30,
+      "scenario_events": 2358,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 1432,
+        "kt66-mailgw": 12,
+        "windows_eventchannel": 2,
+        "sshd": 1,
+        "sudo": 1,
+        "kt66-dns": 500,
+        "web-accesslog": 410
+      }
+    },
+    {
+      "round": "r01",
+      "days": 90,
+      "scenario_events": 2262,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 2262
+      }
+    },
+    {
+      "round": "r02",
+      "days": 90,
+      "scenario_events": 1676,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "kt66-nft": 873,
+        "json": 12,
+        "web-accesslog": 791
+      }
+    },
+    {
+      "round": "r03",
+      "days": 90,
+      "scenario_events": 1490,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 516,
+        "web-accesslog": 974
+      }
+    },
+    {
+      "round": "r04",
+      "days": 90,
+      "scenario_events": 997,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 26,
+        "syscheck_new_entry": 2,
+        "auditd": 962,
+        "json": 1,
+        "useradd": 1,
+        "syscheck_integrity_changed": 5
+      }
+    },
+    {
+      "round": "r05",
+      "days": 90,
+      "scenario_events": 119,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sudo": 7,
+        "auditd": 108,
+        "syscheck_deleted": 3,
+        "syscheck_integrity_changed": 1
+      }
+    },
+    {
+      "round": "r06",
+      "days": 90,
+      "scenario_events": 3637,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 2003,
+        "json": 1594,
+        "kt66-mailgw": 40
+      }
+    },
+    {
+      "round": "r07",
+      "days": 90,
+      "scenario_events": 135,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sshd": 16,
+        "json": 106,
+        "sudo": 6,
+        "windows_eventchannel": 7
+      }
+    },
+    {
+      "round": "r08",
+      "days": 90,
+      "scenario_events": 3283,
+      "before_window": 0,
+      "at_or_after_anchor": 10,
+      "channels": {
+        "json": 2383,
+        "kt66-dns": 900
+      }
+    },
+    {
+      "round": "r09",
+      "days": 90,
+      "scenario_events": 862,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 525,
+        "modsecurity": 300,
+        "syscheck_new_entry": 2,
+        "auditd": 13,
+        "sudo": 5,
+        "useradd": 1,
+        "syscheck_integrity_changed": 1,
+        "sshd": 8,
+        "json": 4,
+        "syscheck_deleted": 3
+      }
+    },
+    {
+      "round": "r10",
+      "days": 90,
+      "scenario_events": 3023,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 562,
+        "kt66-dns": 30,
+        "syscheck_integrity_changed": 1,
+        "syscheck_new_entry": 1230,
+        "syscheck_deleted": 1200
+      }
+    },
+    {
+      "round": "r12",
+      "days": 90,
+      "scenario_events": 236,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 121,
+        "json": 115
+      }
+    },
+    {
+      "round": "r13",
+      "days": 90,
+      "scenario_events": 721,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 661,
+        "modsecurity": 40,
+        "json": 2,
+        "auditd": 12,
+        "sshd": 6
+      }
+    },
+    {
+      "round": "r15",
+      "days": 90,
+      "scenario_events": 3906,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 2980,
+        "kt66-mailgw": 12,
+        "windows_eventchannel": 2,
+        "sshd": 1,
+        "sudo": 1,
+        "kt66-dns": 500,
+        "web-accesslog": 410
+      }
+    },
+    {
+      "round": "r01",
+      "days": 365,
+      "scenario_events": 2262,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 2262
+      }
+    },
+    {
+      "round": "r02",
+      "days": 365,
+      "scenario_events": 1676,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "kt66-nft": 873,
+        "json": 12,
+        "web-accesslog": 791
+      }
+    },
+    {
+      "round": "r03",
+      "days": 365,
+      "scenario_events": 1490,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "modsecurity": 516,
+        "web-accesslog": 974
+      }
+    },
+    {
+      "round": "r04",
+      "days": 365,
+      "scenario_events": 997,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 26,
+        "syscheck_new_entry": 2,
+        "auditd": 962,
+        "json": 1,
+        "useradd": 1,
+        "syscheck_integrity_changed": 5
+      }
+    },
+    {
+      "round": "r05",
+      "days": 365,
+      "scenario_events": 119,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sudo": 7,
+        "auditd": 108,
+        "syscheck_deleted": 3,
+        "syscheck_integrity_changed": 1
+      }
+    },
+    {
+      "round": "r06",
+      "days": 365,
+      "scenario_events": 3637,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 2003,
+        "json": 1594,
+        "kt66-mailgw": 40
+      }
+    },
+    {
+      "round": "r07",
+      "days": 365,
+      "scenario_events": 135,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "sshd": 16,
+        "json": 106,
+        "sudo": 6,
+        "windows_eventchannel": 7
+      }
+    },
+    {
+      "round": "r08",
+      "days": 365,
+      "scenario_events": 3283,
+      "before_window": 0,
+      "at_or_after_anchor": 10,
+      "channels": {
+        "json": 2383,
+        "kt66-dns": 900
+      }
+    },
+    {
+      "round": "r09",
+      "days": 365,
+      "scenario_events": 862,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 525,
+        "modsecurity": 300,
+        "syscheck_new_entry": 2,
+        "auditd": 13,
+        "sudo": 5,
+        "useradd": 1,
+        "syscheck_integrity_changed": 1,
+        "sshd": 8,
+        "json": 4,
+        "syscheck_deleted": 3
+      }
+    },
+    {
+      "round": "r10",
+      "days": 365,
+      "scenario_events": 3023,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 562,
+        "kt66-dns": 30,
+        "syscheck_integrity_changed": 1,
+        "syscheck_new_entry": 1230,
+        "syscheck_deleted": 1200
+      }
+    },
+    {
+      "round": "r12",
+      "days": 365,
+      "scenario_events": 236,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 121,
+        "json": 115
+      }
+    },
+    {
+      "round": "r13",
+      "days": 365,
+      "scenario_events": 721,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "web-accesslog": 661,
+        "modsecurity": 40,
+        "json": 2,
+        "auditd": 12,
+        "sshd": 6
+      }
+    },
+    {
+      "round": "r15",
+      "days": 365,
+      "scenario_events": 4182,
+      "before_window": 0,
+      "at_or_after_anchor": 0,
+      "channels": {
+        "json": 3256,
+        "kt66-mailgw": 12,
+        "windows_eventchannel": 2,
+        "sshd": 1,
+        "sudo": 1,
+        "kt66-dns": 500,
+        "web-accesslog": 410
+      }
+    }
+  ],
+  "streams": [
+    {
+      "round": "r01",
+      "days": 90,
+      "scale": 0.005,
+      "total": 85306,
+      "scenario_tagged": 2262,
+      "cross_chunk_time_inversions": 17,
+      "before_window": 0,
+      "at_or_after_anchor": 0
+    },
+    {
+      "round": "r02",
+      "days": 90,
+      "scale": 0.005,
+      "total": 84392,
+      "scenario_tagged": 1676,
+      "cross_chunk_time_inversions": 11,
+      "before_window": 0,
+      "at_or_after_anchor": 0
+    },
+    {
+      "round": "r08",
+      "days": 90,
+      "scale": 0.005,
+      "total": 85945,
+      "scenario_tagged": 3273,
+      "cross_chunk_time_inversions": 13,
+      "before_window": 0,
+      "at_or_after_anchor": 0
+    },
+    {
+      "round": "r15",
+      "days": 90,
+      "scale": 0.005,
+      "total": 105293,
+      "scenario_tagged": 3906,
+      "cross_chunk_time_inversions": 18,
+      "before_window": 0,
+      "at_or_after_anchor": 0
+    }
+  ],
+  "files": {
+    "answers/_progress.log": "c71f95280a078ce42ca7d50706d07ccf3592c35cbd23e9ffa3bfa788647f5d97",
+    "answers/r01_baseline.txt": "b3abff45cf897d0ded5681643f2f40c4763f8d137a239a78365b93be40e8c3a0",
+    "answers/r02_recon.txt": "374306b3b0f76072055f02aa36e85f74a9c915f7748c23a31613ef8d992aeffa",
+    "answers/r03_webexploit.txt": "ba3bbba9c19b6a0c0353265528b3ae69d7c6fb99029d74a74c7c65dd065f2653",
+    "answers/r04_persistence.txt": "adec5b474a8cb7c54d2002081e59216c24210d75d8b1da4d493236b3562d4be1",
+    "answers/r05_privesc_evasion.txt": "21b1f9c3537246e269f3bb8c568b707ee32907287a2a1ae759015f170aa0af02",
+    "answers/r06_credential.txt": "f137919d87a988acae2fa947bd6171a1015baf15817cd124f8cff23d2da795a1",
+    "answers/r07_lateral.txt": "3db32b970436d6e1604237154dad6e073fa12fa2faa78d15fb362a566750e668",
+    "answers/r08_c2_exfil.txt": "5a3081e30e3c5ac202aeafcfead3f529130bc06ac9d1c568fba9d99aa497cd57",
+    "answers/r09_midterm.txt": "668319f688a05900ee3fc01457bb9867e726f966b7b79a947cdf414c12ae1910",
+    "answers/r10_impact.txt": "87533f9ccf94c21651f6d66e83c7fc96653f469dbcf7bdbf5fb2186a08a21ce3",
+    "answers/r12_ai_service.txt": "96b184bac0f543f51c8df901b6c339926996a1ab1e0109d4e778b64577b19e14",
+    "answers/r13_ai_redteam.txt": "a0e3985f023c2ab2c3514f0916ab78c6404e219946ed5c41e02c09dfe896d6c8",
+    "answers/r15_final.txt": "62a91d6f21c800d933d50c9f5fa20c549bd3f023a97ac6b2f24ab7ceebdb229f",
+    "kt66-setup.sh": "ccc1da141e1e76c555f1b4a5842b4068a98bd79f94e9226dda5ca49a5f9e547f",
+    "labs/lab_r01.yaml": "6d3a4c83dbc43585a598c28a506eb4f39143c78f94ac79ff09a7ab172fd5b57f",
+    "labs/lab_r02.yaml": "f2ce2d4abca0f5aa854ca11835bbe15fc3fc74d63e2e9175920d621cf38110e8",
+    "labs/lab_r03.yaml": "8896b22eced19ff29e2340284ba8d905569ac3f968537c3ef370fbf902e87001",
+    "labs/lab_r04.yaml": "23ae9c49a9ff0da79c1340625a17da098857a304083f82bb375003907fd7495b",
+    "labs/lab_r05.yaml": "10a1ed1b6bdd34a4918130e2b0556cf99aa52341a10cc28d3d5480aa7331453a",
+    "labs/lab_r06.yaml": "c983ceb333673d289f19f7851f7b7e339f2371733e4817289fe00ccd01d26532",
+    "labs/lab_r07.yaml": "4d79cbc21dd60ebcce017cec5d156ac5f7c5d0a5c5aeaea511deb666e7e167b9",
+    "labs/lab_r08.yaml": "d6449c8d9bdd79e53b4cf56803b0a706e4b3407e3ee8eddd223ceb0446a170d5",
+    "labs/lab_r09.yaml": "03519d9112ed7efa65887f809b957e9c509267b6b0eb36e3784d0b282f9e1146",
+    "labs/lab_r10.yaml": "8be99c8a3c1512f7e2841dd3fc3588a1e4c98a6eec515e3365853b1030b05d7b",
+    "labs/lab_r12.yaml": "36486d129c15fb3a01529652fa5d66f5031f6d602fb5c81e7e147a691b7b9e58",
+    "labs/lab_r13.yaml": "2fa918e06eb836ce05c08c7e0b22c9e483bea6118ce854cf156ebac4eb256ce5",
+    "labs/lab_r15.yaml": "2da50b7c9833a480c3179773adf62d2abd900e22d04621363e1a2005b4d830d9",
+    "labs_config.py": "65dd1e1604a67aa8cb4fee7cd731f46ca072b07d79bea0dabe376359f3879ee2",
+    "lectures/lecture_r01.md": "9fa5d539c500aa533ce1de096f128b8892728204cb3c61df643f2154f702dc1a",
+    "lectures/lecture_r02.md": "d8c7a5f9d8ac554369b11fe2c75f7481079e6e2acefa91cdbcb6a90d52f42acc",
+    "lectures/lecture_r03.md": "102a00cf9099bb82dd47101bcada598afff31b90500058c44f007e6d9f730e07",
+    "lectures/lecture_r04.md": "0d10682e28b7c207768d7fbea3bb673295d736097316341f8cf4e304cb2d4d93",
+    "lectures/lecture_r05.md": "b620c363f657e2851989c5bebc9d10ec5daa419a0583e834c0cfe652ef6f0c55",
+    "lectures/lecture_r06.md": "356cd1a05c72246f81558dacd7da1d142a6e90aefca08dc072ebc1dde3ab5a37",
+    "lectures/lecture_r07.md": "7cc480aa5ec14775cac1db2129d67e37c15306f56c3e2c302d036792cede70e8",
+    "lectures/lecture_r08.md": "7658ff882b182a5455a0cc0384fd0333755967512d79b5f1a8bb9eb64a38a80e",
+    "lectures/lecture_r09.md": "4f614fa51ea2bb515b0746143eda2abb8e80319fdd0d2344f224cf9eb6123e9b",
+    "lectures/lecture_r10.md": "5c47af761a994b118d98231a9185c75bb34d47eabe49edc74ada512af7a38059",
+    "lectures/lecture_r12.md": "8e1ca6499c5509be9da6e8049672b9e0391124fb816dfcb70585c3c4608f0363",
+    "lectures/lecture_r13.md": "6ed40c745a2c36c64441c63784c49fb869fdbeab9dc5c780c9ba8fb7e1060b3c",
+    "lectures/lecture_r15.md": "f313004f116bbe92268ff025770c1b675e89b85ce998adb84a782390cdf49295",
+    "make_labs.py": "3400a05065a33257e83e358c8f6fc74c4ed8769a88f5afee0797ce7b953bc9a6",
+    "profile_2019.json": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+    "profile_from_labeling.py": "b88bbf25507cd0bfd217e08db4666e9e0be192695eeda6dec08a037aa190f926",
+    "purplelab.py": "bebefd40379e0a32feba7edd1f581264099f1105e04b0d634497ff4b781da05c",
+    "r01_baseline.py": "d464f4683aeb1a5750592e7e5324c761a9d3c207d4eeebd98d12adc1d0ca879a",
+    "r02_recon.py": "58df55276a83cfbe158b7dfb3914bb12dfa5c70688d7aca13723e1767c6f277d",
+    "r03_webexploit.py": "ed1a322a723388ab1e1040b328d49deaf372f48796196dc090153915eb4ff0c4",
+    "r04_persistence.py": "85c45e026871b46cb496034f0e06423f3211ed2f81c1b14dbb0f08fe5d70d390",
+    "r05_privesc_evasion.py": "068d0304322e3b1a6a82b897679e65d14f8bc998b2ed37ea935b21549339041c",
+    "r06_credential.py": "226fe5ed8312f6770299d59ef14e2dab8497d63bcaf251293906513cc29c2b89",
+    "r07_lateral.py": "7d48ef5d040216fc0f113651e1c4433e89d68c8c0c2cd86c24d6721edde69400",
+    "r08_c2_exfil.py": "0b17d73049b3ac5760e9f52fc5a13a48310107d8c8251b5b231452112849281b",
+    "r09_midterm.py": "ce188b9f955b1cf377eb0269d52c585ee892a7b1db1d83309fdd9f265f6f48ef",
+    "r10_impact.py": "dbc4c5790dec3f3d8d7109bdb56600e4b7ca61ecd5ccd3e8da6f5b99a5fdff2f",
+    "r12_ai_service.py": "57040d97a85d561ee89968ed0675a42d91e3902d498c80fcb1ed8f47e3c1ef64",
+    "r13_ai_redteam.py": "ce44ec873ac7fd3d18ae99b9c019493219a4c0e52725fd194840cb6ac033e85c",
+    "r15_final.py": "293cd424d8174e88b13288e6f1308e76fcdbbcd2b912071bc9cc1e82a3c44bce",
+    "README.md": "a097f7460cec79eeaa95c07877f9ddbd52c0233e446ca64f6b8cae40c59b03f6",
+    "rules/common/ar_config.xml": "5c4644f9dd0b040b7c67afed13bbcc08a5e61d7cada1b990f8374d0849cef783",
+    "rules/common/kt66-purple-decoders.xml": "b4f3fc1e67c0641550aad729f17f61bc914613114a8fd38427df28cc9aeb8fdc",
+    "rules/common/purple-ar.sh": "10be2bf528437f7221ce58378031e06c3583cb9618c912d317bb5da82b006349",
+    "rules/common/purple-test-vhost.conf": "781812dab05d274f4f3d73f11e4e6ef4420e2a87279dcf9cb93b6a8768217fa2",
+    "rules/common/purple_http_replay.py": "47f566fca7e12fdf64be16897463e4f149a11e2dbc884988f1a4ccaaacf6e18b",
+    "rules/common/purple_log_replay.py": "4a4e29e9dc35c487e72436dfa1e907ec8e9d6664c3520ab4915c02e99187af32",
+    "rules/common/stub.cgi": "b2d02bd12a741bdc9fdfe813edd3c587754b05ced167563d8de19e6efcab2c1d",
+    "rules/common/wazuh_localfile.xml": "69855a307d96bfbbe41607c6cc70eb8babfd5b89aad7f174c269a3957e998d40",
+    "rules/r01/osquery.conf": "b7fda1a4e93c0cbaedd97fde124b97cdb1dfce3477cc4ca718360939bf22407c",
+    "rules/r01/sigma/purple-r01-beacon.yml": "8c2cb1cee97d41c10fab65e8334a0a3eede93b10f41da3c4d803ea24c3c1fa02",
+    "rules/r01/suricata.rules": "85660ecefbda2554f5341f363d3b12bc800c5b80d714b6ec3d314467db2e3ce0",
+    "rules/r01/sysmon.xml": "7e0cc064ce1e332c995bd088bfbfb2d3d10c8c9bf1c4497c3950d70e54611a24",
+    "rules/r01/wazuh_ar.xml": "0d50cbed6f4d5b8ee67492eec630778c3af8b64386adaab26fc3dcef4a3f678d",
+    "rules/r01/wazuh_rules.xml": "2beac58efde03207229bdd1c4d87c25482455c7a0c45bf6d973fe016c5a1a430",
+    "rules/r02/modsec.conf": "f1e777b50044767bca38521c3ef38c2bad144846380e5b19e1e8808885f7dac4",
+    "rules/r02/sigma/purple-r02-recon.yml": "6bb9a4f741e0c537cb35552f74aa9479319e9658c3e146460c7fd8ed4c564019",
+    "rules/r02/suricata.rules": "5df6c9a2ee607815ed491943b9a7cd2b8f58ef376b57b229858b824b010f7d98",
+    "rules/r02/wazuh_ar.xml": "31129e339e5dda5993aead439f9575a9d7a8d1d1aeb63161711957b904b01a2e",
+    "rules/r02/wazuh_rules.xml": "5f1b76018ae9b3ecb25af037d0fca07fcf37a3eab3389768e1ed40601f4de11d",
+    "rules/r03/modsec.conf": "ba32ddf59d53602949574b5f3e83e6f7b9e65856d21bdeafeea1859e32bbcf9c",
+    "rules/r03/sigma/purple-r03-sqli.yml": "8aa591a6ed9ef215fd543aeffbcf86fa64715bbfb58ced8292241da2f4b65dc2",
+    "rules/r03/suricata.rules": "9e2b5f2608e06799c639be3653af2a6d6276cf66482382ac83b1d3ebabfc216d",
+    "rules/r03/wazuh_ar.xml": "e600a3b3b6f3054bff150c304941b6cb8af9a003f1d90f466cd79c3f678dd11d",
+    "rules/r03/wazuh_rules.xml": "06f983f8125125684db610409b14e6a0fc7169da3c51d84715babc3ea7cb2924",
+    "rules/r04/modsec.conf": "146654cce71a1d9cc0932da244dcc6e68bb227bf83fbacddb26fa47a7bc0b58b",
+    "rules/r04/osquery.conf": "1f56a47b9b28ace2552d1e7318a9cf82f641aab1c7936e7df72f522dfbe8218c",
+    "rules/r04/sigma/purple-r04-webshell.yml": "a7b4550002ca2aecb66a2b80634d4123fd234802e78428be3c345475a92231c6",
+    "rules/r04/suricata.rules": "37befd98ad99ed71f8e6abeed9a82d96c58dcdea99bdba270a964e22d2060065",
+    "rules/r04/sysmon.xml": "dba6d214a6a1ded3c96f85485688518355cdbbab815606e4b188c3846aedd2b6",
+    "rules/r04/wazuh_ar.xml": "00deabbf84fc4ecd6c100e563e226969ab7238d1d772d010331f0d941f122181",
+    "rules/r04/wazuh_rules.xml": "579e10ff7f8dab3431b27c3f72608c8a4fcc4f3c3c90bfca68936a9fb20077d4",
+    "rules/r05/osquery.conf": "31140a984b73feffbcff9419e1ca727ee2728efc8d6f2033e9256e6bf657b3fa",
+    "rules/r05/sigma/purple-r05-sudo.yml": "201e5fffe4e0f992b4f6a44b024d3e60198a385956a71201e8d93147308531f7",
+    "rules/r05/sysmon.xml": "cf24d152c5060de0f643e64a21ed0be47653e047575fff0c54e710f804ff4962",
+    "rules/r05/wazuh_ar.xml": "06c2b05098f44bdd737fcfe69ed2c461bed788542cec7e6c19a17d49dfeb69fa",
+    "rules/r05/wazuh_rules.xml": "895a0ef7dac192801a9542bbf17d378e0fa1c18dd49b92a120f5d865d81cc8f1",
+    "rules/r06/modsec.conf": "f9dc0418ff9504b4ebec5439c0fa11435b4ae0463fec9eda739de3f666d3d80d",
+    "rules/r06/sigma/purple-r06-spray.yml": "12d1b2ef660735e3b78ff07a2a1dc46a10c0260ad5e92aab388fe15704dd5f9e",
+    "rules/r06/suricata.rules": "cec8781ee0b8fbbc38ca12b1f1b34225d4d72745f3bfc724243f293226b3fe4c",
+    "rules/r06/wazuh_ar.xml": "14789498943aa73cb510066d6ee4dce0e6d386d6dbdaa271d9519b8215ef6636",
+    "rules/r06/wazuh_rules.xml": "9abdb1f5ef5afb8cca385b5797ac67c0f4e153f98915e36f0e6fc8dbfc0dbfae",
+    "rules/r07/osquery.conf": "2d0960ba125930341c3b3bb03832d7b2a9dc60e66ac3f6a5c24968d99fa151f8",
+    "rules/r07/sigma/purple-r07-lateral.yml": "4495c0ea633ef2f545d788cf7c21af161711919de33c8457dd37b84c04044984",
+    "rules/r07/suricata.rules": "5af95de6c0064d9c5f9abd393534030604d79b28719afe1eb65be7599602c203",
+    "rules/r07/sysmon.xml": "f2c3354b9340e705f9e092d2fd6562e009eee9317aca177001f04172d1fa07ec",
+    "rules/r07/wazuh_ar.xml": "e80f495f22be060b9532796c3f068a166df6c7eb383171d977d5484925999652",
+    "rules/r07/wazuh_rules.xml": "9870554552d03804207dad7493a30fc640bfd89e03340f8d6fc248fd6413791e",
+    "rules/r08/osquery.conf": "f23e43e2b3aa5d22efc1ea1a2f416d41f5c06f1e66533bc1b6c307ef64886938",
+    "rules/r08/sigma/purple-r08-dns.yml": "5d34edad4748ff045df12b4c5193a561988d4d89529f372bd446ec003d7e2c2c",
+    "rules/r08/suricata.rules": "279baff752b0088728f09a67590c3a64344968baad40150ee401cc4d6b18f724",
+    "rules/r08/sysmon.xml": "d5c76c5797b02535803cd1e3d59874f0d89187a4ffa516981bc05a902335ac41",
+    "rules/r08/wazuh_ar.xml": "7b3b88d6612ad3401f6733b73c7513451b87029b1ff299c693b8b77a61b74a2f",
+    "rules/r08/wazuh_rules.xml": "fe978def3db43c0791de4aeacff7b8287c534b1aaa0fca771e113fc8631c360d",
+    "rules/r09/modsec.conf": "bd2bd97ba3c128451d0e0a2210d133060662f9203b4e7887cee4faeacc851f07",
+    "rules/r09/osquery.conf": "6976775da6573c38e4e00feab296d9f8847e0d9686ef477758a98acef92ce020",
+    "rules/r09/README.md": "7a91a814f223d0b8f4e8e5508f8cec5d5fa79e89ae65724d244af3895cd7ccc2",
+    "rules/r09/sigma/purple-r09-chain.yml": "5857e15f53d0a07d29cc9cb2d40b85797d4c57875d0ae9b3fd66bf9340e5cb63",
+    "rules/r09/suricata.rules": "ab6e588e4bacd90dd2883c4dd8728e61c83be8e223be6fc1b4f327835e541637",
+    "rules/r09/wazuh_ar.xml": "9cd9463f0b4eba1185ccf413ca819f7417c7e6742022c7defdd8ea0d2a41a0b0",
+    "rules/r09/wazuh_rules.xml": "46508e5fee827b9e90b4a7b373d7cdb136c339622344daa61f82485c5409f9ed",
+    "rules/r10/osquery.conf": "11e092fb6e0749c877ec3899e348d746bdacb635b6cc86d18eec89c686a88627",
+    "rules/r10/sigma/purple-r10-ransom.yml": "fd7a35100243df402dc677fe3325d77891f79a8b84dae24000ab3bd102a9e246",
+    "rules/r10/suricata.rules": "1baca92a13de933c46e37532348e01b73529d757cd09db6886d851c80c32add4",
+    "rules/r10/sysmon.xml": "a7935ffb82e53a02262518a0f21748b0eac1b0b67f44e1ff592c9f624bd73a68",
+    "rules/r10/wazuh_ar.xml": "f1d821a9008993f9c86e8da2470014d842a419bd4d8df31935df946e9e13af43",
+    "rules/r10/wazuh_rules.xml": "65d1458e031eacb5067233aa75f6967b91b0a7e5e813a790734eab9155cfb7ab",
+    "rules/r12/modsec.conf": "2e1d8656aeb1bd4bd2f98e1c0524b72e62ad53f83741c38efc740710eb2120c6",
+    "rules/r12/osquery.conf": "2548d70db95c17f6e88473e6b8474bc7e2896a7a7ae37cc83e03660fd8b36fae",
+    "rules/r12/sigma/purple-r12-ai.yml": "ca8db9a4115bcd670cfbf93e9bb8d12c00b4d16e322765afd2e520ec82e62909",
+    "rules/r12/suricata.rules": "164d36c6a977f075cbd91e3c512845fb2d1701be6a964897c21ece0197ca8928",
+    "rules/r12/wazuh_ar.xml": "5215dfc1e371f1cd40b1fa63c1be8ac2aa45fcca3cbfb4ac0da2097f95c4296c",
+    "rules/r12/wazuh_rules.xml": "1ff2ae52c1df42cbbcf0a95fee9ebf25ded4576846c6c73066fd43839393ff78",
+    "rules/r13/modsec.conf": "5cb0868cdad7492510a40354051e335e134acf08137546630aed70faf31a854d",
+    "rules/r13/osquery.conf": "be8563dac67812fedfe8538b2395ed47da79b5cbc670726cb9e80f349bbb60d6",
+    "rules/r13/sigma/purple-r13-speed.yml": "b6a14128c3f5734ebfeea44121c084f5e3f30d6c59ec0d6ab4c8a95e353f4148",
+    "rules/r13/suricata.rules": "4ed3dfa5a41c3d004ce8bdb91f0162125f51f2148f57697914c3a0217c5a30b4",
+    "rules/r13/sysmon.xml": "9dd59f1cf612808a92507df477289e03d0adaa697c167aed42ced2ed9e3c97ef",
+    "rules/r13/wazuh_ar.xml": "8140273b6d411f1640c82dff55b20fd78bf02f731cabb1cc42c4d0311b37791e",
+    "rules/r13/wazuh_rules.xml": "9a71a1c12169e5877d39ca212c35528d58d8c14809de7b87e98c7f8bb151e1f2",
+    "rules/r15/lists/purple-allow-backup": "bcd8af9f21a39fa2b135d2362a5d0f6e4945aba49a279a777a40b50e6b628912",
+    "rules/r15/lists/purple-allow-scanner": "46e8b0da087d3318ad548a757df81c3307b1bda2079118840dd402044427fc64",
+    "rules/r15/modsec.conf": "c2df4d9e5a024dbb5bf403e1dbdd48bd51e67a2c66df79fb15c2ac2ec4137911",
+    "rules/r15/osquery.conf": "451daab3bf560c9a25197cb9aefcde47b67079a2d66d42f40f22d07298aaf53f",
+    "rules/r15/sigma/purple-r15-final.yml": "7af1bd6c0b0acfaa4d70ac0addded7a9098595b11fbdd101659824310def2432",
+    "rules/r15/suricata.rules": "25132ab6bf5d6cc703829b8f7b3860703fd4741b71b3dec8a320d44e9749f23a",
+    "rules/r15/sysmon.xml": "45274f9b426ba28b4645ae430e08758caca180ba21d863678ddc45858c0793b8",
+    "rules/r15/wazuh_ar.xml": "2e215c49498eb84d82412bc80ceb9b42f2d897358bc06812b2659839af4fc92a",
+    "rules/r15/wazuh_rules.xml": "d524ec4376b9ce90e95772c0bb97e195b4f05737018568c53815520d0c0517f3",
+    "sigma_corr2wazuh.py": "d46a0b30b1c48eea2b92adec5d449aebd17778438400e26476770ad5fb8b841a",
+    "validation/r01_suricata.txt": "9cb8fcaa58401844b535223e60fa2835e3a5785121a6e34d80f7fc8d7e3d5fb8",
+    "validation/r02_modsec.txt": "b1a5af9b68ca376006102501b38dc562c26aeb669208ede69a4e2400bc8ec67c",
+    "validation/r02_suricata.txt": "6aec8c961fa37dd8829d1220315ea6b9710b67d2b280ae5def6149240115def3",
+    "validation/r03_modsec.txt": "47f3b8f020aaa9f97b79511dd67647302dfdbf986d03352b525c5e74d27c8f72",
+    "validation/r03_suricata.txt": "81cd9db989b061600c1f30e4053a38452eb7fd9bbe7d1c9c41af7022dee05cfc",
+    "validation/r04_modsec.txt": "ba846dc8f6d7db723a4b84e5b12a9a738fef2faabd72511734c4296a2e22c547",
+    "validation/r04_suricata.txt": "6bdd73cb12ba6e8f226c80e7c289e226969172b331e47c714cf4f0cc7b4f5835",
+    "validation/r06_modsec.txt": "413aefbefc55589ab0cd785ec64967d9328383f9a524ee9208f9de828421e107",
+    "validation/r06_suricata.txt": "20bbe4afd721b83752c1c067c32e05d3a1c8b33b1476a33ae3401827517672f3",
+    "validation/r07_suricata.txt": "fd82d5c2c94dbba2fa9fec926526523e2bcd8029115649fbe0287da1d839ef1b",
+    "validation/r08_suricata.txt": "422d845434ace67da4e17a38d671ee8ccf31728e0788e9846454087e5cbac3d5",
+    "validation/r09_modsec.txt": "1eec904be5723d789406495f7ea130a6153d143d7dc20c697f15a6e5dcb92491",
+    "validation/r09_suricata.txt": "39ed347187f7df45aefec470bcf5335813a8fdf3278333d78565d8ac879bd7ad",
+    "validation/r10_suricata.txt": "155a07ccc6c60ce818df3ab874d1df1d6ee3dc96ef1651113c49781780f3528a",
+    "validation/r12_modsec.txt": "2370be7df666bdc89d9cebea213b91ad2c4e579827fb011d66a42f648bb66359",
+    "validation/r12_suricata.txt": "f8bfccb175ecd19876aa47e632b153cd3cde2cd74e6ac9d656a94753ebb039e9",
+    "validation/r13_modsec.txt": "8a122f60f106911b37b375872609d1ab31316468c4ff631f2497a022b0d96070",
+    "validation/r13_suricata.txt": "721fe4f1f72cd60f0645895551a7fe9749a3befa97ff1144be872ebaf78461af",
+    "validation/r15_modsec.txt": "2b2c508154e61bbfeb79c33dbf8e34e6edfbafab1fe17f7890f14a723c9e55a4",
+    "validation/r15_suricata.txt": "33906aaadb20f3b4f8184a7419b82f4dbaf1b5df039b8129910bd35f6d06738e",
+    "validation/validate_all.sh": "346d302b28e6331a04fb1822881cf72e09000eff3f30030a2143217ccaaf3004"
+  }
+}

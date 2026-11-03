@@ -1,0 +1,902 @@
+{
+  "schema_version": 1,
+  "input_kind": "per-source aggregates / cumulative snapshots",
+  "privacy": "No IPs, domains, organizations or row-level values exported.",
+  "snapshots": [
+    {
+      "file": "labeling_2019-05-26.xlsx",
+      "sha256": "e625c8ec723dc580e8a490dce67985eebf64abdb705aa9262ff6ff1d6ff5771d",
+      "sheet": "Sheet1",
+      "rows": 13919,
+      "duplicate_headers": {
+        "log_line": 2,
+        "day_cnt": 2
+      },
+      "column_selection": "last",
+      "columns": [
+        "c_memo",
+        "r_memo",
+        "s_memo",
+        "t_memo",
+        "bl_ca",
+        "ip",
+        "cc",
+        "log_line",
+        "day_cnt",
+        "method_set",
+        "alarm_methods",
+        "bl_methods",
+        "hr_methods",
+        "method_cnt",
+        "spc_method",
+        "aid_cfd_score",
+        "aid_report_cnt",
+        "aid_reported_users",
+        "ibm_reputation_score",
+        "log_len",
+        "dip_cnt",
+        "log_type_cnt",
+        "agent_cnt",
+        "nw_cnt",
+        "hour_dist",
+        "dotw_cnt",
+        "nwt_ratio",
+        "hd_ratio",
+        "mean_tg",
+        "stdev_tg",
+        "log_start",
+        "log_end",
+        "web_ok_cnt",
+        "public_service",
+        "school",
+        "hospital",
+        "solution_corp",
+        "search_engine",
+        "aid_cc",
+        "kisa_ip_user",
+        "aid_ip_type",
+        "aid_isp",
+        "aid_domain",
+        "ibm_ip_user",
+        "cclass",
+        "kr_cc",
+        "log_type_content",
+        "methods",
+        "bl_day",
+        "bl_code",
+        "outlier_point"
+      ],
+      "statistics": {
+        "rows": 13919,
+        "class_counts": {
+          "returning": 3339,
+          "persistent": 1534,
+          "oneshot": 9046
+        },
+        "class_definition": "day_cnt <= 1; 1 < day_cnt < 15; day_cnt >= 15. Activity classes, not malicious labels.",
+        "class_share": {
+          "returning": 0.239888,
+          "persistent": 0.110209,
+          "oneshot": 0.649903
+        },
+        "metrics": {
+          "log_line": {
+            "n": 13919,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 2.0,
+            "p90": 54.0,
+            "p99": 1830.0,
+            "p100": 6126.0
+          },
+          "log_len": {
+            "n": 13919,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 6.0,
+            "p90": 96.0,
+            "p99": 4510.0,
+            "p100": 658584.0
+          },
+          "day_cnt": {
+            "n": 13919,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 1.0,
+            "p90": 17.0,
+            "p99": 138.0,
+            "p100": 145.0
+          },
+          "dip_cnt": {
+            "n": 13919,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 1.0,
+            "p90": 1.0,
+            "p99": 2.0,
+            "p100": 180.0
+          },
+          "hour_dist": {
+            "n": 13919,
+            "p00": 0.041667,
+            "p10": 0.041667,
+            "p50": 0.041667,
+            "p90": 0.666667,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "nwt_ratio": {
+            "n": 13919,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.5,
+            "p90": 1.0,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "hd_ratio": {
+            "n": 13919,
+            "p00": 0.002604,
+            "p10": 0.305859,
+            "p50": 1.0,
+            "p90": 1.0,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "mean_tg": {
+            "n": 13919,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.0,
+            "p90": 5778.75,
+            "p99": 25450.0,
+            "p100": 52410.0
+          },
+          "stdev_tg": {
+            "n": 13919,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.0,
+            "p90": 12051.222964,
+            "p99": 57932.399521,
+            "p100": 121035.710433
+          }
+        },
+        "span_days": {
+          "n": 13919,
+          "p00": 0.0,
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 118.0,
+          "p99": 145.791667,
+          "p100": 146.0
+        },
+        "start_hour_counts": [
+          466,
+          411,
+          317,
+          655,
+          834,
+          859,
+          870,
+          888,
+          885,
+          927,
+          859,
+          812,
+          905,
+          580,
+          293,
+          293,
+          306,
+          357,
+          325,
+          337,
+          392,
+          388,
+          377,
+          583
+        ],
+        "start_precision": {
+          "valid": 13919,
+          "exact_hour": 13780,
+          "exact_minute": 13783
+        },
+        "interval_unit_diagnostics": {
+          "span_over_gap_log_line": {
+            "n": 5292,
+            "p00": 2.0,
+            "p10": 60.0,
+            "p50": 60.0,
+            "p90": 60.0,
+            "p99": 60.000488,
+            "p100": 83.0,
+            "near_60_ratio_count": 5248,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_line_minus_one": {
+            "n": 5292,
+            "p00": 2.4,
+            "p10": 60.153453,
+            "p50": 64.0,
+            "p90": 80.0,
+            "p99": 80.0,
+            "p100": 99.6,
+            "near_60_ratio_count": 1,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_len_minus_one": {
+            "n": 5292,
+            "p00": 0.229336,
+            "p10": 16.0,
+            "p50": 59.299611,
+            "p90": 80.0,
+            "p99": 80.0,
+            "p100": 99.6,
+            "near_60_ratio_count": 0,
+            "near_1_ratio_count": 0
+          }
+        },
+        "time_zone": "not declared in spreadsheet datetime cells; do not assume KST",
+        "gap_unit": "unconfirmed; ratio diagnostics are evidence, not a recovered field definition"
+      }
+    },
+    {
+      "file": "labeling_2019-05-27.xlsx",
+      "sha256": "cf731557168140ebedc7a572aef6562c7d0433be8e1538fea4f4c44bfe499557",
+      "sheet": "Sheet1",
+      "rows": 3782,
+      "duplicate_headers": {
+        "log_line": 2,
+        "day_cnt": 2
+      },
+      "column_selection": "last",
+      "columns": [
+        "c_memo",
+        "r_memo",
+        "s_memo",
+        "t_memo",
+        "bl_ca",
+        "ip",
+        "cc",
+        "log_line",
+        "day_cnt",
+        "method_set",
+        "alarm_methods",
+        "bl_methods",
+        "hr_methods",
+        "method_cnt",
+        "spc_method",
+        "aid_cfd_score",
+        "aid_report_cnt",
+        "aid_reported_users",
+        "ibm_reputation_score",
+        "log_len",
+        "dip_cnt",
+        "log_type_cnt",
+        "agent_cnt",
+        "nw_cnt",
+        "hour_dist",
+        "dotw_cnt",
+        "nwt_ratio",
+        "hd_ratio",
+        "mean_tg",
+        "stdev_tg",
+        "log_start",
+        "log_end",
+        "web_ok_cnt",
+        "public_service",
+        "school",
+        "hospital",
+        "solution_corp",
+        "search_engine",
+        "aid_cc",
+        "kisa_ip_user",
+        "aid_ip_type",
+        "aid_isp",
+        "aid_domain",
+        "ibm_ip_user",
+        "cclass",
+        "kr_cc",
+        "log_type_content",
+        "methods",
+        "bl_day",
+        "bl_code",
+        "outlier_point"
+      ],
+      "statistics": {
+        "rows": 3782,
+        "class_counts": {
+          "returning": 1462,
+          "oneshot": 1422,
+          "persistent": 898
+        },
+        "class_definition": "day_cnt <= 1; 1 < day_cnt < 15; day_cnt >= 15. Activity classes, not malicious labels.",
+        "class_share": {
+          "returning": 0.386568,
+          "oneshot": 0.375992,
+          "persistent": 0.237441
+        },
+        "metrics": {
+          "log_line": {
+            "n": 3782,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 8.0,
+            "p90": 442.0,
+            "p99": 4316.0,
+            "p100": 30708.0
+          },
+          "log_len": {
+            "n": 3782,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 12.0,
+            "p90": 1020.0,
+            "p99": 8206.0,
+            "p100": 661110.0
+          },
+          "day_cnt": {
+            "n": 3782,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 3.0,
+            "p90": 63.0,
+            "p99": 144.0,
+            "p100": 146.0
+          },
+          "dip_cnt": {
+            "n": 3782,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 1.0,
+            "p90": 1.0,
+            "p99": 5.0,
+            "p100": 180.0
+          },
+          "hour_dist": {
+            "n": 3782,
+            "p00": 0.041667,
+            "p10": 0.041667,
+            "p50": 0.125,
+            "p90": 1.0,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "nwt_ratio": {
+            "n": 3782,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.5,
+            "p90": 1.0,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "hd_ratio": {
+            "n": 3782,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.097561,
+            "p90": 0.5,
+            "p99": 0.857143,
+            "p100": 0.985507
+          },
+          "mean_tg": {
+            "n": 3782,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 218.4,
+            "p90": 7785.0,
+            "p99": 27765.0,
+            "p100": 51120.0
+          },
+          "stdev_tg": {
+            "n": 3782,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 510.203579,
+            "p90": 17104.993423,
+            "p99": 64120.520896,
+            "p100": 118056.583044
+          }
+        },
+        "span_days": {
+          "n": 3782,
+          "p00": 0.0,
+          "p10": 0.0,
+          "p50": 8.75,
+          "p90": 145.625,
+          "p99": 146.916667,
+          "p100": 147.0
+        },
+        "start_hour_counts": [
+          261,
+          172,
+          122,
+          186,
+          153,
+          128,
+          130,
+          155,
+          333,
+          142,
+          174,
+          113,
+          133,
+          118,
+          136,
+          145,
+          94,
+          140,
+          131,
+          161,
+          143,
+          185,
+          178,
+          149
+        ],
+        "start_precision": {
+          "valid": 3782,
+          "exact_hour": 3613,
+          "exact_minute": 3619
+        },
+        "interval_unit_diagnostics": {
+          "span_over_gap_log_line": {
+            "n": 2503,
+            "p00": 30.0,
+            "p10": 60.0,
+            "p50": 60.0,
+            "p90": 60.0,
+            "p99": 60.121951,
+            "p100": 107.0,
+            "near_60_ratio_count": 2444,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_line_minus_one": {
+            "n": 2503,
+            "p00": 40.0,
+            "p10": 60.064725,
+            "p50": 62.608696,
+            "p90": 80.0,
+            "p99": 80.000343,
+            "p100": 128.4,
+            "near_60_ratio_count": 3,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_len_minus_one": {
+            "n": 2503,
+            "p00": 0.357399,
+            "p10": 10.285714,
+            "p50": 52.8,
+            "p90": 72.0,
+            "p99": 80.0,
+            "p100": 128.4,
+            "near_60_ratio_count": 2,
+            "near_1_ratio_count": 0
+          }
+        },
+        "time_zone": "not declared in spreadsheet datetime cells; do not assume KST",
+        "gap_unit": "unconfirmed; ratio diagnostics are evidence, not a recovered field definition"
+      }
+    },
+    {
+      "file": "labeling_2019-05-30.xlsx",
+      "sha256": "85b7704d079bede014b11ae7c7e9d9ba9f1586261a5efbe962986e45cd782ca2",
+      "sheet": "Sheet1",
+      "rows": 16724,
+      "duplicate_headers": {
+        "log_line": 2,
+        "day_cnt": 2
+      },
+      "column_selection": "last",
+      "columns": [
+        "c_memo",
+        "r_memo",
+        "s_memo",
+        "t_memo",
+        "bl_ca",
+        "ip",
+        "cc",
+        "log_line",
+        "day_cnt",
+        "method_set",
+        "alarm_methods",
+        "bl_methods",
+        "hr_methods",
+        "method_cnt",
+        "spc_method",
+        "aid_cfd_score",
+        "aid_report_cnt",
+        "aid_reported_users",
+        "ibm_reputation_score",
+        "log_len",
+        "dip_cnt",
+        "log_type_cnt",
+        "agent_cnt",
+        "nw_cnt",
+        "hour_dist",
+        "dotw_cnt",
+        "nwt_ratio",
+        "hd_ratio",
+        "mean_tg",
+        "stdev_tg",
+        "log_start",
+        "log_end",
+        "web_ok_cnt",
+        "public_service",
+        "school",
+        "hospital",
+        "solution_corp",
+        "search_engine",
+        "aid_cc",
+        "kisa_ip_user",
+        "aid_ip_type",
+        "aid_isp",
+        "aid_domain",
+        "ibm_ip_user",
+        "cclass",
+        "kr_cc",
+        "log_type_content",
+        "methods",
+        "bl_day",
+        "bl_code",
+        "outlier_point"
+      ],
+      "statistics": {
+        "rows": 16724,
+        "class_counts": {
+          "oneshot": 4840,
+          "returning": 8134,
+          "persistent": 3750
+        },
+        "class_definition": "day_cnt <= 1; 1 < day_cnt < 15; day_cnt >= 15. Activity classes, not malicious labels.",
+        "class_share": {
+          "oneshot": 0.289404,
+          "returning": 0.486367,
+          "persistent": 0.224229
+        },
+        "metrics": {
+          "log_line": {
+            "n": 16724,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 10.0,
+            "p90": 106.0,
+            "p99": 1628.0,
+            "p100": 32488.0
+          },
+          "log_len": {
+            "n": 16724,
+            "p00": 2.0,
+            "p10": 2.0,
+            "p50": 28.0,
+            "p90": 460.0,
+            "p99": 3664.0,
+            "p100": 684350.0
+          },
+          "day_cnt": {
+            "n": 16724,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 4.0,
+            "p90": 35.0,
+            "p99": 140.0,
+            "p100": 149.0
+          },
+          "dip_cnt": {
+            "n": 16724,
+            "p00": 1.0,
+            "p10": 1.0,
+            "p50": 1.0,
+            "p90": 1.0,
+            "p99": 3.0,
+            "p100": 180.0
+          },
+          "hour_dist": {
+            "n": 16724,
+            "p00": 0.041667,
+            "p10": 0.041667,
+            "p50": 0.166667,
+            "p90": 0.666667,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "nwt_ratio": {
+            "n": 16724,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.466667,
+            "p90": 1.0,
+            "p99": 1.0,
+            "p100": 1.0
+          },
+          "hd_ratio": {
+            "n": 16724,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 0.0,
+            "p90": 0.333333,
+            "p99": 0.666667,
+            "p100": 0.983871
+          },
+          "mean_tg": {
+            "n": 16724,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 1230.0,
+            "p90": 9892.5,
+            "p99": 24945.0,
+            "p100": 53445.0
+          },
+          "stdev_tg": {
+            "n": 16724,
+            "p00": 0.0,
+            "p10": 0.0,
+            "p50": 2598.951891,
+            "p90": 22452.734355,
+            "p99": 56257.01023,
+            "p100": 123425.940547
+          }
+        },
+        "span_days": {
+          "n": 16724,
+          "p00": 0.0,
+          "p10": 0.0,
+          "p50": 41.958333,
+          "p90": 113.666667,
+          "p99": 149.75,
+          "p100": 150.0
+        },
+        "start_hour_counts": [
+          685,
+          512,
+          398,
+          387,
+          357,
+          376,
+          397,
+          783,
+          647,
+          630,
+          642,
+          671,
+          625,
+          752,
+          827,
+          845,
+          869,
+          839,
+          818,
+          903,
+          1007,
+          1061,
+          951,
+          742
+        ],
+        "start_precision": {
+          "valid": 16724,
+          "exact_hour": 16530,
+          "exact_minute": 16535
+        },
+        "interval_unit_diagnostics": {
+          "span_over_gap_log_line": {
+            "n": 12500,
+            "p00": 13.0,
+            "p10": 60.0,
+            "p50": 60.0,
+            "p90": 60.0,
+            "p99": 60.0,
+            "p100": 79.0,
+            "near_60_ratio_count": 12447,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_line_minus_one": {
+            "n": 12500,
+            "p00": 15.6,
+            "p10": 60.425532,
+            "p50": 63.529412,
+            "p90": 80.0,
+            "p99": 80.0,
+            "p100": 86.666667,
+            "near_60_ratio_count": 2,
+            "near_1_ratio_count": 0
+          },
+          "span_over_gap_log_len_minus_one": {
+            "n": 12500,
+            "p00": 0.099709,
+            "p10": 6.27451,
+            "p50": 21.818182,
+            "p90": 68.571429,
+            "p99": 80.0,
+            "p100": 86.666667,
+            "near_60_ratio_count": 1,
+            "near_1_ratio_count": 0
+          }
+        },
+        "time_zone": "not declared in spreadsheet datetime cells; do not assume KST",
+        "gap_unit": "unconfirmed; ratio diagnostics are evidence, not a recovered field definition"
+      }
+    }
+  ],
+  "latest_per_source": {
+    "rows": 31479,
+    "class_counts": {
+      "returning": 11884,
+      "persistent": 4608,
+      "oneshot": 14987
+    },
+    "class_definition": "day_cnt <= 1; 1 < day_cnt < 15; day_cnt >= 15. Activity classes, not malicious labels.",
+    "class_share": {
+      "returning": 0.377522,
+      "persistent": 0.146383,
+      "oneshot": 0.476095
+    },
+    "metrics": {
+      "log_line": {
+        "n": 31479,
+        "p00": 2.0,
+        "p10": 2.0,
+        "p50": 4.0,
+        "p90": 68.0,
+        "p99": 922.0,
+        "p100": 32488.0
+      },
+      "log_len": {
+        "n": 31479,
+        "p00": 2.0,
+        "p10": 2.0,
+        "p50": 10.0,
+        "p90": 260.0,
+        "p99": 2384.0,
+        "p100": 684350.0
+      },
+      "day_cnt": {
+        "n": 31479,
+        "p00": 1.0,
+        "p10": 1.0,
+        "p50": 2.0,
+        "p90": 23.0,
+        "p99": 116.0,
+        "p100": 149.0
+      },
+      "dip_cnt": {
+        "n": 31479,
+        "p00": 1.0,
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 1.0,
+        "p99": 2.0,
+        "p100": 180.0
+      },
+      "hour_dist": {
+        "n": 31479,
+        "p00": 0.041667,
+        "p10": 0.041667,
+        "p50": 0.083333,
+        "p90": 0.541667,
+        "p99": 1.0,
+        "p100": 1.0
+      },
+      "nwt_ratio": {
+        "n": 31479,
+        "p00": 0.0,
+        "p10": 0.0,
+        "p50": 0.498615,
+        "p90": 1.0,
+        "p99": 1.0,
+        "p100": 1.0
+      },
+      "hd_ratio": {
+        "n": 31479,
+        "p00": 0.0,
+        "p10": 0.0,
+        "p50": 0.25,
+        "p90": 1.0,
+        "p99": 1.0,
+        "p100": 1.0
+      },
+      "mean_tg": {
+        "n": 31479,
+        "p00": 0.0,
+        "p10": 0.0,
+        "p50": 162.857143,
+        "p90": 8873.333333,
+        "p99": 25882.5,
+        "p100": 53445.0
+      },
+      "stdev_tg": {
+        "n": 31479,
+        "p00": 0.0,
+        "p10": 0.0,
+        "p50": 376.297754,
+        "p90": 19450.377888,
+        "p99": 59132.823372,
+        "p100": 123425.940547
+      }
+    },
+    "span_days": {
+      "n": 31479,
+      "p00": 0.0,
+      "p10": 0.0,
+      "p50": 1.217211,
+      "p90": 101.666667,
+      "p99": 149.416667,
+      "p100": 150.0
+    },
+    "start_hour_counts": [
+      1075,
+      893,
+      730,
+      1055,
+      1206,
+      1243,
+      1314,
+      1714,
+      1757,
+      1542,
+      1533,
+      1512,
+      1559,
+      1374,
+      1168,
+      1194,
+      1174,
+      1248,
+      1180,
+      1300,
+      1428,
+      1524,
+      1397,
+      1359
+    ],
+    "start_precision": {
+      "valid": 31479,
+      "exact_hour": 31008,
+      "exact_minute": 31021
+    },
+    "interval_unit_diagnostics": {
+      "span_over_gap_log_line": {
+        "n": 17576,
+        "p00": 2.0,
+        "p10": 60.0,
+        "p50": 60.0,
+        "p90": 60.0,
+        "p99": 60.000319,
+        "p100": 107.0,
+        "near_60_ratio_count": 17441,
+        "near_1_ratio_count": 0
+      },
+      "span_over_gap_log_line_minus_one": {
+        "n": 17576,
+        "p00": 2.4,
+        "p10": 60.48,
+        "p50": 64.0,
+        "p90": 80.0,
+        "p99": 80.0,
+        "p100": 128.4,
+        "near_60_ratio_count": 3,
+        "near_1_ratio_count": 0
+      },
+      "span_over_gap_log_len_minus_one": {
+        "n": 17576,
+        "p00": 0.099709,
+        "p10": 6.857143,
+        "p50": 32.0,
+        "p90": 72.0,
+        "p99": 80.0,
+        "p100": 128.4,
+        "near_60_ratio_count": 2,
+        "near_1_ratio_count": 0
+      }
+    },
+    "time_zone": "not declared in spreadsheet datetime cells; do not assume KST",
+    "gap_unit": "unconfirmed; ratio diagnostics are evidence, not a recovered field definition"
+  },
+  "merge_policy": "Union of sources; latest log_end then lexicographic dated filename. This is not a same-date cohort or a sum of daily events.",
+  "limitations": [
+    "Only the explicitly selected files were inspected.",
+    "Aggregate snapshots cannot reconstruct individual interarrival times.",
+    "Source selection is security-observation biased; activity class is not an attack label.",
+    "Counter.ipynb does not define the aggregate calculations."
+  ]
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "type": "command",
+    "id": "C03-01-01",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "python3 --version",
+    "purpose": "Python 3 실행 가능 여부를 확인한다.",
+    "syntax": "--version은 버전만 출력한다. 파일이나 서버 설정을 바꾸지 않는다.",
+    "result": "Python 3.x가 출력된다. command not found이면 분석 VM의 Python 설치 상태와 실행 경로를 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-02",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "git --version",
+    "purpose": "Git 실행 가능 여부를 확인한다.",
+    "syntax": "git은 버전 관리 도구이다. --version은 설치된 Git의 버전을 출력한다.",
+    "result": "git version 뒤에 버전이 나온다. 명령을 찾지 못하면 Git을 준비한 뒤 계속한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-03",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "ls -ld ~/hack_ir_book_3",
+    "purpose": "교재 작업 폴더가 이미 있는지 확인한다.",
+    "syntax": "ls는 파일 정보를 보여 준다. -l은 자세히, -d는 폴더 내부 대신 폴더 자체를 표시한다.",
+    "result": "기존 폴더가 있으면 내용을 확인해 사용한다. 처음 작업할 때 No such file or directory는 아직 없다는 뜻이다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-04",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "git clone \\\n  https://github.com/mrgrit/hack_ir_book_3.git \\\n  ~/hack_ir_book_3",
+    "purpose": "교재의 프로그램과 복사용 예제를 내려받는다.",
+    "syntax": "clone 다음에는 원격 주소와 새 폴더 경로를 쓴다. 줄 끝의 역슬래시(\\)는 다음 줄까지 한 명령으로 이어 준다. 역슬래시 뒤에는 공백을 넣지 않는다.",
+    "result": "작업이 완료되면 ~/hack_ir_book_3에 tools와 examples가 있다. 인증·접속 오류이면 계정 접근 권한과 네트워크를 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-05",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "cd ~/hack_ir_book_3",
+    "purpose": "이후 명령의 기준 위치를 교재 저장소로 바꾼다.",
+    "syntax": "cd는 현재 디렉터리를 바꾼다. 이후의 tools/...와 build/...는 이 디렉터리 아래 경로이다.",
+    "result": "오류 없이 프롬프트가 돌아오면 다음 명령으로 현재 위치를 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-06",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "pwd",
+    "purpose": "현재 작업 위치를 확인한다.",
+    "syntax": "pwd는 현재 디렉터리의 전체 경로를 출력한다.",
+    "result": "경로 끝이 /hack_ir_book_3이어야 한다. 다르면 C03-01-05부터 다시 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-07",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "ls -ld ~/hack_ir_with_wazuh_source",
+    "purpose": "원본 코드 사본의 대상 폴더를 확인한다.",
+    "syntax": "-ld는 폴더 자체를 자세히 표시한다.",
+    "result": "폴더가 없을 때 다음 clone을 실행한다. 기존 폴더가 있으면 작업 내용과 Git 상태를 먼저 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-08",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "git clone \\\n  https://github.com/mrgrit/hack_ir_with_wazuh.git \\\n  ~/hack_ir_with_wazuh_source",
+    "purpose": "강의 코드를 별도 사본으로 내려받는다.",
+    "syntax": "마지막 경로가 저장 위치이다. 교재 저장소와 다른 폴더를 지정한다.",
+    "result": "복제가 완료되면 purple-agg 디렉터리가 있다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-09",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "git -C ~/hack_ir_with_wazuh_source \\\n  checkout --detach \\\n  d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+    "purpose": "교재에서 사용할 생성기 버전을 선택한다.",
+    "syntax": "-C는 지정한 폴더에서 Git을 실행한다. checkout --detach는 브랜치의 최신 상태 대신 지정 커밋을 읽는 상태로 전환한다. 새 사본에서 실행한다.",
+    "result": "HEAD가 지정 커밋으로 이동한다. 로컬 변경을 덮을 수 있다는 메시지가 나오면 중단하고 변경 파일부터 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-10",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "git -C ~/hack_ir_with_wazuh_source rev-parse HEAD",
+    "purpose": "선택한 코드 버전을 확인한다.",
+    "syntax": "rev-parse HEAD는 현재 커밋의 전체 식별자를 출력한다.",
+    "result": "d6a2397fc31517147ddd09f58e0d153bc8cf0588과 일치해야 한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-11",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "ls -ld build/r01-pilot01",
+    "purpose": "출력 폴더가 이미 있는지 확인한다.",
+    "syntax": "build는 생성 결과를 두는 폴더이고 r01-pilot01은 이번 실행의 결과 폴더이다.",
+    "result": "처음에는 폴더가 없어야 한다. 기존 결과가 있으면 아래 명령의 실행 이름과 출력 폴더를 새 이름으로 바꾼다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-12",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "python3 tools/prepare_round.py \\\n  --source ~/hack_ir_with_wazuh_source/purple-agg \\\n  --round r01 --anchor 2026-11-01 \\\n  --days 90 --scale 0.005 \\\n  --run-id pilot01 --out build/r01-pilot01",
+    "purpose": "R01의 90일 학습 파일을 생성한다.",
+    "syntax": "--source는 원본 폴더, --round는 라운드, --anchor는 끝 기준일, --days는 기간, --scale은 규모 배율이다. --run-id는 실행 이름, --out은 새 결과 폴더이다.",
+    "result": "완료 출력의 total과 counts를 기록한다. 이 조건의 R01은 총 85,306건, background 83,044건, scenario 2,262건이다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-13",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "python3 tools/check_dataset.py build/r01-pilot01",
+    "purpose": "생성 파일의 손상과 시간·건수 불일치를 검사한다.",
+    "syntax": "check_dataset.py 다음에는 검사할 결과 폴더를 지정한다. 해시, 이벤트 ID와 정답 연결, 기간 및 전체 순서를 검사한다.",
+    "result": "status가 pass이고 events가 85306이다. chronological과 hashes_verified가 true인지 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-14",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "python3 tools/inspect_events.py \\\n  build/r01-pilot01 \\\n  --decoder web-accesslog --limit 1",
+    "purpose": "웹 접근 이벤트의 원문과 필드를 확인한다.",
+    "syntax": "--decoder는 decoder.name의 정확한 값을 지정한다. --limit 1은 한 건만 출력한다.",
+    "result": "event 안의 timestamp, agent, decoder, data, full_log와 book3를 읽는다. 일치하는 이벤트가 없으면 decoder 이름과 결과 폴더를 확인한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-15",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "ls -ld build/r01-pilot01",
+    "purpose": "옮길 결과 폴더를 확인한다.",
+    "syntax": "-ld는 지정한 폴더 하나의 정보를 보여 준다.",
+    "result": "이번에 만든 결과 경로인지 확인한다. 다른 폴더이면 이동하지 않는다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-16",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "ls -ld build/r01-pilot01-reviewed",
+    "purpose": "이동할 새 이름의 존재 여부를 확인한다.",
+    "syntax": "대상 폴더가 이미 있는지 표시한다.",
+    "result": "No such file or directory이면 새 이름이다. 이미 있다면 아래 명령을 실행하지 않고 다른 이름을 정한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-17",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "mv -i build/r01-pilot01 \\\n  build/r01-pilot01-reviewed",
+    "purpose": "검사를 마친 결과를 보존 이름으로 옮긴다.",
+    "syntax": "첫 경로가 원본, 둘째 경로가 새 이름이다. -i는 덮어쓰기가 발생할 때 확인을 요구한다. 앞의 대상 확인을 마친 뒤 실행한다.",
+    "result": "다음 검사에서 이동한 폴더의 파일 해시가 유지돼야 한다."
+  },
+  {
+    "type": "command",
+    "id": "C03-01-18",
+    "where": "Ubuntu 분석 VM 터미널",
+    "text": "python3 tools/check_dataset.py \\\n  build/r01-pilot01-reviewed",
+    "purpose": "이동 후 데이터가 그대로인지 확인한다.",
+    "syntax": "검사 도구에 새 폴더 경로를 전달한다.",
+    "result": "다시 pass가 나오면 보존이 완료된다. 파일 안의 실행 이름과 index 이름은 pilot01로 유지된다."
+  }
+]

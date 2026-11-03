@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-03",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "python-docx": "1.2.0",
+    "Pillow": "12.3.0",
+    "openpyxl": "3.1.5",
+    "pypdf": "6.10.0",
+    "pdf2image": "1.17.0"
+  },
+  "docx_sha256": "5ed3287c327fbb2dfe5ce0a1d9a02a9aa07e6771d693cbf8484fa0f561118c09",
+  "pages": 22,
+  "copyable_commands": 18,
+  "shell_syntax": "18 files, bash -n passed; no shell execution",
+  "python_syntax": "all tools and tests compiled",
+  "template_geometry_and_theme": "exact match to first section; single output section",
+  "actual_run_colors": [
+    "000000"
+  ],
+  "embedded_images": {
+    "assets/illustrations/offline-preparation.png": "4e8697429ad8e8b9d89ed9239c33808d10b9835b22f8996f47518cea299ab05d",
+    "assets/figures/evidence-paths.png": "2c3697668296f795a0507ed7bb854ab62dbe829eb3a62b68e1e861131237b5e4",
+    "assets/figures/three-times.png": "16483a90448b46cb3542683d531a65956012718b149f4e51f3fc13355c2f1147",
+    "assets/figures/preparation-flow.png": "7a9c25312b8539ad3a13eca0afa126c8a932c82c7459cd203a72943897a657fe"
+  },
+  "full_reference_urls_verified": [
+    "https://github.com/mrgrit/hack_ir_book_3",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg",
+    "https://drive.google.com/drive/folders/1opod1aNlgA9LW248K-U99VFK9QKBLiH6",
+    "https://drive.google.com/drive/folders/1fJNfD402l9IRECphaDYX-Y6ca5VH7no0",
+    "https://docs.opensearch.org/latest/api-reference/document-apis/bulk/",
+    "https://documentation.wazuh.com/current/proof-of-concept-guide/integrate-network-ids-suricata.html",
+    "https://docs.suricata.io/en/latest/command-line-options.html",
+    "https://docs.zeek.org/en/current/quickstart.html"
+  ],
+  "body_baselines": [
+    {
+      "page": 1,
+      "body_lowest_baseline_from_bottom_pt": 145.49
+    },
+    {
+      "page": 2,
+      "body_lowest_baseline_from_bottom_pt": 128.9
+    },
+    {
+      "page": 3,
+      "body_lowest_baseline_from_bottom_pt": 188.21
+    },
+    {
+      "page": 4,
+      "body_lowest_baseline_from_bottom_pt": 178.85
+    },
+    {
+      "page": 5,
+      "body_lowest_baseline_from_bottom_pt": 302.74
+    },
+    {
+      "page": 6,
+      "body_lowest_baseline_from_bottom_pt": 171.65
+    },
+    {
+      "page": 7,
+      "body_lowest_baseline_from_bottom_pt": 249.67
+    },
+    {
+      "page": 8,
+      "body_lowest_baseline_from_bottom_pt": 218.71
+    },
+    {
+      "page": 9,
+      "body_lowest_baseline_from_bottom_pt": 264.55
+    },
+    {
+      "page": 10,
+      "body_lowest_baseline_from_bottom_pt": 175.73
+    },
+    {
+      "page": 11,
+      "body_lowest_baseline_from_bottom_pt": 135.41
+    },
+    {
+      "page": 12,
+      "body_lowest_baseline_from_bottom_pt": 252.31
+    },
+    {
+      "page": 13,
+      "body_lowest_baseline_from_bottom_pt": 145.73
+    },
+    {
+      "page": 14,
+      "body_lowest_baseline_from_bottom_pt": 152.69
+    },
+    {
+      "page": 15,
+      "body_lowest_baseline_from_bottom_pt": 301.3
+    },
+    {
+      "page": 16,
+      "body_lowest_baseline_from_bottom_pt": 213.19
+    },
+    {
+      "page": 17,
+      "body_lowest_baseline_from_bottom_pt": 176.45
+    },
+    {
+      "page": 18,
+      "body_lowest_baseline_from_bottom_pt": 177.17
+    },
+    {
+      "page": 19,
+      "body_lowest_baseline_from_bottom_pt": 242.47
+    },
+    {
+      "page": 20,
+      "body_lowest_baseline_from_bottom_pt": 271.51
+    },
+    {
+      "page": 21,
+      "body_lowest_baseline_from_bottom_pt": 371.88
+    },
+    {
+      "page": 22,
+      "body_lowest_baseline_from_bottom_pt": 387.72
+    }
+  ],
+  "visual_review": "All 22 pages reviewed, including byte-identical pages from preceding render; final table and changed pages reviewed individually.",
+  "siem_operations": 0,
+  "pcap_replays": 0
+}
