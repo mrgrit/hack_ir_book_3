@@ -1,0 +1,61 @@
+GET /book3-r09-ch09/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "govportal"
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "sources": {
+      "terms": {
+        "field": "data.srcip",
+        "size": 20,
+        "order": {
+          "blocked": "desc"
+        }
+      },
+      "aggs": {
+        "blocked": {
+          "filter": {
+            "term": {
+              "data.id": "403"
+            }
+          }
+        },
+        "ok": {
+          "filter": {
+            "term": {
+              "data.id": "200"
+            }
+          }
+        },
+        "max_bytes": {
+          "max": {
+            "field": "data.bytes"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # 해킹·침해대응 실무 with Wazuh — 3권
 
-가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 1~8장 초안이다.
+가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 1~9장 초안이다.
 
 실제 시스템을 공격하지 않고 `purple-agg`가 생성한 학습 데이터와 공개 PCAP에서 센서가 얻는 로그로 조사한다. 생성 이벤트의 `rule` 필드와 Wazuh manager가 실제로 만든 경보를 구분한다.
 
@@ -14,13 +14,14 @@
 - [6장 DOCX](manuscript/volume03-chapter06.docx): 자격증명 공격과 피싱, B5 25쪽. R06 86,174건에서 계정 중심 분산 실패·성공·메일 전달·후속 요청을 연결한다. 실제 조회 9개와 [복사용 예제](examples/chapter06), 배경 축소에 따른 분포 변화와 세션 증거의 한계를 다룬다.
 - [7장 DOCX](manuscript/volume03-chapter07.docx): 내부 이동, B5 27쪽. R07 82,010건에서 SSH 접속 대상·Windows 로그온·프로세스·계정 변경을 실제 조회 9개와 연결한다. [복사용 예제](examples/chapter07)와 증거 연결의 한계를 제공한다.
 - [8장 DOCX](manuscript/volume03-chapter08.docx): 외부 통신과 유출, B5 24쪽. R08 85,945건에서 반복 간격·DNS 이름·방향별 바이트를 실제 조회 8개와 연결한다. [복사용 예제](examples/chapter08)와 로컬 간격 계산 도구를 제공한다.
+- [9장 DOCX](manuscript/volume03-chapter09.docx): 장기 사건 재구성, B5 34쪽. R09 101,293건에서 웹·권한·내부 이동·외부 전송·삭제를 실제 조회 10개로 연결한다. [복사용 예제와 시간표](examples/chapter09)를 제공한다.
 - [전체 목차와 강의 대응표](editorial/volume03-outline.md): 13장 및 부록의 학습 목표·실습·완료 조건.
 - [집필 계획](editorial/authoring-plan.md): 집필 순서와 공동 SIEM 사용 원칙.
 - [생성기 현실성 점검](editorial/generator-realism-review.md): 실제 집계 표본 3개와 코드·오프라인 실행의 대조.
 - [PCAP 연계 설계](editorial/pcap-integration-plan.md): Suricata·Zeek 파일 분석을 기본으로, 폐쇄 veth 재생을 선택으로 구성.
 - [검증 기록](editorial/verification.md): 실행한 검사와 아직 실행하지 않은 범위.
 
-현재 원고는 **1~8장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 9~13장과 부록을 한 장씩 작성·검수·업로드한다. REV01과 1·2권 원고는 보존한다.
+현재 원고는 **1~9장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 10~13장과 부록을 한 장씩 작성·검수·업로드한다. REV01과 1·2권 원고는 보존한다.
 
 ## 로컬 준비 도구
 

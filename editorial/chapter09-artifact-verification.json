@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "chapter": 9,
+  "pages": 34,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter09-evidence.png",
+      "sha256": "b7963efa529680aa65d61cda98006ca518067c80a5edcf7825d1dff9761d7c98"
+    },
+    {
+      "path": "assets/screenshots/chapter09/timeline-detail.png",
+      "sha256": "871ee0dc79d7ad58bbf1ca039f2944a5c7ead33045b748e4c093cbebde12ec81"
+    },
+    {
+      "path": "assets/figures/chapter09-evidence-chain.png",
+      "sha256": "a94fcf483e87078d47416c56ab6680b28d61dc8cdf68cfdda7cdaabf63536817"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r09_midterm.py",
+    "https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/how-it-works.html",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter09"
+  ],
+  "queries_match": 10,
+  "commands_match": 3,
+  "files": {
+    "manuscript/volume03-chapter09.docx": "976adc41a4e621b8753904f792ac53495a8d06fb21927ce728b192f8a8023f51",
+    "manuscript/volume03-chapter09.json": "62e4efbd69607ca0a6a2931944d79fdca990bcc4d92db1b7602a35e770065cd6",
+    "examples/chapter09/cleanup.http": "09053628f4b7c1c5e8eb3c2927318ce9a85d622f5b2c483ebe9316165d088224",
+    "examples/chapter09/commands.sh": "28f845e4cf0a3c89514a92b79707bb086d4f3979e8a34914c37b1cd83e2a7b07",
+    "examples/chapter09/discover.dql": "2efdb48aae2dfceb84d99e39f485fc9956d1435dea1a95a3a84349723e45edf6",
+    "examples/chapter09/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter09/Q03-09-01.http": "beb33acc5983445025b8f7f1c24b5e0fb49ddcb6d118e46e29eea4903b6157ec",
+    "examples/chapter09/Q03-09-02.http": "079c7ccd12a5cdd0d39eb9c7cfd6953c5ac9bbee97bc165ea5fc1cbfa2ea5e69",
+    "examples/chapter09/Q03-09-03.http": "1bf0c69d4e1298a6eb80a5ebb8bc12e3a59c4a44d90b7a0a58766f6fdaf8c8ce",
+    "examples/chapter09/Q03-09-04.http": "2b7d367a93ec3521f0a05ffed3643db275c900753eaa8868ed5727d7fd709065",
+    "examples/chapter09/Q03-09-05.http": "392ffc0083fe5647511b917c3ceff8cfe4ae6f5c7b1ce6aee6746fe551a2d83c",
+    "examples/chapter09/Q03-09-06.http": "7f00b8f0b273db0a0296ed9454b4e74c6470198a1fa29962d16c7d1c80f62997",
+    "examples/chapter09/Q03-09-07.http": "ec088da6a29dd2132a5dbda43aac5ea8decb4dc715dbf92c71e8d4a56d836793",
+    "examples/chapter09/Q03-09-08.http": "d89ef5e1c263eae4c2c8fe8086bba94403236d3b973d970432a72d3c2fced83c",
+    "examples/chapter09/Q03-09-09.http": "3f5c2c8a71ca146dc74aa8de4ae43eeb35cdbe38de776bdcdb6db0fa95a263b8",
+    "examples/chapter09/Q03-09-10.http": "ebaca45a1ed862d5960b14cee83260a78b4bcc391dd5ef6b2b5294e5064ba120",
+    "examples/chapter09/queries.json": "68a618ae66019618d8a183195a99efb00f05a24a4ad6bab5cd6594453783b71f",
+    "examples/chapter09/timeline.csv": "edfc9ea2c87db6774cf0181ea436cb2a6a1a3dfc47d30c83e1cfeced84ed66f1"
+  },
+  "qa_pdf_published": false
+}

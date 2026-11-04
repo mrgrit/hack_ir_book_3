@@ -1,0 +1,85 @@
+GET /book3-r09-ch09/_search
+{
+  "size": 30,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-09-28T22:00:00+09:00",
+              "lt": "2026-09-29T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "govportal"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "web-accesslog"
+                      }
+                    },
+                    {
+                      "prefix": {
+                        "data.url": "/files/m_8812.php"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "web-accesslog"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.url": "/minwon/apply"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "term": {
+                  "data.audit.parent": "/usr/sbin/apache2"
+                }
+              },
+              {
+                "term": {
+                  "syscheck.path": "/var/www/govportal/files/m_8812.php"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "decoder.name",
+    "data",
+    "syscheck",
+    "full_log"
+  ]
+}

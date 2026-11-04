@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+agent.name: "govportal" AND decoder.name: "auditd"
+
+decoder.name: "modsecurity" AND data.vhost: "govportal.kt66.lab"
+
+decoder.name: "sshd" AND data.srcip: "10.20.40.84"
