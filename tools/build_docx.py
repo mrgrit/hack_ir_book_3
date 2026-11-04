@@ -1,6 +1,7 @@
 """부크크 원본 DOCX에서 첫 구역의 판형·여백·테마를 상속하는 저자용 조판기."""
 from illustration_assets import fit_existing_frame
 import argparse
+from illustration_assets import apply_extra_scenes
 import json
 from copy import deepcopy
 from pathlib import Path
@@ -108,6 +109,7 @@ def items(doc,block):
 
 def build(output,source=None):
     data=json.loads((source or ROOT/'manuscript/volume03-chapter01.json').read_text(encoding='utf-8'))
+    apply_extra_scenes(data)
     doc=Document(ROOT/'tools/assets/bookk-B5.docx')
     sect=deepcopy(doc.sections[0]._sectPr)
     for x in list(doc.element.body):doc.element.body.remove(x)

@@ -1,0 +1,34 @@
+{
+  "engine": "built-in image_gen",
+  "scenes": [
+    {
+      "id": "b3",
+      "root": "hack_ir_book_3",
+      "asset": "assets/illustrations/natural-angle/black-scenario-author.png",
+      "docs": [
+        "manuscript/volume03-chapter01.docx"
+      ],
+      "anchor": "같은 기간과 규모라도 seed가 다르면",
+      "caption": "삽화. 합성 로그 시나리오의 시간 간격 설정",
+      "prompt": "Image1 is edit target; image2 ONLY provides BLACK FOX at left. Preserve hooded character, dark hoodie, pose, anatomy, furniture, laptop/monitor perspective, all surroundings and pixel style. REMOVE the black fox emblem from EVERY prop (case, bench, backpack, cabinet, device). Put one small BLACK FOX as a stitched patch on the hoodie's naturally visible upper sleeve, with a restrained light edge so it reads against dark fabric. It follows sleeve folds/perspective; never turn body or any prop to show the patch. No owl. Do not change any hand, limb, foot or equipment, or add text. Keep exact aspect ratio and clean transparent outside margin.",
+      "anchors": [
+        "난수로 만든 데이터도 같은 조건을 고정하면 다시 만들 수 있다."
+      ],
+      "mark": "후드 상완의 작은 검은 여우 패치",
+      "width_mm": 62,
+      "review": {
+        "anatomy": true,
+        "perspective": true,
+        "wardrobe": true,
+        "props_unmarked": true,
+        "note": "키보드·마우스 두 손, 의자와 골반·두 발, 책상 가로대와 신체 분리 확인. 서랍 마크 제거."
+      },
+      "sha256": "527d1be8e690a2b079e9439d8734494deef9ae88fc02554886d93816a4133906",
+      "image_size": [
+        1536,
+        1024
+      ],
+      "generation_file": "exec-e4a3e9e0-197e-4602-8e9a-759f04eb554c.png"
+    }
+  ]
+}

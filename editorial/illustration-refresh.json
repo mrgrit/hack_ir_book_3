@@ -1,0 +1,37 @@
+{
+  "scenes": [
+    {
+      "id": "offline-preparation",
+      "old": "assets/illustrations/offline-preparation.png",
+      "path": "assets/illustrations/offline-preparation.png",
+      "frame_size": [
+        1536,
+        1024
+      ],
+      "previous_sha256": "4e8697429ad8e8b9d89ed9239c33808d10b9835b22f8996f47518cea299ab05d",
+      "sha256": "1cdfa687f282a8343432e952a7856e7b0ccd349b660b42dca00b5fbea3c51e7f",
+      "image_size": [
+        1536,
+        1024
+      ],
+      "generation_file": "exec-499520a8-ff27-417b-8732-c8fe9dfaf696.png",
+      "scene": "Precise local clothing cleanup only. In this image the white-hat person/people are viewed from the back or side. Their CHEST owl patch is naturally hidden. REMOVE all visible owl patches and their borders from the person/people; do NOT move or replace the marks anywhere. Plain natural garment fabric under the removed patch. Also remove decorative flap pockets on the upper sleeve or upper back that were used as a fake chest panel; keep actual waist/hip pockets. For the seated woman with clipboard, remove the near-side artificial breast pocket/patch panel and keep a naturally side/back-oriented plain navy torso without turning her. Keep current head, shoulders, torso, pelvis, all arm and hand anatomy, fingers and wrists, legs/feet, all props, cameras, furniture geometry, lighting, pixel style, colors and exact canvas proportions unchanged. No owl on props, back or sleeve. This is intentional emblem occlusion, not a missing mark. Preserve transparent outer margins.\n\nFinal print-edge cleanup: Background-extraction / precise cleanup only. This final illustration is correct internally. Preserve EVERY interior pixel-like detail: the navy woman from behind, plain back without logos, two hands typing, two feet, laptop, coiled cable, cart and background lab furniture. Remove ONLY the detached smoky/dark gray haze around the OUTER edge, especially the dark triangular cloudy blobs at BOTTOM LEFT and BOTTOM RIGHT. Produce a clean compact cutout of the connected physical scene with genuinely ZERO-alpha empty exterior, no blurry vignette, no shadows floating outside the floor/scene, no gray haze at corners. Keep full physical scene, aspect ratio and colors, do not crop any objects or anatomy. Transparent background.",
+      "natural_angle_review": "2026-11-04",
+      "emblem_location": "가슴 패치가 가려지는 각도: 로고 생략"
+    },
+    {
+      "id": "b3",
+      "path": "assets/illustrations/natural-angle/black-scenario-author.png",
+      "old": "assets/illustrations/natural-angle/black-scenario-author.png",
+      "scene": "Image1 is edit target; image2 ONLY provides BLACK FOX at left. Preserve hooded character, dark hoodie, pose, anatomy, furniture, laptop/monitor perspective, all surroundings and pixel style. REMOVE the black fox emblem from EVERY prop (case, bench, backpack, cabinet, device). Put one small BLACK FOX as a stitched patch on the hoodie's naturally visible upper sleeve, with a restrained light edge so it reads against dark fabric. It follows sleeve folds/perspective; never turn body or any prop to show the patch. No owl. Do not change any hand, limb, foot or equipment, or add text. Keep exact aspect ratio and clean transparent outside margin.",
+      "sha256": "527d1be8e690a2b079e9439d8734494deef9ae88fc02554886d93816a4133906",
+      "image_size": [
+        1536,
+        1024
+      ],
+      "emblem_location": "후드 상완의 작은 검은 여우 패치",
+      "natural_angle_review": "2026-11-04"
+    }
+  ],
+  "latest_review": "2026-11-04"
+}
