@@ -1,0 +1,4 @@
+# 각 검색식을 따로 입력한다.
+data.srcuser: "kim.minjun" AND decoder.name: "sshd"
+
+agent.name: "KT66-WIN-01" AND data.win.system.eventID: "4732"

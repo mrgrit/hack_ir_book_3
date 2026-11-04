@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "chapter": 7,
+  "pages": 27,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter07-access-path.png",
+      "sha256": "ec627edd4d3bf6879d72233b4cf27428d36ba23fb2afaa781d87a246ec3161c7"
+    },
+    {
+      "path": "assets/screenshots/chapter07/hosts-detail.png",
+      "sha256": "387b37e8dddd8035851818949207d12306bd6c6be0bf5d34935fb58f8343469d"
+    },
+    {
+      "path": "assets/figures/chapter07-connection-evidence.png",
+      "sha256": "34993ae582f6d683fa0abd354c9704a3da834f19fc6a41e5b7de0ec38133d870"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r07_lateral.py",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4732",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter07"
+  ],
+  "queries_match": 9,
+  "commands_match": 3,
+  "files": {
+    "manuscript/volume03-chapter07.docx": "2b29422b2615cde7dd368cc089d88aee101759c2c5f82737bb3ef732e4b172d2",
+    "manuscript/volume03-chapter07.json": "98558e02e803cd511c136af3e014e875d969a829f7e93c1ecd5adc19c896617d",
+    "examples/chapter07/cleanup.http": "71aa401c4e92af84fcd7ef0e7f77cab68a60435ab58a3cccba6ba059a2e3e924",
+    "examples/chapter07/commands.sh": "f9283541afc4c4a8f56e2f48f47f14e963ba5159cb55e5c1a55022aa35b87ff9",
+    "examples/chapter07/discover.dql": "46cdb2e3ace1728dc7efb596a3fd21a80a6a5e62d58961f1697a1ed4054553ff",
+    "examples/chapter07/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter07/Q03-07-01.http": "1c8121194eef6e4e6a76cb6fd2c5bbf59bb9760a6b9da62ff708702577295ac9",
+    "examples/chapter07/Q03-07-02.http": "4ca7b2cfec31db0c160df0034a02bd2ba741293f9a55d8934637b9c984d7c42e",
+    "examples/chapter07/Q03-07-03.http": "b295bdc77fb7df551ffecfc644ebee61e0194dbc959b06045469164af57f876f",
+    "examples/chapter07/Q03-07-04.http": "5f2e82f06c5f5052dbfc5ae6b5cbaac965a6ae6586704efd5a678e3a9e23ee4e",
+    "examples/chapter07/Q03-07-05.http": "557f380630e3f6a7724e512c3523f522692fcbc5c44f4e94d786da1865d5bbeb",
+    "examples/chapter07/Q03-07-06.http": "b88941efa9029dbb41f5f7a2a0c4651cbadd6a5e28ccec2e93e7dbda763755d0",
+    "examples/chapter07/Q03-07-07.http": "a12f088366b0f1b1b1f26a3e5e48e295798c53279b34ad35951a9a1452ec6b64",
+    "examples/chapter07/Q03-07-08.http": "5f3355f644757e99a9e12c6e3a25ce430ab0951ed5f0a465cc92e54ae8791c77",
+    "examples/chapter07/Q03-07-09.http": "e594f1462c54135a4b41ca1ca7c7a4b39e64a4fe07eed5d0967d30a28eaedceb",
+    "examples/chapter07/queries.json": "292e2da899d45402d48e65041bc6cd7dba41c828c32d724f5b49ab6431fac5e6"
+  },
+  "qa_pdf_published": false
+}

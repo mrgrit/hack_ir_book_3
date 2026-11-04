@@ -1,0 +1,52 @@
+GET /book3-r07-ch07/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "flow"
+          }
+        },
+        {
+          "term": {
+            "data.src_ip": "10.20.40.83"
+          }
+        },
+        {
+          "term": {
+            "data.dest_ip": "10.20.70.10"
+          }
+        },
+        {
+          "term": {
+            "data.dest_port": "445"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.src_ip",
+    "data.dest_ip",
+    "data.dest_port",
+    "data.app_proto",
+    "data.flow"
+  ]
+}

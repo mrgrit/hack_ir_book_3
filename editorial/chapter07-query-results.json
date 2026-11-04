@@ -1,0 +1,2047 @@
+{
+  "01": {
+    "took": 7,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 5395,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "kim.doyun",
+            "doc_count": 388,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "juiceshop",
+                  "doc_count": 72
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 67
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 64
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 63
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 61
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 61
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.chaewon",
+            "doc_count": 385,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "aicompanion",
+                  "doc_count": 72
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 69
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 64
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 62
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 59
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 59
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.suah",
+            "doc_count": 384,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "mediforum",
+                  "doc_count": 84
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 73
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 61
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 58
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 56
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 52
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.jimin",
+            "doc_count": 382,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 81
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 71
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 68
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 57
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 54
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 51
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.siwoo",
+            "doc_count": 376,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "neobank",
+                  "doc_count": 75
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 66
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 65
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 59
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 56
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 55
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.yuna",
+            "doc_count": 365,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 70
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 68
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 64
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 60
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 58
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 45
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.seoyeon",
+            "doc_count": 363,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 70
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 64
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 61
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 58
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 55
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 55
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.jiwoo",
+            "doc_count": 359,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "aicompanion",
+                  "doc_count": 67
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 66
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 58
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 58
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 56
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 54
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.hayun",
+            "doc_count": 353,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 66
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 65
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 62
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 59
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 51
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 50
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.minjun",
+            "doc_count": 352,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "aicompanion",
+                  "doc_count": 65
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 62
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 61
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 60
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 56
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 48
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.yejun",
+            "doc_count": 350,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 70
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 63
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 60
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 55
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 53
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 49
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.hajun",
+            "doc_count": 342,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 62
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 60
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 59
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 57
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 55
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 49
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.seojun",
+            "doc_count": 338,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "mediforum",
+                  "doc_count": 69
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 67
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 60
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 58
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 50
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 34
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.jiho",
+            "doc_count": 337,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "adminconsole",
+                  "doc_count": 63
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 63
+                },
+                {
+                  "key": "govportal",
+                  "doc_count": 58
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 56
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 49
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 48
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.eunwoo",
+            "doc_count": 321,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 60
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 56
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 55
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 53
+                },
+                {
+                  "key": "adminconsole",
+                  "doc_count": 51
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 46
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 6
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 6,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "times": {
+        "buckets": [
+          {
+            "key_as_string": "2026-10-29T01:20:00.000+09:00",
+            "key": 1793204400000,
+            "doc_count": 4,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal",
+                  "doc_count": 1
+                },
+                {
+                  "key": "juiceshop",
+                  "doc_count": 1
+                },
+                {
+                  "key": "mediforum",
+                  "doc_count": 1
+                },
+                {
+                  "key": "neobank",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 4
+            }
+          },
+          {
+            "key_as_string": "2026-10-29T01:30:00.000+09:00",
+            "key": 1793205000000,
+            "doc_count": 2,
+            "hosts": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "adminconsole",
+                  "doc_count": 1
+                },
+                {
+                  "key": "aicompanion",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "unique_hosts": {
+              "value": 2
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 9,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079389",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:26:43 juiceshop sshd[14621]: Accepted password for kim.minjun from 10.20.30.201 port 47207 ssh2",
+            "timestamp": "2026-10-29T01:26:43.036+0900"
+          },
+          "sort": [
+            1793204803036
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079391",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:28:00 neobank sshd[15163]: Accepted password for kim.minjun from 10.20.30.201 port 48213 ssh2",
+            "timestamp": "2026-10-29T01:28:00.457+0900"
+          },
+          "sort": [
+            1793204880457
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079393",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "govportal"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:29:01 govportal sshd[15591]: Accepted password for kim.minjun from 10.20.30.201 port 49008 ssh2",
+            "timestamp": "2026-10-29T01:29:01.576+0900"
+          },
+          "sort": [
+            1793204941576
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079395",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:29:46 mediforum sshd[15908]: Accepted password for kim.minjun from 10.20.30.201 port 49598 ssh2",
+            "timestamp": "2026-10-29T01:29:46.965+0900"
+          },
+          "sort": [
+            1793204986965
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079397",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:30:28 aicompanion sshd[16197]: Accepted password for kim.minjun from 10.20.30.201 port 50135 ssh2",
+            "timestamp": "2026-10-29T01:30:28.247+0900"
+          },
+          "sort": [
+            1793205028247
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079399",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "adminconsole"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5715"
+            },
+            "full_log": "Oct 29 01:31:10 adminconsole sshd[16494]: Accepted password for kim.minjun from 10.20.30.201 port 50686 ssh2",
+            "timestamp": "2026-10-29T01:31:10.647+0900"
+          },
+          "sort": [
+            1793205070647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079400",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "dvwa"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "full_log": "Oct 29 01:31:15 dvwa sshd[16529]: Failed password for kim.minjun from 10.20.30.201 port 50751 ssh2",
+            "timestamp": "2026-10-29T01:31:15.647+0900"
+          },
+          "sort": [
+            1793205075647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079401",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "dvwa"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "full_log": "Oct 29 01:31:20 dvwa sshd[16564]: Failed password for kim.minjun from 10.20.30.201 port 50816 ssh2",
+            "timestamp": "2026-10-29T01:31:20.647+0900"
+          },
+          "sort": [
+            1793205080647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079402",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "dvwa"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.30.201"
+            },
+            "rule": {
+              "id": "5716"
+            },
+            "full_log": "Oct 29 01:31:25 dvwa sshd[16599]: Failed password for kim.minjun from 10.20.30.201 port 50881 ssh2",
+            "timestamp": "2026-10-29T01:31:25.647+0900"
+          },
+          "sort": [
+            1793205085647
+          ]
+        }
+      ]
+    }
+  },
+  "04": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 628,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "countries": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "Republic of Korea",
+            "doc_count": 624,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "24.199.29.86",
+                  "doc_count": 73
+                },
+                {
+                  "key": "70.65.30.143",
+                  "doc_count": 49
+                },
+                {
+                  "key": "51.71.202.21",
+                  "doc_count": 47
+                },
+                {
+                  "key": "43.147.111.167",
+                  "doc_count": 46
+                },
+                {
+                  "key": "56.96.165.61",
+                  "doc_count": 46
+                },
+                {
+                  "key": "33.115.110.7",
+                  "doc_count": 44
+                },
+                {
+                  "key": "38.255.11.23",
+                  "doc_count": 44
+                },
+                {
+                  "key": "45.50.190.148",
+                  "doc_count": 44
+                },
+                {
+                  "key": "185.65.231.138",
+                  "doc_count": 42
+                },
+                {
+                  "key": "14.88.141.203",
+                  "doc_count": 41
+                },
+                {
+                  "key": "163.131.234.213",
+                  "doc_count": 40
+                },
+                {
+                  "key": "159.96.173.144",
+                  "doc_count": 39
+                },
+                {
+                  "key": "43.163.28.208",
+                  "doc_count": 36
+                },
+                {
+                  "key": "4.85.192.204",
+                  "doc_count": 33
+                }
+              ]
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "kim.doyun",
+                  "doc_count": 49
+                },
+                {
+                  "key": "kim.jiho",
+                  "doc_count": 47
+                },
+                {
+                  "key": "kim.suah",
+                  "doc_count": 46
+                },
+                {
+                  "key": "kim.yejun",
+                  "doc_count": 46
+                },
+                {
+                  "key": "kim.hajun",
+                  "doc_count": 44
+                },
+                {
+                  "key": "kim.siwoo",
+                  "doc_count": 44
+                },
+                {
+                  "key": "kim.yuna",
+                  "doc_count": 44
+                },
+                {
+                  "key": "kim.jiwoo",
+                  "doc_count": 43
+                },
+                {
+                  "key": "kim.seojun",
+                  "doc_count": 42
+                },
+                {
+                  "key": "kim.jimin",
+                  "doc_count": 41
+                },
+                {
+                  "key": "kim.minjun",
+                  "doc_count": 40
+                },
+                {
+                  "key": "kim.chaewon",
+                  "doc_count": 39
+                },
+                {
+                  "key": "kim.eunwoo",
+                  "doc_count": 36
+                },
+                {
+                  "key": "kim.seoyeon",
+                  "doc_count": 33
+                },
+                {
+                  "key": "kim.hayun",
+                  "doc_count": 30
+                }
+              ]
+            }
+          },
+          {
+            "key": "Russia",
+            "doc_count": 4,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "71.154.150.26",
+                  "doc_count": 4
+                }
+              ]
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "kim.minjun",
+                  "doc_count": 4
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "05": {
+    "took": 8,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 7785,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "10.20.32.51",
+            "doc_count": 7680,
+            "last": {
+              "value": 1793439024792.0,
+              "value_as_string": "2026-10-31T09:30:24.792Z"
+            },
+            "destinations": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 1280,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "80",
+                        "doc_count": 640
+                      },
+                      {
+                        "key": "9100",
+                        "doc_count": 640
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "first": {
+              "value": 1785688203185.0,
+              "value_as_string": "2026-08-02T16:30:03.185Z"
+            }
+          },
+          {
+            "key": "10.20.30.201",
+            "doc_count": 105,
+            "last": {
+              "value": 1793204661745.0,
+              "value_as_string": "2026-10-28T16:24:21.745Z"
+            },
+            "destinations": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.81",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.82",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.84",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.85",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.86",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 15,
+                  "ports": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "11211",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "22",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "2375",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "27017",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "3306",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5432",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "5601",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "6379",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "80",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8080",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "8443",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9000",
+                        "doc_count": 1
+                      },
+                      {
+                        "key": "9200",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "first": {
+              "value": 1793204644183.0,
+              "value_as_string": "2026-10-28T16:24:04.183Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "06": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2204,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "types": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "5",
+            "doc_count": 2111,
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": []
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "SYSTEM",
+                  "doc_count": 2111
+                }
+              ]
+            }
+          },
+          {
+            "key": "2",
+            "doc_count": 90,
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": []
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "park.jiwoo",
+                  "doc_count": 90
+                }
+              ]
+            }
+          },
+          {
+            "key": "3",
+            "doc_count": 3,
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 3
+                }
+              ]
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "svc_backup",
+                  "doc_count": 2
+                },
+                {
+                  "key": "park.jiwoo",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "07": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 5,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079408",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "targetUserName": "park.jiwoo",
+                  "ipAddress": "10.20.40.83",
+                  "authenticationPackageName": "NTLM",
+                  "logonType": "3"
+                },
+                "system": {
+                  "eventID": "4624"
+                }
+              }
+            },
+            "timestamp": "2026-10-29T01:36:26.647+0900"
+          },
+          "sort": [
+            1793205386647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079409",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Windows\\PSEXESVC.exe",
+                  "parentProcessName": "C:\\Windows\\System32\\services.exe",
+                  "targetUserName": "SYSTEM",
+                  "commandLine": "PSEXESVC.exe"
+                },
+                "system": {
+                  "eventID": "4688"
+                }
+              }
+            },
+            "timestamp": "2026-10-29T01:36:29.647+0900"
+          },
+          "sort": [
+            1793205389647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079410",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Windows\\System32\\cmd.exe",
+                  "parentProcessName": "C:\\Windows\\PSEXESVC.exe",
+                  "targetUserName": "SYSTEM",
+                  "commandLine": "cmd.exe /c net user svc_backup P@ss2026! /add"
+                },
+                "system": {
+                  "eventID": "4688"
+                }
+              }
+            },
+            "timestamp": "2026-10-29T01:36:34.647+0900"
+          },
+          "sort": [
+            1793205394647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079411",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "targetUserName": "svc_backup"
+                },
+                "system": {
+                  "eventID": "4720"
+                }
+              }
+            },
+            "timestamp": "2026-10-29T01:36:35.647+0900"
+          },
+          "sort": [
+            1793205395647
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079412",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "targetUserName": "svc_backup",
+                  "memberName": "svc_backup",
+                  "targetSid": "S-1-5-32-544"
+                },
+                "system": {
+                  "eventID": "4732"
+                }
+              }
+            },
+            "timestamp": "2026-10-29T01:36:39.647+0900"
+          },
+          "sort": [
+            1793205399647
+          ]
+        }
+      ]
+    }
+  },
+  "08": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000080688",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "targetUserName": "svc_backup",
+                  "ipAddress": "10.20.40.83",
+                  "authenticationPackageName": "NTLM",
+                  "logonType": "3"
+                }
+              }
+            },
+            "timestamp": "2026-10-30T12:37:48.231+0900"
+          },
+          "sort": [
+            1793331468231
+          ]
+        },
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000081138",
+          "_score": null,
+          "_source": {
+            "data": {
+              "win": {
+                "eventdata": {
+                  "targetUserName": "svc_backup",
+                  "ipAddress": "10.20.40.83",
+                  "authenticationPackageName": "NTLM",
+                  "logonType": "3"
+                }
+              }
+            },
+            "timestamp": "2026-10-31T01:29:58.131+0900"
+          },
+          "sort": [
+            1793377798131
+          ]
+        }
+      ]
+    }
+  },
+  "09": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r07-ch07",
+          "_id": "r07-000079407",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.83",
+              "dest_ip": "10.20.70.10",
+              "app_proto": "smb",
+              "dest_port": "445",
+              "flow": {
+                "bytes_toclient": 9000,
+                "bytes_toserver": 18000,
+                "age": 3
+              }
+            },
+            "timestamp": "2026-10-29T01:36:25.647+0900"
+          },
+          "sort": [
+            1793205385647
+          ]
+        }
+      ]
+    }
+  }
+}
