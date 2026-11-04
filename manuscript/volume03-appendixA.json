@@ -1,0 +1,790 @@
+{
+  "title": "부록 A 필드·명령·조회 색인",
+  "series": "해킹·침해대응 실무 with Wazuh — 3권",
+  "comments": "기존 장별 예제에서 색인을 생성하고 R15 count·mapping·단일 원문을 읽기 전용으로 대조했다. 필드의 뜻과 자료 종류·관측 단위를 구분한다.",
+  "pages": [
+    {
+      "kind": "content",
+      "title": "부록 A 필드·명령·조회 색인",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "실습 중 필드 이름이나 실행 위치를 찾을 때 이 색인을 사용한다. 먼저 장 번호와 자료 종류를 정한 뒤 해당 예제 파일을 연다. 같은 IP나 숫자라도 웹·SSH·네트워크·Windows 기록에서 저장 위치와 뜻이 다르다."
+        },
+        {
+          "type": "image",
+          "path": "assets/figures/appendixA-lookup.png",
+          "caption": "그림 A-1  입력과 결과의 확인 순서",
+          "width_mm": 115
+        },
+        {
+          "type": "p",
+          "text": "examples/appendixA/query-index.csv는 2~13장의 조회 파일 117개, command-index.csv는 1~13장의 본문 명령 블록 83개를 연결한다. ID·목적·실행 위치·파일 경로로 찾는다. 각 장 본문의 선행 조건과 확인 절차를 함께 읽는다."
+        }
+      ],
+      "break": true,
+      "level": "chapter"
+    },
+    {
+      "kind": "content",
+      "title": "A.1 입력할 위치를 구분한다",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "위치",
+            "입력과 확인"
+          ],
+          "rows": [
+            [
+              "kt66 Ubuntu VM 호스트",
+              "cd·python3·docker를 실행한다. 저장소와 생성 폴더 경로는 이 호스트 기준이다."
+            ],
+            [
+              "분석 컨테이너",
+              "docker exec -it <이름> /bin/bash로 들어간 뒤 센서를 실행한다. 종료는 exit이다. 호스트 경로와 마운트 경로를 구분한다."
+            ],
+            [
+              "Windows 브라우저",
+              "kt66 VM 주소의 HTTPS 5601로 접속한다. Wazuh 화면의 메뉴·검색·결과를 읽는다."
+            ],
+            [
+              "Discover 검색창",
+              "DQL 조건을 입력한다. 인덱스 패턴·시간 범위를 별도로 선택한다."
+            ],
+            [
+              "Dev Tools Console",
+              "GET /인덱스/_search와 JSON 본문을 입력한다. 응답 상태와 _shards.failed를 확인한다."
+            ]
+          ],
+          "widths": [
+            38,
+            89
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "DQL은 Discover에서 문서를 고르는 검색 문법이고 Query DSL은 JSON으로 검색·집계를 표현하는 형식이다. SQL의 SELECT 문과 서로 다른 입력이다. Dev Tools의 GET을 Bash에 붙여 넣거나 DQL을 JSON 본문 자리에 넣지 않는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-A-01",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "pwd\nls manuscript/volume03-chapter13.docx\nls examples/chapter13/Q03-13-10.http",
+          "purpose": "현재 저장소와 예제 위치를 확인한다.",
+          "syntax": "pwd는 현재 디렉터리를 출력한다. ls 뒤에는 존재를 확인할 파일 경로를 쓴다. 두 경로는 현재 저장소를 기준으로 한다.",
+          "result": "현재 위치 끝이 hack_ir_book_3이고 두 파일이 표시된다. 없으면 저장소 위치·갱신 상태를 먼저 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "Windows에 있는 원고 경로와 Ubuntu의 실행 폴더는 별도이다. Windows에서 DOCX를 열었다고 Ubuntu의 생성 파일이 준비되는 것은 아니다. 명령 옆의 실행 위치와 실습 데이터 폴더를 먼저 대조한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.2 인덱스·건수·원문을 확인한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "아래 예는 13장의 R15 적재를 마친 상태에서 실행한다. Dev Tools의 요청은 읽기 전용이다. 인덱스가 없다면 13장의 생성·검사·적재 절차로 돌아간다. 다른 이름을 와일드카드로 넓혀 결과를 맞추지 않는다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-A-01",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_count",
+          "purpose": "전용 인덱스의 전체 문서 수를 확인한다.",
+          "syntax": "_count는 이 인덱스에 저장된 전체 문서 수를 반환한다. 시간·내용 필터가 없는 요청이다.",
+          "result": "count 105293을 manifest total과 대조한다.",
+          "long": true
+        },
+        {
+          "type": "query",
+          "id": "Q03-A-02",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_mapping",
+          "purpose": "필드 자료형과 적재 소유 정보를 읽는다.",
+          "syntax": "mapping은 필드의 색인 형식을 정의한다. 응답의 인덱스 이름과 mappings.properties, mappings._meta.book3를 읽는다.",
+          "result": "timestamp는 date, data.srcip·data.src_ip는 keyword, data.flow.bytes_toserver는 long이다. _meta.book3의 round·expected_events·bulk_sha256을 로컬 manifest와 대조한다.",
+          "long": true
+        },
+        {
+          "type": "query",
+          "id": "Q03-A-03",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_doc/r15-000104075",
+          "purpose": "알고 있는 원문 ID의 문서를 읽는다.",
+          "syntax": "_doc 뒤의 값은 _id이다. 특정 실행에서 저장된 문서 한 개를 찾는다. 주소·경로 자체를 접속하거나 실행하지 않는다.",
+          "result": "found true, _source.data.url의 page=0, id 200, bytes 866174를 13장 Q10 응답과 대조한다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "인덱스의 _id는 해당 실행에서 문서를 찾는 식별자이다. 생성 조건이 바뀌면 같은 번호가 같은 사건을 가리킨다고 가정하지 않는다. 실행 이름·manifest 해시·인덱스 이름과 함께 보관한다."
+        },
+        {
+          "type": "p",
+          "text": "12장의 PCAP 전용 인덱스는 구조가 다르다. _meta.book3에는 source_kind·PCAP/EVE/bulk 해시·total을 보관한다. 정규화한 문서의 data.flow_id는 문자열이다. 합성 라운드의 expected_events나 rule_origin 필드가 모든 자료에 있다고 가정하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.3 공통 필드와 시각",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "필드",
+            "뜻과 확인"
+          ],
+          "rows": [
+            [
+              "timestamp",
+              "이 교재에서 검색하는 이벤트 시각. 합성 자료와 PCAP 정규화 시각의 출처를 확인한다."
+            ],
+            [
+              "agent.name / agent.ip",
+              "기록을 수집한 대상·센서 정보. 웹 요청의 출발지 주소와 구분한다."
+            ],
+            [
+              "decoder.name",
+              "로그를 해석한 형식의 이름. 합성 자료에서는 생성기가 부여한다."
+            ],
+            [
+              "location",
+              "기록 파일·채널의 출처. 호스트 경로와 컨테이너 경로를 구분한다."
+            ],
+            [
+              "full_log",
+              "보존된 원문 문자열. 일부 구조화 필드가 원문에 없을 수 있다."
+            ],
+            [
+              "rule.id / rule.level",
+              "규칙 번호와 중요도. 합성 rule은 실제 manager 실행 결과와 구분한다."
+            ],
+            [
+              "book3.synthetic",
+              "생성 로그 여부. 12장 관측 자료는 false이다."
+            ],
+            [
+              "book3.rule_origin",
+              "합성 라운드에서 generator를 기록한다."
+            ],
+            [
+              "book3.source_kind",
+              "12장에서는 pcap-observation. 원본 PCAP·EVE 해시와 함께 읽는다."
+            ]
+          ],
+          "widths": [
+            52,
+            75
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "숫자처럼 보이는 값도 keyword이면 문자열로 정확히 비교한다. rule.id와 웹 data.id는 문자열, 바이트 수는 수치형이다. keyword 필드에 숫자 범위의 의미를 기대하거나 long 필드에서 문자열 접두사를 검색하기 전에 mapping을 확인한다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "시각/조건",
+            "읽는 방법"
+          ],
+          "rows": [
+            [
+              "Z / +09:00 / +0900",
+              "Z는 UTC, 뒤의 두 표기는 UTC보다 9시간 빠른 KST이다. 같은 순간을 같은 시간대로 바꿔 비교한다."
+            ],
+            [
+              "gte / lt",
+              "gte는 시작값 이상, lt는 끝값 미만이다. 반개구간을 사용하면 연속한 두 창의 경계 문서가 중복되지 않는다."
+            ],
+            [
+              "calendar_interval: day",
+              "time_zone에 맞춘 달력 날짜로 묶는다. min_doc_count 1이면 빈 날짜는 반환하지 않는다."
+            ],
+            [
+              "fixed_interval: 1m",
+              "고정 경계의 1분 버킷이다. 모든 이동 60초 창 중 최대값과 구분한다."
+            ],
+            [
+              "사건·관측·도착 시각",
+              "발생 시각, 센서가 본 시각, manager가 받은 시각을 각각 기록한다."
+            ]
+          ],
+          "widths": [
+            52,
+            75
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "인덱스에 과거 timestamp를 넣은 일괄 적재와 manager의 시간 상관 시험은 다른 절차이다. 과거 날짜의 JSON을 한꺼번에 넣어 manager가 원래 90일 간격으로 받았다고 설명하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.4 웹·인증·파일·Windows 필드",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "웹·SSH 필드",
+            "뜻과 원문 대조"
+          ],
+          "rows": [
+            [
+              "data.srcip",
+              "웹·SSH·DNS·일부 앱의 출발지. flow의 src_ip와 철자가 다르다."
+            ],
+            [
+              "data.vhost",
+              "대상 웹 가상 호스트. WAF 센서의 agent.name과 실제 대상 서비스가 다를 수 있다."
+            ],
+            [
+              "data.protocol / data.url",
+              "합성 웹 로그에서 요청 방법·경로이다. flow의 TCP/UDP는 data.proto이다."
+            ],
+            [
+              "data.id / data.bytes",
+              "합성 웹 응답 코드·응답 크기. HTTP 200의 실제 본문과 업무 결과를 추가 확인한다."
+            ],
+            [
+              "data.user_agent",
+              "요청자가 보낸 프로그램 표기. 실제 행위자·도구의 증거와 대조한다."
+            ],
+            [
+              "data.srcuser / data.dstuser",
+              "로그별로 원래 계정·대상 계정의 역할을 확인한다. sudo USER=root는 요청 대상이다."
+            ],
+            [
+              "data.command",
+              "sudo 등의 명령 문자열. 실행 결과·파일 읽기 성공은 후속 기록에서 확인한다."
+            ]
+          ],
+          "widths": [
+            53,
+            74
+          ],
+          "keep": false
+        },
+        {
+          "type": "table",
+          "head": [
+            "호스트 필드",
+            "뜻과 확인"
+          ],
+          "rows": [
+            [
+              "data.audit.parent / exe / command",
+              "Linux 감사 예제의 부모·실행 파일·명령. 프로세스·감사 일련번호와 연결한다."
+            ],
+            [
+              "data.audit.auid",
+              "생성기는 계정 이름·단순 값을 넣기도 한다. 실제 로그인 UID 형식과 대조한다."
+            ],
+            [
+              "syscheck.path / event",
+              "FIM 대상 경로와 added·modified·deleted 등의 변화이다."
+            ],
+            [
+              "syscheck.uname_after",
+              "변경 뒤 소유자 정보. 변경 행위자 확인에는 별도 감사 기록이 필요하다."
+            ],
+            [
+              "data.win.system.eventID",
+              "Windows 이벤트 종류. 4688은 프로세스 생성, 4624·4625는 로그온 성공·실패를 조사할 때 사용한다."
+            ],
+            [
+              "data.win.eventdata.\nparentProcessName",
+              "부모 실행 경로. 아래 자식 경로와 함께 본다."
+            ],
+            [
+              "data.win.eventdata.\nnewProcessName",
+              "새 프로세스 경로. 명령줄·프로세스 ID·서명·파일 해시를 추가한다."
+            ],
+            [
+              "data.win.eventdata.\ncommandLine",
+              "실행 인수까지 포함한 명령줄. 생략된 예제 문자열은 완전한 페이로드로 취급하지 않는다."
+            ],
+            [
+              "data.win.eventdata.\ntargetUserName",
+              "생성 예제의 계정. 실제 이벤트 종류·버전의 필드 역할을 확인한다."
+            ]
+          ],
+          "widths": [
+            62,
+            65
+          ],
+          "keep": false
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.5 네트워크·DNS·AI·PCAP 필드",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "필드",
+            "뜻과 확인"
+          ],
+          "rows": [
+            [
+              "data.src_ip / dest_ip",
+              "flow·EVE의 출발지·목적지. HTTP/DNS의 srcip와 구분한다."
+            ],
+            [
+              "data.dest_port / proto",
+              "목적 포트와 전송 프로토콜. 원본 자료형을 mapping에서 확인한다."
+            ],
+            [
+              "data.app_proto",
+              "센서 또는 생성기가 지정한 응용 프로토콜. tls 표기만으로 실제 TLS 내용을 복원하지 않는다."
+            ],
+            [
+              "data.flow.bytes_toserver",
+              "클라이언트에서 서버 방향 바이트. 연결의 요청 방향과 내부/외부를 먼저 정한다."
+            ],
+            [
+              "data.flow.bytes_toclient",
+              "반대 방향 바이트. 파일·웹 본문 바이트와 측정 범위를 맞춰 비교한다."
+            ],
+            [
+              "data.flow.age",
+              "생성 예제의 흐름 지속시간 값. 이벤트 timestamp와 더해 실제 완료 시각으로 단정하지 않는다."
+            ],
+            [
+              "data.domain / query / qtype",
+              "합성 DNS의 묶음 도메인·전체 질의명·질의 유형이다."
+            ],
+            [
+              "data.query_len",
+              "전체 DNS 이름 길이. 첫 레이블 길이와 구분한다."
+            ]
+          ],
+          "widths": [
+            61,
+            66
+          ],
+          "keep": false
+        },
+        {
+          "type": "table",
+          "head": [
+            "AI·관측 필드",
+            "뜻과 확인"
+          ],
+          "rows": [
+            [
+              "data.ai.user / tool",
+              "앱 사용자와 요청된 도구 이름. 실제 도구 실행·권한·결과를 추가 확인한다."
+            ],
+            [
+              "data.ai.flags / blocked",
+              "표지 배열과 차단 상태 문자열. blocked false만으로 공격 성공을 세지 않는다."
+            ],
+            [
+              "data.ai.prompt_len / tokens_out",
+              "생성된 입력 길이·출력 토큰 수. 실제 모델의 측정값으로 표시하지 않는다."
+            ],
+            [
+              "data.event_type",
+              "12장에서는 alert·http·dns·tls·flow를 구분한다."
+            ],
+            [
+              "data.flow_id / tx_id",
+              "같은 Suricata 실행의 흐름·트랜잭션 연결. Zeek uid와 직접 같은 값으로 비교하지 않는다."
+            ],
+            [
+              "data.timestamp",
+              "12장 원본 EVE의 시각과 정밀도를 보존한다. 검색용 timestamp와 함께 읽는다."
+            ],
+            [
+              "data.flow.start / end",
+              "12장의 실제 연결 시작·끝 문자열. 같은 시간대·형식에서 비교한다."
+            ],
+            [
+              "data.http.status",
+              "PCAP HTTP 응답 코드. 결측이면 센서 재조립·손실·설정·다른 센서 기록을 대조한다."
+            ],
+            [
+              "data.alert.signature_id",
+              "Suricata 규칙 번호. Wazuh rule.id와 별도이다."
+            ]
+          ],
+          "widths": [
+            61,
+            66
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "12장의 바이트·flow·HTTP·DNS·경보는 서로 다른 관측 단위이다. 패킷 39427개, HTTP 627개, GET 경보 625개를 같은 분모로 계산하지 않는다. Zeek conn.log의 orig_bytes·resp_bytes와 Suricata 흐름 바이트도 센서 정의를 확인한 뒤 비교한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.6 집계 문법과 결과를 읽는다",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "입력/출력",
+            "확인할 동작"
+          ],
+          "rows": [
+            [
+              "term / terms",
+              "정확한 한 값 또는 값 목록으로 고른다. 필드 자료형·대소문자·원문 값을 확인한다."
+            ],
+            [
+              "bool.filter",
+              "조건을 모두 만족하는 문서를 고른다."
+            ],
+            [
+              "should + minimum_should_match",
+              "OR 조건 중 필요한 일치 개수를 정한다. 1은 하나 이상이다."
+            ],
+            [
+              "must_not",
+              "명시한 조건에 맞는 문서를 제외한다. 정상 예외의 범위를 넓히기 전에 근거를 확인한다."
+            ],
+            [
+              "prefix / wildcard",
+              "접두사 또는 패턴 조건이다. 일반 문자열 접두사를 모든 사설망 판별식으로 쓰지 않는다."
+            ],
+            [
+              "size / hits.total",
+              "size는 반환할 원문 수, hits.total은 검색에 맞은 문서 수이다. size 0에서도 집계는 계산한다."
+            ],
+            [
+              "Terms size / doc_count",
+              "반환할 범주 수와 각 범주의 문서 수이다. 검색의 size와 서로 다른 위치이다."
+            ],
+            [
+              "sum_other_doc_count",
+              "반환되지 않은 Terms 범주에 속한 문서 수를 확인한다."
+            ],
+            [
+              "doc_count_error_upper_bound",
+              "Terms 문서 수 오차의 경계이다. -1이면 해당 정렬에서 경계를 계산하지 못한 값이다."
+            ],
+            [
+              "cardinality",
+              "서로 다른 값의 추정 수이다. 임계값 근처에서는 원문·전체 값 목록과 대조한다."
+            ],
+            [
+              "sum / avg / min / max",
+              "합계·평균·최소·최대이다. 단위·필드 존재·필터로 정해진 분모를 확인한다."
+            ],
+            [
+              "filter / filters 집계",
+              "한 조건 또는 이름 붙인 여러 조건별 집계를 만든다. 조건이 겹치면 같은 문서가 여러 버킷에 포함될 수 있다."
+            ],
+            [
+              "bucket_selector",
+              "계산한 버킷을 조건으로 거른다. 원문 검색 조건이나 미반환 Terms 범주의 전수 탐색을 대신하지 않는다."
+            ]
+          ],
+          "widths": [
+            58,
+            69
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "Dev Tools의 조회는 실행한 순간의 직접 조회이다. 예약 모니터는 일정·조회 창·트리거·알림·중복 처리 조건을 별도로 정한다. 저장된 조회에 결과가 나온 사실과 예약 경보가 실제로 발생한 사실을 구분한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.7 질문에서 조회 파일을 찾는다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "아래 번호는 각 장 examples/chapterNN의 Q03-NN-번호.http에 대응한다. 예를 들어 13장 Q10은 Q03-13-10.http이다. 전체 제목·인덱스 경로는 query-index.csv에 있다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "장 / 파일 수",
+            "주요 질문과 조회"
+          ],
+          "rows": [
+            [
+              "2 / 14",
+              "Q01 기간·건수, Q03 출처 분포, Q04~Q14 정상 분포·고유 수·시간·후속 조사"
+            ],
+            [
+              "3 / 9",
+              "정찰 출발지·경로·포트·분산·재방문을 Q01~Q09로 조사"
+            ],
+            [
+              "4 / 12",
+              "R03 응답 변화와 R04 파일·실행·계정·예약 기록을 분리"
+            ],
+            [
+              "5 / 8",
+              "권한 요청·감사 공백·파일 변화와 수집 상태 조사"
+            ],
+            [
+              "6 / 9",
+              "계정 중심 분산 실패·성공·메일·후속 요청 조사"
+            ],
+            [
+              "7 / 9",
+              "SSH·Windows 로그인·프로세스·계정 변경 조사"
+            ],
+            [
+              "8 / 8",
+              "반복 연결·DNS·방향별 전송량과 간격 계산"
+            ],
+            [
+              "9 / 10",
+              "Q08 사건 날짜·종류, Q09 전송 원문, Q10 WAF 관측"
+            ],
+            [
+              "10 / 9",
+              "파일 대량 변경·서비스 장애·응답 크기·GPU 연결"
+            ],
+            [
+              "11 / 13",
+              "R12 입력·도구와 R13 속도·후속 인증을 분리"
+            ],
+            [
+              "12 / 6",
+              "Q01 종류, Q03 반복 HTTP, Q04 flow, Q05 DNS, Q06 경보"
+            ],
+            [
+              "13 / 10",
+              "Q03 메일·실행, Q04 인증, Q07 AI 시간표, Q08 백업, Q09 점검, Q10 내보내기"
+            ]
+          ],
+          "widths": [
+            34,
+            93
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "2장 Q02는 _field_caps로 필드 자료형을 확인하는 요청이며 본문 일반 코드 블록으로 제시했다. 따라서 조회 파일 수와 query 형식 본문 블록 수는 한 개 차이가 난다. 파일 색인은 실제 복사용 파일 117개를 기준으로 한다."
+        },
+        {
+          "type": "h",
+          "text": "Discover에서 같은 후보를 찾는 예"
+        },
+        {
+          "type": "code",
+          "text": "agent.name: \"KT66-WIN-01\" AND\n  data.win.system.eventID: \"4688\"\n\ndata.domain: \"telemetry-kt66.net\"",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "두 검색식을 각각 입력한다. 첫 식의 AND는 두 조건을 함께 적용한다. 콜론(:) 뒤의 따옴표는 해당 필드 값을 감싼다. Discover의 인덱스 패턴을 book3-r15-ch13에 맞추고 2026-08-03~11-01의 시간 범위를 별도로 선택한다. Dev Tools JSON에는 본문의 range가 시간 범위를 포함한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.8 로컬 도구와 확인 순서",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "도구",
+            "입력과 결과 / 본문"
+          ],
+          "rows": [
+            [
+              "prepare_round.py",
+              "기준 코드·라운드·기간·배율을 받아 새 생성 폴더를 만든다. 1장과 각 장 준비 절."
+            ],
+            [
+              "check_dataset.py",
+              "합성 bulk·truth·manifest·template의 해시·건수·범위를 검사한다."
+            ],
+            [
+              "load_dataset.py",
+              "검사한 합성 자료를 새 전용 인덱스에만 적재한다. 기존 대상이면 중단한다."
+            ],
+            [
+              "inspect_events.py",
+              "bulk에서 원문 일부를 출력한다. 적재·명령 실행을 하지 않는다."
+            ],
+            [
+              "flow_intervals.py",
+              "정한 flow 방향과 포트의 인접 이벤트 간격을 계산한다. 8·13장."
+            ],
+            [
+              "inspect_pcap.py / extract_pcap.py",
+              "PCAP 메타데이터 검사 / 선언한 ZIP 구성원·해시 검증 후 새 PCAP 파일 생성. 12장."
+            ],
+            [
+              "pcap_observations.py",
+              "원본 EVE 선별·provenance 추가·파일 검사·새 인덱스 적재. 12장."
+            ],
+            [
+              "compare_pcap_logs.py",
+              "같은 캡처의 Suricata·Zeek 관측과 간격을 비교한다. 12장."
+            ]
+          ],
+          "widths": [
+            57,
+            70
+          ],
+          "keep": false
+        },
+        {
+          "type": "command",
+          "id": "C03-A-02",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/check_dataset.py build/r15-ch13",
+          "purpose": "로컬 생성 자료가 보존됐는지 확인한다.",
+          "syntax": "check_dataset.py 뒤의 폴더는 13장에서 만든 자료이다. status·events·chronological·hashes_verified를 읽는다.",
+          "result": "pass, events 105293이다. 해시가 달라지면 현재 파일을 보존하고 어떤 파일이 바뀌었는지 조사한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-A-03",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/inspect_events.py build/r15-ch13 \\\n  --decoder sshd --limit 1",
+          "purpose": "SSH 형식 원문 한 건을 읽는다.",
+          "syntax": "--decoder는 decoder.name의 정확한 값, --limit는 출력할 최대 수이다. 역슬래시(\\)는 다음 줄로 명령을 잇는다.",
+          "result": "bulk_action과 event에 원문 ID·timestamp·sshd 필드가 나온다. 첫 문서는 시간순 자료의 첫 일치 문서이다."
+        },
+        {
+          "type": "p",
+          "text": "적재 중 실패하면 오류 응답과 부분 인덱스를 보존한다. load 도구는 기존 인덱스에 자동 재시도하지 않는다. 정상 완료한 데이터와 혼동하지 않도록 실행 상태를 기록하고 문서 수·실패 항목·소유 정보를 확인한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "A.9 오류에서 다음 확인으로 이동한다",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "증상",
+            "확인 순서"
+          ],
+          "rows": [
+            [
+              "명령을 찾을 수 없다",
+              "호스트/컨테이너 위치·도구 준비 상태·파일 경로를 확인한다. Dev Tools 요청을 셸에 입력했는지도 본다."
+            ],
+            [
+              "인덱스 없음 / 404",
+              "정확한 이름·현재 접속 서버·manifest·적재 완료를 확인한다. 삭제나 재생성으로 기존 자료를 바꾸지 않는다."
+            ],
+            [
+              "401 / 403",
+              "401은 인증 정보·인증 방식, 403은 접근 권한과 대상 범위를 확인한다. 토큰·암호를 예제 파일에 저장하지 않는다."
+            ],
+            [
+              "인증서 오류",
+              "호스트 주소·서버 인증서·신뢰할 CA를 확인한다. 자체 서명 실습 옵션과 운영 접속을 구분한다."
+            ],
+            [
+              "검색 0건",
+              "인덱스·기간·시간대·필드 이름·자료형·정확한 값을 순서대로 좁혀 확인한다."
+            ],
+            [
+              "Terms 집계 오류",
+              "mapping에서 keyword/수치형 여부를 확인한다. 다른 인덱스의 동명 필드 충돌도 확인한다."
+            ],
+            [
+              "건수 불일치",
+              "전체 문서·필터 문서·반환 원문·버킷 수의 단위를 분리한다. 배율과 source 조건도 대조한다."
+            ],
+            [
+              "한 날짜가 비어 있다",
+              "시간 경계·빈 버킷 조건·원본 생성 범위·센서 수집 상태를 확인한다."
+            ],
+            [
+              "HTTP status 결측",
+              "원문 EVE·패킷 범위·센서 버전·재조립 통계·다른 센서 관측을 비교한다."
+            ],
+            [
+              "로그가 생겼다 사라진다",
+              "공동 SIEM 작업을 멈추고 기다린다. UUID·건수·시각을 기록하며 다른 작업이 안정될 때까지 적재·삭제를 보류한다."
+            ]
+          ],
+          "widths": [
+            40,
+            87
+          ],
+          "keep": false
+        },
+        {
+          "type": "p",
+          "text": "확인 결과와 수정한 입력을 조사표에 남긴다. 원상복구는 자신이 추가한 정확한 대상에만 적용한다. 전용 인덱스 제거는 각 장 cleanup.http의 소유 정보·보존 절차를 따른다. 이 부록의 확인 요청은 데이터를 변경하지 않으므로 삭제나 서비스 재시작을 뒤따라 실행하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "참고자료",
+      "blocks": [
+        {
+          "type": "link",
+          "text": "3권 복사용 예제",
+          "url": "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples"
+        },
+        {
+          "type": "link",
+          "text": "부록 A 전체 색인",
+          "url": "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/appendixA"
+        },
+        {
+          "type": "link",
+          "text": "OpenSearch — Terms aggregation",
+          "url": "https://docs.opensearch.org/latest/aggregations/bucket/terms/"
+        },
+        {
+          "type": "link",
+          "text": "OpenSearch — Query DSL",
+          "url": "https://docs.opensearch.org/latest/query-dsl/"
+        },
+        {
+          "type": "link",
+          "text": "Wazuh — Rules syntax",
+          "url": "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html"
+        }
+      ],
+      "break": true,
+      "level": "section"
+    }
+  ]
+}

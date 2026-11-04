@@ -1,0 +1,118 @@
+﻿장,ID,질문,방법,인덱스/경로,파일
+2,Q03-02-01,자료 건수와 시간 범위,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-01.http
+2,Q03-02-02,필드 자료형,GET,/book3-r01-pilot01/_field_caps?fields=*,examples/chapter02/Q03-02-02.http
+2,Q03-02-03,이벤트 출처별 건수,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-03.http
+2,Q03-02-04,웹 서비스별 요청과 방문 출발지,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-04.http
+2,Q03-02-05,HTTP 응답별 건수,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-05.http
+2,Q03-02-06,7일 구간별 추이,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-06.http
+2,Q03-02-07,서버존 출발 목적지와 활동 일수,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-07.http
+2,Q03-02-08,후보 목적지의 일별 건수,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-08.http
+2,Q03-02-09,요청 경로와 메서드 및 사용자 에이전트,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-09.http
+2,Q03-02-10,급증 구간의 시간순 원문,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-10.http
+2,Q03-02-11,조건을 넘는 비콘 후보,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-11.http
+2,Q03-02-12,생성기가 부여한 규칙의 분포,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-12.http
+2,Q03-02-13,평소 시간순 원문,GET,/book3-r01-pilot01/_search,examples/chapter02/Q03-02-13.http
+2,Q03-02-14,실습 인덱스의 소유 정보,GET,/book3-r01-pilot01/_mapping,examples/chapter02/Q03-02-14.http
+3,Q03-03-01,전체 자료와 로그 출처,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-01.http
+3,Q03-03-02,웹 요청량 상위 출발지,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-02.http
+3,Q03-03-03,404 출발지의 경로와 서비스 다양성,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-03.http
+3,Q03-03-04,neobank API 경로별 출발지,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-04.http
+3,Q03-03-05,방화벽 출발지별 포트와 목적지,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-05.http
+3,Q03-03-06,웹 후보의 활동 날짜와 응답,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-06.http
+3,Q03-03-07,방화벽 후보의 시간순 원문,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-07.http
+3,Q03-03-08,단일 출발지의 웹 경로 원문,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-08.http
+3,Q03-03-09,두 API 경로의 고유 출발지와 IP당 요청,GET,/book3-r02-ch03/_search,examples/chapter03/Q03-03-09.http
+4,Q03-04-01,WAF 기록의 출발지와 서비스,GET,/book3-r03-ch04/_search,examples/chapter04/Q03-04-01.http
+4,Q03-04-02,서비스를 고정한 응답 코드 비교,GET,/book3-r03-ch04/_search,examples/chapter04/Q03-04-02.http
+4,Q03-04-03,history 응답 크기 비교,GET,/book3-r03-ch04/_search,examples/chapter04/Q03-04-03.http
+4,Q03-04-04,10월 28일의 10분별 응답,GET,/book3-r03-ch04/_search,examples/chapter04/Q03-04-04.http
+4,Q03-04-05,큰 응답의 실제 요청 원문,GET,/book3-r03-ch04/_search,examples/chapter04/Q03-04-05.http
+4,Q03-04-06,업로드 폴더에 추가된 파일의 확장자,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-06.http
+4,Q03-04-07,부모 프로세스와 실행 파일,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-07.http
+4,Q03-04-08,업로드 PHP 경로의 호출 출발지,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-08.http
+4,Q03-04-09,파일 추가와 첫 실행 순서,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-09.http
+4,Q03-04-10,계정과 지속성 관련 파일 원문,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-10.http
+4,Q03-04-11,cron 실행 파일과 관측 기간,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-11.http
+4,Q03-04-12,의심 예약 작업의 연속 시각,GET,/book3-r04-ch04/_search,examples/chapter04/Q03-04-12.http
+5,Q03-05-01,sudo 사용자와 결과 구분,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-01.http
+5,Q03-05-02,서비스 계정 sudo 원문,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-02.http
+5,Q03-05-03,공백 전 감사 원문,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-03.http
+5,Q03-05-04,고정된 두 호스트의 시간별 문서 수,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-04.http
+5,Q03-05-05,에이전트 중지와 시작 명령 기록,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-05.http
+5,Q03-05-06,임시 경로 실행 파일과 반복 관측,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-06.http
+5,Q03-05-07,삭제된 파일의 경로 분포,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-07.http
+5,Q03-05-08,재개 뒤의 삭제와 수정 원문,GET,/book3-r05-ch05/_search,examples/chapter05/Q03-05-08.http
+6,Q03-06-01,출발 IP별 인증 실패,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-01.http
+6,Q03-06-02,계정별 실패 문서와 고유 출발지,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-02.http
+6,Q03-06-03,실습 내부망 밖에서 성공한 계정,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-03.http
+6,Q03-06-04,국가 값이 있는 해외 성공 후보,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-04.http
+6,Q03-06-05,수신 메일의 발신 도메인 전체 분포,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-05.http
+6,Q03-06-06,유사 도메인의 시간 범위와 수신자,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-06.http
+6,Q03-06-07,lee.yuna의 실습 외부 성공 원문,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-07.http
+6,Q03-06-08,메일 표시 경로의 출발지와 시간 범위,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-08.http
+6,Q03-06-09,피싱 후보 출발지의 메일 표시 원문,GET,/book3-r06-ch06/_search,examples/chapter06/Q03-06-09.http
+7,Q03-07-01,bastion발 SSH 성공의 계정과 대상,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-01.http
+7,Q03-07-02,kim.minjun 성공의 고정 10분 버킷,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-02.http
+7,Q03-07-03,여러 서버의 SSH 성공과 실패 원문,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-03.http
+7,Q03-07-04,bastion의 외부 성공 출발지,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-04.http
+7,Q03-07-05,서버존 연결의 출발지와 목적지별 포트,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-05.http
+7,Q03-07-06,Windows 성공 로그온 유형과 출발지,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-06.http
+7,Q03-07-07,Windows 로그온과 프로세스 및 계정 변경,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-07.http
+7,Q03-07-08,svc_backup의 후속 네트워크 로그온,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-08.http
+7,Q03-07-09,neobank에서 Windows로 향한 SMB 연결,GET,/book3-r07-ch07/_search,examples/chapter07/Q03-07-09.http
+8,Q03-08-01,PC의 목적지와 모든 포트 및 활동 날짜,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-01.http
+8,Q03-08-02,443 반복 연결의 6시간 분포,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-02.http
+8,Q03-08-03,첫 하루 반복 연결 시각 원문,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-03.http
+8,Q03-08-04,DNS 도메인별 이름 수와 길이 및 출발지,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-04.http
+8,Q03-08-05,긴 이름 후보의 날짜별 집중 범위,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-05.http
+8,Q03-08-06,내부발 연결의 목적지별 방향 바이트 합계,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-06.http
+8,Q03-08-07,대용량 후보 여섯 흐름의 원문,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-07.http
+8,Q03-08-08,사용자존의 포트와 프로토콜 관측,GET,/book3-r08-ch08/_search,examples/chapter08/Q03-08-08.http
+9,Q03-09-01,govportal의 차단 응답이 많은 출발지,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-01.http
+9,Q03-09-02,후보의 응답 시각과 큰 응답 원문,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-02.http
+9,Q03-09-03,웹 요청과 파일 생성 및 셸 실행,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-03.http
+9,Q03-09-04,권한 요청과 계정 및 예약 파일 변경,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-04.http
+9,Q03-09-05,shadow 접근 명령과 서버발 SSH 순서,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-05.http
+9,Q03-09-06,서버존의 실습망 밖 목적지별 전송,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-06.http
+9,Q03-09-07,로그와 스크립트 삭제 원문,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-07.http
+9,Q03-09-08,확인한 단서로 날짜와 종류를 재구성,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-08.http
+9,Q03-09-09,후보 전송의 원문 네 건,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-09.http
+9,Q03-09-10,WAF 센서에서 동일 가상 호스트의 차단 확인,GET,/book3-r09-ch09/_search,examples/chapter09/Q03-09-10.http
+10,Q03-10-01,최근 사흘의 FIM 10분 구간과 호스트,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-01.http
+10,Q03-10-02,같은 폴더와 시간의 종류별 이벤트 및 고유 경로,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-02.http
+10,Q03-10-03,첫 파일 추가와 삭제 및 안내문 원문,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-03.http
+10,Q03-10-04,neobank 장애 전후의 요청 수와 응답 코드,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-04.http
+10,Q03-10-05,같은 첫 화면 200 응답의 시간별 크기,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-05.http
+10,Q03-10-06,첫 화면 파일 변경 원문,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-06.http
+10,Q03-10-07,GPU 호스트의 포트별 기간과 연결 시간 합,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-07.http
+10,Q03-10-08,3333 연결의 실제 시각과 시간대,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-08.http
+10,Q03-10-09,같은 GPU 주소의 DNS 요청,GET,/book3-r10-ch10/_search,examples/chapter10/Q03-10-09.http
+11,Q03-11-01,R12 도구 표시와 사용자 수,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-01.http
+11,Q03-11-02,R12 사용자별 길이와 출력 토큰,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-02.http
+11,Q03-11-03,R12 표지와 차단을 분리한 조건,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-03.http
+11,Q03-11-04,R12 관리용 도구 표시의 원문,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-04.http
+11,Q03-11-05,R12 디버그와 업로드의 경로 및 응답,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-05.http
+11,Q03-11-06,R12 관리콘솔로 향한 관측 출발지,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-06.http
+11,Q03-11-07,R12 http_fetch 표시와 내부 연결의 시각,GET,/book3-r12-ch11/_search,examples/chapter11/Q03-11-07.http
+11,Q03-11-08,R13 특정 서비스의 분당 요청과 출발지,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-08.http
+11,Q03-11-09,R13 같은 출발지의 날짜별 범위,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-09.http
+11,Q03-11-10,R13 짧은 본 사건의 관측 종류별 시간표,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-10.http
+11,Q03-11-11,R13 프로세스와 서버 인증 및 큰 전송 원문,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-11.http
+11,Q03-11-12,R13 검색 경로의 응답 코드와 큰 응답 원문,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-12.http
+11,Q03-11-13,R13 생성 레벨 값과 필드 없는 문서,GET,/book3-r13-ch11/_search,examples/chapter11/Q03-11-13.http
+12,Q03-12-01,선택한 센서 관측의 종류,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-01.http
+12,Q03-12-02,HTTP 대상과 요청 방법,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-02.http
+12,Q03-12-03,반복 HTTP 경로의 응답과 누락,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-03.http
+12,Q03-12-04,후보 목적지의 연결과 방향별 바이트,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-04.http
+12,Q03-12-05,DNS 요청과 응답의 관측 단위,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-05.http
+12,Q03-12-06,관측용 GET 경보와 실제 Wazuh 규칙의 구분,GET,/book3-pcap-ch12/_search,examples/chapter12/Q03-12-06.http
+13,Q03-13-01,Windows 부모와 자식 프로세스 조합,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-01.http
+13,Q03-13-02,사용자 PC의 외향 연결과 활동 날짜,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-02.http
+13,Q03-13-03,메일 전달과 문서 및 셸 실행,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-03.http
+13,Q03-13-04,PC발 인증과 관리콘솔 권한 사용,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-04.http
+13,Q03-13-05,DNS 도메인별 고유 이름과 활동 날짜,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-05.http
+13,Q03-13-06,관리콘솔 응답을 많이 받은 출발지,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-06.http
+13,Q03-13-07,AI 입력과 내부 응답 및 외부 전송의 시각,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-07.http
+13,Q03-13-08,서버의 큰 외향 전송과 정상 백업 후보,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-08.http
+13,Q03-13-09,govportal의 404 경로와 점검 후보,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-09.http
+13,Q03-13-10,AI 서버발 내보내기 요청 원문,GET,/book3-r15-ch13/_search,examples/chapter13/Q03-13-10.http

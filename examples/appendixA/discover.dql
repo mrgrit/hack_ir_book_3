@@ -1,0 +1,4 @@
+# 두 검색식을 각각 입력한다.
+agent.name: "KT66-WIN-01" AND data.win.system.eventID: "4688"
+
+data.domain: "telemetry-kt66.net"

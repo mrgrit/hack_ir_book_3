@@ -1,0 +1,433 @@
+{
+  "01": {
+    "count": 105293,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "02": {
+    "book3-r15-ch13": {
+      "mappings": {
+        "_meta": {
+          "book3": {
+            "round": "r15",
+            "expected_events": 105293,
+            "bulk_sha256": "7c26878df1a8a2024ebed9b878180bdeda41e753569cf1d00453a74c0d1c68df"
+          }
+        },
+        "dynamic_templates": [
+          {
+            "string_as_keyword": {
+              "match_mapping_type": "string",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          }
+        ],
+        "date_detection": false,
+        "properties": {
+          "GeoLocation": {
+            "properties": {
+              "country_name": {
+                "type": "keyword"
+              },
+              "location": {
+                "type": "geo_point"
+              }
+            }
+          },
+          "agent": {
+            "properties": {
+              "id": {
+                "type": "keyword"
+              },
+              "ip": {
+                "type": "keyword"
+              },
+              "name": {
+                "type": "keyword"
+              }
+            }
+          },
+          "book3": {
+            "properties": {
+              "round": {
+                "type": "keyword"
+              },
+              "rule_origin": {
+                "type": "keyword"
+              },
+              "run_id": {
+                "type": "keyword"
+              },
+              "synthetic": {
+                "type": "boolean"
+              }
+            }
+          },
+          "data": {
+            "properties": {
+              "action": {
+                "type": "keyword"
+              },
+              "ai": {
+                "properties": {
+                  "blocked": {
+                    "type": "keyword"
+                  },
+                  "flags": {
+                    "type": "keyword"
+                  },
+                  "latency_ms": {
+                    "type": "long"
+                  },
+                  "prompt_len": {
+                    "type": "long"
+                  },
+                  "tokens_out": {
+                    "type": "long"
+                  },
+                  "tool": {
+                    "type": "keyword"
+                  },
+                  "user": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "alert": {
+                "properties": {
+                  "category": {
+                    "type": "keyword"
+                  },
+                  "severity": {
+                    "type": "keyword"
+                  },
+                  "signature": {
+                    "type": "keyword"
+                  },
+                  "signature_id": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "app": {
+                "type": "keyword"
+              },
+              "app_proto": {
+                "type": "keyword"
+              },
+              "audit": {
+                "properties": {
+                  "auid": {
+                    "type": "keyword"
+                  },
+                  "command": {
+                    "type": "keyword"
+                  },
+                  "exe": {
+                    "type": "keyword"
+                  },
+                  "parent": {
+                    "type": "keyword"
+                  },
+                  "type": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "bytes": {
+                "type": "long"
+              },
+              "command": {
+                "type": "keyword"
+              },
+              "dest_ip": {
+                "type": "keyword"
+              },
+              "dest_port": {
+                "type": "keyword"
+              },
+              "direction": {
+                "type": "keyword"
+              },
+              "domain": {
+                "type": "keyword"
+              },
+              "dstip": {
+                "type": "keyword"
+              },
+              "dstport": {
+                "type": "keyword"
+              },
+              "dstuser": {
+                "type": "keyword"
+              },
+              "duration_ms": {
+                "type": "long"
+              },
+              "event": {
+                "type": "keyword"
+              },
+              "event_type": {
+                "type": "keyword"
+              },
+              "flow": {
+                "properties": {
+                  "age": {
+                    "type": "long"
+                  },
+                  "bytes_toclient": {
+                    "type": "long"
+                  },
+                  "bytes_toserver": {
+                    "type": "long"
+                  }
+                }
+              },
+              "from": {
+                "type": "keyword"
+              },
+              "from_domain": {
+                "type": "keyword"
+              },
+              "http": {
+                "properties": {
+                  "length": {
+                    "type": "long"
+                  }
+                }
+              },
+              "id": {
+                "type": "keyword"
+              },
+              "modsec": {
+                "properties": {
+                  "msg": {
+                    "type": "keyword"
+                  },
+                  "rule_id": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "proto": {
+                "type": "keyword"
+              },
+              "protocol": {
+                "type": "keyword"
+              },
+              "qtype": {
+                "type": "keyword"
+              },
+              "query": {
+                "type": "keyword"
+              },
+              "query_len": {
+                "type": "long"
+              },
+              "reason": {
+                "type": "keyword"
+              },
+              "result": {
+                "type": "keyword"
+              },
+              "size": {
+                "type": "long"
+              },
+              "src_ip": {
+                "type": "keyword"
+              },
+              "srcip": {
+                "type": "keyword"
+              },
+              "srcport": {
+                "type": "keyword"
+              },
+              "srcuser": {
+                "type": "keyword"
+              },
+              "status": {
+                "type": "keyword"
+              },
+              "to": {
+                "type": "keyword"
+              },
+              "url": {
+                "type": "keyword"
+              },
+              "user_agent": {
+                "type": "keyword"
+              },
+              "vhost": {
+                "type": "keyword"
+              },
+              "win": {
+                "properties": {
+                  "eventdata": {
+                    "properties": {
+                      "commandLine": {
+                        "type": "keyword"
+                      },
+                      "logonType": {
+                        "type": "keyword"
+                      },
+                      "newProcessName": {
+                        "type": "keyword"
+                      },
+                      "parentProcessName": {
+                        "type": "keyword"
+                      },
+                      "status": {
+                        "type": "keyword"
+                      },
+                      "subStatus": {
+                        "type": "keyword"
+                      },
+                      "targetUserName": {
+                        "type": "keyword"
+                      }
+                    }
+                  },
+                  "system": {
+                    "properties": {
+                      "channel": {
+                        "type": "keyword"
+                      },
+                      "computer": {
+                        "type": "keyword"
+                      },
+                      "eventID": {
+                        "type": "keyword"
+                      },
+                      "providerName": {
+                        "type": "keyword"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "decoder": {
+            "properties": {
+              "name": {
+                "type": "keyword"
+              }
+            }
+          },
+          "full_log": {
+            "type": "text"
+          },
+          "lab": {
+            "properties": {
+              "round": {
+                "type": "keyword"
+              }
+            }
+          },
+          "location": {
+            "type": "keyword"
+          },
+          "manager": {
+            "properties": {
+              "name": {
+                "type": "keyword"
+              }
+            }
+          },
+          "rule": {
+            "properties": {
+              "description": {
+                "type": "keyword"
+              },
+              "groups": {
+                "type": "keyword"
+              },
+              "id": {
+                "type": "keyword"
+              },
+              "level": {
+                "type": "long"
+              },
+              "mitre": {
+                "properties": {
+                  "id": {
+                    "type": "keyword"
+                  }
+                }
+              }
+            }
+          },
+          "syscheck": {
+            "properties": {
+              "event": {
+                "type": "keyword"
+              },
+              "mode": {
+                "type": "keyword"
+              },
+              "path": {
+                "type": "keyword"
+              },
+              "uname_after": {
+                "type": "keyword"
+              }
+            }
+          },
+          "timestamp": {
+            "type": "date",
+            "format": "date_optional_time||epoch_millis"
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "_index": "book3-r15-ch13",
+    "_id": "r15-000104075",
+    "_version": 1,
+    "_seq_no": 104074,
+    "_primary_term": 1,
+    "found": true,
+    "_source": {
+      "agent": {
+        "id": "016",
+        "ip": "10.20.40.86",
+        "name": "adminconsole"
+      },
+      "book3": {
+        "round": "r15",
+        "rule_origin": "generator",
+        "run_id": "ch13",
+        "synthetic": true
+      },
+      "data": {
+        "bytes": 866174,
+        "duration_ms": 300,
+        "id": "200",
+        "protocol": "GET",
+        "srcip": "10.20.40.87",
+        "url": "/api/users/export?format=json&page=0",
+        "user_agent": "aicompanion-tools/1.2",
+        "vhost": "admin.kt66.lab"
+      },
+      "decoder": {
+        "name": "web-accesslog"
+      },
+      "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:05 +0900] \"GET /api/users/export?format=json&page=0 HTTP/1.1\" 200 866174 \"-\" \"aicompanion-tools/1.2\"",
+      "lab": {
+        "round": "r15"
+      },
+      "location": "/var/log/apache2/adminconsole_access.log",
+      "manager": {
+        "name": "kt66-siem"
+      },
+      "timestamp": "2026-10-31T03:00:05.585+0900"
+    }
+  }
+}

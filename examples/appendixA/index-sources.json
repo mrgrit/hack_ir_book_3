@@ -1,0 +1,20 @@
+{
+  "chapters": 13,
+  "query_files": 117,
+  "printed_command_blocks": 83,
+  "sources": {
+    "manuscript/volume03-chapter01.json": "60cf07484af3e510ebaa2ec9e42807f71599e6d26122f9186cb588eeaaf4cada",
+    "manuscript/volume03-chapter02.json": "57d3b853585b6c98e4f4c494ca56d522ff10773558418a6620ec2ceece03c8a3",
+    "manuscript/volume03-chapter03.json": "ae1d191abec7a8c3b00feb25a415ebb97ab44fe94a5169a7799b487a6b9aae87",
+    "manuscript/volume03-chapter04.json": "2af79cc3b7a3d4f023cdb669551f1902336a95859eaeb85342067d710f634fa4",
+    "manuscript/volume03-chapter05.json": "7995d1c642c347024e7af599538f249bd27132c474be61a25e9e39609a8f30f8",
+    "manuscript/volume03-chapter06.json": "2348b466368878cc0cd51f75477811774df393d35ec3d9826bbd2d181ef4c4f0",
+    "manuscript/volume03-chapter07.json": "98558e02e803cd511c136af3e014e875d969a829f7e93c1ecd5adc19c896617d",
+    "manuscript/volume03-chapter08.json": "b50f2bb8895612167efe427cc92dd848511e2e19582ca60192025ef44d19e904",
+    "manuscript/volume03-chapter09.json": "62e4efbd69607ca0a6a2931944d79fdca990bcc4d92db1b7602a35e770065cd6",
+    "manuscript/volume03-chapter10.json": "5b326b6c096860f59c83d5774fa1305123f96b6a81d06770d087853f58ebab7b",
+    "manuscript/volume03-chapter11.json": "7c316ec8f324a939a825c0be2e9f281358c2feeb16bc6da5b1435a3a391f17aa",
+    "manuscript/volume03-chapter12.json": "4724a734d4d2965344df0f906ae58eb75e1afbc555278cbaff2deedeef654020",
+    "manuscript/volume03-chapter13.json": "2b1408ff7cee4b729abbdad722627ba8331ea33a6ee0e779c3b8a4b619b73dd6"
+  }
+}

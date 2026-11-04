@@ -1,0 +1,20 @@
+{
+  "01": {
+    "title": "전용 인덱스의 전체 문서 수를 확인한다.",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_count",
+    "body": null
+  },
+  "02": {
+    "title": "필드 자료형과 적재 소유 정보를 읽는다.",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_mapping",
+    "body": null
+  },
+  "03": {
+    "title": "알고 있는 원문 ID의 문서를 읽는다.",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_doc/r15-000104075",
+    "body": null
+  }
+}

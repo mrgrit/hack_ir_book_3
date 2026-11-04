@@ -19,13 +19,14 @@
 - [11장 DOCX](manuscript/volume03-chapter11.docx): AI 서비스의 입력과 후속 동작, B5 35쪽. R12 83,101건·R13 101,582건을 실제 조회 13개로 조사하고 입력 표지·도구 권한·내부 요청·고속 웹 요청·서버 인증과 전송을 연결한다. [복사용 예제](examples/chapter11)를 제공한다.
 - [12장 DOCX](manuscript/volume03-chapter12.docx): PCAP에서 관측 로그 만들기, B5 36쪽. 공개 캡처 39,427패킷을 Suricata·Zeek로 파일 분석하고 3,746개 관측 문서를 실제 조회 6개로 조사한다. Wazuh logtest와 센서 재조립 설정 비교, [복사용 예제](examples/chapter12), 선택 폐쇄망 재생 절차를 제공한다.
 - [13장 DOCX](manuscript/volume03-chapter13.docx): 종합 조사와 대응 판단, B5 34쪽. R15 105,293건을 조회 10개로 조사하고 PC·AI 활동, 승인된 점검·백업을 분리한다. [복사용 예제와 사건표·시간표·모의 대응 계획](examples/chapter13)을 제공한다.
+- [부록 A DOCX](manuscript/volume03-appendixA.docx): 필드·명령·조회 색인, B5 19쪽. [조회 117개·본문 명령 83개의 색인](examples/appendixA), 자료형 확인과 오류 확인표를 제공한다.
 - [전체 목차와 강의 대응표](editorial/volume03-outline.md): 13장 및 부록의 학습 목표·실습·완료 조건.
 - [집필 계획](editorial/authoring-plan.md): 집필 순서와 공동 SIEM 사용 원칙.
 - [생성기 현실성 점검](editorial/generator-realism-review.md): 실제 집계 표본 3개와 코드·오프라인 실행의 대조.
 - [PCAP 연계 설계](editorial/pcap-integration-plan.md): Suricata·Zeek 파일 분석을 기본으로, 폐쇄 veth 재생을 선택으로 구성.
 - [검증 기록](editorial/verification.md): 실행한 검사와 아직 실행하지 않은 범위.
 
-현재 원고는 **1~13장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 부록 A·B를 한 편씩 작성·검수·업로드한다. REV01과 1·2권 원고는 보존한다.
+현재 원고는 **1~13장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 부록 A까지 작성·검수·업로드했으며 부록 B를 이어서 완성한다. REV01과 1·2권 원고는 보존한다.
 
 ## 로컬 준비 도구
 

@@ -1,0 +1,84 @@
+﻿장,ID,절,실행 위치,목적,파일
+1,C03-01-01,1.3 실행 위치와 준비 상태,Ubuntu 분석 VM 터미널,Python 3 실행 가능 여부를 확인한다.,examples/chapter01/C03-01-01.sh
+1,C03-01-02,1.3 실행 위치와 준비 상태,Ubuntu 분석 VM 터미널,Git 실행 가능 여부를 확인한다.,examples/chapter01/C03-01-02.sh
+1,C03-01-03,1.4 교재 파일 내려받기,Ubuntu 분석 VM 터미널,교재 작업 폴더가 이미 있는지 확인한다.,examples/chapter01/C03-01-03.sh
+1,C03-01-04,1.4 교재 파일 내려받기,Ubuntu 분석 VM 터미널,교재의 프로그램과 복사용 예제를 내려받는다.,examples/chapter01/C03-01-04.sh
+1,C03-01-05,1.4 교재 파일 내려받기,Ubuntu 분석 VM 터미널,이후 명령의 기준 위치를 교재 저장소로 바꾼다.,examples/chapter01/C03-01-05.sh
+1,C03-01-06,1.4 교재 파일 내려받기,Ubuntu 분석 VM 터미널,현재 작업 위치를 확인한다.,examples/chapter01/C03-01-06.sh
+1,C03-01-07,1.5 생성기 원본 버전 고정,Ubuntu 분석 VM 터미널,원본 코드 사본의 대상 폴더를 확인한다.,examples/chapter01/C03-01-07.sh
+1,C03-01-08,1.5 생성기 원본 버전 고정,Ubuntu 분석 VM 터미널,강의 코드를 별도 사본으로 내려받는다.,examples/chapter01/C03-01-08.sh
+1,C03-01-09,1.5 생성기 원본 버전 고정,Ubuntu 분석 VM 터미널,교재에서 사용할 생성기 버전을 선택한다.,examples/chapter01/C03-01-09.sh
+1,C03-01-10,1.6 생성 조건 결정,Ubuntu 분석 VM 터미널,선택한 코드 버전을 확인한다.,examples/chapter01/C03-01-10.sh
+1,C03-01-11,1.7 로컬 학습 파일 생성,Ubuntu 분석 VM 터미널,출력 폴더가 이미 있는지 확인한다.,examples/chapter01/C03-01-11.sh
+1,C03-01-12,1.7 로컬 학습 파일 생성,Ubuntu 분석 VM 터미널,R01의 90일 학습 파일을 생성한다.,examples/chapter01/C03-01-12.sh
+1,C03-01-13,1.8 생성 파일 검사,Ubuntu 분석 VM 터미널,생성 파일의 손상과 시간·건수 불일치를 검사한다.,examples/chapter01/C03-01-13.sh
+1,C03-01-14,1.9 이벤트 한 건 읽기,Ubuntu 분석 VM 터미널,웹 접근 이벤트의 원문과 필드를 확인한다.,examples/chapter01/C03-01-14.sh
+1,C03-01-15,1.14 실패 확인과 원상복구,Ubuntu 분석 VM 터미널,옮길 결과 폴더를 확인한다.,examples/chapter01/C03-01-15.sh
+1,C03-01-16,1.15 결과 보존과 완료 판정,Ubuntu 분석 VM 터미널,이동할 새 이름의 존재 여부를 확인한다.,examples/chapter01/C03-01-16.sh
+1,C03-01-17,1.15 결과 보존과 완료 판정,Ubuntu 분석 VM 터미널,검사를 마친 결과를 보존 이름으로 옮긴다.,examples/chapter01/C03-01-17.sh
+1,C03-01-18,1.15 결과 보존과 완료 판정,Ubuntu 분석 VM 터미널,이동 후 데이터가 그대로인지 확인한다.,examples/chapter01/C03-01-18.sh
+2,C03-02-01,2.2 적재를 위한 준비,kt66 Ubuntu VM의 호스트 터미널,교재 도구가 있는 폴더로 이동한다.,examples/chapter02/commands.sh
+2,C03-02-02,2.2 적재를 위한 준비,kt66 Ubuntu VM의 호스트 터미널,저장소에 수정 중인 파일이 있는지 확인한다.,examples/chapter02/commands.sh
+2,C03-02-03,2.2 적재를 위한 준비,kt66 Ubuntu VM의 호스트 터미널,원격에 추가된 2장 도구를 가져온다.,examples/chapter02/commands.sh
+2,C03-02-04,생성 파일과 indexer 주소 확인,kt66 Ubuntu VM의 호스트 터미널,1장에서 생성한 파일의 해시·시간·건수를 다시 확인한다.,examples/chapter02/commands.sh
+2,C03-02-05,생성 파일과 indexer 주소 확인,kt66 Ubuntu VM의 호스트 터미널,indexer 컨테이너의 내부 IP 주소를 확인한다.,examples/chapter02/commands.sh
+2,C03-02-06,전용 인덱스에 적재,kt66 Ubuntu VM의 호스트 터미널,검사가 끝난 데이터를 새 book3-r01-pilot01 인덱스에 적재한다.,examples/chapter02/commands.sh
+3,C03-03-01,3.1 자료와 비교 범위를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R02 파일을 새 폴더에 생성한다.,examples/chapter03/commands.sh
+3,C03-03-02,3.1 자료와 비교 범위를 준비한다,kt66 Ubuntu VM의 호스트 터미널,파일 해시와 기간·시간순·건수를 검사한다.,examples/chapter03/commands.sh
+3,C03-03-03,3.2 전용 인덱스를 열고 원문을 찾는다,kt66 Ubuntu VM의 호스트 터미널,검사한 파일을 새 전용 인덱스에 적재한다.,examples/chapter03/commands.sh
+4,C03-04-01,4.1 두 사례를 별도로 준비한다,kt66 Ubuntu VM의 호스트 터미널,R03 자료를 새 폴더에 생성한다.,examples/chapter04/commands.sh
+4,C03-04-02,4.1 두 사례를 별도로 준비한다,kt66 Ubuntu VM의 호스트 터미널,R03의 해시·기간·순서·건수를 검사한다.,examples/chapter04/commands.sh
+4,C03-04-03,4.1 두 사례를 별도로 준비한다,kt66 Ubuntu VM의 호스트 터미널,R03 검사를 마친 뒤 R04 자료를 생성한다.,examples/chapter04/commands.sh
+4,C03-04-04,4.1 두 사례를 별도로 준비한다,kt66 Ubuntu VM의 호스트 터미널,R04 파일을 검사한다.,examples/chapter04/commands.sh
+4,C03-04-05,4.2 전용 자료를 적재하고 검색 범위를 고정한다,kt66 Ubuntu VM의 호스트 터미널,검사한 R03을 새 인덱스에 적재한다.,examples/chapter04/commands.sh
+4,C03-04-06,4.2 전용 자료를 적재하고 검색 범위를 고정한다,kt66 Ubuntu VM의 호스트 터미널,R03 적재 확인 후 R04를 적재한다.,examples/chapter04/commands.sh
+5,C03-05-01,5.1 R05 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R05 이벤트 파일을 생성한다.,examples/chapter05/commands.sh
+5,C03-05-02,5.1 R05 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,생성 파일의 해시·기간·시간순·건수를 검사한다.,examples/chapter05/commands.sh
+5,C03-05-03,5.1 R05 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,검사한 자료를 전용 인덱스에 적재한다.,examples/chapter05/commands.sh
+6,C03-06-01,6.1 R06 자료와 비교 범위를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R06 파일을 생성한다.,examples/chapter06/commands.sh
+6,C03-06-02,6.1 R06 자료와 비교 범위를 준비한다,kt66 Ubuntu VM의 호스트 터미널,생성 파일의 건수·시간순·기간·해시를 검사한다.,examples/chapter06/commands.sh
+6,C03-06-03,6.1 R06 자료와 비교 범위를 준비한다,kt66 Ubuntu VM의 호스트 터미널,검사한 자료를 새 전용 인덱스에 적재한다.,examples/chapter06/commands.sh
+7,C03-07-01,7.1 R07 자료와 접속 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,R07 파일을 생성한다.,examples/chapter07/commands.sh
+7,C03-07-02,7.1 R07 자료와 접속 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,파일의 시간순·기간·건수·해시를 검사한다.,examples/chapter07/commands.sh
+7,C03-07-03,7.1 R07 자료와 접속 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,검사한 파일을 전용 인덱스에 적재한다.,examples/chapter07/commands.sh
+8,C03-08-01,8.1 자료와 관측 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,R08 파일을 만든다.,examples/chapter08/commands.sh
+8,C03-08-02,8.1 자료와 관측 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,시간순·기간·건수·해시를 검사한다.,examples/chapter08/commands.sh
+8,C03-08-03,8.1 자료와 관측 방향을 준비한다,kt66 Ubuntu VM의 호스트 터미널,검사한 파일을 전용 인덱스에 적재한다.,examples/chapter08/commands.sh
+8,C03-08-04,8.2 반복 목적지의 시간 분포를 조사한다,kt66 Ubuntu VM의 호스트 터미널,전체 관측 구간의 개별 시간 간격을 계산한다.,examples/chapter08/commands.sh
+9,C03-09-01,9.1 사건 자료와 조사표를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R09 파일을 만든다.,examples/chapter09/commands.sh
+9,C03-09-02,9.1 사건 자료와 조사표를 준비한다,kt66 Ubuntu VM의 호스트 터미널,기간·시간순·건수·해시를 검사한다.,examples/chapter09/commands.sh
+9,C03-09-03,9.1 사건 자료와 조사표를 준비한다,kt66 Ubuntu VM의 호스트 터미널,검사한 파일을 새 전용 인덱스에 적재한다.,examples/chapter09/commands.sh
+10,C03-10-01,10.1 자료와 완료 조건,kt66 Ubuntu VM의 호스트 터미널,R10 파일을 생성한다.,examples/chapter10/commands.sh
+10,C03-10-02,10.1 자료와 완료 조건,kt66 Ubuntu VM의 호스트 터미널,기간·시간순·건수·해시를 확인한다.,examples/chapter10/commands.sh
+10,C03-10-03,10.1 자료와 완료 조건,kt66 Ubuntu VM의 호스트 터미널,새 전용 인덱스에 적재한다.,examples/chapter10/commands.sh
+11,C03-11-01,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R12를 로컬 파일로 만든다.,examples/chapter11/commands.sh
+11,C03-11-02,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R12의 기간·정렬·건수·해시를 확인한다.,examples/chapter11/commands.sh
+11,C03-11-03,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R13을 별도 파일로 만든다.,examples/chapter11/commands.sh
+11,C03-11-04,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R13을 검사한다.,examples/chapter11/commands.sh
+11,C03-11-05,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,R12를 전용 인덱스에 적재한다.,examples/chapter11/commands.sh
+11,C03-11-06,11.2 독립된 두 자료를 준비한다,kt66 Ubuntu VM의 호스트 터미널,이어서 R13을 적재한다.,examples/chapter11/commands.sh
+12,C03-12-01,12.2 분석 폴더와 도구를 준비한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,작업 위치·이미지·이름 중복을 확인한다.,examples/chapter12/commands.sh
+12,C03-12-02,12.2 분석 폴더와 도구를 준비한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,새 분석 폴더와 관측 규칙을 준비한다.,examples/chapter12/commands.sh
+12,C03-12-03,12.2 분석 폴더와 도구를 준비한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,고정한 ZIP에서 PCAP 한 파일을 꺼낸다.,examples/chapter12/commands.sh
+12,C03-12-04,12.2 분석 폴더와 도구를 준비한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,패킷 수와 시각 범위를 기록한다.,examples/chapter12/commands.sh
+12,C03-12-05,12.2 분석 폴더와 도구를 준비한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,센서 설정 사본과 Zeek를 준비한다.,examples/chapter12/commands.sh
+12,C03-12-06,12.3 Suricata가 파일을 읽게 한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,전용 파일 분석 컨테이너를 만든 뒤 들어간다.,examples/chapter12/commands.sh
+12,C03-12-07,12.3 Suricata가 파일을 읽게 한다,book3-suri-ch12 컨테이너 · /work,버전과 설정·규칙 문법을 확인한다.,examples/chapter12/commands.sh
+12,C03-12-08,12.3 Suricata가 파일을 읽게 한다,book3-suri-ch12 컨테이너 · /work,패킷을 전송하지 않고 EVE를 만든다.,examples/chapter12/commands.sh
+12,C03-12-09,12.4 Zeek의 연결과 HTTP를 연결한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,Suricata 분석을 마친 뒤 Zeek 작업 공간을 연다.,examples/chapter12/commands.sh
+12,C03-12-10,12.4 Zeek의 연결과 HTTP를 연결한다,book3-zeek-ch12 컨테이너 · /output,같은 PCAP를 Zeek로 분석한다.,examples/chapter12/commands.sh
+12,C03-12-11,12.5 반복 간격과 응답 누락을 대조한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,반복 요청과 같은 실행의 연결을 대조한다.,examples/chapter12/commands.sh
+12,C03-12-12,12.5 반복 간격과 응답 누락을 대조한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,설정 비교 결과를 위한 새 출력 폴더를 준비한다.,examples/chapter12/commands.sh
+12,C03-12-13,12.5 반복 간격과 응답 누락을 대조한다,book3-suri-ch12 컨테이너 · /work,재조립 깊이 제한만 바꿔 별도 분석한다.,examples/chapter12/commands.sh
+12,C03-12-14,12.6 Wazuh의 디코더와 규칙을 시험한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,관측용 경보 원문을 준비하고 manager 터미널로 들어간다.,examples/chapter12/commands.sh
+12,C03-12-15,12.6 Wazuh의 디코더와 규칙을 시험한다,kt66-siem 컨테이너,복사한 JSON 한 줄의 분류를 확인한다.,examples/chapter12/commands.sh
+12,C03-12-16,12.7 관측 로그를 전용 인덱스에서 조사한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,원문과 연결된 검색 자료를 만든다.,examples/chapter12/commands.sh
+12,C03-12-17,12.7 관측 로그를 전용 인덱스에서 조사한다,kt66 Ubuntu VM 호스트 · 3권 저장소 루트,새 전용 관측 인덱스에 적재한다.,examples/chapter12/commands.sh
+12,C03-12-18,12.8 패킷 재생은 별도 폐쇄 환경에서 다룬다,독립 Ubuntu 분석 VM · 호스트,독립 분석 VM의 도구와 이름 사용 여부를 확인한다.,examples/chapter12/commands.sh
+12,C03-12-19,12.8 패킷 재생은 별도 폐쇄 환경에서 다룬다,독립 Ubuntu 분석 VM · 호스트,송신·수신 네트워크 스택을 veth 한 쌍으로 잇는다.,examples/chapter12/commands.sh
+12,C03-12-20,12.8 패킷 재생은 별도 폐쇄 환경에서 다룬다,독립 Ubuntu 분석 VM · 첫 터미널,수신 센서를 먼저 실행한다.,examples/chapter12/commands.sh
+12,C03-12-21,12.8 패킷 재생은 별도 폐쇄 환경에서 다룬다,독립 Ubuntu 분석 VM · 두 번째 터미널,원래 간격의 1배로 한 번 전송한다.,examples/chapter12/commands.sh
+13,C03-13-01,13.1 조사 자료와 완료 조건을 정한다,kt66 Ubuntu VM의 호스트 터미널,R15 파일을 만든다.,examples/chapter13/commands.sh
+13,C03-13-02,13.1 조사 자료와 완료 조건을 정한다,kt66 Ubuntu VM의 호스트 터미널,기간·순서·파일 해시를 검사한다.,examples/chapter13/commands.sh
+13,C03-13-03,13.1 조사 자료와 완료 조건을 정한다,kt66 Ubuntu VM의 호스트 터미널,검사한 자료를 새 전용 인덱스에 적재한다.,examples/chapter13/commands.sh
+13,C03-13-04,13.3 반복 연결·인증·DNS를 연결한다,kt66 Ubuntu VM의 호스트 터미널,같은 방향 연결의 인접 기록 간격을 계산한다.,examples/chapter13/commands.sh

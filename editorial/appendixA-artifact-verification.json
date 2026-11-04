@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "appendix": "A",
+  "pages": 19,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "fonts": [
+    "Consolas",
+    "부크크 고딕 Light",
+    "부크크 명조 Light"
+  ],
+  "images": [
+    {
+      "path": "assets/figures/appendixA-lookup.png",
+      "sha256": "3b8a08c23d2865d06789b61a1c195b3e8628c166a18113bc4d702e6f40ce04ec"
+    }
+  ],
+  "urls_verified": [
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/appendixA",
+    "https://docs.opensearch.org/latest/aggregations/bucket/terms/",
+    "https://docs.opensearch.org/latest/query-dsl/",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html"
+  ],
+  "queries_match": 3,
+  "commands_match": 3,
+  "files": {
+    "manuscript/volume03-appendixA.docx": "774835a41edf53f9118a844b4b02089c8c0271b73e070d62e1487ec75123f542",
+    "manuscript/volume03-appendixA.json": "0f042ddda20a232f60135938f87932d350dfaf53344a9961a48d1a97fcc27e74",
+    "examples/appendixA/command-index.csv": "242d1f9042df1b4524e680776f3f60a9b3cf2dd935f342fb644ed261589f1c38",
+    "examples/appendixA/commands.sh": "06f054d978bd50014c6280adc01a40e3551fff8b28a3c18510087b6ad98dc5bb",
+    "examples/appendixA/discover.dql": "b44a91fa772055caf5b446c5b025fd48a85786b3e1ae4735a6c96a9df32f7e09",
+    "examples/appendixA/index-sources.json": "f8f31acfbfef4345f8dde2291a05a279525de5453c1bc208f77ac8ab53cfd3e7",
+    "examples/appendixA/Q03-A-01.http": "bdf4af568df520eb162b0c5cf076e4fdceb556ed8570ef85d7e55222abe503cf",
+    "examples/appendixA/Q03-A-02.http": "1522b9beebb87f3daa64e4d543f9fcb45fc164b6e4e0f8e0f3322dddae8f9d5b",
+    "examples/appendixA/Q03-A-03.http": "f04f28f2e9f6e50ef0cd10263d59e2e659da768c37f8c213aac890bdfa6d15e6",
+    "examples/appendixA/queries.json": "56208d16f9ef05536a345797938940ec993cfaa595731d343fa150e26d008b50",
+    "examples/appendixA/query-index.csv": "111c07d51be4fc9cd3890d42b50f5d518a480d4e2e5e3fb38b1d4cf52f390bb1"
+  },
+  "qa_pdf_published": false
+}
