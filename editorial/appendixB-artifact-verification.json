@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "appendix": "B",
+  "pages": 21,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "fonts": [
+    "Consolas",
+    "부크크 고딕 Light",
+    "부크크 명조 Light"
+  ],
+  "images": [
+    {
+      "path": "assets/figures/appendixB-reproduction.png",
+      "sha256": "de26ff34c8a5128c47fe73ef576bdfc6648e8220d43cf6cac492833603384102"
+    }
+  ],
+  "urls_verified": [
+    "https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg",
+    "https://drive.google.com/drive/folders/1opod1aNlgA9LW248K-U99VFK9QKBLiH6",
+    "https://drive.google.com/drive/folders/1fJNfD402l9IRECphaDYX-Y6ca5VH7no0",
+    "https://www.malware-traffic-analysis.net/2025/01/22/index.html",
+    "https://www.malware-traffic-analysis.net/about.html"
+  ],
+  "queries_match": 0,
+  "commands_match": 5,
+  "files": {
+    "manuscript/volume03-appendixB.docx": "66912a91312aa3113251fa2aa92e578d2b326c0e4453d690bd31c60fc28a09cc",
+    "manuscript/volume03-appendixB.json": "693601ca877d8b8a147de963b757f7e4e5267691b51d533f2ac2b338bf2ec788",
+    "examples/appendixB/commands.sh": "d8adfeeac95dbe47b42500fddafdd4a993d59d4e2a6753d221f6e222cd4f144b",
+    "examples/appendixB/distribution-check.csv": "1ad10bee77890a4c61dbb7d6b79a99ce76c0621d2d9e80c5992545f3a4a67709",
+    "examples/appendixB/handoff-record.csv": "40fa8aaf9e24ee5d9a30add5bd531aeed4031b29eec33e7e2d232da02d7aa382",
+    "examples/appendixB/queries.json": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f",
+    "examples/appendixB/reproduction-record.json": "57e62a6aab4394a108274322d4d5e43ade18457f6da1bf1303baa9f595163ea9",
+    "examples/appendixB/run-catalog.csv": "206cf75d7327b142844b76f18fd7a321f65fce158d91ad24baece8f5e28ad08e",
+    "examples/appendixB/run-catalog.json": "e9dfa607912f5bc1f9bbf57f314839f9a6b93adc3e905fb3f0cb0f15971d40a6",
+    "examples/appendixB/source-record.csv": "dde697bee051ad9f370ebafc18e22585b466b1f9a0b583718c6b14d3321a8352"
+  },
+  "qa_pdf_published": false
+}

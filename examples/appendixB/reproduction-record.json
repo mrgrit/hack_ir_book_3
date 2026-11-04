@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "record_status": "blank-template",
+  "source_kind": null,
+  "source_url": null,
+  "source_commit": null,
+  "book_commit": null,
+  "input_sha256": {},
+  "runtime": {
+    "os": null,
+    "python": null,
+    "sensor_version": null,
+    "container_digest": null
+  },
+  "parameters": {
+    "round": null,
+    "seed": null,
+    "anchor": null,
+    "days": null,
+    "scale": null,
+    "run_id": null,
+    "start_inclusive": null,
+    "end_exclusive": null,
+    "time_zone": null
+  },
+  "sensor": {
+    "config_sha256": null,
+    "rules_sha256": null,
+    "overrides": [],
+    "selected_event_types": []
+  },
+  "outputs": {
+    "folder": null,
+    "index": null,
+    "total": null,
+    "files_sha256": {}
+  },
+  "verification": {
+    "commands": [],
+    "counts": {},
+    "failed_checks": [],
+    "evidence_files": []
+  },
+  "scope": {
+    "packets_transmitted": null,
+    "manager_rule_execution": null,
+    "siem_loaded": null,
+    "retained_resources": [],
+    "cleanup_record": null
+  },
+  "unknowns": []
+}

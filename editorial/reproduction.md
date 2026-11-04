@@ -75,3 +75,13 @@ python3 tools/verify_chapter03.py build/r02-ch03 editorial/chapter03-query-resul
 ```
 
 원문 생성 명령은 3장과 `examples/chapter03/commands.sh`를 따른다. 저장된 응답과 대조할 때는 동일한 manifest·bulk 해시의 자료를 사용한다. Windows Word 렌더와 모든 쪽의 개별 검수 후 `verify_artifact.py 3 build/검수폴더/chapter03.pdf --reviewed-all-pages`를 실행하면 내장 그림·URL·쿼리·판형을 기록한다. 이 옵션은 실제로 모든 지면을 확인한 뒤에만 지정한다.
+
+## 4~13장과 부록 재현
+
+각 장의 `examples/chapterNN/commands.sh`를 본문의 실행 위치·선행 조건과 함께 한 명령씩 사용한다. 생성 자료의 정확한 조건·건수·해시는 `examples/appendixB/run-catalog.json`에 있다. 12장의 PCAP·센서 버전·컨테이너 digest·설정 변경은 `examples/chapter12/dataset.json`을 따른다. 원본 PCAP와 대용량 로그는 저장소에 포함하지 않는다.
+
+DOCX 조판은 해당 `manuscript/volume03-chapterNN.json`을 `tools/build_docx.py --source ... --output ...`에 지정한다. 장별 저자 스크립트는 `tools/write_chapterNN.py`이다. 재생성 전 필요한 조회 파일·도식·실제 화면·삽화 자산을 보존한다. 새로운 실행 결과를 이전 결과로 표시하거나 UI를 임의 생성하지 않는다.
+
+부록 A의 색인은 `tools/build_reader_index.py`, 원고는 `tools/write_appendixA.py`로 만든다. 부록 B의 실행 목록·양식은 `tools/build_appendixB_records.py`, 원고는 `tools/write_appendixB.py`로 만든다. B 기록 생성은 14개 기존 로컬 출력 폴더와 `build/repro-b/r15-ch13`의 동일 조건 재현 자료를 요구한다. 이 폴더를 준비하는 독자용 절차는 부록 B에 있다. 목록을 만들기 위해 새 SIEM 적재를 반복하지 않는다.
+
+`tools/verify_appendix.py A|B 검수PDF경로 --reviewed-all-pages`는 각각의 부록 지면을 모두 열어 확인한 뒤 실행한다. `tools/verify_volume_inventory.py`는 현재 DOCX·예제·내장 이미지·색인을 기존 개별 검수 기록과 대조해 `editorial/volume03-delivery-verification.json`을 갱신한다. 이 마지막 검사는 새로운 지면 검수나 SIEM 실습을 대신하지 않는다.

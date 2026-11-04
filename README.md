@@ -1,6 +1,6 @@
 # 해킹·침해대응 실무 with Wazuh — 3권
 
-가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 1~13장 초안이다.
+가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 **1~13장과 부록 A·B의 초안을 완성했다.** 장별 DOCX 15개, 지면 합계 431쪽이다.
 
 실제 시스템을 공격하지 않고 `purple-agg`가 생성한 학습 데이터와 공개 PCAP에서 센서가 얻는 로그로 조사한다. 생성 이벤트의 `rule` 필드와 Wazuh manager가 실제로 만든 경보를 구분한다.
 
@@ -20,13 +20,14 @@
 - [12장 DOCX](manuscript/volume03-chapter12.docx): PCAP에서 관측 로그 만들기, B5 36쪽. 공개 캡처 39,427패킷을 Suricata·Zeek로 파일 분석하고 3,746개 관측 문서를 실제 조회 6개로 조사한다. Wazuh logtest와 센서 재조립 설정 비교, [복사용 예제](examples/chapter12), 선택 폐쇄망 재생 절차를 제공한다.
 - [13장 DOCX](manuscript/volume03-chapter13.docx): 종합 조사와 대응 판단, B5 34쪽. R15 105,293건을 조회 10개로 조사하고 PC·AI 활동, 승인된 점검·백업을 분리한다. [복사용 예제와 사건표·시간표·모의 대응 계획](examples/chapter13)을 제공한다.
 - [부록 A DOCX](manuscript/volume03-appendixA.docx): 필드·명령·조회 색인, B5 19쪽. [조회 117개·본문 명령 83개의 색인](examples/appendixA), 자료형 확인과 오류 확인표를 제공한다.
+- [부록 B DOCX](manuscript/volume03-appendixB.docx): 생성 조건과 재현 기록, B5 21쪽. R15 동일 조건 재생성, 실제 표본의 시간·횟수·빈도 해석, PCAP 센서 설정 비교와 [실행 목록·분포 평가·출처·인계 양식](examples/appendixB)을 제공한다.
 - [전체 목차와 강의 대응표](editorial/volume03-outline.md): 13장 및 부록의 학습 목표·실습·완료 조건.
 - [집필 계획](editorial/authoring-plan.md): 집필 순서와 공동 SIEM 사용 원칙.
 - [생성기 현실성 점검](editorial/generator-realism-review.md): 실제 집계 표본 3개와 코드·오프라인 실행의 대조.
 - [PCAP 연계 설계](editorial/pcap-integration-plan.md): Suricata·Zeek 파일 분석을 기본으로, 폐쇄 veth 재생을 선택으로 구성.
 - [검증 기록](editorial/verification.md): 실행한 검사와 아직 실행하지 않은 범위.
 
-현재 원고는 **1~13장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 부록 A까지 작성·검수·업로드했으며 부록 B를 이어서 완성한다. REV01과 1·2권 원고는 보존한다.
+사용자 요청에 따라 **3장부터 13장, 부록 A·B까지 순차 집필·검수했다.** 각 장의 업로드를 마친 뒤 다음 장을 진행했다. [진행 기록](editorial/sequential-authoring.md)과 [최종 파일 대조 기록](editorial/volume03-delivery-verification.json)을 제공한다. 현재 산출물은 교정용 초안이며 합본·PDF 배포 없이 별도 DOCX를 유지한다. REV01과 1·2권 원고는 보존한다.
 
 ## 로컬 준비 도구
 
@@ -47,7 +48,7 @@ python3 tools/check_dataset.py build/r01-pilot01
 
 ## 공동 SIEM
 
-1장은 오프라인 파일 준비를 다룬다. 2장은 기존 kt66 환경의 전용 인덱스 `book3-r01-pilot01`에 85,306건을 적재하고 쿼리 14개와 실제 Wazuh UI를 확인했다. 기존 인덱스의 소멸·재생성·건수 감소는 없었다. 규칙·공용 템플릿·서비스를 변경하거나 공격·패킷 재생을 수행하지 않았다. 상세 범위는 [2장 검토 기록](editorial/chapter02-review.md)에 있다.
+1장은 오프라인 파일 준비를 다룬다. 2~13장은 기존 kt66 환경의 전용 인덱스에서 실제 조회와 Wazuh UI를 확인했다. 13개 합성 라운드 1,188,021건과 PCAP 관측 문서 3,746건을 서로 다른 자료로 관리한다. 장별 적재 전에 기존 인덱스의 안정 상태를 확인했으며 기존 자료의 소멸·재생성·건수 감소는 없었다. 기존 규칙·공용 템플릿·서비스를 변경하거나 실제 공격·네트워크 패킷 재생을 수행하지 않았다. 12장의 센서 분석은 별도 컨테이너의 파일 입력으로 검증했다. 상세 범위는 장별 검토 기록과 [검증 기록](editorial/verification.md)에 있다.
 
 원본 `gen`은 같은 라운드 인덱스를 삭제 후 재생성하므로 공동 환경에서 바로 실행하지 않는다. 교재의 `load_dataset.py`는 파일 검사를 마친 뒤 새 전용 인덱스만 만들며, 이미 존재하는 인덱스에서는 중단한다. 로그 소멸이나 UUID·건수의 예상 밖 변동이 있으면 다른 작업이 끝날 때까지 기다린다.
 

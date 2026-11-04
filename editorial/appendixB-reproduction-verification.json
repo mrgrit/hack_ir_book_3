@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "scope": "Local offline R15 reproduction; no server calls or packets transmitted",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Windows"
+  },
+  "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+  "parameters": {
+    "round": "r15",
+    "seed": 1515,
+    "anchor": "2026-11-01",
+    "days": 90,
+    "scale": 0.005,
+    "index": "book3-r15-ch13"
+  },
+  "output_folders": [
+    "build/r15-ch13",
+    "build/repro-b/r15-ch13"
+  ],
+  "events": 105293,
+  "files": {
+    "manifest.json": {
+      "sha256": "60556a6792fcd8befae680829d99e85434b49b814f9837ebf73e8de7d28e0201",
+      "identical": true
+    },
+    "events.bulk.ndjson": {
+      "sha256": "7c26878df1a8a2024ebed9b878180bdeda41e753569cf1d00453a74c0d1c68df",
+      "identical": true
+    },
+    "template.json": {
+      "sha256": "ae5895f3ab5e66c9578a8acce05f9885144282d25f058760caf351d8b41220c4",
+      "identical": true
+    },
+    "truth.jsonl": {
+      "sha256": "0a54a2b820055fe516047f83f677d7cb12eb779418e551f4a98a17aab188d8d5",
+      "identical": true
+    }
+  },
+  "tool_sha256": {
+    "tools/prepare_round.py": "2e7fb40aacea35aa5016ff6a3d1db46dd287f366dfda058ce7655ba1e0429a11",
+    "tools/upstream.py": "7b6273a47a39d33a491a08667b90fd53bce0e65155c15c0add21801f226e5a3e",
+    "tools/check_dataset.py": "8bf721809bf93e604d3edfb7fc44c654b1e268cdf22f72a67dd7bc64e0cdd001"
+  },
+  "catalog_runs": 14,
+  "synthetic_total": 1188021,
+  "pcap_documents": 3746,
+  "network_operations": 0
+}

@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "chapter": 1,
+      "folder": "build/r01-pilot01",
+      "manifest_sha256": "7d7173759bf64e85caf584fe7fafdd82fc9326da4f5acf198c1e7e8d71ea90e8",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r01",
+        "seed": 101,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r01-pilot01",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 83044,
+          "scenario": 2262
+        },
+        "total": 85306,
+        "scenario_share": 0.026516306004266993,
+        "channels": {
+          "web-accesslog": 34018,
+          "json": 21275,
+          "windows_eventchannel": 7620,
+          "sudo": 2727,
+          "sshd": 9665,
+          "syscheck_deleted": 540,
+          "syscheck_new_entry": 1844,
+          "syscheck_integrity_changed": 7109,
+          "kt66-dns": 205,
+          "kt66-mailgw": 167,
+          "modsecurity": 15,
+          "kt66-nft": 121
+        },
+        "input_time_inversions": 17,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "f2e20fa69ff6beb6772e2afd8d2d2ac56812ad461f1723b45535d65c943befd9",
+          "template.json": "a0b0adf4b4bf0ee9e799690c5727a238b91043f4df96754e1956bfc5a647d82a",
+          "truth.jsonl": "891569a77fe863aece5b5d14a0db1bd33aaa7672e8c2ff992a7c12a7c48d0e00"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 3,
+      "folder": "build/r02-ch03",
+      "manifest_sha256": "b337ae8391e4137fb92b96930aeddb43bdc16edfff880c91ddc4c6e503bd849d",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r02",
+        "seed": 202,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r02-ch03",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82716,
+          "scenario": 1676
+        },
+        "total": 84392,
+        "scenario_share": 0.019859702341454167,
+        "channels": {
+          "json": 18986,
+          "sshd": 9600,
+          "windows_eventchannel": 7590,
+          "web-accesslog": 34636,
+          "sudo": 2723,
+          "kt66-nft": 986,
+          "syscheck_deleted": 540,
+          "syscheck_integrity_changed": 7160,
+          "syscheck_new_entry": 1757,
+          "kt66-mailgw": 188,
+          "kt66-dns": 219,
+          "modsecurity": 7
+        },
+        "input_time_inversions": 11,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "c0a6378a2ffc2a61866daa0dbf2f54a59b8d617fcd0748fbbd845f0189ce0e09",
+          "template.json": "c8f94061eb0a90cfee25ee029c06c87a535cdae9527ff7ee0a17f37d73775724",
+          "truth.jsonl": "dbe17ef976cfad29406251d1e654949c5627f17ebb8f117452bc31dade77e015"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 4,
+      "folder": "build/r03-ch04",
+      "manifest_sha256": "c988d0a086b89e91a2e1eb9b4fc3f324e0241b21085a6c2181bd7160ad7bd152",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r03",
+        "seed": 303,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r03-ch04",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82454,
+          "scenario": 1490
+        },
+        "total": 83944,
+        "scenario_share": 0.017749928523777755,
+        "channels": {
+          "json": 18606,
+          "web-accesslog": 34759,
+          "windows_eventchannel": 7642,
+          "sshd": 9681,
+          "syscheck_integrity_changed": 7198,
+          "syscheck_deleted": 540,
+          "sudo": 2689,
+          "syscheck_new_entry": 1834,
+          "kt66-mailgw": 138,
+          "kt66-dns": 205,
+          "modsecurity": 532,
+          "kt66-nft": 120
+        },
+        "input_time_inversions": 16,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "2bf6bd2a18f08bf639876e1a659462d1a8060241e75c063ac3ea40294b5d4d12",
+          "template.json": "a86699babb5c1a0ae3df831c563539d764b93123e37976f44ef0d8776accdc0d",
+          "truth.jsonl": "527945649c9542b7b9eba5b60fea4ff64963cc4bc85ffbb291cdbbaa35cc26d2"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 4,
+      "folder": "build/r04-ch04",
+      "manifest_sha256": "7893cc1fd46ba0feefe427c82859118656a3922e6c3c9c103afe8217c48bc979",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r04",
+        "seed": 404,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r04-ch04",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 101276,
+          "scenario": 997
+        },
+        "total": 102273,
+        "scenario_share": 0.009748418448661915,
+        "channels": {
+          "windows_eventchannel": 7608,
+          "auditd": 18503,
+          "json": 19239,
+          "web-accesslog": 34503,
+          "sshd": 9666,
+          "sudo": 2692,
+          "syscheck_deleted": 540,
+          "syscheck_integrity_changed": 7137,
+          "syscheck_new_entry": 1838,
+          "kt66-mailgw": 191,
+          "kt66-dns": 219,
+          "kt66-nft": 119,
+          "modsecurity": 17,
+          "useradd": 1
+        },
+        "input_time_inversions": 33,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "319a0e4597a1f56309a09dd7a58364b887e2b20435e3370b258db06126892f5b",
+          "template.json": "cddf81c226f53ad48230f12debeccb073d2e01c2d6c8767a95ff2b36b33ec420",
+          "truth.jsonl": "f1e8f8a6d2b48932860316e83613169314a68b246adc30edf4732f72d0d27152"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 5,
+      "folder": "build/r05-ch05",
+      "manifest_sha256": "8e7e1063a7ffd8d482bcb0753abf7c28b281246fec92a87e751cbecbcb70e233",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r05",
+        "seed": 505,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r05-ch05",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 100620,
+          "scenario": 119
+        },
+        "total": 100739,
+        "scenario_share": 0.0011812704116578485,
+        "channels": {
+          "json": 18690,
+          "auditd": 17563,
+          "web-accesslog": 34277,
+          "kt66-dns": 196,
+          "windows_eventchannel": 7673,
+          "sshd": 9703,
+          "syscheck_deleted": 543,
+          "syscheck_integrity_changed": 7313,
+          "syscheck_new_entry": 1767,
+          "sudo": 2691,
+          "kt66-nft": 128,
+          "kt66-mailgw": 168,
+          "modsecurity": 27
+        },
+        "input_time_inversions": 16,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "30304044da63d859fa16033095f5a338ea8a6ce90611d15410502909469dc565",
+          "template.json": "dd5784af35aa5405e1851543d3b4e06ac35171aaee3a47cd9112d642262bb66c",
+          "truth.jsonl": "08e429a0e77652ccb120796d058460611c3e2202ef5cef3ab31a2f1dd35c467d"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 6,
+      "folder": "build/r06-ch06",
+      "manifest_sha256": "d53011f1e7a5b885dd4f92ad83cf57737919b3de495f2679a08165bfac41ca04",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r06",
+        "seed": 606,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r06-ch06",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82537,
+          "scenario": 3637
+        },
+        "total": 86174,
+        "scenario_share": 0.04220530554459582,
+        "channels": {
+          "windows_eventchannel": 7595,
+          "web-accesslog": 36049,
+          "json": 20213,
+          "sshd": 9689,
+          "syscheck_deleted": 540,
+          "kt66-mailgw": 214,
+          "syscheck_integrity_changed": 7023,
+          "sudo": 2708,
+          "syscheck_new_entry": 1798,
+          "kt66-dns": 200,
+          "kt66-nft": 132,
+          "modsecurity": 13
+        },
+        "input_time_inversions": 17,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "3c3bb6c5f0ad825ad2ec3e0835f6546a4d7d4cb3b8361584dff58f00dcd7f3e0",
+          "template.json": "f3f78348956a80ab9058710aabe316983ab3ee262b3b8a002981ee4f195376e8",
+          "truth.jsonl": "4a9a98048059515dc872e415e367755d3c28f6aa0cfbda3a5864bd56bf0b9678"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 7,
+      "folder": "build/r07-ch07",
+      "manifest_sha256": "a134d20ae58342592d4bd16510a3fbd4ae598ceff068476c3dd041e56f54348c",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r07",
+        "seed": 707,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r07-ch07",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 81875,
+          "scenario": 135
+        },
+        "total": 82010,
+        "scenario_share": 0.0016461407145470066,
+        "channels": {
+          "web-accesslog": 33339,
+          "kt66-nft": 127,
+          "json": 18587,
+          "sudo": 2681,
+          "windows_eventchannel": 7593,
+          "syscheck_integrity_changed": 7294,
+          "syscheck_new_entry": 1793,
+          "syscheck_deleted": 540,
+          "sshd": 9678,
+          "kt66-mailgw": 164,
+          "kt66-dns": 199,
+          "modsecurity": 15
+        },
+        "input_time_inversions": 16,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "ceddeefe2a79581e09bad1e0e2b5b696d66cda9810ecb9e32b75eeac51f609aa",
+          "template.json": "c1da6fa08736e9e42ecafd28b9115c0f2b0f76925404b54d718c43e15178d3ff",
+          "truth.jsonl": "06c1822d56d74be3501bcea2e71792dc245362c9231862e6072e1fa09d5aefaf"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 8,
+      "folder": "build/r08-ch08",
+      "manifest_sha256": "f8a6953ccd724891aa9e229061c1032ef29bf3480426a956027f4e622cc0e46a",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r08",
+        "seed": 808,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r08-ch08",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82672,
+          "scenario": 3273
+        },
+        "total": 85945,
+        "scenario_share": 0.038082494618651465,
+        "channels": {
+          "json": 21167,
+          "web-accesslog": 33934,
+          "windows_eventchannel": 7619,
+          "sshd": 9698,
+          "syscheck_deleted": 540,
+          "sudo": 2693,
+          "syscheck_integrity_changed": 7076,
+          "syscheck_new_entry": 1775,
+          "kt66-mailgw": 181,
+          "kt66-dns": 1117,
+          "kt66-nft": 138,
+          "modsecurity": 7
+        },
+        "input_time_inversions": 13,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {
+          "at_or_after_end": 10
+        },
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "5b65e34e91a3b7b988f231d5737fd71f52e431e0ca2a9d156f05f73c96180880",
+          "template.json": "6f3daf78f2a6caa24580c801b1f78914a3faf0b5970e0c1eaba14d6fa9e85aad",
+          "truth.jsonl": "565e0f570854ea4bff30dbd2e4100a7df6eb001762c40e6fc3b1eb9e0356807f"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 9,
+      "folder": "build/r09-ch09",
+      "manifest_sha256": "3023df2745eba17acd15c7ac5a3e836b56bd3bb916e56b0304566f3d3943c472",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r09",
+        "seed": 909,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r09-ch09",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 100431,
+          "scenario": 862
+        },
+        "total": 101293,
+        "scenario_share": 0.008509966137837758,
+        "channels": {
+          "auditd": 17799,
+          "windows_eventchannel": 7530,
+          "json": 18485,
+          "web-accesslog": 34682,
+          "kt66-nft": 137,
+          "syscheck_integrity_changed": 7235,
+          "sshd": 9678,
+          "syscheck_deleted": 543,
+          "syscheck_new_entry": 1808,
+          "sudo": 2709,
+          "kt66-mailgw": 181,
+          "kt66-dns": 191,
+          "modsecurity": 314,
+          "useradd": 1
+        },
+        "input_time_inversions": 20,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "9fb7a904843997e6e146f3e018e463d9650742addcbf4f2e72a76ee73e5a04f8",
+          "template.json": "df298b3e2b089bd8d3839f2c3a29bf39ad23df6520288bcf09c0da29873ed14a",
+          "truth.jsonl": "0d4014e051413abd01839d20317b69050671875ba2a20b0cf54271d012073080"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 10,
+      "folder": "build/r10-ch10",
+      "manifest_sha256": "b3d790214e3b6795f6dc478908bca7056b01260383f2c907f8b4c77df00ac86e",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r10",
+        "seed": 1010,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r10-ch10",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82946,
+          "scenario": 3023
+        },
+        "total": 85969,
+        "scenario_share": 0.035163838127697196,
+        "channels": {
+          "json": 19364,
+          "web-accesslog": 33997,
+          "windows_eventchannel": 7701,
+          "sshd": 9657,
+          "syscheck_deleted": 1740,
+          "syscheck_new_entry": 3036,
+          "syscheck_integrity_changed": 7166,
+          "sudo": 2734,
+          "kt66-dns": 251,
+          "kt66-nft": 142,
+          "kt66-mailgw": 169,
+          "modsecurity": 12
+        },
+        "input_time_inversions": 9,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "ef67560a77970f560f2f3c70b3988621280bfe67d653eaca383c75291efee4e0",
+          "template.json": "8308a249c1b1b3d08d56f02e3435b59fbd6fadb4c3d8d1ade82d9fde44fc077b",
+          "truth.jsonl": "10ea708041190acde13eb6e9f7efb74224f7853d1928ebc08dede6c2b0281792"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 11,
+      "folder": "build/r12-ch11",
+      "manifest_sha256": "245414be86cc51095da12e5d86adb4f6b624168a082705fed526c8c1eb9a25b9",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r12",
+        "seed": 1212,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r12-ch11",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 82865,
+          "scenario": 236
+        },
+        "total": 83101,
+        "scenario_share": 0.002839917690521173,
+        "channels": {
+          "web-accesslog": 33898,
+          "json": 19137,
+          "windows_eventchannel": 7681,
+          "kt66-mailgw": 185,
+          "sshd": 9620,
+          "syscheck_deleted": 540,
+          "sudo": 2700,
+          "syscheck_integrity_changed": 7102,
+          "syscheck_new_entry": 1874,
+          "kt66-nft": 137,
+          "kt66-dns": 217,
+          "modsecurity": 10
+        },
+        "input_time_inversions": 18,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "4e554da3e76541283fe6878d5b2ab83f345a1919f70a7c91a1156a7d10bc35b0",
+          "template.json": "19afdbb9965876950c0432419015076adea79609ee6b765ffabcef034727e2f6",
+          "truth.jsonl": "c55a97d85538950696e98e54b480a559af87f9303824aa120f99d914fc67e192"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 11,
+      "folder": "build/r13-ch11",
+      "manifest_sha256": "dca19f24a6ea0e3011b953a2c7e5f300d0160e8107682a2cadb629bb7321ec15",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r13",
+        "seed": 1313,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r13-ch11",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 100861,
+          "scenario": 721
+        },
+        "total": 101582,
+        "scenario_share": 0.007097714161957827,
+        "channels": {
+          "web-accesslog": 35124,
+          "json": 18732,
+          "auditd": 17430,
+          "windows_eventchannel": 7735,
+          "syscheck_new_entry": 1867,
+          "syscheck_integrity_changed": 7218,
+          "syscheck_deleted": 540,
+          "sshd": 9686,
+          "sudo": 2706,
+          "kt66-dns": 191,
+          "kt66-mailgw": 168,
+          "kt66-nft": 131,
+          "modsecurity": 54
+        },
+        "input_time_inversions": 17,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "458d057d381ac4742e4dc1ac4aca22b0ed119480edb60863a3b04655313cac3d",
+          "template.json": "fb8c2e24c7fe13531be49f58b55bcb26186469fcb0432f91c7eb6bd299e4efc9",
+          "truth.jsonl": "3b39b927f1fb0ca47bbb7a645a7cadaa0873f931fd074bc3372d81810fd61089"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 13,
+      "folder": "build/r15-ch13",
+      "manifest_sha256": "60556a6792fcd8befae680829d99e85434b49b814f9837ebf73e8de7d28e0201",
+      "manifest": {
+        "schema_version": 1,
+        "source_commit": "d6a2397fc31517147ddd09f58e0d153bc8cf0588",
+        "round": "r15",
+        "seed": 1515,
+        "days": 90,
+        "anchor": "2026-11-01",
+        "start_inclusive": "2026-08-03T00:00:00.000+0900",
+        "end_exclusive": "2026-11-01T00:00:00.000+0900",
+        "scale": 0.005,
+        "index": "book3-r15-ch13",
+        "generator": "upstream with Windows epoch adapter, disk sort and explicit half-open window",
+        "timing_model": "upstream-preserved; aggregate gap unit unresolved; not empirically recalibrated",
+        "upstream_profile_sha256": "78e0f443cb389f36e674dcad92c1ac8ab8eaa1466ffab2149e40ea45b12eea1a",
+        "counts": {
+          "background": 101387,
+          "scenario": 3906
+        },
+        "total": 105293,
+        "scenario_share": 0.03709648314702782,
+        "channels": {
+          "web-accesslog": 35217,
+          "auditd": 17501,
+          "json": 21870,
+          "windows_eventchannel": 7720,
+          "sudo": 2695,
+          "syscheck_deleted": 540,
+          "sshd": 9665,
+          "kt66-nft": 132,
+          "syscheck_new_entry": 1773,
+          "syscheck_integrity_changed": 7257,
+          "kt66-dns": 726,
+          "kt66-mailgw": 185,
+          "modsecurity": 12
+        },
+        "input_time_inversions": 18,
+        "stream_outside_window_removed": 0,
+        "scenario_outside_window_before_upstream_filter": {},
+        "truth_definition": "scenario means upstream attack() branch, including authorized scanner/backup; background includes hostile background scanning. Neither is a malicious/benign label.",
+        "files": {
+          "events.bulk.ndjson": "7c26878df1a8a2024ebed9b878180bdeda41e753569cf1d00453a74c0d1c68df",
+          "template.json": "ae5895f3ab5e66c9578a8acce05f9885144282d25f058760caf351d8b41220c4",
+          "truth.jsonl": "0a54a2b820055fe516047f83f677d7cb12eb779418e551f4a98a17aab188d8d5"
+        },
+        "network_operations": 0,
+        "limitations": [
+          "No Wazuh decoder or rule execution.",
+          "No SIEM upload or template application.",
+          "No PCAP reconstruction or replay.",
+          "Scale mostly changes background population; it is not a uniform event sampling probability.",
+          "Upstream synthetic GeoLocation is not real IP geolocation."
+        ]
+      }
+    },
+    {
+      "chapter": 12,
+      "folder": "build/pcap-ch12",
+      "manifest_sha256": "255c99274c5357229535ef68de5214286fe2409df29166417c2d338d69fd936d",
+      "manifest": {
+        "schema_version": 1,
+        "source_kind": "pcap-observation",
+        "index": "book3-pcap-ch12",
+        "total": 3746,
+        "selected_counts": {
+          "dns": 1510,
+          "tls": 159,
+          "alert": 625,
+          "http": 627,
+          "flow": 825
+        },
+        "all_eve_counts": {
+          "dhcp": 1,
+          "dns": 1510,
+          "tls": 159,
+          "alert": 625,
+          "http": 627,
+          "fileinfo": 422,
+          "krb5": 25,
+          "dcerpc": 296,
+          "smb": 110,
+          "flow": 825
+        },
+        "pcap": {
+          "schema_version": 1,
+          "format": "classic-pcap",
+          "bytes": 26759675,
+          "sha256": "e59db1c07c6fdefafa0abdbca03248c341cdc36c09c34753204d3162802a3586",
+          "version": "2.4",
+          "timestamp_precision": "microsecond",
+          "link_type": 1,
+          "snaplen": 65535,
+          "packets": 39427,
+          "captured_bytes": 26128819,
+          "original_bytes": 26128819,
+          "truncated_packets": 0,
+          "time_inversions": 0,
+          "first_packet_utc": "2025-01-22T19:44:56.530137Z",
+          "last_packet_utc": "2025-01-22T20:38:18.918250Z",
+          "duration_seconds": 3202.388113,
+          "payload_extracted": false,
+          "packets_transmitted": 0
+        },
+        "eve_sha256": "df602db5e8bb3696e3f639fae96e97501d3daf3c4d578d14989659d61e276b45",
+        "sensor_version": "6.0.4",
+        "config_sha256": "99b6b08650e45eaf2fef7fd0e11b9d5e08cf48fac62338737c789717fe2d1382",
+        "rules_sha256": "680466bc4991c2f08abd90e88fa243b6f18e8f98e4e1ccb334f69ab5ad2af30e",
+        "timestamp_transform": "UTC millisecond search field; original EVE timestamp retained in data.timestamp",
+        "flow_id_transform": "decimal string to preserve identity across JSON clients",
+        "manager_alerts_created": false,
+        "files": {
+          "events.bulk.ndjson": "5c84c2e2f8af0447a377cb39148e645b73733fc917a882af1589490cefb98d43",
+          "definition.json": "b6aea4e36a424795eed7d3f4bd861c7b369a44e07e775f340d67b9c782fd32ad"
+        }
+      }
+    }
+  ],
+  "note": "Manifests only. scenario/background are code provenance, not malicious/benign labels."
+}
