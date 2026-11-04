@@ -1,0 +1,433 @@
+{
+  "01": {
+    "title": "sudo 사용자와 결과 구분",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "sudo"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.srcuser",
+            "size": 20,
+            "order": {
+              "_key": "asc"
+            }
+          },
+          "aggs": {
+            "results": {
+              "terms": {
+                "field": "rule.id",
+                "size": 3
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "서비스 계정 sudo 원문",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "sudo"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "term": {
+                "data.srcuser": "www-data"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.srcuser",
+        "data.dstuser",
+        "data.command",
+        "rule.id",
+        "full_log"
+      ]
+    }
+  },
+  "03": {
+    "title": "공백 전 감사 원문",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 20,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T00:30:00+09:00",
+                  "lt": "2026-10-30T01:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "auditd"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "terms": {
+                "data.audit.auid": [
+                  "root",
+                  "www-data"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.audit.auid",
+        "data.audit.exe",
+        "data.audit.command",
+        "data.audit.parent"
+      ]
+    }
+  },
+  "04": {
+    "title": "고정된 두 호스트의 시간별 문서 수",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T00:00:00+09:00",
+                  "lt": "2026-10-30T04:00:00+09:00"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "hosts": {
+          "filters": {
+            "filters": {
+              "mediforum": {
+                "term": {
+                  "agent.name": "mediforum"
+                }
+              },
+              "neobank": {
+                "term": {
+                  "agent.name": "neobank"
+                }
+              }
+            }
+          },
+          "aggs": {
+            "hours": {
+              "date_histogram": {
+                "field": "timestamp",
+                "fixed_interval": "1h",
+                "time_zone": "+09:00",
+                "min_doc_count": 0,
+                "extended_bounds": {
+                  "min": "2026-10-30T00:00:00+09:00",
+                  "max": "2026-10-30T03:00:00+09:00"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "title": "에이전트 중지와 시작 명령 기록",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "auditd"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "prefix": {
+                "data.audit.command": "systemctl "
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.audit.command",
+        "data.audit.auid",
+        "data.audit.parent"
+      ]
+    }
+  },
+  "06": {
+    "title": "임시 경로 실행 파일과 반복 관측",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "auditd"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "prefix": {
+                      "data.audit.exe": "/tmp/"
+                    }
+                  },
+                  {
+                    "prefix": {
+                      "data.audit.exe": "/dev/shm/"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "executables": {
+          "terms": {
+            "field": "data.audit.exe",
+            "size": 5
+          },
+          "aggs": {
+            "users": {
+              "terms": {
+                "field": "data.audit.auid",
+                "size": 3
+              }
+            },
+            "parents": {
+              "terms": {
+                "field": "data.audit.parent",
+                "size": 3
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "삭제된 파일의 경로 분포",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "rule.id": "553"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "paths": {
+          "terms": {
+            "field": "syscheck.path",
+            "size": 12
+          }
+        }
+      }
+    }
+  },
+  "08": {
+    "title": "재개 뒤의 삭제와 수정 원문",
+    "method": "GET",
+    "path": "/book3-r05-ch05/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T03:00:00+09:00",
+                  "lt": "2026-10-30T04:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "terms": {
+                "rule.id": [
+                  "550",
+                  "553"
+                ]
+              }
+            },
+            {
+              "terms": {
+                "syscheck.path": [
+                  "/root/.bash_history",
+                  "/home/www-data/.bash_history",
+                  "/var/log/apache2/mediforum_access.log.1",
+                  "/var/log/auth.log"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "syscheck.path",
+        "syscheck.event",
+        "rule.id",
+        "full_log"
+      ]
+    }
+  }
+}

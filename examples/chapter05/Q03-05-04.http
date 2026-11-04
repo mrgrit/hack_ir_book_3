@@ -1,0 +1,51 @@
+GET /book3-r05-ch05/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-30T00:00:00+09:00",
+              "lt": "2026-10-30T04:00:00+09:00"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "hosts": {
+      "filters": {
+        "filters": {
+          "mediforum": {
+            "term": {
+              "agent.name": "mediforum"
+            }
+          },
+          "neobank": {
+            "term": {
+              "agent.name": "neobank"
+            }
+          }
+        }
+      },
+      "aggs": {
+        "hours": {
+          "date_histogram": {
+            "field": "timestamp",
+            "fixed_interval": "1h",
+            "time_zone": "+09:00",
+            "min_doc_count": 0,
+            "extended_bounds": {
+              "min": "2026-10-30T00:00:00+09:00",
+              "max": "2026-10-30T03:00:00+09:00"
+            }
+          }
+        }
+      }
+    }
+  }
+}

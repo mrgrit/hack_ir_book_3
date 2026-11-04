@@ -1,0 +1,4 @@
+# 각 검색식을 따로 입력한다.
+decoder.name: "sudo" and data.srcuser: "www-data"
+
+agent.name: "mediforum" and decoder.name: "auditd"

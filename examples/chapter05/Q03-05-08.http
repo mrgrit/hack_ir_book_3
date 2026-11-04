@@ -1,0 +1,54 @@
+GET /book3-r05-ch05/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-30T03:00:00+09:00",
+              "lt": "2026-10-30T04:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "terms": {
+            "rule.id": [
+              "550",
+              "553"
+            ]
+          }
+        },
+        {
+          "terms": {
+            "syscheck.path": [
+              "/root/.bash_history",
+              "/home/www-data/.bash_history",
+              "/var/log/apache2/mediforum_access.log.1",
+              "/var/log/auth.log"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "syscheck.path",
+    "syscheck.event",
+    "rule.id",
+    "full_log"
+  ]
+}

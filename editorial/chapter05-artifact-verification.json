@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "chapter": 5,
+  "pages": 24,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter05-account-review.png",
+      "sha256": "6717bc87cfae47430da6a4f72f0d69f69b3992259f77b6e5faea2eb514f384ee"
+    },
+    {
+      "path": "assets/screenshots/chapter05/gap-detail.png",
+      "sha256": "a3815a78db6cf478a1286a8b349be2d8c7dcd69751af9fcb087d47c34153ad5e"
+    },
+    {
+      "path": "assets/figures/chapter05-gap-checks.png",
+      "sha256": "4809affdd0e0ba3e30786e005dd8d5cf2be60c10769b2c132fc0465387087b67"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r05_privesc_evasion.py",
+    "https://docs.opensearch.org/latest/aggregations/bucket/filters/",
+    "https://docs.opensearch.org/latest/aggregations/bucket/date-histogram/",
+    "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/system_design_guide/auditing-the-system_system-design-guide",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter05"
+  ],
+  "queries_match": 8,
+  "commands_match": 3,
+  "files": {
+    "manuscript/volume03-chapter05.docx": "40d2961d7697e2ded9273c1a378b9f2e4aa8a3b5450c87c32ba89c35b3edda22",
+    "manuscript/volume03-chapter05.json": "7995d1c642c347024e7af599538f249bd27132c474be61a25e9e39609a8f30f8",
+    "examples/chapter05/cleanup.http": "6026eff17a0298bea8fba7a3c0525c895cffea41c079db5d51a131a6b8383a17",
+    "examples/chapter05/commands.sh": "b8ddd54a5a7f492aca05339795788919b6c6788b86e05b1ace66eb14a991dfbd",
+    "examples/chapter05/discover.dql": "b486e6b488980b695ef77887274f699583e9bb9e92004152c73f61ab294c46fe",
+    "examples/chapter05/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter05/Q03-05-01.http": "6e743359b84e2b42b697e916dd5862e23338ca1683fc355d1513fdf9218ffc57",
+    "examples/chapter05/Q03-05-02.http": "67189b61b7b058cefd1a23a328647773d7397d6bf5ded695e004eb0d03faa6e9",
+    "examples/chapter05/Q03-05-03.http": "3bf46b44c18f1dcbf5294254ab8f2e42dfb3bb5726521c1c0dd5aa2b15adf23c",
+    "examples/chapter05/Q03-05-04.http": "1814b49da2e233acb7bd87bed7a909eb5234db2141c50149e9e99c570047c13d",
+    "examples/chapter05/Q03-05-05.http": "0be8bc2019829fc45340e66cb4624a10caae67899aa0230a1586c91a338ba0b2",
+    "examples/chapter05/Q03-05-06.http": "a691bfe5f81a43101445a37969e7ecec3452e68204e1e1e9de02dc0692b59180",
+    "examples/chapter05/Q03-05-07.http": "aa4949097aa9ba31ace4566a450dd96b6b4fd3fa1134856cf9400431ac9594ed",
+    "examples/chapter05/Q03-05-08.http": "5fafaa26b46c2c0fe92661c9f7fc2bab5764ae160c141ffdcebdac5c2e06b6f7",
+    "examples/chapter05/queries.json": "ca4fd5cf0a678b671459eb28418c7de9c9bef4e23df65252e9dee9c3613171c3"
+  },
+  "qa_pdf_published": false
+}

@@ -1,0 +1,47 @@
+GET /book3-r05-ch05/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "sudo"
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "term": {
+            "data.srcuser": "www-data"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.srcuser",
+    "data.dstuser",
+    "data.command",
+    "rule.id",
+    "full_log"
+  ]
+}

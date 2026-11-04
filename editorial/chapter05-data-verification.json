@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "chapter": 5,
+  "queries_checked": 8,
+  "matched_documents": {
+    "01": 2691,
+    "02": 7,
+    "03": 15,
+    "04": 112,
+    "05": 5,
+    "06": 91,
+    "07": 543,
+    "08": 4
+  },
+  "datasets": [
+    {
+      "folder": "r05-ch05",
+      "status": "pass",
+      "events": 100739,
+      "counts": {
+        "background": 100620,
+        "scenario": 119
+      },
+      "first_timestamp": "2026-08-03T00:00:10.153+0900",
+      "last_timestamp": "2026-10-31T23:58:28.111+0900",
+      "chronological": true,
+      "hashes_verified": true,
+      "network_operations": 0,
+      "bulk_sha256": "30304044da63d859fa16033095f5a338ea8a6ce90611d15410502909469dc565"
+    }
+  ],
+  "response_sha256": "01d442fb519c2af472e2f25441ddb5236080a69ec305fa561271275087a2f9e0",
+  "network_operations": 0,
+  "scope": "Exact source counts, returned buckets and metrics, selected hit IDs and fields; query intent and unreturned candidates require editorial review."
+}

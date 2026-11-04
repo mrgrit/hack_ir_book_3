@@ -1,0 +1,43 @@
+GET /book3-r05-ch05/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "sudo"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "users": {
+      "terms": {
+        "field": "data.srcuser",
+        "size": 20,
+        "order": {
+          "_key": "asc"
+        }
+      },
+      "aggs": {
+        "results": {
+          "terms": {
+            "field": "rule.id",
+            "size": 3
+          }
+        }
+      }
+    }
+  }
+}

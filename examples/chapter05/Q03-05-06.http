@@ -1,0 +1,78 @@
+GET /book3-r05-ch05/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "auditd"
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "prefix": {
+                  "data.audit.exe": "/tmp/"
+                }
+              },
+              {
+                "prefix": {
+                  "data.audit.exe": "/dev/shm/"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "executables": {
+      "terms": {
+        "field": "data.audit.exe",
+        "size": 5
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.audit.auid",
+            "size": 3
+          }
+        },
+        "parents": {
+          "terms": {
+            "field": "data.audit.parent",
+            "size": 3
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      }
+    }
+  }
+}

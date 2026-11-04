@@ -1,0 +1,1125 @@
+{
+  "01": {
+    "took": 28,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2691,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "kim.chaewon",
+            "doc_count": 176,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 176
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.doyun",
+            "doc_count": 185,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 185
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.eunwoo",
+            "doc_count": 165,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 165
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.hajun",
+            "doc_count": 166,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 166
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.hayun",
+            "doc_count": 193,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 193
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.jiho",
+            "doc_count": 194,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 194
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.jimin",
+            "doc_count": 191,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 191
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.jiwoo",
+            "doc_count": 186,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 186
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.minjun",
+            "doc_count": 143,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 143
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.seojun",
+            "doc_count": 163,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 163
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.seoyeon",
+            "doc_count": 192,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 192
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.siwoo",
+            "doc_count": 171,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 171
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.suah",
+            "doc_count": 192,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 192
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.yejun",
+            "doc_count": 205,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 205
+                }
+              ]
+            }
+          },
+          {
+            "key": "kim.yuna",
+            "doc_count": 162,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5402",
+                  "doc_count": 162
+                }
+              ]
+            }
+          },
+          {
+            "key": "www-data",
+            "doc_count": 7,
+            "results": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5401",
+                  "doc_count": 6
+                },
+                {
+                  "key": "5402",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 7,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098444",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:40:10 mediforum sudo[29874]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:40:10.645+0900"
+          },
+          "sort": [
+            1793288410645
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098446",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:40:23 mediforum sudo[29967]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:40:23.933+0900"
+          },
+          "sort": [
+            1793288423933
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098448",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:40:31 mediforum sudo[30017]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:40:31.018+0900"
+          },
+          "sort": [
+            1793288431018
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098450",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:40:42 mediforum sudo[30099]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:40:42.736+0900"
+          },
+          "sort": [
+            1793288442736
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098452",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:40:49 mediforum sudo[30149]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:40:49.969+0900"
+          },
+          "sort": [
+            1793288449969
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098454",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "list"
+            },
+            "rule": {
+              "id": "5401"
+            },
+            "full_log": "Oct 30 00:41:02 mediforum sudo[30239]: www-data : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=list",
+            "timestamp": "2026-10-30T00:41:02.714+0900"
+          },
+          "sort": [
+            1793288462714
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098456",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcuser": "www-data",
+              "dstuser": "root",
+              "command": "/usr/bin/find . -exec /bin/sh ; -quit"
+            },
+            "rule": {
+              "id": "5402"
+            },
+            "full_log": "Oct 30 00:41:42 mediforum sudo[30519]: www-data : TTY=pts/0 ; PWD=/home/www-data ; USER=root ; COMMAND=/usr/bin/find . -exec /bin/sh ; -quit",
+            "timestamp": "2026-10-30T00:41:42.714+0900"
+          },
+          "sort": [
+            1793288502714
+          ]
+        }
+      ]
+    }
+  },
+  "03": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 15,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098445",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:40:10.655+0900"
+          },
+          "sort": [
+            1793288410655
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098447",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:40:23.943+0900"
+          },
+          "sort": [
+            1793288423943
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098449",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:40:31.028+0900"
+          },
+          "sort": [
+            1793288431028
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098451",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:40:42.746+0900"
+          },
+          "sort": [
+            1793288442746
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098453",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:40:49.979+0900"
+          },
+          "sort": [
+            1793288449979
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098455",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "www-data",
+                "exe": "/usr/bin/sudo",
+                "command": "sudo -l"
+              }
+            },
+            "timestamp": "2026-10-30T00:41:02.724+0900"
+          },
+          "sort": [
+            1793288462724
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098457",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/bin/sudo",
+                "auid": "root",
+                "exe": "/usr/bin/find",
+                "command": "find . -exec /bin/sh ; -quit"
+              }
+            },
+            "timestamp": "2026-10-30T00:41:42.734+0900"
+          },
+          "sort": [
+            1793288502734
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098458",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/bin/find",
+                "auid": "root",
+                "exe": "/bin/sh",
+                "command": "/bin/sh"
+              }
+            },
+            "timestamp": "2026-10-30T00:41:42.764+0900"
+          },
+          "sort": [
+            1793288502764
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098459",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/cp",
+                "command": "cp /tmp/.x/update.sh /dev/shm/.k"
+              }
+            },
+            "timestamp": "2026-10-30T00:43:10.725+0900"
+          },
+          "sort": [
+            1793288590725
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098460",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/dev/shm/[kworker/u8:2]",
+                "command": "[kworker/u8:2]"
+              }
+            },
+            "timestamp": "2026-10-30T00:43:46.169+0900"
+          },
+          "sort": [
+            1793288626169
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098462",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/truncate",
+                "command": "truncate -s 0 /var/log/auth.log"
+              }
+            },
+            "timestamp": "2026-10-30T00:45:42.492+0900"
+          },
+          "sort": [
+            1793288742492
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098463",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/rm",
+                "command": "rm -f /root/.bash_history /home/www-data/.bash_history"
+              }
+            },
+            "timestamp": "2026-10-30T00:47:28.357+0900"
+          },
+          "sort": [
+            1793288848357
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098464",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "www-data",
+                "exe": "/usr/bin/php",
+                "command": "php /var/www/mediforum/artisan schedule:run"
+              }
+            },
+            "timestamp": "2026-10-30T00:47:46.392+0900"
+          },
+          "sort": [
+            1793288866392
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098465",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/sed",
+                "command": "sed -i /10.20/d /var/log/apache2/mediforum_access.log"
+              }
+            },
+            "timestamp": "2026-10-30T00:48:34.755+0900"
+          },
+          "sort": [
+            1793288914755
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098466",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "exe": "/usr/bin/systemctl",
+                "command": "systemctl stop wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-30T00:49:52.961+0900"
+          },
+          "sort": [
+            1793288992961
+          ]
+        }
+      ]
+    }
+  },
+  "04": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 112,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "hosts": {
+        "buckets": {
+          "mediforum": {
+            "doc_count": 32,
+            "hours": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 23
+                },
+                {
+                  "key_as_string": "2026-10-30T01:00:00.000+09:00",
+                  "key": 1793289600000,
+                  "doc_count": 0
+                },
+                {
+                  "key_as_string": "2026-10-30T02:00:00.000+09:00",
+                  "key": 1793293200000,
+                  "doc_count": 0
+                },
+                {
+                  "key_as_string": "2026-10-30T03:00:00.000+09:00",
+                  "key": 1793296800000,
+                  "doc_count": 9
+                }
+              ]
+            }
+          },
+          "neobank": {
+            "doc_count": 16,
+            "hours": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 5
+                },
+                {
+                  "key_as_string": "2026-10-30T01:00:00.000+09:00",
+                  "key": 1793289600000,
+                  "doc_count": 7
+                },
+                {
+                  "key_as_string": "2026-10-30T02:00:00.000+09:00",
+                  "key": 1793293200000,
+                  "doc_count": 4
+                },
+                {
+                  "key_as_string": "2026-10-30T03:00:00.000+09:00",
+                  "key": 1793296800000,
+                  "doc_count": 0
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 5,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000068873",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "command": "systemctl stop wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-03T03:00:43.784+0900"
+          },
+          "sort": [
+            1790964043784
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000080894",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "command": "systemctl stop wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-14T03:03:13.955+0900"
+          },
+          "sort": [
+            1791914593955
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000090674",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "command": "systemctl stop wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-23T02:02:07.622+0900"
+          },
+          "sort": [
+            1792688527622
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098466",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/bin/sh",
+                "auid": "root",
+                "command": "systemctl stop wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-30T00:49:52.961+0900"
+          },
+          "sort": [
+            1793288992961
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098521",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "command": "systemctl start wazuh-agent"
+              }
+            },
+            "timestamp": "2026-10-30T03:05:42.000+0900"
+          },
+          "sort": [
+            1793297142000
+          ]
+        }
+      ]
+    }
+  },
+  "06": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 91,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "executables": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "/dev/shm/[kworker/u8:2]",
+            "doc_count": 91,
+            "last": {
+              "value": 1793457642000.0,
+              "value_as_string": "2026-10-31T14:40:42.000Z"
+            },
+            "first": {
+              "value": 1793288626169.0,
+              "value_as_string": "2026-10-29T15:43:46.169Z"
+            },
+            "users": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "root",
+                  "doc_count": 91
+                }
+              ]
+            },
+            "parents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "/usr/sbin/cron",
+                  "doc_count": 90
+                },
+                {
+                  "key": "/bin/sh",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "07": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 543,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "paths": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "/var/log/apache2/adminconsole_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/var/log/apache2/aicompanion_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/var/log/apache2/govportal_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/var/log/apache2/juiceshop_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/var/log/apache2/mediforum_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/var/log/apache2/neobank_access.log.8.gz",
+            "doc_count": 90
+          },
+          {
+            "key": "/home/www-data/.bash_history",
+            "doc_count": 1
+          },
+          {
+            "key": "/root/.bash_history",
+            "doc_count": 1
+          },
+          {
+            "key": "/var/log/apache2/mediforum_access.log.1",
+            "doc_count": 1
+          }
+        ]
+      }
+    }
+  },
+  "08": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 4,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098522",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/root/.bash_history",
+              "event": "deleted"
+            },
+            "rule": {
+              "id": "553"
+            },
+            "full_log": "File '/root/.bash_history' deleted",
+            "timestamp": "2026-10-30T03:06:42.000+0900"
+          },
+          "sort": [
+            1793297202000
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098523",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/home/www-data/.bash_history",
+              "event": "deleted"
+            },
+            "rule": {
+              "id": "553"
+            },
+            "full_log": "File '/home/www-data/.bash_history' deleted",
+            "timestamp": "2026-10-30T03:06:43.000+0900"
+          },
+          "sort": [
+            1793297203000
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098524",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/var/log/apache2/mediforum_access.log.1",
+              "event": "deleted"
+            },
+            "rule": {
+              "id": "553"
+            },
+            "full_log": "File '/var/log/apache2/mediforum_access.log.1' deleted",
+            "timestamp": "2026-10-30T03:06:44.000+0900"
+          },
+          "sort": [
+            1793297204000
+          ]
+        },
+        {
+          "_index": "book3-r05-ch05",
+          "_id": "r05-000098525",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/var/log/auth.log",
+              "event": "modified"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/var/log/auth.log' modified",
+            "timestamp": "2026-10-30T03:06:52.000+0900"
+          },
+          "sort": [
+            1793297212000
+          ]
+        }
+      ]
+    }
+  }
+}
