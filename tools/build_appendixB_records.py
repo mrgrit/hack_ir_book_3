@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'examples/appendixB'
 RUNS=[(1,'r01-pilot01'),(3,'r02-ch03'),(4,'r03-ch04'),(4,'r04-ch04'),(5,'r05-ch05'),(6,'r06-ch06'),(7,'r07-ch07'),(8,'r08-ch08'),(9,'r09-ch09'),(10,'r10-ch10'),(11,'r12-ch11'),(11,'r13-ch11'),(13,'r15-ch13'),(12,'pcap-ch12')]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def save(path,obj):path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n','utf8')
+def save(path,obj):path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n','utf8',newline='\n')
 def csvfile(name,head,rows):
  with (OUT/name).open('w',encoding='utf-8-sig',newline='') as f:
   w=csv.writer(f,lineterminator='\n');w.writerow(head);w.writerows(rows)

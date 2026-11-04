@@ -27,15 +27,15 @@
   "commands_match": 3,
   "files": {
     "manuscript/volume03-appendixA.docx": "774835a41edf53f9118a844b4b02089c8c0271b73e070d62e1487ec75123f542",
-    "manuscript/volume03-appendixA.json": "0f042ddda20a232f60135938f87932d350dfaf53344a9961a48d1a97fcc27e74",
+    "manuscript/volume03-appendixA.json": "81d1803464e886d77adabb53d93d3d2922e18d05fceeb0447314011d6e044da7",
     "examples/appendixA/command-index.csv": "242d1f9042df1b4524e680776f3f60a9b3cf2dd935f342fb644ed261589f1c38",
-    "examples/appendixA/commands.sh": "06f054d978bd50014c6280adc01a40e3551fff8b28a3c18510087b6ad98dc5bb",
-    "examples/appendixA/discover.dql": "b44a91fa772055caf5b446c5b025fd48a85786b3e1ae4735a6c96a9df32f7e09",
-    "examples/appendixA/index-sources.json": "f8f31acfbfef4345f8dde2291a05a279525de5453c1bc208f77ac8ab53cfd3e7",
-    "examples/appendixA/Q03-A-01.http": "bdf4af568df520eb162b0c5cf076e4fdceb556ed8570ef85d7e55222abe503cf",
-    "examples/appendixA/Q03-A-02.http": "1522b9beebb87f3daa64e4d543f9fcb45fc164b6e4e0f8e0f3322dddae8f9d5b",
-    "examples/appendixA/Q03-A-03.http": "f04f28f2e9f6e50ef0cd10263d59e2e659da768c37f8c213aac890bdfa6d15e6",
-    "examples/appendixA/queries.json": "56208d16f9ef05536a345797938940ec993cfaa595731d343fa150e26d008b50",
+    "examples/appendixA/commands.sh": "9921b1744cebea4ae4ffa174464d9fdf12ca6da5b2a725ca55b5a98f6db99385",
+    "examples/appendixA/discover.dql": "ca36be997e87478d81c194a0caff6826d76f9f9d6bb348cee06e24c03f60e566",
+    "examples/appendixA/index-sources.json": "c8885a7b4f26b37a01d8e4dba306c72d98cca2afe7e21b9d08841c8bc027df5c",
+    "examples/appendixA/Q03-A-01.http": "d26d5d734e6f4e646b100e3aee42dcb28e468254131a122412e1faf6f80b7be6",
+    "examples/appendixA/Q03-A-02.http": "78def1c454131dc7c7fe87ebbc00272f80e21a688d3a5c3c4d8d5986f544b61d",
+    "examples/appendixA/Q03-A-03.http": "d8eac708fdeff693dc1a8e47498d46e1d796b2025bf4a190a1e24022e59b3dc9",
+    "examples/appendixA/queries.json": "b8af49bbe3d8ed71b8fef46b981d3d11e7e3b1c635b017c10bba9a3aedf96768",
     "examples/appendixA/query-index.csv": "111c07d51be4fc9cd3890d42b50f5d518a480d4e2e5e3fb38b1d4cf52f390bb1"
   },
   "qa_pdf_published": false

@@ -8,9 +8,9 @@
       "source": "manuscript/volume03-chapter01.json",
       "pages": 22,
       "docx_sha256": "8c0d398d26b6649eb55cb14d8954a3f3f5c37309e5e4a2635311b649cefa32c2",
-      "source_sha256": "60cf07484af3e510ebaa2ec9e42807f71599e6d26122f9186cb588eeaaf4cada",
+      "source_sha256": "5ef3130bb02af897d609d8d1f63c7f14b28d835195377827cacbbc2503214a8f",
       "qa_record": "editorial/artifact-verification.json",
-      "qa_record_sha256": "fb006401ee2be5a69ab8a954393b069726198789de36a86770a80fa7e5982f8e",
+      "qa_record_sha256": "9dbadebdb7f58b78b9f95e22968156d0c265fc15c4f9d82023274d0493ac41dc",
       "embedded_images_matched": 5
     },
     {
@@ -131,7 +131,7 @@
       "docx_sha256": "32bfbf91dfa97784f1c459b0a3d225f5db2aa457003503de1c16fe69085af249",
       "source_sha256": "4724a734d4d2965344df0f906ae58eb75e1afbc555278cbaff2deedeef654020",
       "qa_record": "editorial/chapter12-artifact-verification.json",
-      "qa_record_sha256": "db2ad378fbfe6370b810d396c390fe1818390111628f1bb5adb8c846421f5002",
+      "qa_record_sha256": "33319ac28b299cfe3a169a051a36d7afb68362983d5bc9e9edcd4df14d1f3e8d",
       "embedded_images_matched": 4
     },
     {
@@ -151,9 +151,9 @@
       "source": "manuscript/volume03-appendixA.json",
       "pages": 19,
       "docx_sha256": "774835a41edf53f9118a844b4b02089c8c0271b73e070d62e1487ec75123f542",
-      "source_sha256": "0f042ddda20a232f60135938f87932d350dfaf53344a9961a48d1a97fcc27e74",
+      "source_sha256": "81d1803464e886d77adabb53d93d3d2922e18d05fceeb0447314011d6e044da7",
       "qa_record": "editorial/appendixA-artifact-verification.json",
-      "qa_record_sha256": "ecc8953a71540ea477320cd61098f794acaee4581e1d66282f6ff672b4146eb8",
+      "qa_record_sha256": "b243589cabea97c0f3f3c65805754ae40797b5bc7a53e135e37bda5d707ba7e7",
       "embedded_images_matched": 1
     },
     {
@@ -162,9 +162,9 @@
       "source": "manuscript/volume03-appendixB.json",
       "pages": 21,
       "docx_sha256": "66912a91312aa3113251fa2aa92e578d2b326c0e4453d690bd31c60fc28a09cc",
-      "source_sha256": "693601ca877d8b8a147de963b757f7e4e5267691b51d533f2ac2b338bf2ec788",
+      "source_sha256": "5182f5c58d8a9a68839ad920d23ad249691edc3981c072e5c3bfa413cff1d360",
       "qa_record": "editorial/appendixB-artifact-verification.json",
-      "qa_record_sha256": "fbf904120eff50a636ac19e628d259a3ef3b490eaaabc03fa582dfcfe6c6ce8c",
+      "qa_record_sha256": "09da2e8ef18958c5d8f1007eda8a0f182fc9a9f7a61afd320d74dc5aa26d1ec3",
       "embedded_images_matched": 1
     }
   ],

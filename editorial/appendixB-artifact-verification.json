@@ -27,14 +27,14 @@
   "commands_match": 5,
   "files": {
     "manuscript/volume03-appendixB.docx": "66912a91312aa3113251fa2aa92e578d2b326c0e4453d690bd31c60fc28a09cc",
-    "manuscript/volume03-appendixB.json": "693601ca877d8b8a147de963b757f7e4e5267691b51d533f2ac2b338bf2ec788",
-    "examples/appendixB/commands.sh": "d8adfeeac95dbe47b42500fddafdd4a993d59d4e2a6753d221f6e222cd4f144b",
+    "manuscript/volume03-appendixB.json": "5182f5c58d8a9a68839ad920d23ad249691edc3981c072e5c3bfa413cff1d360",
+    "examples/appendixB/commands.sh": "d24531d2a11de7fc6d1378b094598e290bea5f31e4c9ece084ebc7b0f0c3306e",
     "examples/appendixB/distribution-check.csv": "1ad10bee77890a4c61dbb7d6b79a99ce76c0621d2d9e80c5992545f3a4a67709",
     "examples/appendixB/handoff-record.csv": "40fa8aaf9e24ee5d9a30add5bd531aeed4031b29eec33e7e2d232da02d7aa382",
-    "examples/appendixB/queries.json": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f",
-    "examples/appendixB/reproduction-record.json": "57e62a6aab4394a108274322d4d5e43ade18457f6da1bf1303baa9f595163ea9",
+    "examples/appendixB/queries.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "examples/appendixB/reproduction-record.json": "7d041ed30dfdc76ed5cd2bdac42574ec4f18a1a66380f5b627b64e21c47772c6",
     "examples/appendixB/run-catalog.csv": "206cf75d7327b142844b76f18fd7a321f65fce158d91ad24baece8f5e28ad08e",
-    "examples/appendixB/run-catalog.json": "e9dfa607912f5bc1f9bbf57f314839f9a6b93adc3e905fb3f0cb0f15971d40a6",
+    "examples/appendixB/run-catalog.json": "117b64b74b954914972f0a761461c56fac771251f2cead57e8fe678cddaa9b5e",
     "examples/appendixB/source-record.csv": "dde697bee051ad9f370ebafc18e22585b466b1f9a0b583718c6b14d3321a8352"
   },
   "qa_pdf_published": false

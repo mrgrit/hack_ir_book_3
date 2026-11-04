@@ -32,7 +32,7 @@ def verify(letter,pdf,reviewed):
    assert len(rows)==count;assert len({r['ID'] for r in rows})==count
    for r in rows:assert (ROOT/r['파일']).exists(),r
  result={'status':'pass','appendix':letter,'pages':len(reader.pages),'individual_page_visual_review':reviewed,'page_geometry_and_theme_preserved':True,'text_black':True,'fonts':sorted(fonts),'images':images,'urls_verified':urls,'queries_match':len(queries),'commands_match':len(commands),'files':{str(p.relative_to(ROOT)).replace('\\','/'):sha(p) for p in [doc,source]+list(folder.glob('*')) if p.is_file()},'qa_pdf_published':False}
- (ROOT/f'editorial/appendix{letter}-artifact-verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n','utf8');print('PASS',letter,len(reader.pages),'pages; visual review',reviewed)
+ (ROOT/f'editorial/appendix{letter}-artifact-verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n','utf8',newline='\n');print('PASS',letter,len(reader.pages),'pages; visual review',reviewed)
 def sha_bytes(b):
  import hashlib
  return hashlib.sha256(b).hexdigest()

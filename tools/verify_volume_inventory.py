@@ -27,6 +27,6 @@ def main():
  for f,h in idx['sources'].items():assert sha(ROOT/f)==h,f
  assert len(list((ROOT/'manuscript').glob('*.docx')))==15
  result={'status':'pass','scope':'Current delivered files matched to existing individual visual/technical QA; no repeated SIEM actions','documents':rows,'document_count':len(rows),'page_sum_not_a_merged_book':sum(x['pages'] for x in rows),'chapter_query_files':idx['query_files'],'chapter_command_blocks':idx['printed_command_blocks'],'additional_appendix_queries':3,'additional_appendix_commands':8,'checked_report_file_entries':len(checked),'appendixA_source_index_current':True,'pdf_published':False,'publication_status':'chapter drafts; not REV01'}
- (ROOT/'editorial/volume03-delivery-verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n','utf8')
+ (ROOT/'editorial/volume03-delivery-verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n','utf8',newline='\n')
  print('PASS',len(rows),'DOCX;',result['page_sum_not_a_merged_book'],'pages;',len(checked),'file hashes')
 if __name__=='__main__':main()

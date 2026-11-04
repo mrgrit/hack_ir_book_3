@@ -18,5 +18,5 @@ for chapter in range(1,14):
    queries.append([chapter,f'Q03-{chapter:02}-{n}',q['title'],q['method'],q['path'],f'examples/chapter{chapter:02}/{name}'])
 for name,header,rows in [('query-index.csv',['장','ID','질문','방법','인덱스/경로','파일'],queries),('command-index.csv',['장','ID','절','실행 위치','목적','파일'],commands)]:
  with (OUT/name).open('w',encoding='utf-8-sig',newline='') as f:w=csv.writer(f,lineterminator='\n');w.writerow(header);w.writerows(rows)
-(OUT/'index-sources.json').write_text(json.dumps({'chapters':13,'query_files':len(queries),'printed_command_blocks':len(commands),'sources':sources},ensure_ascii=False,indent=2)+'\n','utf8')
+(OUT/'index-sources.json').write_text(json.dumps({'chapters':13,'query_files':len(queries),'printed_command_blocks':len(commands),'sources':sources},ensure_ascii=False,indent=2)+'\n','utf8',newline='\n')
 print(len(queries),'queries,',len(commands),'commands')

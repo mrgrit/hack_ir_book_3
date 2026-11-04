@@ -1,0 +1,100 @@
+{
+  "status": "pass",
+  "cause": "Git eol=lf converts Windows CRLF text before publication; DOCX content unchanged",
+  "fix": "Explicit LF in appendix/index/verification writers; text hashes matched to Git blobs; source-index hashes propagated",
+  "affected_artifact_entries": [
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "manuscript/volume03-appendixA.json",
+      "previous_windows_worktree_sha256": "0f042ddda20a232f60135938f87932d350dfaf53344a9961a48d1a97fcc27e74",
+      "published_lf_sha256": "81d1803464e886d77adabb53d93d3d2922e18d05fceeb0447314011d6e044da7"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/commands.sh",
+      "previous_windows_worktree_sha256": "06f054d978bd50014c6280adc01a40e3551fff8b28a3c18510087b6ad98dc5bb",
+      "published_lf_sha256": "9921b1744cebea4ae4ffa174464d9fdf12ca6da5b2a725ca55b5a98f6db99385"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/discover.dql",
+      "previous_windows_worktree_sha256": "b44a91fa772055caf5b446c5b025fd48a85786b3e1ae4735a6c96a9df32f7e09",
+      "published_lf_sha256": "ca36be997e87478d81c194a0caff6826d76f9f9d6bb348cee06e24c03f60e566"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/index-sources.json",
+      "previous_windows_worktree_sha256": "f8f31acfbfef4345f8dde2291a05a279525de5453c1bc208f77ac8ab53cfd3e7",
+      "published_lf_sha256": "c8885a7b4f26b37a01d8e4dba306c72d98cca2afe7e21b9d08841c8bc027df5c"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/Q03-A-01.http",
+      "previous_windows_worktree_sha256": "bdf4af568df520eb162b0c5cf076e4fdceb556ed8570ef85d7e55222abe503cf",
+      "published_lf_sha256": "d26d5d734e6f4e646b100e3aee42dcb28e468254131a122412e1faf6f80b7be6"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/Q03-A-02.http",
+      "previous_windows_worktree_sha256": "1522b9beebb87f3daa64e4d543f9fcb45fc164b6e4e0f8e0f3322dddae8f9d5b",
+      "published_lf_sha256": "78def1c454131dc7c7fe87ebbc00272f80e21a688d3a5c3c4d8d5986f544b61d"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/Q03-A-03.http",
+      "previous_windows_worktree_sha256": "f04f28f2e9f6e50ef0cd10263d59e2e659da768c37f8c213aac890bdfa6d15e6",
+      "published_lf_sha256": "d8eac708fdeff693dc1a8e47498d46e1d796b2025bf4a190a1e24022e59b3dc9"
+    },
+    {
+      "report": "editorial/appendixA-artifact-verification.json",
+      "file": "examples/appendixA/queries.json",
+      "previous_windows_worktree_sha256": "56208d16f9ef05536a345797938940ec993cfaa595731d343fa150e26d008b50",
+      "published_lf_sha256": "b8af49bbe3d8ed71b8fef46b981d3d11e7e3b1c635b017c10bba9a3aedf96768"
+    },
+    {
+      "report": "editorial/appendixB-artifact-verification.json",
+      "file": "manuscript/volume03-appendixB.json",
+      "previous_windows_worktree_sha256": "693601ca877d8b8a147de963b757f7e4e5267691b51d533f2ac2b338bf2ec788",
+      "published_lf_sha256": "5182f5c58d8a9a68839ad920d23ad249691edc3981c072e5c3bfa413cff1d360"
+    },
+    {
+      "report": "editorial/appendixB-artifact-verification.json",
+      "file": "examples/appendixB/commands.sh",
+      "previous_windows_worktree_sha256": "d8adfeeac95dbe47b42500fddafdd4a993d59d4e2a6753d221f6e222cd4f144b",
+      "published_lf_sha256": "d24531d2a11de7fc6d1378b094598e290bea5f31e4c9ece084ebc7b0f0c3306e"
+    },
+    {
+      "report": "editorial/appendixB-artifact-verification.json",
+      "file": "examples/appendixB/queries.json",
+      "previous_windows_worktree_sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f",
+      "published_lf_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    {
+      "report": "editorial/appendixB-artifact-verification.json",
+      "file": "examples/appendixB/reproduction-record.json",
+      "previous_windows_worktree_sha256": "57e62a6aab4394a108274322d4d5e43ade18457f6da1bf1303baa9f595163ea9",
+      "published_lf_sha256": "7d041ed30dfdc76ed5cd2bdac42574ec4f18a1a66380f5b627b64e21c47772c6"
+    },
+    {
+      "report": "editorial/appendixB-artifact-verification.json",
+      "file": "examples/appendixB/run-catalog.json",
+      "previous_windows_worktree_sha256": "e9dfa607912f5bc1f9bbf57f314839f9a6b93adc3e905fb3f0cb0f15971d40a6",
+      "published_lf_sha256": "117b64b74b954914972f0a761461c56fac771251f2cead57e8fe678cddaa9b5e"
+    },
+    {
+      "report": "editorial/chapter12-artifact-verification.json",
+      "file": "examples/chapter12/dataset.json",
+      "previous_windows_worktree_sha256": "4842e354c4a5db7ab77fa660dcf9864ab28bab8a9d2b51a7fe7a5b935d9d83c5",
+      "published_lf_sha256": "cdebb26f67f26586282f89b415aa67e039218bdc2ffff3610976283f0f067595"
+    }
+  ],
+  "source_index_updates": [
+    {
+      "file": "manuscript/volume03-chapter01.json",
+      "previous_windows_crlf_sha256": "60cf07484af3e510ebaa2ec9e42807f71599e6d26122f9186cb588eeaaf4cada",
+      "published_lf_sha256": "5ef3130bb02af897d609d8d1f63c7f14b28d835195377827cacbbc2503214a8f"
+    }
+  ],
+  "docx_changed": false,
+  "new_layout_review_required": false
+}
