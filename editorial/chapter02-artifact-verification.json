@@ -1,0 +1,140 @@
+{
+  "status": "pass",
+  "date": "2026-11-04",
+  "chapter": 2,
+  "rendered_pages": 49,
+  "visual_review": "All pages individually reviewed; final changed pages 9, 19, 28 re-opened, other 46 pixel-identical to reviewed render.",
+  "page_size_margins_and_theme_match_template": true,
+  "document_text_black": true,
+  "embedded_images": [
+    {
+      "path": "assets/illustrations/chapter02-source-review.png",
+      "sha256": "1bc539a4937d1eb145e381ccd876ae2cfc71e408f17db08a3806a9ebc25bad18",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/figures/chapter02-aggregation-flow.png",
+      "sha256": "dcc38a4cc5161376b6b45fe27bf690f8a754615a708cdd55489072c9d32ac63e",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/screenshots/chapter02/index-pattern-detail.png",
+      "sha256": "6e28d14ee8bdd37eca4d6cbb0f44f6ae0479ea7f94d68c2dec367bed51ad93e0",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/screenshots/chapter02/discover-detail.png",
+      "sha256": "50015ea928fb60cbfd840b8974287da6a630cfb708cfa402bd4e8ee6f9056f1a",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/screenshots/chapter02/terms-result-detail.png",
+      "sha256": "1050874df827d4140e86c899dc7ccf1a91f6e78935ddf2609b92725003616c3c",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/screenshots/chapter02/agent-bars-settings.png",
+      "sha256": "bc15423276f5255f87dcd8e03a7c345b2ce4c67b01ccd6e35c6ff3e0f3ec83c4",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/screenshots/chapter02/agent-bars-chart.png",
+      "sha256": "a617a1c2a6a3ff8db2f47d4372a1992a08c46b2a72eb2865c97299f825b6e134",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/figures/chapter02-observer-flow.png",
+      "sha256": "cf3f04c7db2e8a76989a821a92797b74a09e0822cbdf3227433d37437b386082",
+      "embedded_match": true
+    },
+    {
+      "path": "assets/figures/chapter02-gap-comparison.png",
+      "sha256": "024ef244c21fd0cd92b7a787d741c8eba21b8a2b8412dcc0b3b14c6cb266dd52",
+      "embedded_match": true
+    }
+  ],
+  "shape_pages": [
+    {
+      "page": 1,
+      "index": 1
+    },
+    {
+      "page": 3,
+      "index": 2
+    },
+    {
+      "page": 8,
+      "index": 3
+    },
+    {
+      "page": 9,
+      "index": 4
+    },
+    {
+      "page": 15,
+      "index": 5
+    },
+    {
+      "page": 18,
+      "index": 6
+    },
+    {
+      "page": 19,
+      "index": 7
+    },
+    {
+      "page": 28,
+      "index": 8
+    },
+    {
+      "page": 38,
+      "index": 9
+    }
+  ],
+  "full_urls_verified_in_docx_and_pdf": [
+    "https://docs.opensearch.org/latest/aggregations/bucket/terms/",
+    "https://docs.opensearch.org/latest/aggregations/metric/cardinality/",
+    "https://docs.opensearch.org/latest/aggregations/bucket/date-histogram/",
+    "https://docs.opensearch.org/latest/aggregations/pipeline/bucket-selector/",
+    "https://docs.opensearch.org/latest/api-reference/document-apis/bulk/",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/tree/main/purple-agg",
+    "https://drive.google.com/file/d/1Vak1YgdiRcKGk__nI8RxtZO6q6w0-IuC/view",
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter02"
+  ],
+  "query_files_and_printed_json_match": 14,
+  "command_blocks_match": 6,
+  "capture_placeholders": 0,
+  "pdf_for_qa_only": true,
+  "files": {
+    "manuscript/volume03-chapter02.docx": "5b0bd14d941314da5030d198be62f1f3bb1a44a9cf7bd99ae0a985720b6c2fee",
+    "manuscript/volume03-chapter02.json": "57d3b853585b6c98e4f4c494ca56d522ff10773558418a6620ec2ceece03c8a3",
+    "tools/assets/bookk-B5.docx": "2506e3b2036c3bfa18f84a1f3b6185bff52c0273d4c2c526dd3c68d9adb5b18b",
+    "examples/chapter02/cleanup.http": "40e06429ee28a615dc998d2f0f18d886b676217deffb8be65f83ff09b879e235",
+    "examples/chapter02/commands.sh": "acc83607ab4d5af4ea31a78fed31dc804d65863d4b888171e52e881b4e7a0162",
+    "examples/chapter02/discover.dql": "efdbd806ef64b0524396c1b71d3631e7910106b60267c03fd0b35441d17803d2",
+    "examples/chapter02/investigation.csv": "28e92b8ed88b2603a11c9f1647ced1ec3adbadf9d225db221b73a1fb8ed9f33d",
+    "examples/chapter02/Q03-02-01.http": "58932d602294f3ad79106860efa6453b433664f68c8d01c1f185733ae89a290e",
+    "examples/chapter02/Q03-02-02.http": "661f15f5d9ad6d11fe5b08c3932459483fcd778c22233786303d238ad7a62f99",
+    "examples/chapter02/Q03-02-03.http": "c18b4b2805c383f34094b9cbee742e93b9542d4b62726387987c14187870bf72",
+    "examples/chapter02/Q03-02-04.http": "63db50f2873fc6e99c1c501a569ff6f7d1488a1000845eb3b4b15bf9e532bdb2",
+    "examples/chapter02/Q03-02-05.http": "8f17f801c4b8c48b76797b42dcced85889016f2f728fd583cca2e5e2e16ea25e",
+    "examples/chapter02/Q03-02-06.http": "2a5ea51d94c17b58f695d443ccd013ef98110932d930fde606d227c9de40bc87",
+    "examples/chapter02/Q03-02-07.http": "45d6087b9b0569110e759ba27644e47dca26f18c23cc88238673c9f2f068127f",
+    "examples/chapter02/Q03-02-08.http": "0abee16883c34756cffaa849f2344b7ecc0a5722f27a8e165386639239df69b3",
+    "examples/chapter02/Q03-02-09.http": "acffec469c1a6ac34dbed314384ea4ebef737810eaa86a8c416ade319325a702",
+    "examples/chapter02/Q03-02-10.http": "ebffc40697db65e34a7aac1abc345e53210a9c0a9501cca7394ce4070a474a6f",
+    "examples/chapter02/Q03-02-11.http": "acd87fa75ec48920c8ded2e3dc70dad31673ebb7d5c77bf98e5571aee96988d0",
+    "examples/chapter02/Q03-02-12.http": "8ef0b7cb6494e62db9a7f4399089a1c5c80adeb492a71f64ab5215142f2665a5",
+    "examples/chapter02/Q03-02-13.http": "fa948daa1a7a8e2e9d40cec2650101ea2ec887f0f54027f720df4c8c8d16a25b",
+    "examples/chapter02/Q03-02-14.http": "9576254956b0e10ed73cdcb00990babfe15a7673bec9e30da42b088a7a1d807b",
+    "examples/chapter02/queries.json": "cbdd3f4697f88d2ef424a3f6e65e404e44c990a3e4ebb582de9c76b5d3086591",
+    "tools/write_chapter02.py": "212dffc32ed5c9268186013594b974b63e0ab274968d517287b160829e734bb8",
+    "tools/queries_chapter02.py": "4915b8f42f86081c3d484d0e6b4dad1634b2b888dea609e198e88223c570d123",
+    "tools/figures_chapter02.py": "5194f33c54b460acc41da345bde170218eb64a2548979c0078a63e3ac825a250",
+    "tools/build_docx.py": "32cc0941f5ab9119f8289b4601e4787ebfd25010a9b50d786c54b4fb31ed74f9",
+    "tools/check_dataset.py": "8bf721809bf93e604d3edfb7fc44c654b1e268cdf22f72a67dd7bc64e0cdd001",
+    "tools/load_dataset.py": "dc3cdfce3046b1cbf406ee83afa3f3d144f6c3d2d769c6c220d1dfab85f43737",
+    "tools/verify_chapter02.py": "c097d842e0c01c8f0bf1057ac2a0377864569b027a7c8efaecb645fbeac62d72"
+  }
+}

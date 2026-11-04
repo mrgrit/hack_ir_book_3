@@ -19,4 +19,6 @@ Word 읽기 전용 렌더: 11쪽, 원본 5구역. 표지·판권·차례·본문
 - 기존 미사용 서식·관계 등은 DOCX를 base로 연 방식으로 유지한다. 편집 대상은 document.xml, 사용한 styles, header/footer, metadata, 새 이미지 관계이다.
 - 참고 URL은 전체 문자열을 10pt Consolas로 출력한다. 임의 하이픈·생략 부호를 삽입하지 않는다.
 
+2장부터 긴 DSL 쿼리는 `long: true`인 블록에 한해 글꼴을 유지하며 다음 지면으로 이어진다. 실행 위치·목적을 입력 앞에, 옵션 해석·확인 결과를 입력 뒤에 둔다. 짧은 터미널 명령의 기존 묶음 설정은 유지한다. 장별 그림 수는 원고에 따르며 2장은 인물 1개·도식 3개·실제 화면 5개를 사용했다.
+
 전용 render_docx.py는 Windows 번들에 LibreOffice가 없어 soffice.exe 없음으로 실패했다. 사용자 설치 LibreOffice를 대체 사용하지 않고, 설치된 Microsoft Word의 읽기 전용 PDF export와 번들 Poppler로 검사한다. PDF·PNG는 build에만 두며 배포하지 않는다. 최종 원고의 전체 지면·URL·내장 이미지 해시를 검사한다.

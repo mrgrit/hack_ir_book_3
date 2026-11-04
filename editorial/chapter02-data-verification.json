@@ -1,0 +1,246 @@
+{
+  "status": "pass",
+  "checked_dataset": {
+    "status": "pass",
+    "events": 85306,
+    "counts": {
+      "background": 83044,
+      "scenario": 2262
+    },
+    "first_timestamp": "2026-08-03T00:00:21.234+0900",
+    "last_timestamp": "2026-10-31T23:58:42.101+0900",
+    "chronological": true,
+    "hashes_verified": true,
+    "network_operations": 0
+  },
+  "index": "book3-r01-pilot01",
+  "bulk_sha256": "f2e20fa69ff6beb6772e2afd8d2d2ac56812ad461f1723b45535d65c943befd9",
+  "live_query_count": 14,
+  "agent_counts": {
+    "juiceshop": 13921,
+    "neobank": 13026,
+    "govportal": 13755,
+    "ips": 20354,
+    "KT66-WIN-01": 7620,
+    "mediforum": 4426,
+    "adminconsole": 2958,
+    "aicompanion": 4411,
+    "bastion": 4298,
+    "dns": 205,
+    "mail": 167,
+    "web": 15,
+    "fw": 121,
+    "webmail": 29
+  },
+  "web_access_count": 34018,
+  "web_status_counts": {
+    "200": 32815,
+    "404": 212,
+    "304": 467,
+    "302": 470,
+    "403": 15,
+    "400": 10,
+    "401": 19,
+    "500": 10
+  },
+  "cardinality_crosscheck": [
+    {
+      "vhost": "juice.kt66.lab",
+      "exact_distinct_ips": 1667,
+      "estimated_distinct_ips": 1667
+    },
+    {
+      "vhost": "govportal.kt66.lab",
+      "exact_distinct_ips": 1400,
+      "estimated_distinct_ips": 1400
+    },
+    {
+      "vhost": "neobank.kt66.lab",
+      "exact_distinct_ips": 1074,
+      "estimated_distinct_ips": 1074
+    },
+    {
+      "vhost": "mediforum.kt66.lab",
+      "exact_distinct_ips": 773,
+      "estimated_distinct_ips": 773
+    },
+    {
+      "vhost": "ai.kt66.lab",
+      "exact_distinct_ips": 621,
+      "estimated_distinct_ips": 621
+    },
+    {
+      "vhost": "webmail.kt66.lab",
+      "exact_distinct_ips": 21,
+      "estimated_distinct_ips": 21
+    }
+  ],
+  "destination_crosscheck": [
+    {
+      "destination": "53.81.8.74",
+      "count": 2262,
+      "sources": [
+        "10.20.40.81"
+      ],
+      "active_days": 75
+    },
+    {
+      "destination": "79.141.198.183",
+      "count": 1548,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    },
+    {
+      "destination": "197.4.88.248",
+      "count": 1526,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    },
+    {
+      "destination": "45.169.41.147",
+      "count": 1518,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    },
+    {
+      "destination": "5.252.115.82",
+      "count": 1479,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    },
+    {
+      "destination": "182.229.108.111",
+      "count": 1475,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    },
+    {
+      "destination": "159.23.46.6",
+      "count": 1430,
+      "sources": [
+        "10.20.40.81",
+        "10.20.40.83",
+        "10.20.40.84",
+        "10.20.40.85",
+        "10.20.40.86",
+        "10.20.40.87"
+      ],
+      "active_days": 90
+    }
+  ],
+  "timestamp_samples": {
+    "10": {
+      "total_hits": {
+        "value": 13,
+        "relation": "eq"
+      },
+      "sample_size": 8,
+      "timestamps": [
+        "2026-10-30T10:30:41.219000+09:00",
+        "2026-10-30T10:31:13.431000+09:00",
+        "2026-10-30T10:31:53.013000+09:00",
+        "2026-10-30T10:32:30.006000+09:00",
+        "2026-10-30T10:33:02.433000+09:00",
+        "2026-10-30T10:33:49.991000+09:00",
+        "2026-10-30T10:34:45.517000+09:00",
+        "2026-10-30T10:35:42.520000+09:00"
+      ],
+      "gaps_seconds": [
+        32.212,
+        39.582,
+        36.993,
+        32.427,
+        47.558,
+        55.526,
+        57.003
+      ],
+      "sample_event_ids": [
+        "r01-000083316",
+        "r01-000083317",
+        "r01-000083318",
+        "r01-000083319",
+        "r01-000083320",
+        "r01-000083322",
+        "r01-000083324",
+        "r01-000083325"
+      ]
+    },
+    "13": {
+      "total_hits": {
+        "value": 24,
+        "relation": "eq"
+      },
+      "sample_size": 8,
+      "timestamps": [
+        "2026-10-29T00:36:53.699000+09:00",
+        "2026-10-29T01:38:45.179000+09:00",
+        "2026-10-29T02:54:54.489000+09:00",
+        "2026-10-29T03:43:38.157000+09:00",
+        "2026-10-29T04:42:15.642000+09:00",
+        "2026-10-29T05:57:07.746000+09:00",
+        "2026-10-29T06:56:58.827000+09:00",
+        "2026-10-29T07:53:19.131000+09:00"
+      ],
+      "gaps_seconds": [
+        3711.48,
+        4569.31,
+        2923.668,
+        3517.485,
+        4492.104,
+        3591.081,
+        3380.304
+      ],
+      "sample_event_ids": [
+        "r01-000082107",
+        "r01-000082123",
+        "r01-000082140",
+        "r01-000082160",
+        "r01-000082183",
+        "r01-000082211",
+        "r01-000082242",
+        "r01-000082269"
+      ]
+    }
+  },
+  "generated_rule_counts": {
+    "File deleted.": 540,
+    "Integrity checksum changed.": 7109
+  },
+  "response_sha256": "df9e807597aa323d0e3131056a5d8a91113db4403e993511bca4c0f76a2d029e",
+  "network_operations_in_this_verifier": 0
+}

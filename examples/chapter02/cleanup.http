@@ -1,0 +1,7 @@
+# 실행 전 원고 2.14의 소유 정보·로컬 파일·백업 확인
+GET /book3-r01-pilot01/_mapping
+
+# 제거가 필요할 때만 다음 요청을 별도로 선택
+DELETE /book3-r01-pilot01
+
+GET /book3-r01-pilot01/_count

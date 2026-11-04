@@ -1,0 +1,4 @@
+# 아래 두 검색식을 각각 입력한다. 같은 검색창에 함께 넣지 않는다.
+book3.synthetic: true and decoder.name: "web-accesslog"
+
+data.src_ip: "10.20.40.81" and data.dest_ip: "53.81.8.74"

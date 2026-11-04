@@ -1,0 +1,31 @@
+GET /book3-r01-pilot01/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "first": {
+      "min": {
+        "field": "timestamp"
+      }
+    },
+    "last": {
+      "max": {
+        "field": "timestamp"
+      }
+    }
+  },
+  "track_total_hits": true
+}

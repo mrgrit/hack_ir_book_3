@@ -1,10 +1,10 @@
 # 저자용 재현 절차
 
-실습 독자는 DOCX와 examples/chapter01의 명령을 한 개씩 사용한다. 아래는 조판·검증 담당자의 명령이다. 실행 위치는 이 저장소의 루트이며 경로를 자신의 별도 사본에 맞춘다. 출력 파일·폴더가 이미 있으면 새 경로를 정한다.
+실습 독자는 DOCX와 examples/chapter01·examples/chapter02의 명령을 한 개씩 사용한다. 아래는 조판·검증 담당자의 명령이다. 실행 위치는 이 저장소의 루트이며 경로를 자신의 별도 사본에 맞춘다. 출력 파일·폴더가 이미 있으면 새 경로를 정한다.
 
 ## 실행 환경
 
-이번 실행은 Windows 11 PowerShell, Codex 번들 Python, Microsoft Word COM 읽기 전용 export, 번들 Poppler에서 수행했다. Python·패키지 버전과 도구 해시는 verification 기록을 따른다. 원고의 Ubuntu 22.04 터미널 명령은 Git Bash 문법 검사와 코드 대조를 했으며 Ubuntu VM에서 처음부터 설치한 시험은 아니다.
+조판은 Windows 11 PowerShell, Codex 번들 Python, Microsoft Word COM 읽기 전용 export, 번들 Poppler에서 수행했다. Python·패키지 버전과 도구 해시는 verification 기록을 따른다. 1장의 Ubuntu 터미널 명령은 Git Bash 문법 검사와 코드 대조를 했다. 2장은 기존 Ubuntu 22.04의 Python 3.10.12에서 파일 검사·적재를 실행했다. Ubuntu 설치부터 재현한 시험은 아니다.
 
 생성·검사는 Python 표준 라이브러리만 필요하다. 표본 분석에는 openpyxl, 원고 조판에는 python-docx·Pillow, 검수에는 pdf2image·pypdf가 추가로 필요하다. 저자 도구의 의존성을 독자에게 일괄 설치하도록 요구하지 않는다.
 
@@ -45,3 +45,21 @@ python tools\rasterize.py build\review\chapter01.pdf --out build\review --popple
 ```
 
 `POPPLER_BIN_PATH`는 사용할 Poppler bin의 실제 경로로 바꾼다. 이번 실행은 Codex 번들 런타임을 사용했다. PDF를 배포하지 않는다. 모든 쪽에서 제목·본문·표·명령·전체 URL·그림을 확인하고, 원고에 내장한 그림 해시를 현재 자산과 대조한다.
+
+## 2장 재현
+
+본문과 복사용 요청은 다음 순서로 갱신한다. 그림 자르기는 보존된 실제 화면 파일을 사용한다. 인물 원본 PNG를 새로 생성하지 않는다.
+
+```bash
+python3 tools/queries_chapter02.py
+python3 tools/write_chapter02.py
+python3 tools/figures_chapter02.py
+python3 tools/build_docx.py --source manuscript/volume03-chapter02.json --output manuscript/volume03-chapter02.docx
+python3 tools/verify_chapter02.py build/r01-pilot01 editorial/chapter02-query-results.json --out build/chapter02-data-verification.json
+```
+
+마지막 명령은 네트워크 요청 없이 1장의 원본 생성 파일과 저장된 14개 실제 응답을 대조한다. 같은 manifest와 bulk 해시가 필요하다. 다른 기준일·규모의 파일을 과거 응답과 대조하지 않는다.
+
+실제 적재는 2장 본문과 `examples/chapter02/commands.sh`를 따라 kt66 호스트에서 수행한다. `load_dataset.py`는 해시 검사를 선행하며 정확한 전용 인덱스가 없는 경우에만 만든다. 기존 인덱스에서는 중단하므로 보존 중인 검토용 인덱스에 적재를 반복하지 않는다. partial bulk 실패에서는 현재 인덱스를 보존하고 오류를 조사한다.
+
+독자용 도구는 Python 표준 라이브러리를 사용하며 비밀번호는 실행 시 getpass로 입력한다. `--insecure`는 본문의 kt66 자체 서명 인증서 실습에만 사용한다. 인증서를 검증할 환경은 `--ca-cert` 경로를 지정한다. 실제 시험 범위와 남겨 둔 saved object는 `chapter02-review.md`를 따른다.

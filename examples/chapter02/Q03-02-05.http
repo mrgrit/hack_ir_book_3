@@ -1,0 +1,54 @@
+GET /book3-r01-pilot01/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "by_status": {
+      "filters": {
+        "filters": {
+          "ok": {
+            "term": {
+              "data.id": "200"
+            }
+          },
+          "forbidden": {
+            "term": {
+              "data.id": "403"
+            }
+          },
+          "not_found": {
+            "term": {
+              "data.id": "404"
+            }
+          }
+        }
+      },
+      "aggs": {
+        "visitors": {
+          "cardinality": {
+            "field": "data.srcip",
+            "precision_threshold": 40000
+          }
+        }
+      }
+    }
+  }
+}

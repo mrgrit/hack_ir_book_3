@@ -153,6 +153,9 @@ def build(output,source=None):
                 para(doc,'**목적**  '+b['purpose'],after=3,keep=True)
                 p=para(doc,b['text'],size=10,name=MONO,after=4,keep=True)
                 p.paragraph_format.line_spacing=1.15
+                if b.get('long'):
+                    p.paragraph_format.keep_together=False
+                    p.paragraph_format.keep_with_next=False
                 border(p._p.get_or_add_pPr())
                 if b.get('syntax'):para(doc,'**구문**  '+b['syntax'],after=3,keep=True)
                 para(doc,'**확인**  '+b['result'],after=9)
@@ -165,7 +168,8 @@ def build(output,source=None):
                 border(p._p.get_or_add_pPr())
                 para(doc,'확인  '+b['result'],after=9)
             elif typ=='code':
-                para(doc,b['text'],name=MONO,size=10,after=6)
+                p=para(doc,b['text'],name=MONO,size=10,after=6)
+                if b.get('long'):p.paragraph_format.keep_together=False
             elif typ=='table':table(doc,b)
             elif typ=='box':box(doc,b)
             elif typ=='list':items(doc,b)

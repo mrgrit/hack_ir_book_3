@@ -1,0 +1,56 @@
+GET /book3-r01-pilot01/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "prefix": {
+            "data.src_ip": "10.20.40."
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "by_dst": {
+      "terms": {
+        "field": "data.dest_ip",
+        "size": 50
+      },
+      "aggs": {
+        "srcs": {
+          "cardinality": {
+            "field": "data.src_ip",
+            "precision_threshold": 40000
+          }
+        },
+        "active_days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          }
+        },
+        "candidate": {
+          "bucket_selector": {
+            "buckets_path": {
+              "n": "_count",
+              "s": "srcs"
+            },
+            "script": "params.n >= 500 && params.s == 1"
+          }
+        }
+      }
+    }
+  }
+}

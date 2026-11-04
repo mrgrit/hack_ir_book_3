@@ -3,8 +3,13 @@ import argparse
 from collections import Counter
 from datetime import datetime
 import json
+import re
 from pathlib import Path
 from prepare_round import sha
+
+def parse_time(value):
+    """Accept the generator's +0900 offset on Ubuntu 22.04 Python 3.10 too."""
+    return datetime.fromisoformat(re.sub(r'([+-]\d{2})(\d{2})$',r'\1:\2',value))
 
 
 def check(folder):
@@ -13,14 +18,14 @@ def check(folder):
         if Path(name).name!=name:raise ValueError('Unsafe manifest filename')
         if sha(folder/name)!=expected:raise ValueError(f'Hash mismatch: {name}')
     n=0;prev=None;first=last=None;origins=Counter();ids=set()
-    lo=datetime.fromisoformat(m['start_inclusive']);hi=datetime.fromisoformat(m['end_exclusive'])
+    lo=parse_time(m['start_inclusive']);hi=parse_time(m['end_exclusive'])
     with (folder/'events.bulk.ndjson').open(encoding='utf-8') as f, (folder/'truth.jsonl').open(encoding='utf-8') as truth:
         while True:
             action=f.readline()
             if not action:break
             action=json.loads(action);body=f.readline()
             if not body:raise ValueError('Missing bulk document')
-            d=json.loads(body);t=datetime.fromisoformat(d['timestamp'])
+            d=json.loads(body);t=parse_time(d['timestamp'])
             if list(action)!=['create']:raise ValueError('Non-create bulk operation')
             meta=action['create'];eid=meta['_id']
             if meta['_index']!=m['index'] or not m['index'].startswith('book3-'):raise ValueError('Unexpected index')

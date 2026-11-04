@@ -1,0 +1,44 @@
+GET /book3-r01-pilot01/_search
+{
+  "size": 8,
+  "_source": [
+    "timestamp",
+    "data.src_ip",
+    "data.dest_ip",
+    "data.http.url"
+  ],
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "data.src_ip": "10.20.40.81"
+          }
+        },
+        {
+          "term": {
+            "data.dest_ip": "53.81.8.74"
+          }
+        },
+        {
+          "term": {
+            "data.http.url": "/beat"
+          }
+        },
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-29T00:00:00+09:00",
+              "lt": "2026-10-30T00:00:00+09:00"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
