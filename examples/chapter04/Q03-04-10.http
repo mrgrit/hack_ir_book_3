@@ -1,0 +1,58 @@
+GET /book3-r04-ch04/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "prefix": {
+                  "syscheck.path": "/etc/"
+                }
+              },
+              {
+                "prefix": {
+                  "syscheck.path": "/root/"
+                }
+              },
+              {
+                "term": {
+                  "rule.id": "5902"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "rule.id",
+    "syscheck.path",
+    "data.dstuser",
+    "full_log"
+  ]
+}

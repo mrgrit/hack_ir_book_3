@@ -1,0 +1,60 @@
+GET /book3-r04-ch04/_search
+{
+  "size": 6,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-09-22T00:00:00+09:00",
+              "lt": "2026-09-23T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "data.srcip": "70.246.138.5"
+                }
+              },
+              {
+                "term": {
+                  "data.audit.parent": "/usr/sbin/apache2"
+                }
+              },
+              {
+                "wildcard": {
+                  "syscheck.path": "*.php"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "decoder.name",
+    "data.url",
+    "syscheck.path",
+    "data.audit.parent",
+    "data.audit.exe",
+    "data.audit.command"
+  ]
+}

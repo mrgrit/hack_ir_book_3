@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "chapter": 4,
+  "pages": 30,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter04-web-request.png",
+      "sha256": "cb98b29baa277f46029509b7e65c5cf77658ee156a687dd6ef205d3dd11d5106"
+    },
+    {
+      "path": "assets/figures/chapter04-evidence-chain.png",
+      "sha256": "a62577b583bcf713ab1068005782f605a1237db4e507ac4cf068eb07202de3d9"
+    },
+    {
+      "path": "assets/screenshots/chapter04/extensions-detail.png",
+      "sha256": "aaf0464163d7a1f31e4563bfee265a890f277cf4cd31913c91f3816bded07c6b"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r03_webexploit.py",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r04_persistence.py",
+    "https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html",
+    "https://docs.opensearch.org/latest/aggregations/bucket/date-histogram/",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter04"
+  ],
+  "queries_match": 12,
+  "commands_match": 6,
+  "files": {
+    "manuscript/volume03-chapter04.docx": "cd842100bf52a2236a7233f3c0def9d2157dcbba5b464904c426cfe832102fd2",
+    "manuscript/volume03-chapter04.json": "2af79cc3b7a3d4f023cdb669551f1902336a95859eaeb85342067d710f634fa4",
+    "examples/chapter04/cleanup.http": "b2f8c46466da84fed1a31dd5cb4613f2e9e9a12c0ae76588b6a8b74f55ac9a7b",
+    "examples/chapter04/commands.sh": "3b2e4488bc78810c76ff8c22971808ba756000706cbd5bd664799388365832ec",
+    "examples/chapter04/discover.dql": "804f9876015526bf0e2bb671cff9d25f43fae3997b8bd4191f05c6d436fe52ca",
+    "examples/chapter04/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter04/Q03-04-01.http": "d782615e49ff26a262f1d95ab9cfcb7a9cadc15e36c410317ac9e6bbd532c539",
+    "examples/chapter04/Q03-04-02.http": "c9b20a84a1f6a34923ca87094938205f8fd36045ffd90eef47641e082ab02adc",
+    "examples/chapter04/Q03-04-03.http": "0492033f25549b0a418f1d0296ce508a896a560a885d3dd735052639793f6274",
+    "examples/chapter04/Q03-04-04.http": "c7a7c325d29165d111742f3533b0f13102b1fe20f523fa5c9cbfb9a34b4979d8",
+    "examples/chapter04/Q03-04-05.http": "cf24aadf0053784249ceaadafcf2e155957c3151c6936f39dfaaf53a214d9b86",
+    "examples/chapter04/Q03-04-06.http": "e6b47ae700f8041a43e9336488c4cb30e2e89201c6f913345c190a9cf891a723",
+    "examples/chapter04/Q03-04-07.http": "20511b172c1aeea2374d90c094d205aa3ba1e2833e49fa3f9f2530154488d01f",
+    "examples/chapter04/Q03-04-08.http": "c3fc3cc8f51da4863f7b852f0c5e86dcca88150503312f6ec033a422a0e19f1f",
+    "examples/chapter04/Q03-04-09.http": "d49496b6a1a836b048c62482caa2d3daf034bf3ec79332665eb97ca96963edb2",
+    "examples/chapter04/Q03-04-10.http": "cc83301d89e207f95cabc48acb0739c98bd469a56a8ce710bb7be588891c7855",
+    "examples/chapter04/Q03-04-11.http": "8c9799fe8fc28c7dfde603815d82d25fa25f76e105209ded739c6bc5d60698cd",
+    "examples/chapter04/Q03-04-12.http": "cd33d3809cb779247d7e02a3f6e0dcfa4e918088ef89d4aa5630cc2f1df6613a",
+    "examples/chapter04/queries.json": "68b1956a69a7743b1abf99e2e20b2d6aa9eee8e8e3b08231715efb221ad2003b"
+  },
+  "qa_pdf_published": false
+}

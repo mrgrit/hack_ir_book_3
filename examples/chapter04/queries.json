@@ -1,0 +1,692 @@
+{
+  "01": {
+    "title": "WAF 기록의 출발지와 서비스",
+    "method": "GET",
+    "path": "/book3-r03-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "modsecurity"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 3
+          },
+          "aggs": {
+            "sites": {
+              "terms": {
+                "field": "data.vhost",
+                "size": 3
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "서비스를 고정한 응답 코드 비교",
+    "method": "GET",
+    "path": "/book3-r03-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 3,
+            "order": {
+              "blocked": "desc"
+            }
+          },
+          "aggs": {
+            "blocked": {
+              "filter": {
+                "term": {
+                  "data.id": "403"
+                }
+              }
+            },
+            "ok": {
+              "filter": {
+                "term": {
+                  "data.id": "200"
+                }
+              }
+            },
+            "error": {
+              "filter": {
+                "term": {
+                  "data.id": "500"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "history 응답 크기 비교",
+    "method": "GET",
+    "path": "/book3-r03-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            },
+            {
+              "prefix": {
+                "data.url": "/api/history"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 3,
+            "order": {
+              "maximum": "desc"
+            }
+          },
+          "aggs": {
+            "maximum": {
+              "max": {
+                "field": "data.bytes"
+              }
+            },
+            "average": {
+              "avg": {
+                "field": "data.bytes"
+              }
+            },
+            "total": {
+              "sum": {
+                "field": "data.bytes"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "title": "10월 28일의 10분별 응답",
+    "method": "GET",
+    "path": "/book3-r03-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-28T00:00:00+09:00",
+                  "lt": "2026-10-29T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "218.136.73.91"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "time": {
+          "date_histogram": {
+            "field": "timestamp",
+            "fixed_interval": "10m",
+            "time_zone": "+09:00",
+            "format": "MM-dd HH:mm",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "status": {
+              "terms": {
+                "field": "data.id",
+                "size": 6
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "title": "큰 응답의 실제 요청 원문",
+    "method": "GET",
+    "path": "/book3-r03-ch04/_search",
+    "body": {
+      "size": 3,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "218.136.73.91"
+              }
+            },
+            {
+              "range": {
+                "data.bytes": {
+                  "gte": 1000000
+                }
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.url",
+        "data.id",
+        "data.bytes",
+        "data.duration_ms",
+        "data.srcip"
+      ]
+    }
+  },
+  "06": {
+    "title": "업로드 폴더에 추가된 파일의 확장자",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "rule.id": "554"
+              }
+            },
+            {
+              "wildcard": {
+                "syscheck.path": "/var/www/*/uploads/*"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "extensions": {
+          "filters": {
+            "filters": {
+              "jpg": {
+                "wildcard": {
+                  "syscheck.path": "*.jpg"
+                }
+              },
+              "png": {
+                "wildcard": {
+                  "syscheck.path": "*.png"
+                }
+              },
+              "pdf": {
+                "wildcard": {
+                  "syscheck.path": "*.pdf"
+                }
+              },
+              "php": {
+                "wildcard": {
+                  "syscheck.path": "*.php"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "부모 프로세스와 실행 파일",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "auditd"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "parents": {
+          "terms": {
+            "field": "data.audit.parent",
+            "size": 5
+          },
+          "aggs": {
+            "executables": {
+              "terms": {
+                "field": "data.audit.exe",
+                "size": 5
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "08": {
+    "title": "업로드 PHP 경로의 호출 출발지",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "wildcard": {
+                "data.url": "/uploads/*.php*"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 3
+          },
+          "aggs": {
+            "urls": {
+              "cardinality": {
+                "field": "data.url",
+                "precision_threshold": 40000
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "09": {
+    "title": "파일 추가와 첫 실행 순서",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 6,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-09-22T00:00:00+09:00",
+                  "lt": "2026-09-23T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "term": {
+                      "data.srcip": "70.246.138.5"
+                    }
+                  },
+                  {
+                    "term": {
+                      "data.audit.parent": "/usr/sbin/apache2"
+                    }
+                  },
+                  {
+                    "wildcard": {
+                      "syscheck.path": "*.php"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "decoder.name",
+        "data.url",
+        "syscheck.path",
+        "data.audit.parent",
+        "data.audit.exe",
+        "data.audit.command"
+      ]
+    }
+  },
+  "10": {
+    "title": "계정과 지속성 관련 파일 원문",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "prefix": {
+                      "syscheck.path": "/etc/"
+                    }
+                  },
+                  {
+                    "prefix": {
+                      "syscheck.path": "/root/"
+                    }
+                  },
+                  {
+                    "term": {
+                      "rule.id": "5902"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "rule.id",
+        "syscheck.path",
+        "data.dstuser",
+        "full_log"
+      ]
+    }
+  },
+  "11": {
+    "title": "cron 실행 파일과 관측 기간",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.audit.parent": "/usr/sbin/cron"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "executables": {
+          "terms": {
+            "field": "data.audit.exe",
+            "size": 3
+          },
+          "aggs": {
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            },
+            "hosts": {
+              "cardinality": {
+                "field": "agent.name"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "12": {
+    "title": "의심 예약 작업의 연속 시각",
+    "method": "GET",
+    "path": "/book3-r04-ch04/_search",
+    "body": {
+      "size": 6,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "mediforum"
+              }
+            },
+            {
+              "term": {
+                "data.audit.parent": "/usr/sbin/cron"
+              }
+            },
+            {
+              "term": {
+                "data.audit.exe": "/tmp/.x/update.sh"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.audit.command",
+        "data.audit.auid",
+        "data.audit.parent",
+        "data.audit.exe"
+      ]
+    }
+  }
+}

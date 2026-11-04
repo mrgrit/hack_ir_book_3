@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "chapter": 4,
+  "queries_checked": 12,
+  "matched_documents": {
+    "01": 532,
+    "02": 10923,
+    "03": 1123,
+    "04": 930,
+    "05": 24,
+    "06": 12,
+    "07": 18503,
+    "08": 25,
+    "09": 38,
+    "10": 7,
+    "11": 13094,
+    "12": 937
+  },
+  "datasets": [
+    {
+      "folder": "r03-ch04",
+      "status": "pass",
+      "events": 83944,
+      "counts": {
+        "background": 82454,
+        "scenario": 1490
+      },
+      "first_timestamp": "2026-08-03T00:02:01.345+0900",
+      "last_timestamp": "2026-10-31T23:55:14.470+0900",
+      "chronological": true,
+      "hashes_verified": true,
+      "network_operations": 0,
+      "bulk_sha256": "2bf6bd2a18f08bf639876e1a659462d1a8060241e75c063ac3ea40294b5d4d12"
+    },
+    {
+      "folder": "r04-ch04",
+      "status": "pass",
+      "events": 102273,
+      "counts": {
+        "background": 101276,
+        "scenario": 997
+      },
+      "first_timestamp": "2026-08-03T00:02:28.411+0900",
+      "last_timestamp": "2026-10-31T23:57:37.149+0900",
+      "chronological": true,
+      "hashes_verified": true,
+      "network_operations": 0,
+      "bulk_sha256": "319a0e4597a1f56309a09dd7a58364b887e2b20435e3370b258db06126892f5b"
+    }
+  ],
+  "response_sha256": "cdcefd0db1cfaf76a7522b561aec3ff4ffd931a1c5c96a1608a4bf49dd6d2210",
+  "network_operations": 0,
+  "scope": "Exact source counts, returned buckets and metrics, selected hit IDs and fields; query intent and unreturned candidates require editorial review."
+}

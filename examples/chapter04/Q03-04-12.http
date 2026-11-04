@@ -1,0 +1,46 @@
+GET /book3-r04-ch04/_search
+{
+  "size": 6,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "term": {
+            "data.audit.parent": "/usr/sbin/cron"
+          }
+        },
+        {
+          "term": {
+            "data.audit.exe": "/tmp/.x/update.sh"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.audit.command",
+    "data.audit.auid",
+    "data.audit.parent",
+    "data.audit.exe"
+  ]
+}

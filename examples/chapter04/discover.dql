@@ -1,0 +1,4 @@
+# 각 검색식을 따로 입력한다.
+data.vhost: "neobank.kt66.lab" and data.srcip: "218.136.73.91"
+
+agent.name: "mediforum" and decoder.name: "auditd"

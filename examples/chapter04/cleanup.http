@@ -1,0 +1,15 @@
+# 원고의 소유 정보·해시·백업 확인 후 제거가 필요할 때만 실행
+
+GET /book3-r03-ch04/_mapping
+
+DELETE /book3-r03-ch04
+
+GET /book3-r03-ch04/_count
+
+# 원고의 소유 정보·해시·백업 확인 후 제거가 필요할 때만 실행
+
+GET /book3-r04-ch04/_mapping
+
+DELETE /book3-r04-ch04
+
+GET /book3-r04-ch04/_count

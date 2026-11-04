@@ -1,0 +1,1133 @@
+{
+  "01": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 532,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 13,
+        "buckets": [
+          {
+            "key": "218.136.73.91",
+            "doc_count": 516,
+            "sites": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "neobank.kt66.lab",
+                  "doc_count": 516
+                }
+              ]
+            }
+          },
+          {
+            "key": "80.160.121.59",
+            "doc_count": 2,
+            "sites": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "govportal.kt66.lab",
+                  "doc_count": 1
+                },
+                {
+                  "key": "webmail.kt66.lab",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "103.140.17.28",
+            "doc_count": 1,
+            "sites": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "webmail.kt66.lab",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 10,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 10923,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": -1,
+        "sum_other_doc_count": 9947,
+        "buckets": [
+          {
+            "key": "218.136.73.91",
+            "doc_count": 974,
+            "blocked": {
+              "doc_count": 516
+            },
+            "error": {
+              "doc_count": 24
+            },
+            "ok": {
+              "doc_count": 362
+            }
+          },
+          {
+            "key": "11.161.197.210",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 1
+            },
+            "error": {
+              "doc_count": 0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          },
+          {
+            "key": "24.25.202.71",
+            "doc_count": 1,
+            "blocked": {
+              "doc_count": 1
+            },
+            "error": {
+              "doc_count": 0
+            },
+            "ok": {
+              "doc_count": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 6,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1123,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": -1,
+        "sum_other_doc_count": 233,
+        "buckets": [
+          {
+            "key": "218.136.73.91",
+            "doc_count": 886,
+            "average": {
+              "value": 85516.2821670429
+            },
+            "total": {
+              "value": 75767426.0
+            },
+            "maximum": {
+              "value": 5189279.0
+            }
+          },
+          {
+            "key": "67.234.18.40",
+            "doc_count": 3,
+            "average": {
+              "value": 9747.666666666666
+            },
+            "total": {
+              "value": 29243.0
+            },
+            "maximum": {
+              "value": 16317.0
+            }
+          },
+          {
+            "key": "187.103.150.8",
+            "doc_count": 1,
+            "average": {
+              "value": 15953.0
+            },
+            "total": {
+              "value": 15953.0
+            },
+            "maximum": {
+              "value": 15953.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "04": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 930,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "time": {
+        "buckets": [
+          {
+            "key_as_string": "10-28 14:00",
+            "key": 1793163600000,
+            "doc_count": 96,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "404",
+                  "doc_count": 64
+                },
+                {
+                  "key": "200",
+                  "doc_count": 24
+                },
+                {
+                  "key": "401",
+                  "doc_count": 8
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 14:40",
+            "key": 1793166000000,
+            "doc_count": 84,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "403",
+                  "doc_count": 84
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 14:50",
+            "key": 1793166600000,
+            "doc_count": 173,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "403",
+                  "doc_count": 173
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 15:00",
+            "key": 1793167200000,
+            "doc_count": 171,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "403",
+                  "doc_count": 171
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 15:10",
+            "key": 1793167800000,
+            "doc_count": 52,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "403",
+                  "doc_count": 52
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 15:30",
+            "key": 1793169000000,
+            "doc_count": 92,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 88
+                },
+                {
+                  "key": "500",
+                  "doc_count": 4
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 15:40",
+            "key": 1793169600000,
+            "doc_count": 101,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 92
+                },
+                {
+                  "key": "500",
+                  "doc_count": 9
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 15:50",
+            "key": 1793170200000,
+            "doc_count": 98,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 90
+                },
+                {
+                  "key": "500",
+                  "doc_count": 8
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 16:00",
+            "key": 1793170800000,
+            "doc_count": 39,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 36
+                },
+                {
+                  "key": "500",
+                  "doc_count": 3
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 16:40",
+            "key": 1793173200000,
+            "doc_count": 12,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 12
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 16:50",
+            "key": 1793173800000,
+            "doc_count": 11,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 11
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "10-28 17:00",
+            "key": 1793174400000,
+            "doc_count": 1,
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "05": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 24,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r03-ch04",
+          "_id": "r03-000081033",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 7478,
+              "srcip": "218.136.73.91",
+              "bytes": 2089744,
+              "id": "200",
+              "url": "/api/history?page=1/**/uNiOn/**/sElEcT/**/acct_no,owner,balance,ssn/**/FROM/**/accounts/**/LIMIT/**/0,5000"
+            },
+            "timestamp": "2026-10-28T16:40:51.202+0900"
+          },
+          "sort": [
+            1793173251202
+          ]
+        },
+        {
+          "_index": "book3-r03-ch04",
+          "_id": "r03-000081034",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 8561,
+              "srcip": "218.136.73.91",
+              "bytes": 2595405,
+              "id": "200",
+              "url": "/api/history?page=1/**/uNiOn/**/sElEcT/**/acct_no,owner,balance,ssn/**/FROM/**/accounts/**/LIMIT/**/5000,5000"
+            },
+            "timestamp": "2026-10-28T16:41:14.325+0900"
+          },
+          "sort": [
+            1793173274325
+          ]
+        },
+        {
+          "_index": "book3-r03-ch04",
+          "_id": "r03-000081035",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 5450,
+              "srcip": "218.136.73.91",
+              "bytes": 2509067,
+              "id": "200",
+              "url": "/api/history?page=1/**/uNiOn/**/sElEcT/**/acct_no,owner,balance,ssn/**/FROM/**/accounts/**/LIMIT/**/10000,5000"
+            },
+            "timestamp": "2026-10-28T16:41:45.045+0900"
+          },
+          "sort": [
+            1793173305045
+          ]
+        }
+      ]
+    }
+  },
+  "06": {
+    "took": 8,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 12,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "extensions": {
+        "buckets": {
+          "jpg": {
+            "doc_count": 2
+          },
+          "pdf": {
+            "doc_count": 4
+          },
+          "php": {
+            "doc_count": 1
+          },
+          "png": {
+            "doc_count": 5
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 18503,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "parents": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "/usr/sbin/cron",
+            "doc_count": 13094,
+            "executables": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "/usr/bin/php",
+                  "doc_count": 12157
+                },
+                {
+                  "key": "/tmp/.x/update.sh",
+                  "doc_count": 937
+                }
+              ]
+            }
+          },
+          {
+            "key": "/usr/bin/bash",
+            "doc_count": 5384,
+            "executables": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "/usr/bin/top",
+                  "doc_count": 1115
+                },
+                {
+                  "key": "/usr/bin/tail",
+                  "doc_count": 1104
+                },
+                {
+                  "key": "/usr/bin/systemctl",
+                  "doc_count": 1074
+                },
+                {
+                  "key": "/usr/bin/df",
+                  "doc_count": 1068
+                },
+                {
+                  "key": "/usr/bin/journalctl",
+                  "doc_count": 1023
+                }
+              ]
+            }
+          },
+          {
+            "key": "/usr/sbin/apache2",
+            "doc_count": 25,
+            "executables": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "/bin/sh",
+                  "doc_count": 25
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "08": {
+    "took": 5,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 25,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "70.246.138.5",
+            "doc_count": 25,
+            "urls": {
+              "value": 21
+            },
+            "last": {
+              "value": 1792888759193.0,
+              "value_as_string": "2026-10-25T00:39:19.193Z"
+            },
+            "first": {
+              "value": 1790082684964.0,
+              "value_as_string": "2026-09-22T13:11:24.964Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "09": {
+    "took": 7,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 38,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057697",
+          "_score": null,
+          "_source": {
+            "data": {
+              "url": "/upload"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "timestamp": "2026-09-22T22:08:10.000+0900"
+          },
+          "sort": [
+            1790082490000
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057698",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/var/www/mediforum/uploads/202609/av_7731.php"
+            },
+            "decoder": {
+              "name": "syscheck_new_entry"
+            },
+            "timestamp": "2026-09-22T22:08:10.400+0900"
+          },
+          "sort": [
+            1790082490400
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057701",
+          "_score": null,
+          "_source": {
+            "data": {
+              "url": "/uploads/202609/av_7731.php?c=id"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "timestamp": "2026-09-22T22:11:24.964+0900"
+          },
+          "sort": [
+            1790082684964
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057702",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "exe": "/bin/sh",
+                "command": "sh -c id"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "timestamp": "2026-09-22T22:11:25.014+0900"
+          },
+          "sort": [
+            1790082685014
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057703",
+          "_score": null,
+          "_source": {
+            "data": {
+              "url": "/uploads/202609/av_7731.php?c=uname+-a"
+            },
+            "decoder": {
+              "name": "web-accesslog"
+            },
+            "timestamp": "2026-09-22T22:13:55.714+0900"
+          },
+          "sort": [
+            1790082835714
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057704",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/apache2",
+                "exe": "/bin/sh",
+                "command": "sh -c uname -a"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "timestamp": "2026-09-22T22:13:55.764+0900"
+          },
+          "sort": [
+            1790082835764
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 7,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057738",
+          "_score": null,
+          "_source": {
+            "data": {
+              "dstuser": "sysupdate"
+            },
+            "rule": {
+              "id": "5902"
+            },
+            "full_log": "Sep 22 22:30:18 mediforum useradd[7728]: new user: name=sysupdate, UID=1001, GID=1001, home=/home/sysupdate, shell=/bin/bash",
+            "timestamp": "2026-09-22T22:30:18.408+0900"
+          },
+          "sort": [
+            1790083818408
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057739",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/etc/passwd"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/etc/passwd' modified",
+            "timestamp": "2026-09-22T22:30:18.808+0900"
+          },
+          "sort": [
+            1790083818808
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057740",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/etc/group"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/etc/group' modified",
+            "timestamp": "2026-09-22T22:30:18.908+0900"
+          },
+          "sort": [
+            1790083818908
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057743",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/etc/shadow"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/etc/shadow' modified",
+            "timestamp": "2026-09-22T22:31:32.160+0900"
+          },
+          "sort": [
+            1790083892160
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057751",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/etc/cron.d/sysupdate"
+            },
+            "rule": {
+              "id": "554"
+            },
+            "full_log": "File '/etc/cron.d/sysupdate' added",
+            "timestamp": "2026-09-22T22:34:51.550+0900"
+          },
+          "sort": [
+            1790084091550
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057757",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/root/.ssh/authorized_keys"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/root/.ssh/authorized_keys' modified",
+            "timestamp": "2026-09-22T22:38:22.136+0900"
+          },
+          "sort": [
+            1790084302136
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057760",
+          "_score": null,
+          "_source": {
+            "syscheck": {
+              "path": "/etc/rc.local"
+            },
+            "rule": {
+              "id": "550"
+            },
+            "full_log": "File '/etc/rc.local' modified",
+            "timestamp": "2026-09-22T22:42:02.573+0900"
+          },
+          "sort": [
+            1790084522573
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "took": 9,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 13094,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "executables": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "/usr/bin/php",
+            "doc_count": 12157,
+            "last": {
+              "value": 1793458559632.0,
+              "value_as_string": "2026-10-31T14:55:59.632Z"
+            },
+            "hosts": {
+              "value": 6
+            },
+            "first": {
+              "value": 1785682990508.0,
+              "value_as_string": "2026-08-02T15:03:10.508Z"
+            }
+          },
+          {
+            "key": "/tmp/.x/update.sh",
+            "doc_count": 937,
+            "last": {
+              "value": 1793455200890.0,
+              "value_as_string": "2026-10-31T14:00:00.890Z"
+            },
+            "hosts": {
+              "value": 1
+            },
+            "first": {
+              "value": 1790085601972.0,
+              "value_as_string": "2026-09-22T14:00:01.972Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "12": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 937,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057768",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-22T23:00:01.972+0900"
+          },
+          "sort": [
+            1790085601972
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057792",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-23T00:00:01.243+0900"
+          },
+          "sort": [
+            1790089201243
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057812",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-23T01:00:01.459+0900"
+          },
+          "sort": [
+            1790092801459
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057833",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-23T02:00:01.852+0900"
+          },
+          "sort": [
+            1790096401852
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057858",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-23T03:00:01.364+0900"
+          },
+          "sort": [
+            1790100001364
+          ]
+        },
+        {
+          "_index": "book3-r04-ch04",
+          "_id": "r04-000057888",
+          "_score": null,
+          "_source": {
+            "data": {
+              "audit": {
+                "parent": "/usr/sbin/cron",
+                "auid": "root",
+                "exe": "/tmp/.x/update.sh",
+                "command": "/bin/sh /tmp/.x/update.sh"
+              }
+            },
+            "timestamp": "2026-09-23T04:00:01.213+0900"
+          },
+          "sort": [
+            1790103601213
+          ]
+        }
+      ]
+    }
+  }
+}
