@@ -1,0 +1,484 @@
+{
+  "01": {
+    "title": "PC의 목적지와 모든 포트 및 활동 날짜",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.src_ip": "10.20.70.10"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "destinations": {
+          "terms": {
+            "field": "data.dest_ip",
+            "size": 20
+          },
+          "aggs": {
+            "ports": {
+              "terms": {
+                "field": "data.dest_port",
+                "size": 10
+              }
+            },
+            "days": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "day",
+                "time_zone": "+09:00",
+                "min_doc_count": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "443 반복 연결의 6시간 분포",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.src_ip": "10.20.70.10"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "112.177.128.164"
+              }
+            },
+            {
+              "term": {
+                "data.dest_port": "443"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "times": {
+          "date_histogram": {
+            "field": "timestamp",
+            "fixed_interval": "6h",
+            "time_zone": "+09:00",
+            "min_doc_count": 0
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "첫 하루 반복 연결 시각 원문",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 30,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-13T14:00:00+09:00",
+                  "lt": "2026-08-14T14:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.src_ip": "10.20.70.10"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "112.177.128.164"
+              }
+            },
+            {
+              "term": {
+                "data.dest_port": "443"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.src_ip",
+        "data.dest_ip",
+        "data.dest_port",
+        "data.app_proto",
+        "data.flow"
+      ]
+    }
+  },
+  "04": {
+    "title": "DNS 도메인별 이름 수와 길이 및 출발지",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "kt66-dns"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "domains": {
+          "terms": {
+            "field": "data.domain",
+            "size": 30
+          },
+          "aggs": {
+            "names": {
+              "cardinality": {
+                "field": "data.query"
+              }
+            },
+            "length": {
+              "avg": {
+                "field": "data.query_len"
+              }
+            },
+            "sources": {
+              "terms": {
+                "field": "data.srcip",
+                "size": 250
+              }
+            },
+            "types": {
+              "terms": {
+                "field": "data.qtype",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "title": "긴 이름 후보의 날짜별 집중 범위",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 3,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "kt66-dns"
+              }
+            },
+            {
+              "term": {
+                "data.domain": "cdn-sync-analytics.com"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "10.20.70.10"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            },
+            "names": {
+              "cardinality": {
+                "field": "data.query"
+              }
+            }
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "06": {
+    "title": "내부발 연결의 목적지별 방향 바이트 합계",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "prefix": {
+                "data.src_ip": "10.20."
+              }
+            },
+            {
+              "bool": {
+                "must_not": [
+                  {
+                    "prefix": {
+                      "data.dest_ip": "10.20."
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "destinations": {
+          "terms": {
+            "field": "data.dest_ip",
+            "size": 30,
+            "order": {
+              "out_bytes": "desc"
+            }
+          },
+          "aggs": {
+            "out_bytes": {
+              "sum": {
+                "field": "data.flow.bytes_toserver"
+              }
+            },
+            "in_bytes": {
+              "sum": {
+                "field": "data.flow.bytes_toclient"
+              }
+            },
+            "sources": {
+              "terms": {
+                "field": "data.src_ip",
+                "size": 250
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "대용량 후보 여섯 흐름의 원문",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.src_ip": "10.20.70.10"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "195.30.10.79"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data"
+      ]
+    }
+  },
+  "08": {
+    "title": "사용자존의 포트와 프로토콜 관측",
+    "method": "GET",
+    "path": "/book3-r08-ch08/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "prefix": {
+                "data.src_ip": "10.20.70."
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "ports": {
+          "terms": {
+            "field": "data.dest_port",
+            "size": 10
+          },
+          "aggs": {
+            "destinations": {
+              "terms": {
+                "field": "data.dest_ip",
+                "size": 20
+              }
+            },
+            "sources": {
+              "terms": {
+                "field": "data.src_ip",
+                "size": 250
+              }
+            },
+            "protocols": {
+              "terms": {
+                "field": "data.app_proto",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

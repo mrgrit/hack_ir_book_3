@@ -1,0 +1,52 @@
+GET /book3-r08-ch08/_search
+{
+  "size": 30,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-13T14:00:00+09:00",
+              "lt": "2026-08-14T14:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "flow"
+          }
+        },
+        {
+          "term": {
+            "data.src_ip": "10.20.70.10"
+          }
+        },
+        {
+          "term": {
+            "data.dest_ip": "112.177.128.164"
+          }
+        },
+        {
+          "term": {
+            "data.dest_port": "443"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.src_ip",
+    "data.dest_ip",
+    "data.dest_port",
+    "data.app_proto",
+    "data.flow"
+  ]
+}

@@ -1,0 +1,71 @@
+GET /book3-r08-ch08/_search
+{
+  "size": 3,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "kt66-dns"
+          }
+        },
+        {
+          "term": {
+            "data.domain": "cdn-sync-analytics.com"
+          }
+        },
+        {
+          "term": {
+            "data.srcip": "10.20.70.10"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "days": {
+      "date_histogram": {
+        "field": "timestamp",
+        "calendar_interval": "day",
+        "time_zone": "+09:00",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        },
+        "names": {
+          "cardinality": {
+            "field": "data.query"
+          }
+        }
+      }
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

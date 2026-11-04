@@ -1,0 +1,14 @@
+{
+  "events": 1919,
+  "intervals": 1918,
+  "first": "2026-08-13T14:03:00.000+0900",
+  "last": "2026-10-31T23:31:21.628+0900",
+  "minimum_seconds": 2700.327,
+  "median_seconds": 3569.873,
+  "maximum_seconds": 4499.19,
+  "maximum_gap_endpoints": [
+    "2026-09-27T09:36:01.563+0900",
+    "2026-09-27T10:51:00.753+0900"
+  ],
+  "interpretation": "Observed event gaps; not packet capture, process attribution, or proof of C2."
+}

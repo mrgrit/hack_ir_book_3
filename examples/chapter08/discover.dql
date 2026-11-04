@@ -1,0 +1,4 @@
+# 각 검색식을 따로 입력한다.
+data.src_ip: "10.20.70.10" AND data.event_type: "flow"
+
+decoder.name: "kt66-dns" AND data.domain: "cdn-sync-analytics.com"

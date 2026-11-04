@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "chapter": 8,
+  "pages": 24,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter08-sensor.png",
+      "sha256": "366b78e046cb567a900c926193dcd23eff2743b665d8db9e0530b49417cb5868"
+    },
+    {
+      "path": "assets/screenshots/chapter08/bytes-detail.png",
+      "sha256": "eb552efd04108997db478e1d9c2f8720704d91c768a0a4de504d6be66340865d"
+    },
+    {
+      "path": "assets/figures/chapter08-outbound-evidence.png",
+      "sha256": "3e2640b45400eb8b2e9a89478905ea6735a85373ce8114c58fff59074825122b"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r08_c2_exfil.py",
+    "https://docs.suricata.io/en/latest/output/eve/eve-json-format.html",
+    "https://docs.suricata.io/en/latest/rules/flow-keywords.html",
+    "https://publicsuffix.org/learn/",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter08"
+  ],
+  "queries_match": 8,
+  "commands_match": 4,
+  "files": {
+    "manuscript/volume03-chapter08.docx": "49c3e4daab424b9f71f6a611b535dbc9763f86e82b4895b052f1050ac0a84097",
+    "manuscript/volume03-chapter08.json": "b50f2bb8895612167efe427cc92dd848511e2e19582ca60192025ef44d19e904",
+    "examples/chapter08/cleanup.http": "b0b681f4238226e44010102a33568cafcea59820399651813be9d228e9db0bdb",
+    "examples/chapter08/commands.sh": "424cd8df4fc8e89f9b49ecf0658028e47c487291a964641d7cf4001b109117a8",
+    "examples/chapter08/discover.dql": "3293ef3a915b8ec4378000ca8f143a55980a3f8874760cb39cbee624fc4415d7",
+    "examples/chapter08/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter08/Q03-08-01.http": "60ebab7a4b9b380eabb60da9bc2e2d3470d760a914766cf594ba74cb4494e52d",
+    "examples/chapter08/Q03-08-02.http": "70f7537270505ccd0ff695e5f31039d20612a3f78807be6ca582686d61200680",
+    "examples/chapter08/Q03-08-03.http": "f6f900509e505527754c4d2814be2c8383d5dbb70b962ea905825230524a4382",
+    "examples/chapter08/Q03-08-04.http": "d1594c28eddd1e7ff6c870ee63aaad8fb92944587ae414cdaecd5dc9b46ba611",
+    "examples/chapter08/Q03-08-05.http": "3d1d4aef0f771995bdca27d3a982524ae5c62566f7cfe3e7ed82eec2f376e407",
+    "examples/chapter08/Q03-08-06.http": "56a96d547218eb5d9cfac12a367d420fb529f265cf2b75c986b6e1ffef6f2ba9",
+    "examples/chapter08/Q03-08-07.http": "788c7343d5bb2fcc129263ad0d636d0ec920cec93eebc59e3b305e6df47b4238",
+    "examples/chapter08/Q03-08-08.http": "04247e9fee0f4055947a0e3693b5cb0e5e90e83769625011f28ece32ebdd698c",
+    "examples/chapter08/queries.json": "c3afdd2347d417a9af7353c584a3b6bd122aa4fd02ec2646cc324db8762515f8"
+  },
+  "qa_pdf_published": false
+}
