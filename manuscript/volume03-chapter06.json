@@ -1,0 +1,529 @@
+{
+  "title": "6장 자격증명 공격과 피싱",
+  "series": "해킹·침해대응 실무 with Wazuh — 3권",
+  "comments": "R06 전용 자료 생성·적재·조회 9개와 실제 Dev Tools 화면 확인. 규칙·모니터·계정·메일함 변경은 수행하지 않음.",
+  "pages": [
+    {
+      "kind": "content",
+      "title": "6장 자격증명 공격과 피싱",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "웹메일에 로그인하지 못한 출발 IP가 많지만 각 IP의 실패는 두 번 이하이다. 계정으로 묶으면 여러 출발지가 같은 계정에 접근한 흔적이 나타난다. 다른 경로에서는 유사한 이름의 발신 도메인이 직원들에게 메일을 전달하고, 다음 날 한 수신자의 외부 로그인이 이어진다."
+        },
+        {
+          "type": "image",
+          "path": "assets/illustrations/chapter06-account-response.png",
+          "caption": "그림 6-1  계정 조사 범위와 대응 권한 확인",
+          "width_mm": 78
+        },
+        {
+          "type": "p",
+          "text": "자격증명은 계정의 신원을 증명할 때 쓰는 비밀번호·토큰 같은 정보이다. 피싱은 신뢰할 만한 발신자나 서비스를 가장해 정보를 입력하거나 동작하도록 유도하는 행위이다. R06에서는 분산 인증 실패와 피싱 후보를 별도 경로로 조사하고, 같은 계정·시간에 연결되는 증거를 정리한다."
+        }
+      ],
+      "break": true,
+      "level": "chapter"
+    },
+    {
+      "kind": "content",
+      "title": "6.1 R06 자료와 비교 범위를 준비한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "kt66 Ubuntu VM 호스트에서 cd ~/hack_ir_book_3로 이동한다. git status --short로 변경 파일을 확인하고 작업 중인 수정이 없으면 git pull --ff-only로 갱신한다. Python 3, 별도 강의 코드 사본과 2장의 indexer 접속이 선행 조건이다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "조건",
+            "값"
+          ],
+          "rows": [
+            [
+              "라운드 / seed",
+              "R06 / 606"
+            ],
+            [
+              "기간(KST)",
+              "2026-08-03 00:00 이상 ~ 11-01 00:00 미만"
+            ],
+            [
+              "배율 / 실행 이름",
+              "0.005 / ch06"
+            ],
+            [
+              "전용 인덱스",
+              "book3-r06-ch06"
+            ],
+            [
+              "전체 / 출처별 문서",
+              "86,174건 / 배경 82,537·시나리오 3,637"
+            ]
+          ],
+          "widths": [
+            38,
+            89
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "prepare_round.py는 서버 접속 없이 자료를 만드는 도구이다. --source는 강의 코드 폴더, --round는 사례, --anchor는 끝 경계, --days는 기간, --scale은 배경 배율, --run-id는 실행 이름, --out은 새 출력 폴더이다. 역슬래시(\\)로 다음 줄에 명령을 잇는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-06-01",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/prepare_round.py \\\n  --source ../hack_ir_with_wazuh_source/purple-agg \\\n  --round r06 --anchor 2026-11-01 --days 90 \\\n  --scale 0.005 --run-id ch06 --out build/r06-ch06",
+          "purpose": "R06 파일을 생성한다.",
+          "syntax": "같은 출력 폴더가 있으면 중단한다. 이전 manifest를 확인하고 새 실행 이름을 사용한다.",
+          "result": "total 86174, background 82537, scenario 3637이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-06-02",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/check_dataset.py build/r06-ch06",
+          "purpose": "생성 파일의 건수·시간순·기간·해시를 검사한다.",
+          "syntax": "인수는 자료 폴더이다. 실패하면 파일 변경 여부와 manifest의 생성 조건을 확인한다.",
+          "result": "status pass, events 86174를 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "공동 SIEM의 기존 인덱스가 사라지거나 UUID·건수가 예상 밖으로 바뀌면 적재를 기다린다. 안정 상태에서 새 전용 인덱스만 만든다. 다음 주소는 자신의 indexer 주소로 바꾼다."
+        },
+        {
+          "type": "command",
+          "id": "C03-06-03",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/load_dataset.py build/r06-ch06 \\\n  --url https://10.20.32.110:9200 \\\n  --user admin --insecure",
+          "purpose": "검사한 자료를 새 전용 인덱스에 적재한다.",
+          "syntax": "--url은 indexer 주소, --user는 인증 계정이다. 암호는 실행 뒤 입력한다. 자체 서명 인증서 실습의 --insecure 대신 신뢰할 CA가 있으면 --ca-cert 경로를 지정한다.",
+          "result": "created와 count 모두 86174이다. 이미 존재하는 인덱스에는 중복 적재하지 않는다."
+        },
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "Windows 브라우저로 kt66 VM의 HTTPS 5601에 접속한다. Indexer management → Dev Tools를 연다.",
+            "examples/chapter06의 조회 파일을 본문 순서로 붙여 넣는다. 마지막 닫는 중괄호까지 확인한 뒤 요청 안에서 Ctrl+Enter를 누른다.",
+            "200 OK, timed_out: false, _shards.failed: 0을 확인한다. 결과·기간·원문 _id를 investigation.csv에 기록한다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이 배율에서는 정상 웹메일 인증·메일 표시 배경 문서가 0건이다. 해당 배경을 시간별로 나누는 생성 코드의 정수 절삭 때문이다. 인증 실패 1,573건·성공 21건과 메일 표시 409건은 모두 시나리오에서 나왔다. 조회 연습의 결과를 운영 정상 분포나 오탐률로 사용하지 않는다. 운영 기준은 같은 서비스의 정상 접속·재택근무·VPN·공유 출구를 포함한 별도 기간에서 구한다."
+        },
+        {
+          "type": "p",
+          "text": "IP와 국가 값은 생성기의 학습 값이다. 표시된 외부 주소를 실제 공격자 목록으로 등록하거나 접속하지 않는다. 적재한 rule 필드도 실제 manager 규칙 실행 결과와 구분한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.2 IP에서 계정으로 집계 축을 바꾼다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "비밀번호 스프레이는 적은 수의 비밀번호를 여러 계정에 시도하는 방식이다. 이 자료에는 시도한 비밀번호가 없으므로 관찰 결과를 “여러 출발지의 계정 인증 실패”로 기록한다. 구체적인 대입 방식을 판정할 때는 인증 서비스의 상세 감사 기록을 추가로 확인한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-01",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.app\": \"webmail\"}},\n        {\"term\": {\"data.result\": \"fail\"}}\n      ]\n    }\n  },\n  \"aggs\": {\"ips\": {\"terms\": {\"field\": \"data.srcip\", \"size\": 5}}}\n}",
+          "purpose": "실패가 많은 출발 IP 다섯 개를 읽는다.",
+          "syntax": "data.app과 data.result를 함께 고정한다. ips의 terms는 data.srcip별 문서 수를 많은 순으로 반환한다. track_total_hits는 전체 일치 건수를 요청한다.",
+          "result": "전체 1,573건이다. 상위 다섯 IP는 모두 2건이고 sum_other_doc_count는 1,563이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "다섯 IP에 나타난 10건만 조사하면 나머지 실패 1,563건이 빠진다. 최대 두 번이라는 값은 현재 기간·자료에서의 IP별 빈도이다. 출발지가 바뀌는 시도는 계정으로 묶어 찾아본다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-02",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.app\": \"webmail\"}},\n        {\"term\": {\"data.result\": \"fail\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"users\": {\n      \"terms\": {\n        \"field\": \"data.srcuser\",\n        \"size\": 300,\n        \"order\": {\"_key\": \"asc\"}\n      },\n      \"aggs\": {\"ips\": {\"cardinality\": {\"field\": \"data.srcip\"}}}\n    }\n  }\n}",
+          "purpose": "계정마다 실패 문서 수와 서로 다른 출발지 수를 비교한다.",
+          "syntax": "terms의 size: 300과 _key: asc로 최대 300개 이름을 사전순으로 반환한다. ips의 cardinality는 각 계정의 고유 IP 수 추정치이다. sum_other_doc_count가 0인지 확인한다.",
+          "result": "240개 계정이 반환된다. kang.juwon은 14건·14개 IP, lim.jimin은 15건·14개 IP이다.",
+          "long": true
+        },
+        {
+          "type": "table",
+          "head": [
+            "계정",
+            "실패 문서",
+            "고유 IP"
+          ],
+          "rows": [
+            [
+              "kang.juwon",
+              "14",
+              "14"
+            ],
+            [
+              "lim.jimin",
+              "15",
+              "14"
+            ],
+            [
+              "jung.jiho",
+              "13",
+              "13"
+            ],
+            [
+              "lim.suah",
+              "13",
+              "13"
+            ],
+            [
+              "choi.jiho",
+              "7",
+              "7"
+            ]
+          ],
+          "widths": [
+            63,
+            32,
+            32
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "lim.jimin은 문서 수가 고유 IP 수보다 하나 많다. 적어도 한 출발지가 반복된 형태를 조사할 수 있다. 정확한 출발지 목록은 같은 계정을 term으로 고정하고 data.srcip의 terms 결과를 원문과 대조한다. cardinality는 추정 집계이므로 임계값 가까이에서는 원문·정확한 목록도 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "운영에서 이름을 사전순으로 300개만 요청하면 뒤의 계정이 빠질 수 있다. 반환되지 않은 문서 수를 확인하고 계정 범위 분할이나 전체 페이지 조회를 사용한다. 여러 샤드에서 하위 지표 순으로 상위 일부만 고르는 방식도 후보 누락을 따로 점검해야 한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.3 성공 출발지와 승인된 접속을 대조한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "인증 성공은 서비스가 해당 요청을 승인했다는 기록이다. 조사에서는 출발 IP·계정·시각을 정상 사용자의 접속 이력과 비교한다. 여러 출구 주소를 사용하는 VPN, 휴대전화, 재택근무도 함께 확인한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-03",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.app\": \"webmail\"}},\n        {\"term\": {\"data.result\": \"success\"}},\n        {\n          \"bool\": {\n            \"must_not\": [{\"prefix\": {\"data.srcip\": \"10.\"}}]\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"users\": {\n      \"terms\": {\"field\": \"data.srcuser\", \"size\": 300},\n      \"aggs\": {\n        \"ips\": {\"terms\": {\"field\": \"data.srcip\", \"size\": 10}},\n        \"unique_ips\": {\"cardinality\": {\"field\": \"data.srcip\"}}\n      }\n    }\n  }\n}",
+          "purpose": "실습 내부망 밖에서 성공한 계정과 IP 목록을 읽는다.",
+          "syntax": "must_not의 prefix 10.은 이 생성 자료의 내부 주소를 제외한다. unique_ips는 고유 수, ips는 실제 주소별 문서 수이다. 운영의 내부·외부 구분은 자산·VPN·프록시의 주소 범위로 따로 정의한다.",
+          "result": "21건·4개 계정이다. 성공 문서/고유 IP는 jung.dohyun 6/5, kang.seoah 6/5, choi.jiho 5/4, lee.yuna 4/2이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "10. 제외는 모든 사설망·IPv6·VPN을 판별하는 일반식이 아니다. 이 실습의 주소 규칙에만 적용한다. IP 2개를 사용자 2명으로 세지 않는다. 계정 소유자와 기기·세션·MFA 기록으로 접속 주체를 확인한다. MFA는 비밀번호 외에 추가 인증 요소를 요구하는 방식이다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-04",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.app\": \"webmail\"}},\n        {\"term\": {\"data.result\": \"success\"}},\n        {\"exists\": {\"field\": \"GeoLocation.country_name\"}},\n        {\n          \"bool\": {\n            \"must_not\": [\n              {\n                \"term\": {\n                  \"GeoLocation.country_name\": \"Republic of Korea\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"users\": {\n      \"terms\": {\"field\": \"data.srcuser\", \"size\": 10},\n      \"aggs\": {\n        \"countries\": {\n          \"terms\": {\n            \"field\": \"GeoLocation.country_name\",\n            \"size\": 10\n          }\n        }\n      }\n    }\n  }\n}",
+          "purpose": "국가 값이 있는 국외 성공 후보를 확인한다.",
+          "syntax": "exists로 국가 필드가 있는 문서를 선택한 뒤 Republic of Korea를 제외한다. 국가 값이 없는 성공 기록은 이 결과에서 빠지므로 누락 범위도 별도로 확인한다.",
+          "result": "lee.yuna의 Netherlands 4건, choi.jiho와 jung.dohyun의 United States 각 1건이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "GeoLocation.country_name은 출발 주소에 붙은 국가 값이다. 실제 운영의 IP 위치 정보도 VPN·중계 서비스·데이터베이스 시점의 영향을 받는다. 국가가 바뀐 계정은 출장·승인된 VPN·기기 등록·MFA 성공 방식을 확인할 후보로 남긴다. 이 자료의 국가 문자열을 실제 IP 위치 조회 결과로 사용하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.4 메일 발신 도메인과 발송 간격을 조사한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "메일 게이트웨이는 메일의 수신·전달·차단 상태를 기록하는 경계 서비스이다. 이 자료의 data.from_domain은 발신 주소에서 @ 뒤를 분리한 값이고 data.to는 수신 주소이다. data.status의 sent는 게이트웨이가 전달로 기록한 상태이다. 사용자가 읽거나 링크를 클릭한 상태는 별도 증거로 확인한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-05",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.direction\": \"in\"}},\n        {\"term\": {\"data.status\": \"sent\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"domains\": {\n      \"terms\": {\n        \"field\": \"data.from_domain\",\n        \"size\": 20,\n        \"order\": {\"_key\": \"asc\"}\n      },\n      \"aggs\": {\n        \"recipients\": {\"cardinality\": {\"field\": \"data.to\"}}\n      }\n    }\n  }\n}",
+          "purpose": "전달된 수신 메일의 발신 도메인 전체 분포를 읽는다.",
+          "syntax": "direction: in과 status: sent를 함께 선택한다. 도메인을 이름순으로 최대 20개 받고 수신 주소 고유 수를 계산한다. 적은 건수 상위 몇 개만 선택하는 방법 대신 전체 여덟 도메인을 비교한다.",
+          "result": "138건·8개 도메인이다. kt66-lab.help는 40건·40명으로 가장 많다. 나머지 일곱 도메인은 각각 11~19건이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "배경 배율은 정상 메일만 크게 줄이고 시나리오 40건은 유지한다. 따라서 이 파일에서는 “가장 드문 도메인”을 고르면 피싱 후보가 빠진다. 과거에 승인된 발신자였는지, 회사 이름과 유사한지, 짧은 시간에 여러 수신자에게 전달되었는지 확인한다. 처음 보인 도메인도 신규 거래처일 수 있으므로 발신 목적과 원본을 대조한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-06",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.direction\": \"in\"}},\n        {\"term\": {\"data.status\": \"sent\"}},\n        {\"term\": {\"data.from_domain\": \"kt66-lab.help\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"first\": {\"min\": {\"field\": \"timestamp\"}},\n    \"last\": {\"max\": {\"field\": \"timestamp\"}},\n    \"recipients\": {\"terms\": {\"field\": \"data.to\", \"size\": 50}},\n    \"senders\": {\"terms\": {\"field\": \"data.from\", \"size\": 5}}\n  }\n}",
+          "purpose": "kt66-lab.help의 수신자와 발송 범위를 확인한다.",
+          "syntax": "first·last는 해당 문서의 최소·최대 timestamp이다. recipients는 최대 50개 주소를 반환한다. senders는 도메인 안의 실제 발신 주소를 구분한다.",
+          "result": "it-support@kt66-lab.help 한 주소에서 40명에게 각 1건이 전달되었다. 수신자에 lee.yuna@kt66.lab이 있다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "first·last의 value_as_string 끝에 Z가 있으면 UTC이다. 9시간을 더하면 10월 20일 10:12:03.376~10:14:31.608 KST, 148.232초이다. 이 값은 관측된 첫 전달과 마지막 전달 사이의 범위이다. 메일 제목·본문·첨부·링크·Message-ID·인증 결과는 이 자료에 없으므로 원본 메일과 게이트웨이 원문에서 추가로 확보한다."
+        },
+        {
+          "type": "p",
+          "text": "피싱이 의심되면 수신자 목록을 조사표에 기록하고 원본 메일을 보존한다. 사용자에게 해당 시각의 열람·입력 여부를 확인하고, 메일 보안 도구에서 같은 Message-ID와 링크가 있는 다른 수신함도 조사한다. 본문에서 낯선 링크를 직접 열어 확인하는 절차를 수행하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.5 로그인과 후속 메일 표시 요청을 연결한다",
+      "blocks": [
+        {
+          "type": "query",
+          "id": "Q03-06-07",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 10,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.app\": \"webmail\"}},\n        {\"term\": {\"data.result\": \"success\"}},\n        {\n          \"bool\": {\n            \"must_not\": [{\"prefix\": {\"data.srcip\": \"10.\"}}]\n          }\n        },\n        {\"term\": {\"data.srcuser\": \"lee.yuna\"}}\n      ]\n    }\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"data.srcuser\",\n    \"data.srcip\",\n    \"data.result\",\n    \"GeoLocation.country_name\",\n    \"full_log\"\n  ]\n}",
+          "purpose": "lee.yuna의 외부 인증 성공 원문을 시각순으로 읽는다.",
+          "syntax": "계정·결과·실습 외부 주소 조건을 함께 적용한다. size: 10 안에 현재 4건이 모두 들어가며 _source에서 시간·계정·IP·국가를 읽는다.",
+          "result": "10월 21일 03:10:00.009, 25일 09:58:57.412, 27일 10:19:13.256, 31일 10:46:46.830 KST에 성공했다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "첫 성공은 메일 전달 다음 날이며 출발지는 102.225.118.252이다. 27일에는 98.55.27.47, 나머지 세 번은 첫 주소이다. 현재 생성 인증 문서에는 full_log 문자열이 없다. _source의 구조화 필드를 원문 자료로 보존하고, 실제 서비스에서는 인증 감사 파일과 세션 식별자를 확보한다."
+        },
+        {
+          "type": "p",
+          "text": "URL의 물음표(?) 뒤는 요청 매개변수이다. 앰퍼샌드(&)는 매개변수를 나누고 등호(=)는 이름과 값을 연결한다. _task=mail, _action=show, _uid는 이 웹메일의 메일 표시 작업과 대상 값을 나타낸다. 로그인 URL까지 포함한 고유 URL 수와 메일 표시 URL 수를 구분한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-08",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.vhost\": \"webmail.kt66.lab\"}},\n        {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n        {\n          \"prefix\": {\n            \"data.url\": \"/?_task=mail&_action=show&_uid=\"\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"ips\": {\n      \"terms\": {\"field\": \"data.srcip\", \"size\": 10},\n      \"aggs\": {\n        \"urls\": {\"cardinality\": {\"field\": \"data.url\"}},\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}},\n        \"status\": {\"terms\": {\"field\": \"data.id\", \"size\": 5}}\n      }\n    }\n  }\n}",
+          "purpose": "메일 표시 경로의 출발지·개수·시간을 비교한다.",
+          "syntax": "vhost와 디코더를 고정하고 prefix로 메일 표시 경로만 선택한다. ips 안의 urls는 고유 URL 수, first·last는 관측 범위, status는 웹 접근 로그의 data.id별 응답 코드이다.",
+          "result": "총 409건·6개 출발지이다. 102.225.118.252는 320건·320개 URL이고 응답 코드는 모두 200이다.",
+          "long": true
+        },
+        {
+          "type": "image",
+          "path": "assets/screenshots/chapter06/mail-detail.png",
+          "caption": "화면 6-1  메일 표시 요청의 출발지·시간 범위·응답 코드",
+          "width_mm": 121
+        },
+        {
+          "type": "p",
+          "text": "화면의 UTC 시각을 KST로 바꾸면 10월 21일 03:10:01.597~03:30:07.232이다. 320건의 첫·마지막 요청 간격은 1,205.635초, 약 20분 6초이다. 첫 로그인 뒤 약 1.6초 만에 표시 요청이 시작되었다. 나머지 출발지의 89건은 여러 날짜에 걸친다. 90일 합계를 모두 같은 짧은 세션에서 발생한 것으로 읽지 않는다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-06-09",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r06-ch06/_search\n{\n  \"size\": 3,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.vhost\": \"webmail.kt66.lab\"}},\n        {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n        {\n          \"prefix\": {\n            \"data.url\": \"/?_task=mail&_action=show&_uid=\"\n          }\n        },\n        {\"term\": {\"data.srcip\": \"102.225.118.252\"}}\n      ]\n    }\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"data.srcip\",\n    \"data.url\",\n    \"data.id\",\n    \"data.bytes\",\n    \"full_log\"\n  ]\n}",
+          "purpose": "첫 세 요청의 URL과 접근 로그를 대조한다.",
+          "syntax": "후보 IP를 추가하고 size: 3, timestamp 오름차순으로 앞부분을 반환한다. 전체 hits는 320이며 반환된 세 건과 구분한다. data.id·bytes·url을 full_log와 대조한다.",
+          "result": "_uid 9000, 8999, 8998 요청이 순서대로 보인다. 첫 기록은 GET 요청에 200과 응답 크기 37663을 기록한다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "이 자료의 HTTP 응답 코드는 data.id이고 메일 전달 상태는 data.status이다. 같은 상태라는 이름으로 바꾸어 조회하면 빈 결과가 나온다. 200은 서버의 성공 응답 분류이며 어떤 메일 본문이 실제 전달되었는지는 서비스 감사·응답 내용·세션으로 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "웹 접근 로그에는 계정과 세션 식별자가 없다. 따라서 같은 IP·가까운 시각은 lee.yuna 로그인과 연결할 후보 근거이다. NAT나 프록시를 공유하는 다른 요청인지 확인할 세션 기록이 필요하다. 고유 URL도 메일함·폴더·UID 범위가 같을 때 대상 메일 수로 연결할 수 있다. 실제 조사에서는 계정·메일함·메시지 식별자를 함께 보존한다."
+        },
+        {
+          "type": "p",
+          "text": "요청 간격은 생성 원문에서 1.503~5.994초이다. 반복 조회·자동 동기화·승인된 내보내기도 짧은 간격을 만들 수 있다. 속도와 건수는 조사 우선순위에 쓰고, 승인·세션·대상 범위를 확인해 판단한다. R06에는 피싱 링크 클릭·비밀번호 입력·단말 프로세스 후속 실행 자료가 없으므로 이 동작을 관찰했다고 기록하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.6 조사 결과와 대응 조건을 작성한다",
+      "blocks": [
+        {
+          "type": "image",
+          "path": "assets/figures/chapter06-evidence-links.png",
+          "caption": "그림 6-2  계정·메일·후속 요청의 증거 연결",
+          "width_mm": 121
+        },
+        {
+          "type": "table",
+          "head": [
+            "관찰",
+            "추가 확인",
+            "대응 완료 기준"
+          ],
+          "rows": [
+            [
+              "분산 실패·외부 성공",
+              "사용자·기기·VPN·MFA·세션",
+              "의심 세션 무효화와 정상 사용자 재인증"
+            ],
+            [
+              "유사 도메인 40명 전달",
+              "원본 메일·메시지 ID·열람/입력 이력",
+              "대상 회수·관련 수신자 조사 완료"
+            ],
+            [
+              "320개 표시 URL",
+              "계정 세션·메일함·메시지·승인",
+              "열람 범위 확인과 불필요한 접근 종료"
+            ]
+          ],
+          "widths": [
+            38,
+            44,
+            45
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "현재 실습에서는 investigation.csv에 관찰 사실·추가 증거·대응 담당자·성공 기준을 적는다. 운영에서 계정 침해가 확인되면 영향 범위와 권한에 따라 세션·토큰을 폐기하고 비밀번호 재설정·MFA 재등록을 수행한다. 기존 전달 규칙·위임 권한·등록 앱도 확인하고 정상 사용자의 복구를 점검한다."
+        },
+        {
+          "type": "p",
+          "text": "메일 조치는 원본과 수신 범위를 보존한 뒤 메시지 회수·발신 조건 제한·수신자 확인을 연결한다. IP 제한은 단기 억제 수단으로 평가하고 계정·세션 조치의 효과도 확인한다. 여러 IP가 같은 출구를 공유할 때는 정상 업무 영향을 함께 기록한다."
+        },
+        {
+          "type": "p",
+          "text": "강의의 예약 모니터는 외부 성공 IP가 2개 이상인 계정을 후보로 삼는다. 실운영에서는 반복 알림의 중복 기준, 시간 창, 수집 지연, 정상 VPN 예외와 관찰 기간을 정한 뒤 검증한다. 이 실습에서는 모니터나 자동 차단을 등록하지 않고 결과에 근거한 조건을 작성한다."
+        },
+        {
+          "type": "p",
+          "text": "Wazuh 상관 규칙은 실제 디코더 필드와 입력·도착 순서에서 시험한다. 특히 강의의 190606은 같은 발신자의 사건 빈도를 세며 서로 다른 수신자 수 조건은 없다. 한 수신자에게 반복된 메일과 여러 수신자에게 보낸 메일을 구분할 별도 검사가 필요하다. 생성 인덱스의 집계 성공을 규칙 190601~190606의 실제 경보 시험으로 대신하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "6.7 실패 확인과 원상복구",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "결과가 다르면 인덱스·90일 범위·시간대·seed·배율 순으로 확인한다. 인증에는 data.app·srcuser·result, 메일에는 direction·from_domain·to·status, 웹 접근에는 vhost·url·id를 사용한다. 같은 주소가 보여도 로그 종류를 섞어 실패·성공 횟수를 두 번 세지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "도메인이나 계정이 빠지면 sum_other_doc_count와 terms 크기를 확인한다. cardinality와 원문 목록이 다르면 집계 추정·후보 누락·필드 부재를 구분한다. 메일 URL 순서가 달라지는 다른 제품에서는 고정 prefix 대신 파싱한 작업 필드를 사용한다. 배경이 0건인 현재 파일에서 오탐률을 추정하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "조사표·조회 결과·manifest·원문 사본을 보존한다. 전용 인덱스를 제거하려면 아래 _mapping의 _meta.book3에서 round r06, expected_events 86174, bulk_sha256을 로컬 manifest와 대조한다. DELETE는 검색용 자료를 지우므로 소유와 보존 범위를 먼저 확인한다."
+        },
+        {
+          "type": "code",
+          "text": "GET /book3-r06-ch06/_mapping\n\nDELETE /book3-r06-ch06\n\nGET /book3-r06-ch06/_count",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "acknowledged: true 뒤 _count의 index_not_found_exception을 확인한다. 전용 패턴을 별도로 만들었다면 그 패턴만 제거하고 이전 검색 조건으로 돌아간다. 원상복구 대상은 자신의 전용 자료이며 공용 인덱스·계정·메일함을 변경하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "확인 문제",
+      "blocks": [
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "한 IP에서 실패가 두 번 이하인데 왜 계정별 고유 IP를 확인하는가?",
+            "kt66-lab.help가 현재 가장 많은 도메인인데도 조사 후보인 근거는 무엇인가?",
+            "lee.yuna 로그인과 320개 표시 URL을 같은 사용자 동작으로 확정하려면 무엇이 더 필요한가?"
+          ]
+        },
+        {
+          "type": "h",
+          "text": "해설"
+        },
+        {
+          "type": "p",
+          "text": "1. 출발지를 바꾸는 시도가 계정 단위로 모일 수 있다. 문서 수·고유 IP·승인된 접속 이력을 비교한다. 비밀번호가 없는 자료에서는 대입 방식의 세부 유형도 추가 조사 대상으로 남긴다."
+        },
+        {
+          "type": "p",
+          "text": "2. 배경 축소로 건수 순위가 바뀌었다. 회사 이름과 유사한 발신 주소, 148.232초 안의 40명 전달과 수신자 이후 성공을 확인한다. 원본 메일·승인 이력으로 판단을 보강한다."
+        },
+        {
+          "type": "p",
+          "text": "3. 인증·접근 기록을 연결할 세션과 계정·기기 정보, 프록시/NAT 경로, 메일함·메시지 식별자가 필요하다. 현재 원문에서는 같은 출발지와 시각 근접까지만 직접 관찰한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "참고자료",
+      "blocks": [
+        {
+          "type": "link",
+          "text": "강의 Module03 — 133~155슬라이드",
+          "url": "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view"
+        },
+        {
+          "type": "link",
+          "text": "purple-agg R06 생성 코드",
+          "url": "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r06_credential.py"
+        },
+        {
+          "type": "p",
+          "text": "기준 커밋 d6a2397fc31517147ddd09f58e0d153bc8cf0588의 배율 0.005 결과를 사용한다."
+        },
+        {
+          "type": "link",
+          "text": "MITRE ATT&CK — Password Spraying",
+          "url": "https://attack.mitre.org/techniques/T1110/003/"
+        },
+        {
+          "type": "link",
+          "text": "OpenSearch — Terms aggregation",
+          "url": "https://docs.opensearch.org/latest/aggregations/bucket/terms/"
+        },
+        {
+          "type": "link",
+          "text": "Wazuh — Rules syntax",
+          "url": "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html"
+        },
+        {
+          "type": "link",
+          "text": "6장 복사용 입력과 조사표",
+          "url": "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter06"
+        }
+      ],
+      "break": false,
+      "level": "section"
+    }
+  ]
+}

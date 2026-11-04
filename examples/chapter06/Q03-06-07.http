@@ -1,0 +1,58 @@
+GET /book3-r06-ch06/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.app": "webmail"
+          }
+        },
+        {
+          "term": {
+            "data.result": "success"
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              {
+                "prefix": {
+                  "data.srcip": "10."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "term": {
+            "data.srcuser": "lee.yuna"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.srcuser",
+    "data.srcip",
+    "data.result",
+    "GeoLocation.country_name",
+    "full_log"
+  ]
+}

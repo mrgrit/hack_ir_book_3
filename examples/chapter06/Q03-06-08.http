@@ -1,0 +1,65 @@
+GET /book3-r06-ch06/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "webmail.kt66.lab"
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "prefix": {
+            "data.url": "/?_task=mail&_action=show&_uid="
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "ips": {
+      "terms": {
+        "field": "data.srcip",
+        "size": 10
+      },
+      "aggs": {
+        "urls": {
+          "cardinality": {
+            "field": "data.url"
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        },
+        "status": {
+          "terms": {
+            "field": "data.id",
+            "size": 5
+          }
+        }
+      }
+    }
+  }
+}

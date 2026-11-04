@@ -1,0 +1,61 @@
+GET /book3-r06-ch06/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.app": "webmail"
+          }
+        },
+        {
+          "term": {
+            "data.result": "success"
+          }
+        },
+        {
+          "exists": {
+            "field": "GeoLocation.country_name"
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              {
+                "term": {
+                  "GeoLocation.country_name": "Republic of Korea"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "users": {
+      "terms": {
+        "field": "data.srcuser",
+        "size": 10
+      },
+      "aggs": {
+        "countries": {
+          "terms": {
+            "field": "GeoLocation.country_name",
+            "size": 10
+          }
+        }
+      }
+    }
+  }
+}

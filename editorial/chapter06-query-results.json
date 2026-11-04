@@ -1,0 +1,2594 @@
+{
+  "01": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1573,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "ips": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 1563,
+        "buckets": [
+          {
+            "key": "100.55.214.210",
+            "doc_count": 2
+          },
+          {
+            "key": "101.210.17.145",
+            "doc_count": 2
+          },
+          {
+            "key": "102.13.174.221",
+            "doc_count": 2
+          },
+          {
+            "key": "102.137.212.204",
+            "doc_count": 2
+          },
+          {
+            "key": "103.12.16.132",
+            "doc_count": 2
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 19,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1573,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "cho.chaewon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "cho.dohyun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.doyun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.eunwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.hajun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.hayun",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "cho.jiho",
+            "doc_count": 12,
+            "ips": {
+              "value": 12
+            }
+          },
+          {
+            "key": "cho.jimin",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "cho.jiwoo",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "cho.jiyu",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.juwon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "cho.minjun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.minseo",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "cho.seoah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "cho.seojun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "cho.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "cho.siwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "cho.suah",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "cho.yejun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "cho.yuna",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "choi.chaewon",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "choi.dohyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "choi.doyun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "choi.eunwoo",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "choi.hajun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "choi.hayun",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "choi.jiho",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "choi.jimin",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "choi.jiwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "choi.jiyu",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "choi.juwon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "choi.minjun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "choi.minseo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "choi.seoah",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "choi.seojun",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "choi.seoyeon",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "choi.siwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "choi.suah",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "choi.yejun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "choi.yuna",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "han.chaewon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "han.dohyun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "han.doyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "han.eunwoo",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "han.hajun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "han.hayun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "han.jiho",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "han.jimin",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "han.jiwoo",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "han.jiyu",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "han.juwon",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "han.minjun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "han.minseo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "han.seoah",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "han.seojun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "han.seoyeon",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "han.siwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "han.suah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "han.yejun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "han.yuna",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "jang.chaewon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "jang.dohyun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "jang.doyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jang.eunwoo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "jang.hajun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jang.hayun",
+            "doc_count": 9,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jang.jiho",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "jang.jimin",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jang.jiwoo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "jang.jiyu",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "jang.juwon",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "jang.minjun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "jang.minseo",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "jang.seoah",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "jang.seojun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "jang.seoyeon",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "jang.siwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jang.suah",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "jang.yejun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "jang.yuna",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jung.chaewon",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jung.dohyun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "jung.doyun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jung.eunwoo",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "jung.hajun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "jung.hayun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "jung.jiho",
+            "doc_count": 13,
+            "ips": {
+              "value": 13
+            }
+          },
+          {
+            "key": "jung.jimin",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "jung.jiwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jung.jiyu",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jung.juwon",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "jung.minjun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "jung.minseo",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "jung.seoah",
+            "doc_count": 1,
+            "ips": {
+              "value": 1
+            }
+          },
+          {
+            "key": "jung.seojun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jung.seoyeon",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "jung.siwoo",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "jung.suah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "jung.yejun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "jung.yuna",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "kang.chaewon",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "kang.dohyun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.doyun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.eunwoo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kang.hajun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.hayun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "kang.jiho",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.jimin",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "kang.jiwoo",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "kang.jiyu",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kang.juwon",
+            "doc_count": 14,
+            "ips": {
+              "value": 14
+            }
+          },
+          {
+            "key": "kang.minjun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kang.minseo",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "kang.seoah",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kang.seojun",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "kang.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.siwoo",
+            "doc_count": 12,
+            "ips": {
+              "value": 12
+            }
+          },
+          {
+            "key": "kang.suah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kang.yejun",
+            "doc_count": 1,
+            "ips": {
+              "value": 1
+            }
+          },
+          {
+            "key": "kang.yuna",
+            "doc_count": 8,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kim.chaewon",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "kim.dohyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kim.doyun",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kim.eunwoo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kim.hajun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "kim.hayun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "kim.jiho",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "kim.jimin",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.jiwoo",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "kim.jiyu",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kim.juwon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "kim.minjun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "kim.minseo",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "kim.seoah",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "kim.seojun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "kim.seoyeon",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "kim.siwoo",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "kim.suah",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "kim.yejun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "kim.yuna",
+            "doc_count": 1,
+            "ips": {
+              "value": 1
+            }
+          },
+          {
+            "key": "lee.chaewon",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "lee.dohyun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lee.doyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "lee.eunwoo",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "lee.hajun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "lee.hayun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.jiho",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lee.jimin",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "lee.jiwoo",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "lee.jiyu",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.juwon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "lee.minjun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.minseo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.seoah",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "lee.seojun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lee.siwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "lee.suah",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.yejun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lee.yuna",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "lim.chaewon",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "lim.dohyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "lim.doyun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "lim.eunwoo",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "lim.hajun",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "lim.hayun",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "lim.jiho",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "lim.jimin",
+            "doc_count": 15,
+            "ips": {
+              "value": 14
+            }
+          },
+          {
+            "key": "lim.jiwoo",
+            "doc_count": 12,
+            "ips": {
+              "value": 12
+            }
+          },
+          {
+            "key": "lim.jiyu",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "lim.juwon",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "lim.minjun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "lim.minseo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "lim.seoah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lim.seojun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lim.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "lim.siwoo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "lim.suah",
+            "doc_count": 13,
+            "ips": {
+              "value": 13
+            }
+          },
+          {
+            "key": "lim.yejun",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "lim.yuna",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "oh.chaewon",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "oh.dohyun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "oh.doyun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "oh.eunwoo",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "oh.hajun",
+            "doc_count": 12,
+            "ips": {
+              "value": 12
+            }
+          },
+          {
+            "key": "oh.hayun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "oh.jiho",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "oh.jimin",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "oh.jiwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "oh.jiyu",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "oh.juwon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "oh.minjun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "oh.minseo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "oh.seoah",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "oh.seojun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "oh.seoyeon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "oh.siwoo",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "oh.suah",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "oh.yejun",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "oh.yuna",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "park.chaewon",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "park.dohyun",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "park.doyun",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "park.eunwoo",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "park.hajun",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "park.hayun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "park.jiho",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "park.jimin",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "park.jiwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "park.jiyu",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "park.juwon",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "park.minjun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "park.minseo",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "park.seoah",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "park.seojun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "park.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "park.siwoo",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "park.suah",
+            "doc_count": 5,
+            "ips": {
+              "value": 5
+            }
+          },
+          {
+            "key": "park.yejun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "park.yuna",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "yoon.chaewon",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "yoon.dohyun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "yoon.doyun",
+            "doc_count": 8,
+            "ips": {
+              "value": 8
+            }
+          },
+          {
+            "key": "yoon.eunwoo",
+            "doc_count": 1,
+            "ips": {
+              "value": 1
+            }
+          },
+          {
+            "key": "yoon.hajun",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "yoon.hayun",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "yoon.jiho",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          },
+          {
+            "key": "yoon.jimin",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "yoon.jiwoo",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "yoon.jiyu",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "yoon.juwon",
+            "doc_count": 11,
+            "ips": {
+              "value": 11
+            }
+          },
+          {
+            "key": "yoon.minjun",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "yoon.minseo",
+            "doc_count": 2,
+            "ips": {
+              "value": 2
+            }
+          },
+          {
+            "key": "yoon.seoah",
+            "doc_count": 6,
+            "ips": {
+              "value": 6
+            }
+          },
+          {
+            "key": "yoon.seojun",
+            "doc_count": 9,
+            "ips": {
+              "value": 9
+            }
+          },
+          {
+            "key": "yoon.seoyeon",
+            "doc_count": 7,
+            "ips": {
+              "value": 7
+            }
+          },
+          {
+            "key": "yoon.siwoo",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "yoon.suah",
+            "doc_count": 3,
+            "ips": {
+              "value": 3
+            }
+          },
+          {
+            "key": "yoon.yejun",
+            "doc_count": 10,
+            "ips": {
+              "value": 10
+            }
+          },
+          {
+            "key": "yoon.yuna",
+            "doc_count": 4,
+            "ips": {
+              "value": 4
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 21,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "jung.dohyun",
+            "doc_count": 6,
+            "unique_ips": {
+              "value": 5
+            },
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "121.131.204.241",
+                  "doc_count": 2
+                },
+                {
+                  "key": "109.253.197.56",
+                  "doc_count": 1
+                },
+                {
+                  "key": "128.15.49.78",
+                  "doc_count": 1
+                },
+                {
+                  "key": "150.221.152.21",
+                  "doc_count": 1
+                },
+                {
+                  "key": "57.120.241.11",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "kang.seoah",
+            "doc_count": 6,
+            "unique_ips": {
+              "value": 5
+            },
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "111.39.232.105",
+                  "doc_count": 2
+                },
+                {
+                  "key": "109.253.197.56",
+                  "doc_count": 1
+                },
+                {
+                  "key": "150.221.152.21",
+                  "doc_count": 1
+                },
+                {
+                  "key": "57.120.241.11",
+                  "doc_count": 1
+                },
+                {
+                  "key": "80.160.118.227",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "choi.jiho",
+            "doc_count": 5,
+            "unique_ips": {
+              "value": 4
+            },
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "14.112.67.120",
+                  "doc_count": 2
+                },
+                {
+                  "key": "128.15.49.78",
+                  "doc_count": 1
+                },
+                {
+                  "key": "150.221.152.21",
+                  "doc_count": 1
+                },
+                {
+                  "key": "80.160.118.227",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "lee.yuna",
+            "doc_count": 4,
+            "unique_ips": {
+              "value": 2
+            },
+            "ips": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "102.225.118.252",
+                  "doc_count": 3
+                },
+                {
+                  "key": "98.55.27.47",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "04": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 6,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "lee.yuna",
+            "doc_count": 4,
+            "countries": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Netherlands",
+                  "doc_count": 4
+                }
+              ]
+            }
+          },
+          {
+            "key": "choi.jiho",
+            "doc_count": 1,
+            "countries": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "United States",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "jung.dohyun",
+            "doc_count": 1,
+            "countries": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "United States",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "05": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 138,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "domains": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "coupang.com",
+            "doc_count": 14,
+            "recipients": {
+              "value": 13
+            }
+          },
+          {
+            "key": "gmail.com",
+            "doc_count": 12,
+            "recipients": {
+              "value": 12
+            }
+          },
+          {
+            "key": "gov.kr",
+            "doc_count": 11,
+            "recipients": {
+              "value": 11
+            }
+          },
+          {
+            "key": "kakao.com",
+            "doc_count": 16,
+            "recipients": {
+              "value": 16
+            }
+          },
+          {
+            "key": "kt66-lab.help",
+            "doc_count": 40,
+            "recipients": {
+              "value": 40
+            }
+          },
+          {
+            "key": "naver.com",
+            "doc_count": 13,
+            "recipients": {
+              "value": 13
+            }
+          },
+          {
+            "key": "partner-corp.co.kr",
+            "doc_count": 19,
+            "recipients": {
+              "value": 17
+            }
+          },
+          {
+            "key": "vendor.com",
+            "doc_count": 13,
+            "recipients": {
+              "value": 13
+            }
+          }
+        ]
+      }
+    }
+  },
+  "06": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 40,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "last": {
+        "value": 1792458871608.0,
+        "value_as_string": "2026-10-20T01:14:31.608Z"
+      },
+      "recipients": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "cho.minjun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "cho.yuna@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.chaewon@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.hayun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.jiyu@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.seojun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.siwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "choi.yuna@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "han.dohyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "han.jiwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "han.juwon@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jang.jiwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jang.seoah@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jang.seojun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jang.siwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jang.yejun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jung.doyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jung.siwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "jung.suah@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "kang.doyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "kang.jiyu@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "kang.seoah@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "kim.dohyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "kim.yejun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lee.hajun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lee.minjun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lee.yuna@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lim.doyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lim.jimin@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lim.jiwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "lim.juwon@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "oh.jiwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "park.dohyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "park.eunwoo@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "park.seojun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "yoon.doyun@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "yoon.jiho@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "yoon.jiyu@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "yoon.seoah@kt66.lab",
+            "doc_count": 1
+          },
+          {
+            "key": "yoon.seojun@kt66.lab",
+            "doc_count": 1
+          }
+        ]
+      },
+      "senders": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "it-support@kt66-lab.help",
+            "doc_count": 40
+          }
+        ]
+      },
+      "first": {
+        "value": 1792458723376.0,
+        "value_as_string": "2026-10-20T01:12:03.376Z"
+      }
+    }
+  },
+  "07": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 4,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000075132",
+          "_score": null,
+          "_source": {
+            "data": {
+              "result": "success",
+              "srcuser": "lee.yuna",
+              "srcip": "102.225.118.252"
+            },
+            "GeoLocation": {
+              "country_name": "Netherlands"
+            },
+            "timestamp": "2026-10-21T03:10:00.009+0900"
+          },
+          "sort": [
+            1792519800009
+          ]
+        },
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000079704",
+          "_score": null,
+          "_source": {
+            "data": {
+              "result": "success",
+              "srcuser": "lee.yuna",
+              "srcip": "102.225.118.252"
+            },
+            "GeoLocation": {
+              "country_name": "Netherlands"
+            },
+            "timestamp": "2026-10-25T09:58:57.412+0900"
+          },
+          "sort": [
+            1792889937412
+          ]
+        },
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000081663",
+          "_score": null,
+          "_source": {
+            "data": {
+              "result": "success",
+              "srcuser": "lee.yuna",
+              "srcip": "98.55.27.47"
+            },
+            "GeoLocation": {
+              "country_name": "Netherlands"
+            },
+            "timestamp": "2026-10-27T10:19:13.256+0900"
+          },
+          "sort": [
+            1793063953256
+          ]
+        },
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000085507",
+          "_score": null,
+          "_source": {
+            "data": {
+              "result": "success",
+              "srcuser": "lee.yuna",
+              "srcip": "102.225.118.252"
+            },
+            "GeoLocation": {
+              "country_name": "Netherlands"
+            },
+            "timestamp": "2026-10-31T10:46:46.830+0900"
+          },
+          "sort": [
+            1793411206830
+          ]
+        }
+      ]
+    }
+  },
+  "08": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 409,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "ips": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "102.225.118.252",
+            "doc_count": 320,
+            "urls": {
+              "value": 320
+            },
+            "last": {
+              "value": 1792521007232.0,
+              "value_as_string": "2026-10-20T18:30:07.232Z"
+            },
+            "first": {
+              "value": 1792519801597.0,
+              "value_as_string": "2026-10-20T18:10:01.597Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 320
+                }
+              ]
+            }
+          },
+          {
+            "key": "150.221.152.21",
+            "doc_count": 25,
+            "urls": {
+              "value": 25
+            },
+            "last": {
+              "value": 1793375426882.0,
+              "value_as_string": "2026-10-30T15:50:26.882Z"
+            },
+            "first": {
+              "value": 1788760271038.0,
+              "value_as_string": "2026-09-07T05:51:11.038Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 25
+                }
+              ]
+            }
+          },
+          {
+            "key": "128.15.49.78",
+            "doc_count": 23,
+            "urls": {
+              "value": 23
+            },
+            "last": {
+              "value": 1789883120489.0,
+              "value_as_string": "2026-09-20T05:45:20.489Z"
+            },
+            "first": {
+              "value": 1789204099601.0,
+              "value_as_string": "2026-09-12T09:08:19.601Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 23
+                }
+              ]
+            }
+          },
+          {
+            "key": "109.253.197.56",
+            "doc_count": 15,
+            "urls": {
+              "value": 15
+            },
+            "last": {
+              "value": 1789660921949.0,
+              "value_as_string": "2026-09-17T16:02:01.949Z"
+            },
+            "first": {
+              "value": 1789440572711.0,
+              "value_as_string": "2026-09-15T02:49:32.711Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 15
+                }
+              ]
+            }
+          },
+          {
+            "key": "80.160.118.227",
+            "doc_count": 14,
+            "urls": {
+              "value": 14
+            },
+            "last": {
+              "value": 1789724969610.0,
+              "value_as_string": "2026-09-18T09:49:29.610Z"
+            },
+            "first": {
+              "value": 1789013190395.0,
+              "value_as_string": "2026-09-10T04:06:30.395Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 14
+                }
+              ]
+            }
+          },
+          {
+            "key": "57.120.241.11",
+            "doc_count": 12,
+            "urls": {
+              "value": 12
+            },
+            "last": {
+              "value": 1789521024663.0,
+              "value_as_string": "2026-09-16T01:10:24.663Z"
+            },
+            "first": {
+              "value": 1789000104302.0,
+              "value_as_string": "2026-09-10T00:28:24.302Z"
+            },
+            "status": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "200",
+                  "doc_count": 12
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "09": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 320,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000075133",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcip": "102.225.118.252",
+              "bytes": 37663,
+              "id": "200",
+              "url": "/?_task=mail&_action=show&_uid=9000"
+            },
+            "full_log": "102.225.118.252 - - [21/Oct/2026:03:10:01 +0900] \"GET /?_task=mail&_action=show&_uid=9000 HTTP/1.1\" 200 37663 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15\"",
+            "timestamp": "2026-10-21T03:10:01.597+0900"
+          },
+          "sort": [
+            1792519801597
+          ]
+        },
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000075134",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcip": "102.225.118.252",
+              "bytes": 22333,
+              "id": "200",
+              "url": "/?_task=mail&_action=show&_uid=8999"
+            },
+            "full_log": "102.225.118.252 - - [21/Oct/2026:03:10:04 +0900] \"GET /?_task=mail&_action=show&_uid=8999 HTTP/1.1\" 200 22333 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15\"",
+            "timestamp": "2026-10-21T03:10:04.573+0900"
+          },
+          "sort": [
+            1792519804573
+          ]
+        },
+        {
+          "_index": "book3-r06-ch06",
+          "_id": "r06-000075135",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcip": "102.225.118.252",
+              "bytes": 38242,
+              "id": "200",
+              "url": "/?_task=mail&_action=show&_uid=8998"
+            },
+            "full_log": "102.225.118.252 - - [21/Oct/2026:03:10:07 +0900] \"GET /?_task=mail&_action=show&_uid=8998 HTTP/1.1\" 200 38242 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15\"",
+            "timestamp": "2026-10-21T03:10:07.154+0900"
+          },
+          "sort": [
+            1792519807154
+          ]
+        }
+      ]
+    }
+  }
+}

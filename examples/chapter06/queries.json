@@ -1,0 +1,524 @@
+{
+  "01": {
+    "title": "출발 IP별 인증 실패",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.app": "webmail"
+              }
+            },
+            {
+              "term": {
+                "data.result": "fail"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "ips": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "계정별 실패 문서와 고유 출발지",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.app": "webmail"
+              }
+            },
+            {
+              "term": {
+                "data.result": "fail"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.srcuser",
+            "size": 300,
+            "order": {
+              "_key": "asc"
+            }
+          },
+          "aggs": {
+            "ips": {
+              "cardinality": {
+                "field": "data.srcip"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "실습 내부망 밖에서 성공한 계정",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.app": "webmail"
+              }
+            },
+            {
+              "term": {
+                "data.result": "success"
+              }
+            },
+            {
+              "bool": {
+                "must_not": [
+                  {
+                    "prefix": {
+                      "data.srcip": "10."
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.srcuser",
+            "size": 300
+          },
+          "aggs": {
+            "ips": {
+              "terms": {
+                "field": "data.srcip",
+                "size": 10
+              }
+            },
+            "unique_ips": {
+              "cardinality": {
+                "field": "data.srcip"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "title": "국가 값이 있는 해외 성공 후보",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.app": "webmail"
+              }
+            },
+            {
+              "term": {
+                "data.result": "success"
+              }
+            },
+            {
+              "exists": {
+                "field": "GeoLocation.country_name"
+              }
+            },
+            {
+              "bool": {
+                "must_not": [
+                  {
+                    "term": {
+                      "GeoLocation.country_name": "Republic of Korea"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.srcuser",
+            "size": 10
+          },
+          "aggs": {
+            "countries": {
+              "terms": {
+                "field": "GeoLocation.country_name",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "title": "수신 메일의 발신 도메인 전체 분포",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.direction": "in"
+              }
+            },
+            {
+              "term": {
+                "data.status": "sent"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "domains": {
+          "terms": {
+            "field": "data.from_domain",
+            "size": 20,
+            "order": {
+              "_key": "asc"
+            }
+          },
+          "aggs": {
+            "recipients": {
+              "cardinality": {
+                "field": "data.to"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "06": {
+    "title": "유사 도메인의 시간 범위와 수신자",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.direction": "in"
+              }
+            },
+            {
+              "term": {
+                "data.status": "sent"
+              }
+            },
+            {
+              "term": {
+                "data.from_domain": "kt66-lab.help"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        },
+        "recipients": {
+          "terms": {
+            "field": "data.to",
+            "size": 50
+          }
+        },
+        "senders": {
+          "terms": {
+            "field": "data.from",
+            "size": 5
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "lee.yuna의 실습 외부 성공 원문",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.app": "webmail"
+              }
+            },
+            {
+              "term": {
+                "data.result": "success"
+              }
+            },
+            {
+              "bool": {
+                "must_not": [
+                  {
+                    "prefix": {
+                      "data.srcip": "10."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "term": {
+                "data.srcuser": "lee.yuna"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.srcuser",
+        "data.srcip",
+        "data.result",
+        "GeoLocation.country_name",
+        "full_log"
+      ]
+    }
+  },
+  "08": {
+    "title": "메일 표시 경로의 출발지와 시간 범위",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "webmail.kt66.lab"
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "prefix": {
+                "data.url": "/?_task=mail&_action=show&_uid="
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "ips": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 10
+          },
+          "aggs": {
+            "urls": {
+              "cardinality": {
+                "field": "data.url"
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            },
+            "status": {
+              "terms": {
+                "field": "data.id",
+                "size": 5
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "09": {
+    "title": "피싱 후보 출발지의 메일 표시 원문",
+    "method": "GET",
+    "path": "/book3-r06-ch06/_search",
+    "body": {
+      "size": 3,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "webmail.kt66.lab"
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "prefix": {
+                "data.url": "/?_task=mail&_action=show&_uid="
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "102.225.118.252"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.srcip",
+        "data.url",
+        "data.id",
+        "data.bytes",
+        "full_log"
+      ]
+    }
+  }
+}

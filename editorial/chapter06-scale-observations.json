@@ -1,0 +1,11 @@
+{
+  "origin_counts": {
+    "scenario_auth": 1594,
+    "scenario_views": 409
+  },
+  "mail_span_seconds": 148.232,
+  "view_span_seconds": 1205.635,
+  "view_gap_min": 1.503,
+  "view_gap_max": 5.994,
+  "view_gap_mean": 3.779420062695925
+}

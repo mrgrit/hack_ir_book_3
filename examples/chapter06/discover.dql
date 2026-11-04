@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+data.app: "webmail" AND data.result: "fail"
+
+data.from_domain: "kt66-lab.help"
+
+data.srcip: "102.225.118.252" AND data.vhost: "webmail.kt66.lab"
