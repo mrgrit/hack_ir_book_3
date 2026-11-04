@@ -1,0 +1,61 @@
+{
+  "filter": {
+    "source": "10.1.17.215",
+    "host": "5.252.153.241",
+    "uri": "/1517096937"
+  },
+  "files": {
+    "eve.json": "df602db5e8bb3696e3f639fae96e97501d3daf3c4d578d14989659d61e276b45",
+    "http.log": "c99a7999c66d1e25d2c5fc451be5b28e4e2ae35a0efa9039d2df51a190e29e07",
+    "conn.log": "5b6bb84434194e75d63a34aac36899ba8c56e0192d3587ce9bdc4b0862e489cf"
+  },
+  "suricata_counts": {
+    "dhcp": 1,
+    "dns": 1510,
+    "tls": 159,
+    "alert": 625,
+    "http": 627,
+    "fileinfo": 422,
+    "krb5": 25,
+    "dcerpc": 296,
+    "smb": 110,
+    "flow": 825
+  },
+  "zeek_counts": {
+    "http": 627,
+    "conn": 859
+  },
+  "repeat": {
+    "suricata": 584,
+    "suricata_status": {
+      "404": 386,
+      "200": 4,
+      "missing": 194
+    },
+    "zeek": 584,
+    "zeek_status": {
+      "404": 580,
+      "200": 4
+    },
+    "zeek_connection_count": 2,
+    "first_request_utc": "2025-01-22T19:45:58.896228+00:00",
+    "last_request_utc": "2025-01-22T20:38:18.658377+00:00",
+    "gaps": {
+      "n": 583,
+      "unit": "seconds",
+      "min": 5.153350114822388,
+      "median": 5.206838130950928,
+      "p95": 5.319300889968872,
+      "max": 91.22730612754822,
+      "method": "chronological adjacent requests; includes connection transitions; linear inclusive quantile"
+    }
+  },
+  "deeper": {
+    "sha256": "d309901eb9f9373507cc3bd63886103c599d818969b93423b68749ae249259f1",
+    "repeat": 584,
+    "status": {
+      "404": 580,
+      "200": 4
+    }
+  }
+}

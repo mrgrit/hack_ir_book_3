@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+data.event_type: http AND data.dest_ip: "5.252.153.241"
+
+data.event_type: http AND data.http.url: "/1517096937"
+
+data.event_type: tls

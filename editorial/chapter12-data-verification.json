@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "chapter": 12,
+  "queries_checked": 6,
+  "matched_documents": {
+    "01": 3746,
+    "02": 627,
+    "03": 584,
+    "04": 3,
+    "05": 1510,
+    "06": 625
+  },
+  "datasets": [
+    {
+      "folder": "pcap-ch12",
+      "status": "pass",
+      "events": 3746,
+      "source_kind": "pcap-observation",
+      "bulk_sha256": "5c84c2e2f8af0447a377cb39148e645b73733fc917a882af1589490cefb98d43"
+    }
+  ],
+  "response_sha256": "6ab4e47103a1ebd13c93bb28214d6fa5fe4f89e770b51002a7d9a2b587bc3929",
+  "network_operations": 0,
+  "scope": "Exact source counts, returned buckets and metrics, selected hit IDs and fields; query intent and unreturned candidates require editorial review."
+}

@@ -96,3 +96,8 @@ tools/prepare_round.py의 R01 두 번 생성 결과가 동일했다. 전역 시�
 - 원본 코드: https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg
 - 실제 집계 폴더: https://drive.google.com/drive/folders/1fJNfD402l9IRECphaDYX-Y6ca5VH7no0
 - Wazuh 규칙 문법: https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html
+
+
+## 2026-11-04 12장 후속 검증
+
+12장의 실제 캡처에서 동일 URI 요청 584건을 두 연결에 걸쳐 비교했다. 인접 간격 583개의 중앙값은 약 5.207초, 최대는 약 91.227초이다. 동일 PCAP의 Suricata 기본 설정에서 응답 코드가 빠진 194건은 재조립 제한 해제 실행과 Zeek에서 확인됐다. 간격·중단·연결 전환과 센서 결측을 구분하는 검증 사례이며 모든 공격의 분포로 일반화하거나 기존 생성기를 실측 보정했다고 주장하지 않는다.

@@ -1,0 +1,476 @@
+{
+  "01": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 3746,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "last": {
+        "value": 1737578298918.0,
+        "value_as_string": "2025-01-22T20:38:18.918Z"
+      },
+      "kinds": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "dns",
+            "doc_count": 1510
+          },
+          {
+            "key": "flow",
+            "doc_count": 825
+          },
+          {
+            "key": "http",
+            "doc_count": 627
+          },
+          {
+            "key": "alert",
+            "doc_count": 625
+          },
+          {
+            "key": "tls",
+            "doc_count": 159
+          }
+        ]
+      },
+      "first": {
+        "value": 1737575096530.0,
+        "value_as_string": "2025-01-22T19:44:56.530Z"
+      }
+    }
+  },
+  "02": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 627,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "hosts": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "5.252.153.241",
+            "doc_count": 594,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 594
+                }
+              ]
+            }
+          },
+          {
+            "key": "master16.teamviewer.com",
+            "doc_count": 21,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 21
+                }
+              ]
+            }
+          },
+          {
+            "key": "msedge.b.tlu.dl.delivery.mp.microsoft.com",
+            "doc_count": 4,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 2
+                },
+                {
+                  "key": "HEAD",
+                  "doc_count": 2
+                }
+              ]
+            }
+          },
+          {
+            "key": "download.windowsupdate.com",
+            "doc_count": 3,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 3
+                }
+              ]
+            }
+          },
+          {
+            "key": "ctldl.windowsupdate.com",
+            "doc_count": 2,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 2
+                }
+              ]
+            }
+          },
+          {
+            "key": "www.msftconnecttest.com",
+            "doc_count": 2,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 2
+                }
+              ]
+            }
+          },
+          {
+            "key": "au.download.windowsupdate.com",
+            "doc_count": 1,
+            "methods": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "GET",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 11,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 584,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0000202",
+          "_score": null,
+          "_source": {
+            "data": {
+              "pcap_cnt": 5076,
+              "flow_id": "349373224907784",
+              "http": {
+                "url": "/1517096937",
+                "status": 404
+              },
+              "tx_id": 1,
+              "timestamp": "2025-01-23T04:45:59.134760+0900"
+            },
+            "timestamp": "2025-01-22T19:45:59.134+00:00"
+          },
+          "sort": [
+            1737575159134
+          ]
+        },
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0000309",
+          "_score": null,
+          "_source": {
+            "data": {
+              "pcap_cnt": 7305,
+              "flow_id": "349373224907784",
+              "http": {
+                "url": "/1517096937",
+                "status": 404
+              },
+              "tx_id": 2,
+              "timestamp": "2025-01-23T04:46:04.353789+0900"
+            },
+            "timestamp": "2025-01-22T19:46:04.353+00:00"
+          },
+          "sort": [
+            1737575164353
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "flows": {
+        "value": 2
+      },
+      "without_status": {
+        "doc_count": 194
+      },
+      "status": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": 404,
+            "doc_count": 386
+          },
+          {
+            "key": 200,
+            "doc_count": 4
+          }
+        ]
+      }
+    }
+  },
+  "04": {
+    "took": 5,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 3,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0003991",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.1.17.215",
+              "src_port": 50143,
+              "flow_id": "417169283491647",
+              "dest_ip": "5.252.153.241",
+              "dest_port": 80,
+              "flow": {
+                "reason": "shutdown",
+                "pkts_toserver": 5,
+                "alerted": true,
+                "start": "2025-01-23T04:45:56.665407+0900",
+                "bytes_toclient": 945,
+                "end": "2025-01-23T04:45:57.055247+0900",
+                "state": "closed",
+                "bytes_toserver": 617,
+                "pkts_toclient": 3,
+                "age": 1
+              }
+            },
+            "timestamp": "2025-01-22T19:44:56.530+00:00"
+          },
+          "sort": [
+            "2025-01-23T04:45:56.665407+0900"
+          ]
+        },
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0003917",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.1.17.215",
+              "src_port": 50144,
+              "flow_id": "349373224907784",
+              "dest_ip": "5.252.153.241",
+              "dest_port": 80,
+              "flow": {
+                "reason": "shutdown",
+                "pkts_toserver": 2088,
+                "alerted": true,
+                "start": "2025-01-23T04:45:58.521224+0900",
+                "bytes_toclient": 5304874,
+                "end": "2025-01-23T04:53:38.523674+0900",
+                "state": "closed",
+                "bytes_toserver": 129989,
+                "pkts_toclient": 3880,
+                "age": 460
+              }
+            },
+            "timestamp": "2025-01-22T19:44:56.530+00:00"
+          },
+          "sort": [
+            "2025-01-23T04:45:58.521224+0900"
+          ]
+        },
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0003911",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.1.17.215",
+              "src_port": 49689,
+              "flow_id": "343983076826092",
+              "dest_ip": "5.252.153.241",
+              "dest_port": 80,
+              "flow": {
+                "reason": "shutdown",
+                "pkts_toserver": 1382,
+                "alerted": true,
+                "start": "2025-01-23T04:55:06.875500+0900",
+                "bytes_toclient": 1295878,
+                "end": "2025-01-23T05:38:18.918250+0900",
+                "state": "established",
+                "bytes_toserver": 104788,
+                "pkts_toclient": 1718,
+                "age": 2592
+              }
+            },
+            "timestamp": "2025-01-22T19:44:56.530+00:00"
+          },
+          "sort": [
+            "2025-01-23T04:55:06.875500+0900"
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "to_server": {
+        "value": 235394.0
+      },
+      "to_client": {
+        "value": 6601697.0
+      }
+    }
+  },
+  "05": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1510,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "message_kind": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "query",
+            "doc_count": 785
+          },
+          {
+            "key": "answer",
+            "doc_count": 725
+          }
+        ]
+      }
+    }
+  },
+  "06": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 625,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-pcap-ch12",
+          "_id": "df602db5e8bb3696-0003982",
+          "_score": null,
+          "_source": {
+            "data": {
+              "event_type": "alert",
+              "alert": {
+                "severity": 3,
+                "signature_id": 9900012,
+                "rev": 1,
+                "gid": 1,
+                "signature": "BOOK3 HTTP GET observation",
+                "action": "allowed",
+                "category": ""
+              },
+              "http": {
+                "hostname": "master16.teamviewer.com",
+                "url": "/din.aspx?s=91930119&id=0&client=DynGate&p=10000002"
+              }
+            },
+            "timestamp": "2025-01-22T19:44:56.530+00:00"
+          },
+          "sort": [
+            1737575096530
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "signatures": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": 9900012,
+            "doc_count": 625
+          }
+        ]
+      }
+    }
+  }
+}

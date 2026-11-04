@@ -1,0 +1,26 @@
+{
+  "title": "2025-01-22 Traffic analysis exercise: Download from Fake Software Site",
+  "page": "https://www.malware-traffic-analysis.net/2025/01/22/index.html",
+  "source": "https://www.malware-traffic-analysis.net/2025/01/22/2025-01-22-traffic-analysis-exercise.pcap.zip",
+  "provider_notes": "https://www.malware-traffic-analysis.net/about.html",
+  "rights": "Provider copyright retained; no general redistribution licence asserted. Original PCAP and payloads are not distributed in this repository.",
+  "zip_bytes": 20534228,
+  "zip_sha256": "77eee9a8c0d730282504140a860ae48f63be22aae25399cffab8a61f04a48b17",
+  "member": "2025-01-22-traffic-analysis-exercise.pcap",
+  "pcap_bytes": 26759675,
+  "pcap_sha256": "e59db1c07c6fdefafa0abdbca03248c341cdc36c09c34753204d3162802a3586",
+  "suricata_version": "6.0.4",
+  "kt66_ips_image_id": "sha256:db46bce9bb5e2b1cabbace3c714b86a0b917a5f99a4109244b2db32a00c1f24d",
+  "zeek_image": "zeek/zeek:8.0.0",
+  "zeek_digest": "sha256:a4b547a27f3879f703d4979f0a8ff4571d0cbd061a32150eea0a760d3ea4b488",
+  "suricata_config_sha256": "99b6b08650e45eaf2fef7fd0e11b9d5e08cf48fac62338737c789717fe2d1382",
+  "packets_transmitted": 0,
+  "payload_files_extracted": 0,
+  "suricata_overrides": {
+    "HOME_NET": "[10.1.17.0/24]",
+    "unix-command.enabled": false,
+    "runmode": "single",
+    "checksum": "default",
+    "stream.reassembly.depth": "original YAML; separate comparison uses 0"
+  }
+}

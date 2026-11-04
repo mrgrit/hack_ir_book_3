@@ -188,11 +188,11 @@ def build(output,source=None):
                 para(cell,b['text'],size=9.5,after=4)
                 para(doc,'',size=1,after=3)
             elif typ=='link':
-                p=para(doc,'',size=10,after=7)
+                p=para(doc,'',size=10,after=b.get('title_after',7))
                 link=OxmlElement('w:hyperlink');link.set(qn('r:id'),p.part.relate_to(b['url'],RT.HYPERLINK,is_external=True))
                 r=font(p.add_run(b['text']),BODY,10);p._p.remove(r._r);link.append(r._r);p._p.append(link)
                 p.paragraph_format.keep_with_next=True
-                urlpara=para(doc,'',name=MONO,size=10,after=9)
+                urlpara=para(doc,'',name=MONO,size=10,after=b.get('url_after',9))
                 url_link=OxmlElement('w:hyperlink');url_link.set(qn('r:id'),p.part.relate_to(b['url'],RT.HYPERLINK,is_external=True))
                 r=font(urlpara.add_run(b['url']),MONO,10);urlpara._p.remove(r._r);url_link.append(r._r);urlpara._p.append(url_link)
             else:raise ValueError(typ)

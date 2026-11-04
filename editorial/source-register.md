@@ -18,3 +18,8 @@
 - 강의 코드: https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg
 
 공개 PCAP 자료와 공식 도구 문서의 역할·접근 한계는 pcap-integration-plan.md에 기록했다. 이 작업에서 PCAP 파일은 내려받지 않았다.
+
+
+## 2026-11-04 12장 후속 검증
+
+MTA 2025-01-22 공개 PCAP를 Ubuntu 전용 폴더에 내려받아 검증했다. 출처·ZIP/PCAP SHA-256·크기·센서 버전·이미지 식별자는 examples/chapter12/dataset.json, 패킷 통계는 chapter12-pcap-metadata.json에 있다. 원본·payload는 Git에 배포하지 않는다. 앞의 미다운로드 문장은 착수 당시 상태이다.

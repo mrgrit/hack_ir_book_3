@@ -162,3 +162,8 @@ delete는 지정 네임스페이스를 제거한다. 두 끝을 담은 네임스
 - Wazuh Suricata integration: https://documentation.wazuh.com/current/proof-of-concept-guide/integrate-network-ids-suricata.html
 - Tcpreplay timing: https://tcpreplay.appneta.com/reference/man/tcpreplay/
 - ip-netns: https://man7.org/linux/man-pages/man8/ip-netns.8.html
+
+
+## 2026-11-04 12장 후속 검증
+
+12장에서는 MTA 2025-01-22 PCAP를 별도 Ubuntu 폴더에서 파일 분석했다. Suricata 6.0.4·Zeek 8.0.0, Wazuh logtest와 새 전용 인덱스 조회를 검증했다. 패킷 송신·선택 veth 재생·agent 설정 적용은 하지 않았다. 초기 계획의 미실행 표기는 착수 당시 상태이며 상세 결과는 chapter12-review.md에 있다.

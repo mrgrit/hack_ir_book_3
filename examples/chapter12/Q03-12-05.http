@@ -1,0 +1,32 @@
+GET /book3-pcap-ch12/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2025-01-22T19:44:00Z",
+              "lt": "2025-01-22T20:39:00Z"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "dns"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "message_kind": {
+      "terms": {
+        "field": "data.dns.type",
+        "size": 20
+      }
+    }
+  }
+}

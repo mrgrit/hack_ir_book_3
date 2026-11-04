@@ -75,7 +75,12 @@ def compare_aggs(docs,definitions,actual):
 def verify(chapter,folders):
     datasets={};checks=[]
     for folder in folders:
-        checks.append({'folder':folder.name,**check(folder),'bulk_sha256':sha(folder/'events.bulk.ndjson')})
+        manifest=json.loads((folder/'manifest.json').read_text('utf8'))
+        if manifest.get('source_kind')=='pcap-observation':
+            from pcap_observations import check as check_pcap
+            pc=check_pcap(folder);checked={'status':'pass','events':pc['total'],'source_kind':'pcap-observation'}
+        else:checked=check(folder)
+        checks.append({'folder':folder.name,**checked,'bulk_sha256':sha(folder/'events.bulk.ndjson')})
         index=json.loads((folder/'manifest.json').read_text('utf8'))['index'];docs=[]
         with (folder/'events.bulk.ndjson').open(encoding='utf8') as f:
             for line in f:

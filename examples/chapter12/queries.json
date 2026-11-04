@@ -1,0 +1,308 @@
+{
+  "01": {
+    "title": "선택한 센서 관측의 종류",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "kinds": {
+          "terms": {
+            "field": "data.event_type",
+            "size": 20
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "HTTP 대상과 요청 방법",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "http"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "hosts": {
+          "terms": {
+            "field": "data.http.hostname",
+            "size": 20
+          },
+          "aggs": {
+            "methods": {
+              "terms": {
+                "field": "data.http.http_method",
+                "size": 20
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "반복 HTTP 경로의 응답과 누락",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 2,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "http"
+              }
+            },
+            {
+              "term": {
+                "data.http.url": "/1517096937"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "5.252.153.241"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "status": {
+          "terms": {
+            "field": "data.http.status",
+            "size": 20
+          }
+        },
+        "without_status": {
+          "filter": {
+            "bool": {
+              "must_not": [
+                {
+                  "exists": {
+                    "field": "data.http.status"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "flows": {
+          "cardinality": {
+            "field": "data.flow_id"
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.timestamp",
+        "data.flow_id",
+        "data.pcap_cnt",
+        "data.tx_id",
+        "data.http.status",
+        "data.http.url"
+      ]
+    }
+  },
+  "04": {
+    "title": "후보 목적지의 연결과 방향별 바이트",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 5,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "5.252.153.241"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "to_server": {
+          "sum": {
+            "field": "data.flow.bytes_toserver"
+          }
+        },
+        "to_client": {
+          "sum": {
+            "field": "data.flow.bytes_toclient"
+          }
+        }
+      },
+      "sort": [
+        {
+          "data.flow.start": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.flow_id",
+        "data.src_ip",
+        "data.src_port",
+        "data.dest_ip",
+        "data.dest_port",
+        "data.flow"
+      ]
+    }
+  },
+  "05": {
+    "title": "DNS 요청과 응답의 관측 단위",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "dns"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "message_kind": {
+          "terms": {
+            "field": "data.dns.type",
+            "size": 20
+          }
+        }
+      }
+    }
+  },
+  "06": {
+    "title": "관측용 GET 경보와 실제 Wazuh 규칙의 구분",
+    "method": "GET",
+    "path": "/book3-pcap-ch12/_search",
+    "body": {
+      "size": 1,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2025-01-22T19:44:00Z",
+                  "lt": "2025-01-22T20:39:00Z"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "alert"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "signatures": {
+          "terms": {
+            "field": "data.alert.signature_id",
+            "size": 20
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.event_type",
+        "data.http.hostname",
+        "data.http.url",
+        "data.alert"
+      ]
+    }
+  }
+}

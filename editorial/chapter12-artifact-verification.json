@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "chapter": 12,
+  "pages": 36,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter12-network.png",
+      "sha256": "e41fe8222add37cff477d455814b9a4e19fe8f873d6d4a992c3278d65b1a3198"
+    },
+    {
+      "path": "assets/figures/chapter12-observation.png",
+      "sha256": "e4fef27de2ed6028af6032f7c50966e064075ae00d8aac08df7a98123f0138e9"
+    },
+    {
+      "path": "assets/screenshots/chapter12/pcap-detail.png",
+      "sha256": "ff24df8244bf62c0a99f212956d097cc3902d14a4b1f3972b52c62392ff60bf0"
+    },
+    {
+      "path": "assets/figures/chapter12-replay.png",
+      "sha256": "e6a975f2d16476e3b709ef302a36de3920c180a6129a0cba2be9eebbd0851d0b"
+    }
+  ],
+  "urls_verified": [
+    "https://www.malware-traffic-analysis.net/2025/01/22/index.html",
+    "https://www.malware-traffic-analysis.net/about.html",
+    "https://docs.suricata.io/en/suricata-7.0.10/command-line-options.html",
+    "https://docs.suricata.io/en/suricata-6.0.20/configuration/suricata-yaml.html",
+    "https://docs.zeek.org/en/current/install.html",
+    "https://docs.zeek.org/en/v8.0.0/logs/http.html",
+    "https://documentation.wazuh.com/current/proof-of-concept-guide/integrate-network-ids-suricata.html",
+    "https://www.wireshark.org/docs/man-pages/capinfos.html",
+    "https://tcpreplay.appneta.com/reference/man/tcpreplay/",
+    "https://man7.org/linux/man-pages/man8/ip-netns.8.html",
+    "https://www.netresec.com/?page=PcapFiles",
+    "https://contagiodump.blogspot.com/",
+    "https://www.stratosphereips.org/datasets-iot23",
+    "https://www.caida.org/catalog/datasets/ddos-20070804_dataset/",
+    "https://lab.dynamite.ai/",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter12"
+  ],
+  "queries_match": 6,
+  "commands_match": 21,
+  "files": {
+    "manuscript/volume03-chapter12.docx": "32bfbf91dfa97784f1c459b0a3d225f5db2aa457003503de1c16fe69085af249",
+    "manuscript/volume03-chapter12.json": "4724a734d4d2965344df0f906ae58eb75e1afbc555278cbaff2deedeef654020",
+    "examples/chapter12/book3.rules": "680466bc4991c2f08abd90e88fa243b6f18e8f98e4e1ccb334f69ab5ad2af30e",
+    "examples/chapter12/cleanup.http": "a12af357c5723cf6647ecac7929be63e26dabd0d48a259827844c2914fd02659",
+    "examples/chapter12/commands.sh": "fb2889a2b7b08dcaf64615930e5dd0c7f6d033f37ae5bf8db0762d5db94f83e3",
+    "examples/chapter12/dataset.json": "4842e354c4a5db7ab77fa660dcf9864ab28bab8a9d2b51a7fe7a5b935d9d83c5",
+    "examples/chapter12/discover.dql": "3897707d28bcde81327f6f90a95b0ac6e29362c64342f632801fdf49b58e7a4c",
+    "examples/chapter12/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter12/localfile.xml": "1a7c20867328fc521e3c8c342a469136f8f13251c2e13480bada56fc77c96428",
+    "examples/chapter12/Q03-12-01.http": "cb810bc9e91da4ff671fabfa547f800c1a0a0d2f568e7f4583cf011faabc9d51",
+    "examples/chapter12/Q03-12-02.http": "746a197f50362835767c7d29530e99a63a2c84b9f72fe777bf049ace31e18d83",
+    "examples/chapter12/Q03-12-03.http": "02fa4a91ba18f719ef0350414320a440b8ecf443ade146050d862f328e9d1c89",
+    "examples/chapter12/Q03-12-04.http": "cb48034a4e899f0fda90b78b8f0804f6294f7afb224da2651302ad97ca84c830",
+    "examples/chapter12/Q03-12-05.http": "7a1ab2db24cce71cad9330cf9e32535d64c220aab82f2f45c3f37187e759ccf3",
+    "examples/chapter12/Q03-12-06.http": "6570680e04713bb69791e7515cf7c86401a031fdfe1796bc3795a7373a4881c0",
+    "examples/chapter12/queries.json": "90981b6a93f5979e4fadd502bf3523c20f6bfaf78558ffef120cdcbe342157e1"
+  },
+  "qa_pdf_published": false
+}

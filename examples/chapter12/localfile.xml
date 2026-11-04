@@ -1,0 +1,5 @@
+<!-- 전용 분석 agent의 기존 ossec_config 안에 추가하는 설정 조각이다. -->
+<localfile>
+  <log_format>json</log_format>
+  <location>/var/log/book3/suricata/eve.json</location>
+</localfile>

@@ -1,0 +1,858 @@
+{
+  "title": "12장 PCAP에서 관측 로그 만들기",
+  "series": "해킹·침해대응 실무 with Wazuh — 3권",
+  "comments": "공개 PCAP 파일 분석·logtest·실제 조회를 검증했다. 선택 veth 재생과 전용 agent 설정은 설계이며 실행 수치를 제시하지 않는다.",
+  "pages": [
+    {
+      "kind": "content",
+      "title": "12장 PCAP에서 관측 로그 만들기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "공개 캡처에서 반복 HTTP 요청을 찾고, 센서 설정에 따라 빠지는 응답 필드를 확인한다. 최종 제출물은 캡처 해시·센서 설정·관측 수·요청 간격·Wazuh 규칙 시험 결과를 연결한 조사표이다."
+        },
+        {
+          "type": "p",
+          "text": "PCAP는 네트워크 패킷의 바이트와 관측 시각을 담은 파일 형식이다. Suricata는 패킷을 해석하고 규칙을 검사하여 EVE라는 JSON 이벤트를 만든다. Zeek는 연결과 응용 프로토콜의 기록을 만든다. 두 센서는 같은 파일을 읽어도 연결 경계·기록 시점·분석 제한이 달라질 수 있다."
+        },
+        {
+          "type": "image",
+          "path": "assets/illustrations/chapter12-network.png",
+          "caption": "그림 12-1  네트워크의 관측 위치 확인",
+          "width_mm": 82
+        },
+        {
+          "type": "p",
+          "text": "기본 실습은 네트워크가 없는 분석 컨테이너에서 파일을 읽는다. 패킷에서 추출한 실행 파일을 실행하거나 캡처의 주소로 요청을 보내지 않는다. 센서 로그를 Wazuh logtest로 시험하고, 별도 관측 인덱스에서 집계한다. 이 인덱스의 문서와 manager가 실제 수집하여 만든 경보는 보관 경로가 다르다."
+        }
+      ],
+      "break": true,
+      "level": "chapter"
+    },
+    {
+      "kind": "content",
+      "title": "12.1 캡처의 출처와 범위를 고정한다",
+      "blocks": [
+        {
+          "type": "image",
+          "path": "assets/figures/chapter12-observation.png",
+          "caption": "그림 12-2  캡처에서 조사 근거까지의 연결",
+          "width_mm": 121
+        },
+        {
+          "type": "p",
+          "text": "기본 자료는 Malware-Traffic-Analysis.net의 2025년 1월 22일 연습이다. 제공자는 가짜 소프트웨어 사이트와 관련된 감염 상황을 제시한다. 여기서는 그 설명을 사건 배경으로 사용하고 패킷에서 확인한 사실은 별도로 기록한다. 내부망은 10.1.17.0/24이다."
+        },
+        {
+          "type": "p",
+          "text": "자료의 원본은 제공자의 사이트에서 받는다. examples/chapter12/dataset.json에는 원 URL, ZIP·PCAP 해시, 파일 이름, 센서 버전이 있다. 공개 다운로드와 재배포 허락을 구분하고 제공자의 안내를 확인한다. 원본 PCAP와 실행 파일은 교재 저장소에 넣지 않는다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "항목",
+            "고정한 자료"
+          ],
+          "rows": [
+            [
+              "ZIP 크기",
+              "20,534,228바이트"
+            ],
+            [
+              "PCAP 크기",
+              "26,759,675바이트"
+            ],
+            [
+              "패킷",
+              "39,427개, Ethernet 링크 유형 1"
+            ],
+            [
+              "첫 관측 UTC",
+              "2025-01-22 19:44:56.530137"
+            ],
+            [
+              "마지막 관측 UTC",
+              "2025-01-22 20:38:18.918250"
+            ],
+            [
+              "기간·정밀도",
+              "3,202.388113초 · 마이크로초"
+            ],
+            [
+              "저장 범위",
+              "snaplen 65,535 · 절단 패킷 0"
+            ]
+          ],
+          "widths": [
+            37,
+            90
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "snaplen은 패킷마다 저장할 수 있는 길이 상한이다. 절단 0은 파일에 기록된 저장 길이와 원래 길이가 같다는 뜻이다. 캡처 장비 앞에서 잃어버린 패킷까지 모두 존재한다고 판단하려면 장비의 손실 통계가 더 필요하다. 이 파일에는 시간 역전이 없다."
+        },
+        {
+          "type": "p",
+          "text": "PCAP의 SHA-256은 다음과 같다. SHA-256은 파일 바이트가 달라졌는지 확인하는 해시이며 사건의 진위를 보증하는 서명은 아니다."
+        },
+        {
+          "type": "code",
+          "text": "e59db1c07c6fdefafa0abdbca03248c341cdc36c09c34753204d3162802a3586",
+          "long": true
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.2 분석 폴더와 도구를 준비한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1장에서 준비한 3권 저장소와 kt66의 Docker를 사용한다. Docker 이미지는 실행에 필요한 프로그램의 묶음이고 컨테이너는 그 이미지로 만든 실행 공간이다. 기존 kt66-ips 이미지의 Suricata 6.0.4를 새 컨테이너에서 사용한다. Zeek 8.0.0 이미지는 공식 저장소에서 별도로 받는다. kt66이 Zeek를 설치해 두었다고 가정하지 않는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-01",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "pwd\nsudo docker image inspect kt66-ips --format '{{.Id}}'\nsudo docker ps -a --format '{{.Names}}'",
+          "purpose": "작업 위치·이미지·이름 중복을 확인한다.",
+          "syntax": "pwd는 현재 경로를 출력한다. sudo는 관리자 권한으로 Docker에 접근한다. image inspect는 이미지 정보를, ps -a는 중지된 컨테이너까지 표시한다. --format의 중괄호 표현식은 지정 항목만 출력하며 작은따옴표는 셸 해석을 막는다.",
+          "result": "저장소 루트인지 확인한다. book3-suri-ch12·book3-zeek-ch12가 이미 있으면 기존 소유 작업을 확인하고 새 실행 이름을 정한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-02",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "mkdir build/pcap-work\nWORK=\"$(pwd)/build/pcap-work\"\nmkdir \"$WORK/input\" \"$WORK/config\" \"$WORK/rules\"\nmkdir \"$WORK/output\"\ncp examples/chapter12/book3.rules \"$WORK/rules/\"",
+          "purpose": "새 분석 폴더와 관측 규칙을 준비한다.",
+          "syntax": "mkdir는 폴더를 만든다. 기존 결과에 이어 쓰지 않도록 -p를 쓰지 않는다. WORK는 이번 터미널의 작업 경로 변수이며 $(pwd)는 pwd의 출력으로 치환된다. 큰따옴표는 경로 안의 공백을 보존한다. cp는 지정 규칙 파일을 복사한다.",
+          "result": "input·config·rules·output 네 폴더와 book3.rules를 확인한다. 이후 호스트 명령은 같은 터미널에서 실행한다."
+        },
+        {
+          "type": "p",
+          "text": "curl은 URL의 응답을 파일로 저장하는 도구이다. 다음 URL은 제공자의 자료 다운로드 주소이다. -f는 HTTP 오류를 실패로 처리하고, -L은 이동 주소를 따라가며, -o는 저장 파일을 지정한다. 역슬래시(\\)는 셸 명령을 다음 줄에 이어 쓴다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-03",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "BASE_URL=https://www.malware-traffic-analysis.net/2025/01/22\ncurl -fL -o \"$WORK/input/exercise.zip\" \\\n  \"$BASE_URL/2025-01-22-traffic-analysis-exercise.pcap.zip\"\npython3 tools/extract_pcap.py \\\n  \"$WORK/input/exercise.zip\" \"$WORK/input/exercise.pcap\" \\\n  --manifest examples/chapter12/dataset.json",
+          "purpose": "고정한 ZIP에서 PCAP 한 파일을 꺼낸다.",
+          "syntax": "BASE_URL은 내려받을 경로이다. extract_pcap.py는 ZIP 해시·멤버 이름·크기를 먼저 대조한다. 제공자의 about 페이지에서 확인한 압축 암호를 질문에 입력한다. --manifest는 검증 기준 파일이다.",
+          "result": "Verified PCAP: 26759675 bytes를 확인한다. 기존 출력·해시 불일치·예상 밖 파일이 있으면 도구가 중단한다. ZIP 안의 프로그램을 실행하지 않는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-04",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/inspect_pcap.py \"$WORK/input/exercise.pcap\" \\\n  > \"$WORK/pcap-info.json\"\ncat \"$WORK/pcap-info.json\"",
+          "purpose": "패킷 수와 시각 범위를 기록한다.",
+          "syntax": "inspect_pcap.py는 classic PCAP 헤더와 각 레코드 길이를 읽는 교재 도구이다. >는 표준 출력을 새 기록 파일에 저장하며 cat은 그 내용을 출력한다. 기존 pcap-info.json이 없는지 먼저 확인한다. PCAPNG는 이 도구 대신 Wireshark의 capinfos로 검사한다.",
+          "result": "packets 39427, truncated_packets 0, time_inversions 0과 앞 절의 해시·UTC 범위를 대조한다. payload_extracted와 packets_transmitted는 false·0이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-05",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "sudo docker cp \\\n  kt66-ips:/etc/suricata/suricata.yaml \\\n  \"$WORK/config/suricata.yaml\"\nsudo docker pull zeek/zeek:8.0.0",
+          "purpose": "센서 설정 사본과 Zeek를 준비한다.",
+          "syntax": "docker cp의 콜론(:) 앞은 컨테이너, 뒤는 그 안의 경로이다. 기존 IPS 설정을 읽어 새 폴더에 복사한다. pull은 명시한 버전 이미지를 받는다.",
+          "result": "설정 사본의 존재·해시와 다운로드 성공을 확인한다. 이미지 digest는 dataset.json과 대조해 기록한다. 기존 IPS 서비스 설정은 그대로 유지된다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.3 Suricata가 파일을 읽게 한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "관측 규칙은 HTTP GET을 찾는다. alert는 경보 기록, http는 응용 프로토콜, 주소와 포트 자리에 쓰인 any는 전체를 뜻한다. ->는 요청 방향이다. flow:established,to_server는 성립한 연결의 서버 방향을 검사한다. http.method는 검사 대상을 요청 방법으로 바꾸고 content:\"GET\"과 bsize:3은 길이가 3인 GET을 찾는다. sid 9900012는 이 규칙의 번호, rev 1은 개정 번호이다. 정상 점검 GET도 일치한다."
+        },
+        {
+          "type": "p",
+          "text": "규칙 전체는 examples/chapter12/book3.rules에 있다. 파일 저장 기능은 사용하지 않는다. 설정의 file-store.enabled가 no인지 확인한다. EVE에는 alert·http·dns·tls·flow가 포함되어야 한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-06",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "mkdir \"$WORK/output/suri01\"\nsudo docker run -dit --name book3-suri-ch12 \\\n  --network none --cap-drop ALL \\\n  --security-opt no-new-privileges \\\n  --cpus 1 --memory 768m --user \"$(id -u):$(id -g)\" \\\n  --mount type=bind,src=\"$WORK\",dst=/work,readonly \\\n  --mount type=bind,src=\"$WORK/output\",dst=/output \\\n  --workdir /work --entrypoint /bin/bash kt66-ips\nsudo docker inspect --format '{{.HostConfig.NetworkMode}}' \\\n  book3-suri-ch12\nsudo docker exec -it book3-suri-ch12 /bin/bash",
+          "purpose": "전용 파일 분석 컨테이너를 만든 뒤 들어간다.",
+          "syntax": "-d는 분리 실행, -i·-t는 대화 입력과 터미널이다. --network none은 외부 네트워크를 연결하지 않는다. --cap-drop ALL과 no-new-privileges는 추가 권한 사용을 제한한다. --cpus·--memory는 자원 상한이다. id -u·-g는 현재 사용자·그룹 번호이다. bind mount는 호스트 폴더를 지정 경로에 연결하고 readonly는 읽기 전용이다. /output만 쓰기 가능하다. --entrypoint는 이미지의 서비스 시작 절차 대신 Bash를 실행한다.",
+          "result": "network 출력 none을 확인한다. 컨테이너의 현재 위치는 /work이다. 공용 IPS와 다른 실행 공간이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-07",
+          "where": "book3-suri-ch12 컨테이너 · /work",
+          "text": "suricata -V\nsuricata -T -c /work/config/suricata.yaml \\\n  -S /work/rules/book3.rules -l /output/suri01 \\\n  --set vars.address-groups.HOME_NET=[10.1.17.0/24] \\\n  --set unix-command.enabled=no",
+          "purpose": "버전과 설정·규칙 문법을 확인한다.",
+          "syntax": "-V는 버전, -T는 설정 시험이다. -c는 설정, -S는 이 규칙 파일만 사용, -l은 출력 폴더이다. --set은 이 실행의 설정값을 덮어쓴다. HOME_NET은 캡처 내부망이다. unix-command를 끄면 비권한 분석에서 불필요한 제어 소켓을 만들지 않는다.",
+          "result": "6.0.4와 configuration successfully loaded를 확인한다. 다른 버전이면 버전·설정·실제 결과를 새로 기록한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-08",
+          "where": "book3-suri-ch12 컨테이너 · /work",
+          "text": "suricata -r /work/input/exercise.pcap \\\n  -c /work/config/suricata.yaml \\\n  -S /work/rules/book3.rules -l /output/suri01 \\\n  --runmode single \\\n  --set vars.address-groups.HOME_NET=[10.1.17.0/24] \\\n  --set unix-command.enabled=no\nexit",
+          "purpose": "패킷을 전송하지 않고 EVE를 만든다.",
+          "syntax": "-r은 입력 파일이고 --runmode single은 패킷 처리 스레드 한 개를 사용한다. 체크섬을 무시하는 -k none은 넣지 않는다. 종료 뒤 exit로 호스트로 나온다.",
+          "result": "Pcap-file module의 39427 packets·26128819 bytes를 확인한다. output/suri01에 eve.json·stats.log·suricata.log가 생긴다."
+        },
+        {
+          "type": "p",
+          "text": "EVE 전체는 4,600건이다. DNS 1,510, flow 825, HTTP 627, alert 625, TLS 159 외에도 파일·인증·내부 프로토콜 메타데이터가 있다. 이 문서 수를 패킷 수나 악성 동작 수로 바꾸지 않는다. fileinfo는 파일에 대한 메타데이터이며 실행 파일을 별도 추출한 결과와 구분한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.4 Zeek의 연결과 HTTP를 연결한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Zeek의 conn.log는 연결 기록, http.log는 HTTP 트랜잭션 기록이다. uid는 같은 실행 안에서 연결을 식별한다. 한 TCP 연결에서 여러 HTTP 요청이 가능하므로 HTTP 행 수와 연결 수가 다를 수 있다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-09",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "sudo docker stop book3-suri-ch12\nmkdir \"$WORK/output/zeek01\"\nsudo docker run -dit --name book3-zeek-ch12 \\\n  --network none --cap-drop ALL \\\n  --security-opt no-new-privileges \\\n  --cpus 1 --memory 768m --user \"$(id -u):$(id -g)\" \\\n  --mount type=bind,src=\"$WORK/input\",dst=/input,readonly \\\n  --mount type=bind,src=\"$WORK/output/zeek01\",dst=/output \\\n  --workdir /output --entrypoint /bin/bash zeek/zeek:8.0.0\nsudo docker exec -it book3-zeek-ch12 /bin/bash",
+          "purpose": "Suricata 분석을 마친 뒤 Zeek 작업 공간을 연다.",
+          "syntax": "stop은 지정 컨테이너를 중지한다. /input은 읽기 전용 캡처, /output은 새 결과 폴더이다. 나머지 격리·자원 옵션은 앞 명령과 같다.",
+          "result": "서로 다른 출력 폴더와 book3-zeek-ch12 이름을 확인한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-10",
+          "where": "book3-zeek-ch12 컨테이너 · /output",
+          "text": "zeek --version\nzeek -r /input/exercise.pcap LogAscii::use_json=T\nexit",
+          "purpose": "같은 PCAP를 Zeek로 분석한다.",
+          "syntax": "--version은 버전, -r은 파일 입력이다. LogAscii::use_json=T는 각 로그를 한 줄당 JSON 객체로 출력한다. 실행 디렉터리 /output에 저장한다. 체크섬 검사를 무시하는 -C는 넣지 않는다.",
+          "result": "8.0.0과 실행 완료를 확인한다. conn.log 859행·http.log 627행이 기준 결과이다. 없는 프로토콜 로그를 강제로 만들지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "서로 다른 실행의 Zeek uid와 Suricata flow_id를 문자열이 같다는 이유로 연결하지 않는다. 센서·실행·원본 해시를 먼저 고정한다. 같은 센서에서는 uid 또는 flow_id를 사용하고 센서 간에는 출발지·목적지·포트·프로토콜·겹치는 시각과 HTTP 트랜잭션을 대조한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.5 반복 간격과 응답 누락을 대조한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "10.1.17.215에서 5.252.153.241의 /1517096937로 향하는 요청을 비교한다. compare_pcap_logs.py는 지정한 출발지·HTTP Host·경로를 선택하고 Zeek의 요청 시작 시각 ts를 정렬한다. 이 값은 EVE 이벤트 출력 시각과 역할이 다르다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-11",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "sudo docker stop book3-zeek-ch12\npython3 tools/compare_pcap_logs.py \\\n  --eve \"$WORK/output/suri01/eve.json\" \\\n  --http \"$WORK/output/zeek01/http.log\" \\\n  --conn \"$WORK/output/zeek01/conn.log\" \\\n  --source 10.1.17.215 --host 5.252.153.241 \\\n  --uri /1517096937",
+          "purpose": "반복 요청과 같은 실행의 연결을 대조한다.",
+          "syntax": "--eve·--http·--conn은 입력 로그, --source·--host·--uri는 조사 조건이다. 연속 요청 사이 차이 n-1개를 초로 계산한다. P95는 정렬한 간격의 선형 보간 분위수이며 연결이 바뀌는 구간도 포함한다. uid가 conn에 없으면 중단한다.",
+          "result": "584개 요청·연결 2개·간격 583개이다. 최소 약 5.153초, 중앙값 5.207초, P95 5.319초, 최대 91.227초이다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "범위",
+            "Suricata 기본",
+            "Zeek"
+          ],
+          "rows": [
+            [
+              "반복 요청",
+              "584",
+              "584"
+            ],
+            [
+              "404 응답",
+              "386",
+              "580"
+            ],
+            [
+              "200 응답",
+              "4",
+              "4"
+            ],
+            [
+              "응답 코드 없음",
+              "194",
+              "0"
+            ]
+          ],
+          "widths": [
+            47,
+            40,
+            40
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "584개 요청의 간격을 고정 5초로 표현하면 지터와 긴 중단을 잃는다. 첫 요청은 UTC 19:45:58.896228, 마지막은 20:38:18.658377이다. 이 캡처의 약 52분 관측을 장기 조직 전체의 보편적 분포로 확대하지 않는다. 정상 업데이트·점검 요청도 같은 캡처에 섞여 있다."
+        },
+        {
+          "type": "p",
+          "text": "Suricata stats.log에는 tcp.stream_depth_reached가 6이다. 이 카운터와 코드 없는 HTTP 기록을 함께 보존하고 재조립 제한을 바꾼 새 실행으로 비교한다. stream.reassembly.depth는 TCP 스트림 재조립 깊이 상한이며 0은 이 상한을 해제한다. 다른 제한과 자원 상한은 계속 적용된다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-12",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "mkdir \"$WORK/output/suri-depth0\"\nsudo docker start book3-suri-ch12\nsudo docker exec -it book3-suri-ch12 /bin/bash",
+          "purpose": "설정 비교 결과를 위한 새 출력 폴더를 준비한다.",
+          "syntax": "start는 중지한 전용 컨테이너를 시작한다. 기본 실행의 출력은 보존한다.",
+          "result": "/output/suri-depth0가 새 폴더인지 확인한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-13",
+          "where": "book3-suri-ch12 컨테이너 · /work",
+          "text": "suricata -r /work/input/exercise.pcap \\\n  -c /work/config/suricata.yaml \\\n  -S /work/rules/book3.rules -l /output/suri-depth0 \\\n  --runmode single \\\n  --set vars.address-groups.HOME_NET=[10.1.17.0/24] \\\n  --set unix-command.enabled=no \\\n  --set stream.reassembly.depth=0\nexit",
+          "purpose": "재조립 깊이 제한만 바꿔 별도 분석한다.",
+          "syntax": "기본 실행에 마지막 --set 한 항목을 추가한다. 공용 서비스의 YAML은 편집하지 않는다.",
+          "result": "반복 경로 584건이 404 580건·200 4건으로 바뀐다. 전체 HTTP는 627건으로 유지된다."
+        },
+        {
+          "type": "p",
+          "text": "앞의 비교 명령에 --deeper \"$WORK/output/suri-depth0/eve.json\"을 추가하면 새 실행의 응답 분포도 출력한다. 이 비교는 기본 실행에서 빠진 응답 코드가 분석 설정의 영향을 받았음을 보여 준다. 코드 없는 194건을 서버 무응답이나 공격 성공으로 분류하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.6 Wazuh의 디코더와 규칙을 시험한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "wazuh-logtest는 manager의 디코더와 규칙에 원문 한 줄을 넣어 분류 결과를 확인하는 도구이다. 로그 수집·경보 파일 저장·색인 전체의 완료 시험과 구분한다. 먼저 select 명령으로 센서가 만든 alert 한 줄을 출력한다. 이 줄은 전용 인덱스의 data 포장 객체가 아닌 원래 EVE 객체이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-14",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/pcap_observations.py select \\\n  \"$WORK/output/suri01/eve.json\" --kind alert\nsudo docker exec -it kt66-siem /bin/bash",
+          "purpose": "관측용 경보 원문을 준비하고 manager 터미널로 들어간다.",
+          "syntax": "select는 요청한 event_type의 첫 JSON 한 줄을 출력한다. 그 줄을 복사한다. --kind를 http·flow로 바꾸면 다른 원문을 얻는다.",
+          "result": "첫 alert는 www.msftconnecttest.com의 /connecttest.txt GET이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-15",
+          "where": "kt66-siem 컨테이너",
+          "text": "/var/ossec/bin/wazuh-logtest",
+          "purpose": "복사한 JSON 한 줄의 분류를 확인한다.",
+          "syntax": "명령을 실행한 뒤 JSON 한 줄을 붙여 넣고 Enter를 누른다. Phase 2의 디코더·필드와 Phase 3의 규칙을 읽는다. Ctrl+C로 도구를 마치고 exit로 컨테이너에서 나온다. 각 종류를 새 시험 세션에서 확인한다.",
+          "result": "JSON 디코더, alert는 86601·레벨 3, http는 86602·레벨 0, flow는 86600·레벨 0이다. 표지는 발생 가능한 경보이며 실제 alerts 인덱스 적재 결과는 아니다."
+        },
+        {
+          "type": "p",
+          "text": "86600은 timestamp·event_type이 있는 JSON의 부모 규칙이다. 86601은 event_type alert, 86602는 http를 선택한다. 기본 규칙의 no_full_log 옵션은 경보 원문 저장 방식에 영향을 준다. 센서의 SID 9900012와 manager의 rule.id 86601은 서로 다른 규칙 번호이다. 경보 625개는 GET 관측 규칙의 일치 수이며 감염 625건을 뜻하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "상시 수집에는 전용 분석 agent의 ossec.conf 안에 다음 localfile 조각을 추가한다. 기존 설정을 백업하고 파일 접근 권한·JSON 한 줄 형식을 확인한 뒤 해당 agent만 설정 검증·재시작한다. 감시가 준비된 후 새 행을 추가하고 agent 오류 로그, manager 분류, 경보 파일, 색인 순으로 확인한다. 이 설정을 공용 IPS·manager에 일괄 적용하지 않는다."
+        },
+        {
+          "type": "code",
+          "text": "<localfile>\n  <log_format>json</log_format>\n  <location>/var/log/book3/suricata/eve.json</location>\n</localfile>",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "agent는 지정한 EVE 파일을 읽는다. 레벨 0의 HTTP·flow까지 조사하려면 원문 보관·색인 정책을 별도로 정해야 한다. 경보 수와 읽은 EVE 행 수를 비교할 때 이 분류 차이를 포함한다. 과거 캡처 시각과 manager 도착 시각도 구분한다. 석 달 분량을 한꺼번에 넣으면 도착 간격을 사용하는 상관 조건은 압축된 입력을 보게 된다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.7 관측 로그를 전용 인덱스에서 조사한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "전체 관측을 집계하기 위해 EVE의 flow·dns·http·tls·alert만 선택한다. pcap_observations.py는 원문을 data 아래에 보존하고 원본 해시·센서 버전·EVE 줄 번호를 book3에 붙인다. manager 규칙 값을 만들어 넣지 않는다. source_kind는 pcap-observation, synthetic은 false이다. 선택한 다섯 종류의 합은 3,746건이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-16",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/pcap_observations.py prepare \\\n  --eve \"$WORK/output/suri01/eve.json\" \\\n  --pcap-info \"$WORK/pcap-info.json\" \\\n  --config \"$WORK/config/suricata.yaml\" \\\n  --rules \"$WORK/rules/book3.rules\" \\\n  --sensor-version 6.0.4 --run-id ch12 \\\n  --out build/pcap-ch12\npython3 tools/pcap_observations.py check build/pcap-ch12",
+          "purpose": "원문과 연결된 검색 자료를 만든다.",
+          "syntax": "prepare는 새 출력 경로만 허용한다. --pcap-info는 캡처 검사 기록, --config·--rules는 해시로 보존할 센서 입력이다. check는 해시·고유 ID·건수·정렬·출처를 검사한다. 실행 옵션은 dataset.json과 조사표에도 기록한다.",
+          "result": "total 3746과 종류별 수를 확인한다. 센서 재실행에서는 flow_id·출력 순서·EVE 해시가 달라질 수 있으므로 자신의 manifest를 기준으로 삼는다."
+        },
+        {
+          "type": "p",
+          "text": "검색용 timestamp는 원래 EVE 시각을 UTC 밀리초로 표현한다. data.timestamp에는 마이크로초가 있는 원문 문자열을 보존한다. flow_id는 큰 정수를 JSON 클라이언트에서 잃지 않도록 십진 문자열로 저장한다. 원문 EVE 해시와 source_line으로 변환 전 행을 찾을 수 있다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-17",
+          "where": "kt66 Ubuntu VM 호스트 · 3권 저장소 루트",
+          "text": "python3 tools/pcap_observations.py load build/pcap-ch12 \\\n  --url https://10.20.32.110:9200 --user admin --insecure",
+          "purpose": "새 전용 관측 인덱스에 적재한다.",
+          "syntax": "2장처럼 시간 간격을 둔 SIEM 상태 확인을 먼저 한다. 소멸·UUID 변경·건수 감소가 있으면 기다린다. --url은 자신의 indexer 주소이다. 비밀번호는 질문에 입력한다. --insecure는 격리된 자체 서명 데모에만 사용하고 인증서가 준비된 환경에서는 --ca-cert로 바꾼다.",
+          "result": "book3-pcap-ch12와 count 3746을 확인한다. 기존 인덱스가 있으면 중단한다. 실패한 일부 적재를 자동 삭제·재시도하지 않는다."
+        },
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "Windows 브라우저에서 kt66 VM의 HTTPS 5601로 접속한다. Indexer management → Dev Tools를 연다.",
+            "examples/chapter12의 조회를 하나씩 입력하고 마지막 중괄호를 확인한 뒤 Ctrl+Enter로 실행한다.",
+            "200 OK, timed_out: false, _shards.failed: 0과 조회 범위의 건수를 확인한다. Discover를 쓴다면 book3-pcap-ch12 전용 패턴과 2025년 1월 22일 UTC 범위를 선택한다."
+          ]
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-01",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"kinds\": {\"terms\": {\"field\": \"data.event_type\", \"size\": 20}},\n    \"first\": {\"min\": {\"field\": \"timestamp\"}},\n    \"last\": {\"max\": {\"field\": \"timestamp\"}}\n  }\n}",
+          "purpose": "패킷에서 생성한 관측 종류를 센다.",
+          "syntax": "2025-01-22 19:44 이상~20:39 미만 UTC의 전용 인덱스를 선택한다. 종류별 Terms는 요청·응답·flow·경보의 기록 단위를 나눈다.",
+          "result": "3746건이다. DNS 1510·flow 825·HTTP 627·alert 625·TLS 159이다.",
+          "long": true
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-02",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"http\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"hosts\": {\n      \"terms\": {\"field\": \"data.http.hostname\", \"size\": 20},\n      \"aggs\": {\n        \"methods\": {\n          \"terms\": {\n            \"field\": \"data.http.http_method\",\n            \"size\": 20\n          }\n        }\n      }\n    }\n  }\n}",
+          "purpose": "HTTP 대상과 방법을 비교한다.",
+          "syntax": "event_type을 http로 제한하여 alert 안의 HTTP 정보를 중복 합산하지 않는다. hosts 아래 methods를 읽는다.",
+          "result": "5.252.153.241은 594건이다. 다른 Host에는 TeamViewer 21건과 Microsoft 관련 업데이트·점검 요청이 있다. 전체 방법은 GET 625·HEAD 2이다.",
+          "long": true
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-03",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 2,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"http\"}},\n        {\"term\": {\"data.http.url\": \"/1517096937\"}},\n        {\"term\": {\"data.dest_ip\": \"5.252.153.241\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"status\": {\n      \"terms\": {\"field\": \"data.http.status\", \"size\": 20}\n    },\n    \"without_status\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\"exists\": {\"field\": \"data.http.status\"}}\n          ]\n        }\n      }\n    },\n    \"flows\": {\"cardinality\": {\"field\": \"data.flow_id\"}}\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"data.timestamp\",\n    \"data.flow_id\",\n    \"data.pcap_cnt\",\n    \"data.tx_id\",\n    \"data.http.status\",\n    \"data.http.url\"\n  ]\n}",
+          "purpose": "반복 경로의 응답 분포와 원문을 읽는다.",
+          "syntax": "경로와 목적지를 함께 지정한다. without_status는 exists를 must_not으로 제외해 필드 없는 문서를 센다. flows는 해당 HTTP 문서의 고유 flow_id 수이다.",
+          "result": "584건, 404 386·200 4·응답 코드 없음 194, flow_id 2개이다. 첫 원문의 pcap_cnt는 5076, tx_id는 1이다.",
+          "long": true
+        },
+        {
+          "type": "image",
+          "path": "assets/screenshots/chapter12/pcap-detail.png",
+          "caption": "화면 12-1  반복 경로 584건과 첫 관측의 패킷 번호",
+          "width_mm": 120
+        },
+        {
+          "type": "p",
+          "text": "pcap_cnt는 해당 이벤트와 연결된 캡처 패킷 위치를 찾는 단서이다. 전체 연결의 첫 패킷이나 사용자가 클릭한 순간과 구분한다. flow_id와 tx_id를 함께 보고 주변 요청·응답 패킷을 확인한다. 화면의 원문 시각은 KST 1월 23일 04:45:59.134760이며 검색용 UTC 시각은 1월 22일 19:45:59.134이다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-04",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 5,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"flow\"}},\n        {\"term\": {\"data.dest_ip\": \"5.252.153.241\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"to_server\": {\"sum\": {\"field\": \"data.flow.bytes_toserver\"}},\n    \"to_client\": {\"sum\": {\"field\": \"data.flow.bytes_toclient\"}}\n  },\n  \"sort\": [{\"data.flow.start\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"data.flow_id\",\n    \"data.src_ip\",\n    \"data.src_port\",\n    \"data.dest_ip\",\n    \"data.dest_port\",\n    \"data.flow\"\n  ]\n}",
+          "purpose": "같은 목적지의 연결 세 개와 바이트 방향을 읽는다.",
+          "syntax": "HTTP 대신 flow를 선택한다. flow.start 문자열은 이 실행에서 같은 시간대 형식이므로 그 값으로 정렬한다. 다른 시간대가 섞인 자료에서는 날짜형으로 정규화한 필드를 사용한다.",
+          "result": "3건이다. bytes_toserver 합계는 235394, bytes_toclient는 6601697이다. HTTP 요청 594개가 TCP 연결 594개인 것은 아니다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "flow의 bytes는 센서가 센 연결 방향의 바이트이며 Zeek의 응용 페이로드 orig_bytes·resp_bytes와 분모가 다르다. 캡처의 재전송·헤더·관측 범위도 함께 확인한다. 이 합계를 파일 유출 크기로 표시하지 않는다. 이 실행의 일부 flow 이벤트 timestamp는 flow.start보다 앞선 값이므로 연결 시간표에는 flow.start·end를 직접 사용한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-05",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"dns\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"message_kind\": {\n      \"terms\": {\"field\": \"data.dns.type\", \"size\": 20}\n    }\n  }\n}",
+          "purpose": "DNS 요청과 응답 기록을 나눈다.",
+          "syntax": "dns.type으로 query와 answer를 구분한다. 한 질의가 여러 응답 레코드를 만들 수 있으므로 두 합계를 고유 질의 수로 더하지 않는다.",
+          "result": "query 785·answer 725이다. Zeek dns.log의 817행과는 기록 단위가 다르다.",
+          "long": true
+        },
+        {
+          "type": "query",
+          "id": "Q03-12-06",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-pcap-ch12/_search\n{\n  \"size\": 1,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2025-01-22T19:44:00Z\",\n              \"lt\": \"2025-01-22T20:39:00Z\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"alert\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"signatures\": {\n      \"terms\": {\"field\": \"data.alert.signature_id\", \"size\": 20}\n    }\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"data.event_type\",\n    \"data.http.hostname\",\n    \"data.http.url\",\n    \"data.alert\"\n  ]\n}",
+          "purpose": "관측 규칙의 경보와 정상 요청을 연결한다.",
+          "syntax": "alert만 선택하고 signature_id를 센다. 가장 이른 원문에서 hostname·url·signature를 읽는다.",
+          "result": "625건 모두 SID 9900012이다. 첫 요청은 Microsoft 연결 점검 경로이며 규칙은 이를 포함한 GET을 관측한다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "TLS 기록 159건은 HTTP URL 159개가 아니다. 복호화 자료가 없는 암호화 통신은 관측 가능한 연결·인증서·SNI 같은 항목을 조사한다. 네트워크 캡처만으로 프로세스 실행·FIM·계정 생성 기록을 만들어 붙이지 않는다. 합성 호스트 증거를 보강한다면 원본 캡처와 다른 출처로 표시한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.8 패킷 재생은 별도 폐쇄 환경에서 다룬다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "tcpreplay는 캡처에 저장된 패킷을 인터페이스로 보내는 도구이다. 파일 분석과 달리 실제 송신이 생긴다. 수신 센서의 인터페이스 처리·손실·재생 속도를 점검할 때 선택한다. 수신 서버의 로그인·응용 실행을 새로 성립시키는 절차가 아니다."
+        },
+        {
+          "type": "image",
+          "path": "assets/figures/chapter12-replay.png",
+          "caption": "그림 12-3  두 네임스페이스 사이의 선택 재생",
+          "width_mm": 121
+        },
+        {
+          "type": "p",
+          "text": "이 선택 절차는 공동 kt66 호스트와 분리한 Ubuntu 분석 VM에서 수행한다. Suricata·iproute2·tcpreplay를 준비하고 VM의 물리·가상 외부 연결을 재생 경로에 넣지 않는다. 필요한 패키지를 설치한 뒤 PCAP·설정·규칙을 ~/book3-pcap의 input·config·rules에 준비한다. 아래 인터페이스 재생은 앞 절의 파일 분석 결과와 별도의 실행 기록으로 남긴다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-18",
+          "where": "독립 Ubuntu 분석 VM · 호스트",
+          "text": "sudo apt update\nsudo apt install suricata iproute2 tcpreplay\nsuricata -V\ntcpreplay --version\nip netns list\nip link show",
+          "purpose": "독립 분석 VM의 도구와 이름 사용 여부를 확인한다.",
+          "syntax": "apt update는 패키지 목록을 갱신하고 install은 표시한 도구를 설치한다. ip는 네트워크 장치·주소·경로를 관리한다. netns list는 네임스페이스 목록, link show는 장치 목록이다.",
+          "result": "b3-tx·b3-rx·b3-tx0·b3-rx0가 사용 중이면 중단하고 새 이름을 정한다. 설치 버전과 설정을 조사표에 적는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-19",
+          "where": "독립 Ubuntu 분석 VM · 호스트",
+          "text": "sudo ip netns add b3-tx\nsudo ip netns add b3-rx\nsudo ip link add b3-tx0 type veth peer name b3-rx0\nsudo ip link set b3-tx0 netns b3-tx\nsudo ip link set b3-rx0 netns b3-rx\nsudo ip netns exec b3-tx ip link set b3-tx0 up\nsudo ip netns exec b3-rx ip link set b3-rx0 up\nsudo ip netns exec b3-tx ip link show\nsudo ip netns exec b3-rx ip link show\nsudo ip netns exec b3-tx ip route show\nsudo ip netns exec b3-rx ip route show",
+          "purpose": "송신·수신 네트워크 스택을 veth 한 쌍으로 잇는다.",
+          "syntax": "네임스페이스는 독립된 네트워크 스택이다. add는 생성, veth peer는 양 끝을 가진 가상 장치이다. set ... netns는 해당 끝을 옮기고 up은 장치를 올린다. netns exec는 지정 스택에서 뒤 명령을 실행한다.",
+          "result": "각 스택에 lo와 veth 한 끝만 있고 route 출력은 비어 있어야 한다. IP 주소·기본 경로·브리지를 추가하지 않는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-20",
+          "where": "독립 Ubuntu 분석 VM · 첫 터미널",
+          "text": "cd ~/book3-pcap\nmkdir output/live01\nsudo ip netns exec b3-rx suricata \\\n  -i b3-rx0 -c config/suricata.yaml \\\n  -S rules/book3.rules -l output/live01",
+          "purpose": "수신 센서를 먼저 실행한다.",
+          "syntax": "-i는 수신 인터페이스이다. netns는 파일 경로를 바꾸지 않으므로 현재 폴더의 설정·규칙을 읽는다. output은 미리 준비한 결과 상위 폴더이다.",
+          "result": "초기화 오류 없이 센서가 대기하는지 확인한다. 실행 중인 이 터미널을 유지하고 다음 송신은 두 번째 터미널에서 한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-12-21",
+          "where": "독립 Ubuntu 분석 VM · 두 번째 터미널",
+          "text": "cd ~/book3-pcap\nsudo ip netns exec b3-tx tcpreplay \\\n  --intf1=b3-tx0 --multiplier=1 input/exercise.pcap",
+          "purpose": "원래 간격의 1배로 한 번 전송한다.",
+          "syntax": "--intf1은 송신 끝, --multiplier=1은 원래 캡처 간격을 기준으로 한 속도이다. 처음에는 반복·최고 속도 옵션을 사용하지 않는다.",
+          "result": "전송 완료·실패 수를 기록하고 수신 센서를 Ctrl+C로 정상 종료한다. 센서 패킷 수·손실·로그 수를 대조한다. 원래 캡처 시각과 이번 수신 시각을 별도로 기록한다."
+        },
+        {
+          "type": "p",
+          "text": "이 캡처의 원래 기간은 약 53분 22초이므로 1배 재생에는 비슷한 시간이 필요하다. 빠르게 재생하면 요청 간격과 도착 빈도가 바뀐다. 목적이 수집 처리량인지 규칙의 시간 조건인지 먼저 정하고 속도·시작 시각·드롭 수를 기록한다. 수신 로그만 현재 날짜로 생겼다고 과거 사건 날짜를 덮어쓰지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.9 실패 확인과 원상복구",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "현상",
+            "확인 순서"
+          ],
+          "rows": [
+            [
+              "파일 형식 오류",
+              "ZIP 해시 → PCAP 멤버 → PCAP/PCAPNG 구분"
+            ],
+            [
+              "센서 출력 없음",
+              "버전 → 입력 경로·권한 → -T → 출력 경로 → 종료 로그"
+            ],
+            [
+              "응답 필드 없음",
+              "동일 캡처·연결 → 체크섬·재조립 통계 → 별도 설정 비교"
+            ],
+            [
+              "Wazuh 검색 0건",
+              "전용 인덱스 → 2025년 UTC 범위 → event_type → 필드 매핑"
+            ],
+            [
+              "경보 수 차이",
+              "센서 SID → manager rule.id → 레벨 → 수집·색인 경로"
+            ],
+            [
+              "공동 SIEM 변동",
+              "서버 작업 중지 → 다른 실습 종료 대기 → 상태 재확인"
+            ]
+          ],
+          "widths": [
+            36,
+            91
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "PCAP·설정·규칙·원문·비교 결과·조사표의 해시를 보존한다. 파일 분석의 전용 컨테이너는 stop으로 중지하고 inspect로 이름·마운트·네트워크·종료 상태를 확인한다. 제거가 필요하면 이번 이름만 docker rm으로 제거한다. bind mount의 호스트 결과 폴더는 별도로 남아 있다."
+        },
+        {
+          "type": "code",
+          "text": "sudo docker stop book3-suri-ch12 book3-zeek-ch12\nsudo docker inspect --format '{{.State.Status}}' \\\n  book3-suri-ch12 book3-zeek-ch12\n# 소유·마운트·결과 보존 확인 후 필요할 때만\nsudo docker rm book3-suri-ch12 book3-zeek-ch12",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "전용 인덱스도 소유 정보와 EVE·PCAP·bulk 해시를 먼저 대조한다. _meta.book3의 total은 3746이다. 필요한 결과를 보존한 후 이 인덱스만 제거한다. DELETE 뒤 _count가 index_not_found_exception을 반환하는지 확인한다."
+        },
+        {
+          "type": "code",
+          "text": "GET /book3-pcap-ch12/_mapping\n\nDELETE /book3-pcap-ch12\n\nGET /book3-pcap-ch12/_count",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "선택 재생을 수행했다면 센서를 정상 종료한 뒤 아래 pids 출력이 모두 비어 있는지 확인한다. 남은 PID가 있으면 해당 실습 터미널에서 프로세스를 먼저 종료한다. delete는 지정 네임스페이스를 제거하며 두 끝이 해제되면 veth도 사라진다. 전용 agent 설정을 추가했다면 사전 사본과 대조하여 추가분만 원상복구한다."
+        },
+        {
+          "type": "code",
+          "text": "sudo ip netns pids b3-tx\nsudo ip netns pids b3-rx\n# 두 출력이 비어 있고 소유 범위를 확인한 뒤\nsudo ip netns delete b3-tx\nsudo ip netns delete b3-rx\nip netns list",
+          "long": true
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "12.10 다른 자료로 조사 범위를 넓힌다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "기본 실습과 같은 자료 대장을 사용해 새 캡처의 출처·시각·라벨 단위·센서 설정부터 기록한다. 과거의 실제 집계 표본은 장기 활동의 분포를, PCAP는 짧은 시간의 통신 내용과 간격을 조사하는 근거로 사용한다. 서로 다른 조직·기간의 자료를 한 사건으로 합치지 않는다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "자료",
+            "선택 기준"
+          ],
+          "rows": [
+            [
+              "Malware-Traffic-Analysis",
+              "사건 배경·PCAP·해설을 함께 읽는다. 최신 여부와 캡처 시기를 구분한다."
+            ],
+            [
+              "Netresec PCAP Files",
+              "원 제공자로 연결하는 색인이다. 개별 자료의 설명·이용 조건을 확인한다."
+            ],
+            [
+              "Contagio",
+              "실행 샘플과 PCAP를 구분하고 캡처 자료만 선택한다."
+            ],
+            [
+              "Stratosphere·IoT-23",
+              "정상 반례와 악성 통신의 라벨 단위·수집 환경을 확인한다."
+            ],
+            [
+              "CAIDA",
+              "데이터별 신청 조건·익명화·payload 유무와 관측 방향을 확인한다."
+            ],
+            [
+              "Dynamite Lab",
+              "공개 자료의 열람 가능 범위와 업로드 정책을 먼저 확인한다. 개인·조직 캡처를 자동 업로드하지 않는다."
+            ]
+          ],
+          "widths": [
+            44,
+            83
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "새 센서·규칙으로 결과가 바뀌면 원본 해시가 같은지 먼저 확인한다. 입력은 동일한데 출력이 달라졌다면 센서 버전·규칙·HOME_NET·체크섬·재조립·시간 변환을 비교한다. 공개 캡처에서 본 한 종류의 주기와 크기를 모든 공격 유형의 정답으로 사용하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "확인 문제",
+      "blocks": [
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "패킷 39,427개, HTTP 627개, 관측 경보 625개를 왜 서로 다른 단위로 기록하는가?",
+            "응답 코드 없는 194건을 서버 무응답으로 분류하기 전에 무엇을 비교하는가?",
+            "Zeek uid와 Suricata flow_id를 센서 사이에서 직접 같다고 비교해도 되는가?",
+            "1배와 10배 패킷 재생은 시간 조건에 어떤 차이를 만드는가?"
+          ]
+        },
+        {
+          "type": "h",
+          "text": "해설"
+        },
+        {
+          "type": "p",
+          "text": "1. 패킷은 통신의 전송 단위, HTTP는 요청·응답 트랜잭션, 경보는 규칙 일치 기록이다. 하나의 요청에 여러 패킷과 경보가 연결될 수 있다."
+        },
+        {
+          "type": "p",
+          "text": "2. 같은 캡처의 Zeek 응답과 Suricata 재조립 통계·설정 비교 결과를 확인한다. 기본 실행에서 빠진 코드는 깊이 제한 해제 실행에서 확인됐다."
+        },
+        {
+          "type": "p",
+          "text": "3. 같은 실행 안의 센서 식별자로 사용한다. 센서 사이에는 주소·포트·프로토콜·시각·트랜잭션을 함께 대조한다."
+        },
+        {
+          "type": "p",
+          "text": "4. 10배에서는 송신 간격이 약 10분의 1로 줄어 수신 빈도와 도착 시각 기반 상관 조건이 달라진다. 센서 손실도 따로 확인한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "참고자료",
+      "blocks": [
+        {
+          "type": "link",
+          "text": "Malware-Traffic-Analysis — 2025-01-22 exercise",
+          "url": "https://www.malware-traffic-analysis.net/2025/01/22/index.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Malware-Traffic-Analysis — 제공자 안내",
+          "url": "https://www.malware-traffic-analysis.net/about.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Suricata — 명령행 옵션",
+          "url": "https://docs.suricata.io/en/suricata-7.0.10/command-line-options.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Suricata — 6.0 계열 설정",
+          "url": "https://docs.suricata.io/en/suricata-6.0.20/configuration/suricata-yaml.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "p",
+          "text": "본문 수치는 kt66 이미지의 Suricata 6.0.4 실행 결과이다. 공식 문서의 버전과 실습 버전을 구분하고 해당 실행의 설정 사본을 보존한다."
+        },
+        {
+          "type": "link",
+          "text": "Zeek — 설치와 공식 이미지",
+          "url": "https://docs.zeek.org/en/current/install.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Zeek 8.0.0 — HTTP 로그",
+          "url": "https://docs.zeek.org/en/v8.0.0/logs/http.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Wazuh — Suricata 연계",
+          "url": "https://documentation.wazuh.com/current/proof-of-concept-guide/integrate-network-ids-suricata.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Wireshark — capinfos",
+          "url": "https://www.wireshark.org/docs/man-pages/capinfos.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Tcpreplay — 재생 옵션",
+          "url": "https://tcpreplay.appneta.com/reference/man/tcpreplay/",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "ip-netns — 네임스페이스",
+          "url": "https://man7.org/linux/man-pages/man8/ip-netns.8.html",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Netresec — Public PCAP Files",
+          "url": "https://www.netresec.com/?page=PcapFiles",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Contagio",
+          "url": "https://contagiodump.blogspot.com/",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Stratosphere — IoT-23",
+          "url": "https://www.stratosphereips.org/datasets-iot23",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "CAIDA — DDoS 2007",
+          "url": "https://www.caida.org/catalog/datasets/ddos-20070804_dataset/",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "Dynamite Lab",
+          "url": "https://lab.dynamite.ai/",
+          "title_after": 4,
+          "url_after": 5
+        },
+        {
+          "type": "link",
+          "text": "12장 복사용 입력과 자료 대장",
+          "url": "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter12",
+          "title_after": 4,
+          "url_after": 5
+        }
+      ],
+      "break": false,
+      "level": "section"
+    }
+  ]
+}

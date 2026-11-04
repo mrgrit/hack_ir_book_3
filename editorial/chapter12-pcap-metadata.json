@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "format": "classic-pcap",
+  "bytes": 26759675,
+  "sha256": "e59db1c07c6fdefafa0abdbca03248c341cdc36c09c34753204d3162802a3586",
+  "version": "2.4",
+  "timestamp_precision": "microsecond",
+  "link_type": 1,
+  "snaplen": 65535,
+  "packets": 39427,
+  "captured_bytes": 26128819,
+  "original_bytes": 26128819,
+  "truncated_packets": 0,
+  "time_inversions": 0,
+  "first_packet_utc": "2025-01-22T19:44:56.530137Z",
+  "last_packet_utc": "2025-01-22T20:38:18.918250Z",
+  "duration_seconds": 3202.388113,
+  "payload_extracted": false,
+  "packets_transmitted": 0
+}
