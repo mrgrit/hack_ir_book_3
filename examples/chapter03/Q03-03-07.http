@@ -1,0 +1,41 @@
+GET /book3-r02-ch03/_search
+{
+  "size": 6,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "kt66-nft"
+          }
+        },
+        {
+          "term": {
+            "data.srcip": "142.66.143.170"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.srcip",
+    "data.dstip",
+    "data.dstport",
+    "data.action",
+    "full_log"
+  ]
+}

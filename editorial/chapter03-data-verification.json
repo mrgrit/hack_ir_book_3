@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "dataset_check": {
+    "status": "pass",
+    "events": 84392,
+    "counts": {
+      "background": 82716,
+      "scenario": 1676
+    },
+    "first_timestamp": "2026-08-03T00:06:47.805+0900",
+    "last_timestamp": "2026-10-31T23:56:27.173+0900",
+    "chronological": true,
+    "hashes_verified": true,
+    "network_operations": 0
+  },
+  "queries_checked": 9,
+  "response_sha256": "d5fb447886867fb97e00a3f42ddc7f505adc64c8d5795eea60e1660c31268161",
+  "bulk_sha256": "c0a6378a2ffc2a61866daa0dbf2f54a59b8d617fcd0748fbbd845f0189ce0e09",
+  "web": 34636,
+  "firewall": 986,
+  "web_candidate": {
+    "all": 347,
+    "404": 341,
+    "active_days": 5
+  },
+  "distributed": {
+    "requests": 444,
+    "sources": 300,
+    "both_paths": 144
+  },
+  "network_operations": 0
+}

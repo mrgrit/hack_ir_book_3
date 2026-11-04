@@ -1,0 +1,463 @@
+{
+  "01": {
+    "title": "전체 자료와 로그 출처",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "decoder.name",
+            "size": 15
+          }
+        }
+      },
+      "track_total_hits": true
+    }
+  },
+  "02": {
+    "title": "웹 요청량 상위 출발지",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "by_ip": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5
+          },
+          "aggs": {
+            "ua": {
+              "terms": {
+                "field": "data.user_agent",
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "404 출발지의 경로와 서비스 다양성",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.id": "404"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "by_ip": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5,
+            "order": {
+              "urls": "desc"
+            }
+          },
+          "aggs": {
+            "urls": {
+              "cardinality": {
+                "field": "data.url",
+                "precision_threshold": 40000
+              }
+            },
+            "hosts": {
+              "cardinality": {
+                "field": "data.vhost",
+                "precision_threshold": 40000
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "title": "neobank API 경로별 출발지",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.id": "404"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            },
+            {
+              "prefix": {
+                "data.url": "/api/"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "by_url": {
+          "terms": {
+            "field": "data.url",
+            "size": 5,
+            "order": {
+              "ips": "desc"
+            }
+          },
+          "aggs": {
+            "ips": {
+              "cardinality": {
+                "field": "data.srcip",
+                "precision_threshold": 40000
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "05": {
+    "title": "방화벽 출발지별 포트와 목적지",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "kt66-nft"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "by_ip": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5,
+            "order": {
+              "ports": "desc"
+            }
+          },
+          "aggs": {
+            "ports": {
+              "cardinality": {
+                "field": "data.dstport",
+                "precision_threshold": 40000
+              }
+            },
+            "destinations": {
+              "cardinality": {
+                "field": "data.dstip",
+                "precision_threshold": 40000
+              }
+            },
+            "days": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "day",
+                "time_zone": "+09:00",
+                "min_doc_count": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "06": {
+    "title": "웹 후보의 활동 날짜와 응답",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "221.49.17.120"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "format": "yyyy-MM-dd",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "status": {
+              "terms": {
+                "field": "data.id",
+                "size": 5
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "방화벽 후보의 시간순 원문",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 6,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "kt66-nft"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "142.66.143.170"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.srcip",
+        "data.dstip",
+        "data.dstport",
+        "data.action",
+        "full_log"
+      ]
+    }
+  },
+  "08": {
+    "title": "단일 출발지의 웹 경로 원문",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 6,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "221.49.17.120"
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data.srcip",
+        "data.url",
+        "data.id",
+        "data.vhost",
+        "data.user_agent"
+      ]
+    }
+  },
+  "09": {
+    "title": "두 API 경로의 고유 출발지와 IP당 요청",
+    "method": "GET",
+    "path": "/book3-r02-ch03/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.id": "404"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "neobank.kt66.lab"
+              }
+            },
+            {
+              "terms": {
+                "data.url": [
+                  "/api/v1/admin/users",
+                  "/api/v1/accounts/export?format=csv"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "cardinality": {
+            "field": "data.srcip",
+            "precision_threshold": 40000
+          }
+        },
+        "by_ip": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5
+          },
+          "aggs": {
+            "paths": {
+              "cardinality": {
+                "field": "data.url",
+                "precision_threshold": 40000
+              }
+            }
+          }
+        }
+      },
+      "track_total_hits": true
+    }
+  }
+}

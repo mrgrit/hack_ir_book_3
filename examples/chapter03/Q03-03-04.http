@@ -1,0 +1,57 @@
+GET /book3-r02-ch03/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.id": "404"
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "neobank.kt66.lab"
+          }
+        },
+        {
+          "prefix": {
+            "data.url": "/api/"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "by_url": {
+      "terms": {
+        "field": "data.url",
+        "size": 5,
+        "order": {
+          "ips": "desc"
+        }
+      },
+      "aggs": {
+        "ips": {
+          "cardinality": {
+            "field": "data.srcip",
+            "precision_threshold": 40000
+          }
+        }
+      }
+    }
+  }
+}

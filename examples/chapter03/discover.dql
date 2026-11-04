@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+decoder.name: "web-accesslog" and data.id: "404"
+
+data.srcip: "221.49.17.120"
+
+decoder.name: "kt66-nft" and data.srcip: "142.66.143.170"

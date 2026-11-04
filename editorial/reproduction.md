@@ -63,3 +63,15 @@ python3 tools/verify_chapter02.py build/r01-pilot01 editorial/chapter02-query-re
 실제 적재는 2장 본문과 `examples/chapter02/commands.sh`를 따라 kt66 호스트에서 수행한다. `load_dataset.py`는 해시 검사를 선행하며 정확한 전용 인덱스가 없는 경우에만 만든다. 기존 인덱스에서는 중단하므로 보존 중인 검토용 인덱스에 적재를 반복하지 않는다. partial bulk 실패에서는 현재 인덱스를 보존하고 오류를 조사한다.
 
 독자용 도구는 Python 표준 라이브러리를 사용하며 비밀번호는 실행 시 getpass로 입력한다. `--insecure`는 본문의 kt66 자체 서명 인증서 실습에만 사용한다. 인증서를 검증할 환경은 `--ca-cert` 경로를 지정한다. 실제 시험 범위와 남겨 둔 saved object는 `chapter02-review.md`를 따른다.
+
+## 3장 재현
+
+```bash
+python3 tools/queries_chapter03.py
+python3 tools/write_chapter03.py
+python3 tools/figures_chapter03.py
+python3 tools/build_docx.py --source manuscript/volume03-chapter03.json --output manuscript/volume03-chapter03.docx
+python3 tools/verify_chapter03.py build/r02-ch03 editorial/chapter03-query-results.json --out build/chapter03-data-verification.json
+```
+
+원문 생성 명령은 3장과 `examples/chapter03/commands.sh`를 따른다. 저장된 응답과 대조할 때는 동일한 manifest·bulk 해시의 자료를 사용한다. Windows Word 렌더와 모든 쪽의 개별 검수 후 `verify_artifact.py 3 build/검수폴더/chapter03.pdf --reviewed-all-pages`를 실행하면 내장 그림·URL·쿼리·판형을 기록한다. 이 옵션은 실제로 모든 지면을 확인한 뒤에만 지정한다.

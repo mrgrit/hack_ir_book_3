@@ -1,6 +1,6 @@
 # 해킹·침해대응 실무 with Wazuh — 3권
 
-가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 1·2장 초안이다.
+가제: **로그 생성과 집계 기반 침해분석**. 2026-11-04 기준 1~3장 초안이다.
 
 실제 시스템을 공격하지 않고 `purple-agg`가 생성한 학습 데이터와 공개 PCAP에서 센서가 얻는 로그로 조사한다. 생성 이벤트의 `rule` 필드와 Wazuh manager가 실제로 만든 경보를 구분한다.
 
@@ -8,13 +8,14 @@
 
 - [1장 DOCX](manuscript/volume03-chapter01.docx): 로그 분석용 데이터 준비, B5 22쪽. 명령 18개, 도식 3개, 삽화 2개.
 - [2장 DOCX](manuscript/volume03-chapter02.docx): 집계 기준과 정상 분포, B5 49쪽. 전용 인덱스 적재, Terms·고유 수·합계·평균·시간 버킷, 반복 연결 후보 조사, 결과 보존과 원상복구를 다룬다. 실제 Wazuh 화면 5개, 도식 3개, 삽화 1개와 [복사용 쿼리 14개](examples/chapter02)를 제공한다.
+- [3장 DOCX](manuscript/volume03-chapter03.docx): 정찰과 분산 탐색, B5 25쪽. R02 84,392건에서 출발지·경로·포트·활동 날짜를 비교한다. 실제 조회 9개와 [복사용 예제](examples/chapter03), 조사표를 제공한다.
 - [전체 목차와 강의 대응표](editorial/volume03-outline.md): 13장 및 부록의 학습 목표·실습·완료 조건.
 - [집필 계획](editorial/authoring-plan.md): 집필 순서와 공동 SIEM 사용 원칙.
 - [생성기 현실성 점검](editorial/generator-realism-review.md): 실제 집계 표본 3개와 코드·오프라인 실행의 대조.
 - [PCAP 연계 설계](editorial/pcap-integration-plan.md): Suricata·Zeek 파일 분석을 기본으로, 폐쇄 veth 재생을 선택으로 구성.
 - [검증 기록](editorial/verification.md): 실행한 검사와 아직 실행하지 않은 범위.
 
-현재 원고는 **1·2장 초안**이다. 3~13장은 목차·자료 대응·완료 기준을 정한 상태이며 장별 DOCX로 이어서 집필한다. 이번 2장 집필에서는 REV01과 1·2권 원고, 3권 1장 DOCX를 수정하지 않았다.
+현재 원고는 **1~3장 초안**이다. [순차 집필 계획](editorial/sequential-authoring.md)에 따라 4~13장과 부록을 한 장씩 작성·검수·업로드한다. REV01과 1·2권 원고는 보존한다.
 
 ## 로컬 준비 도구
 

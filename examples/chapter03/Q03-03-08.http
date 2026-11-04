@@ -1,0 +1,41 @@
+GET /book3-r02-ch03/_search
+{
+  "size": 6,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.srcip": "221.49.17.120"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data.srcip",
+    "data.url",
+    "data.id",
+    "data.vhost",
+    "data.user_agent"
+  ]
+}

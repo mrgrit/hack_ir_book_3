@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "chapter": 3,
+  "pages": 25,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter03-repeat-request.png",
+      "sha256": "23d5c97a01a9513b2157af6edfd80c3d44e98979cde8730dbc5223df4152267b"
+    },
+    {
+      "path": "assets/figures/chapter03-axis.png",
+      "sha256": "1687654f278c835fe6d7397fb551529589d8960d0932c64a0595f27b927c083f"
+    },
+    {
+      "path": "assets/screenshots/chapter03/paths-detail.png",
+      "sha256": "4209f28f61ee8ffcd5b03ad33bdcad7cb6a49277b56105b0a20ae6df18e7d66a"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r02_recon.py",
+    "https://docs.opensearch.org/latest/aggregations/bucket/terms/",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter03"
+  ],
+  "queries_match": 9,
+  "commands_match": 3,
+  "files": {
+    "manuscript/volume03-chapter03.docx": "d6acc000f644cb755dafd7bb04888d8a5560d5ccb5e6b8e163bc6cf7ab00a6b4",
+    "manuscript/volume03-chapter03.json": "ae1d191abec7a8c3b00feb25a415ebb97ab44fe94a5169a7799b487a6b9aae87",
+    "examples/chapter03/cleanup.http": "ed740ab1015662e0a0dc3bf1a4ced20c1845e8ea62a5e0b5f2505ae5c6f1fcaa",
+    "examples/chapter03/commands.sh": "ea5164cd1de797c1bc4c0146fe13fd555d59859ba6839a1d783cfbb8b2482a97",
+    "examples/chapter03/discover.dql": "97b9f5ed51bc850baa06919625b97ff2d1563519e26f7cd6bcc0b503dc8fddd8",
+    "examples/chapter03/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter03/Q03-03-01.http": "83d279bc3768b48b288dc084100dfe8b5115f731f5950cc353252cbb649ec700",
+    "examples/chapter03/Q03-03-02.http": "e49206bbb26fa0c3f73e5ddcfa4f9aa4e6bdc2cbf084079ef28272eeca5bdd6e",
+    "examples/chapter03/Q03-03-03.http": "31e827bb069ce175f73b455fc445b209507e7936413009d4cf0f9048a480a4cc",
+    "examples/chapter03/Q03-03-04.http": "0689d92bf89f4efd9671a4745990b2192dd05a3a8df5cab5fcbce5707f4a627a",
+    "examples/chapter03/Q03-03-05.http": "df732a7ac2bcee434ae097b5654ff7aa5d6dd39b3f9a7b122f2aee87e38e2a73",
+    "examples/chapter03/Q03-03-06.http": "541897aa6e02f2f4ee5eb8aec79b82f96a7aed05b5abe1a978c8cf43e4197df6",
+    "examples/chapter03/Q03-03-07.http": "926e8f8f15ddc35a563526375a131219778d5c840477e527afb3738025b8d4a3",
+    "examples/chapter03/Q03-03-08.http": "97f13adf06e04efc1f7c1b208dae6a5974151a030f4d33a29b04bc8f73ef97c7",
+    "examples/chapter03/Q03-03-09.http": "a7f110956be5505732aee8cb1810276cd59bfad1fb8e1d557594e8f7ef71a1c2",
+    "examples/chapter03/queries.json": "5c8d1ad3f57322ea5b244a327a52295d857efc27f86f8b43ba8869d88816a19e"
+  },
+  "qa_pdf_published": false
+}
