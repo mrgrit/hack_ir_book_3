@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+agent.name: "KT66-WIN-01" AND data.win.system.eventID: "4688"
+
+data.domain: "telemetry-kt66.net"
+
+agent.name: adminconsole AND data.srcip: "10.20.40.87"

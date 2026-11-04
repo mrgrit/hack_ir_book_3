@@ -1,0 +1,89 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "flow"
+          }
+        },
+        {
+          "prefix": {
+            "data.src_ip": "10.20.40."
+          }
+        },
+        {
+          "range": {
+            "data.flow.bytes_toserver": {
+              "gte": 10000000
+            }
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              {
+                "prefix": {
+                  "data.dest_ip": "10.20."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "destinations": {
+      "terms": {
+        "field": "data.dest_ip",
+        "size": 10,
+        "order": {
+          "up": "desc"
+        }
+      },
+      "aggs": {
+        "up": {
+          "sum": {
+            "field": "data.flow.bytes_toserver"
+          }
+        },
+        "sources": {
+          "terms": {
+            "field": "data.src_ip",
+            "size": 5
+          }
+        },
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      }
+    }
+  }
+}

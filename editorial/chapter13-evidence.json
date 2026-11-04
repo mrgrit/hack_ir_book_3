@@ -1,0 +1,33 @@
+{
+  "intervals": {
+    "events": 2850,
+    "intervals": 2849,
+    "first": "2026-09-02T10:30:30.000+0900",
+    "last": "2026-10-31T23:41:00.154+0900",
+    "minimum_seconds": 1440.411,
+    "median_seconds": 1814.686,
+    "maximum_seconds": 2159.864,
+    "maximum_gap_endpoints": [
+      "2026-09-25T18:09:32.491+0900",
+      "2026-09-25T18:45:32.355+0900"
+    ],
+    "interpretation": "Observed event gaps; not packet capture, process attribution, or proof of C2."
+  },
+  "mail_events": 12,
+  "mail_unique_recipients": 12,
+  "mail_target": [
+    {
+      "id": "r15-000034327",
+      "timestamp": "2026-09-02T09:42:15.962+0900"
+    }
+  ],
+  "backup_min": 1811934611,
+  "backup_max": 2195847933,
+  "backup_seconds_range": [
+    0.281,
+    48.199
+  ],
+  "dns_first": "2026-10-23T02:05:04.525+0900",
+  "dns_last": "2026-10-29T02:21:56.205+0900",
+  "dns_unique_names": 500
+}

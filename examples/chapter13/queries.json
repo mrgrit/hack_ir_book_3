@@ -1,0 +1,873 @@
+{
+  "01": {
+    "title": "Windows 부모와 자식 프로세스 조합",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "KT66-WIN-01"
+              }
+            },
+            {
+              "term": {
+                "data.win.system.eventID": "4688"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "parents": {
+          "terms": {
+            "field": "data.win.eventdata.parentProcessName",
+            "size": 20
+          },
+          "aggs": {
+            "children": {
+              "terms": {
+                "field": "data.win.eventdata.newProcessName",
+                "size": 20
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "사용자 PC의 외향 연결과 활동 날짜",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.src_ip": "10.20.70.10"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "destinations": {
+          "terms": {
+            "field": "data.dest_ip",
+            "size": 10
+          },
+          "aggs": {
+            "days": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "day",
+                "time_zone": "+09:00",
+                "min_doc_count": 1
+              }
+            },
+            "up": {
+              "sum": {
+                "field": "data.flow.bytes_toserver"
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "메일 전달과 문서 및 셸 실행",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 30,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-09-02T09:40:00+09:00",
+                  "lt": "2026-09-02T10:31:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "kt66-mailgw"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.from": "hr-notice@kt66-hr.support"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "agent.name": "KT66-WIN-01"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.win.system.eventID": "4688"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "agent.name",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "04": {
+    "title": "PC발 인증과 관리콘솔 권한 사용",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 10,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-11T22:14:00+09:00",
+                  "lt": "2026-10-11T22:15:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "agent.name": "adminconsole"
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "sshd"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcip": "10.20.70.10"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "sudo"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcuser": "kim.minjun"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "agent.name",
+        "decoder.name",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "05": {
+    "title": "DNS 도메인별 고유 이름과 활동 날짜",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 1,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "kt66-dns"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "domains": {
+          "terms": {
+            "field": "data.domain",
+            "size": 20,
+            "order": {
+              "names": "desc"
+            }
+          },
+          "aggs": {
+            "names": {
+              "cardinality": {
+                "field": "data.query"
+              }
+            },
+            "sources": {
+              "terms": {
+                "field": "data.srcip",
+                "size": 5
+              }
+            },
+            "types": {
+              "terms": {
+                "field": "data.qtype",
+                "size": 5
+              }
+            },
+            "days": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "day",
+                "time_zone": "+09:00",
+                "min_doc_count": 1
+              }
+            }
+          }
+        }
+      },
+      "sort": [
+        {
+          "data.query_len": "desc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "06": {
+    "title": "관리콘솔 응답을 많이 받은 출발지",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "admin.kt66.lab"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 10,
+            "order": {
+              "response_bytes": "desc"
+            }
+          },
+          "aggs": {
+            "response_bytes": {
+              "sum": {
+                "field": "data.bytes"
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "AI 입력과 내부 응답 및 외부 전송의 시각",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 1,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-31T03:00:00+09:00",
+                  "lt": "2026-10-31T03:03:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "web-accesslog"
+                          }
+                        },
+                        {
+                          "term": {
+                            "agent.name": "aicompanion"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcip": "138.242.102.64"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "term": {
+                      "data.ai.user": "u5520193"
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "web-accesslog"
+                          }
+                        },
+                        {
+                          "term": {
+                            "agent.name": "adminconsole"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcip": "10.20.40.87"
+                          }
+                        },
+                        {
+                          "prefix": {
+                            "data.url": "/api/users/export?"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "data.event_type": "flow"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.src_ip": "10.20.40.87"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.dest_ip": "71.212.10.1"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "stages": {
+          "filters": {
+            "filters": {
+              "chat": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "web-accesslog"
+                      }
+                    },
+                    {
+                      "term": {
+                        "agent.name": "aicompanion"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.srcip": "138.242.102.64"
+                      }
+                    }
+                  ]
+                }
+              },
+              "ai": {
+                "term": {
+                  "data.ai.user": "u5520193"
+                }
+              },
+              "export": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "web-accesslog"
+                      }
+                    },
+                    {
+                      "term": {
+                        "agent.name": "adminconsole"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.srcip": "10.20.40.87"
+                      }
+                    },
+                    {
+                      "prefix": {
+                        "data.url": "/api/users/export?"
+                      }
+                    }
+                  ]
+                }
+              },
+              "out": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "data.event_type": "flow"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.src_ip": "10.20.40.87"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.dest_ip": "71.212.10.1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "aggs": {
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        },
+        "tools": {
+          "terms": {
+            "field": "data.ai.tool",
+            "size": 5
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "desc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data"
+      ]
+    }
+  },
+  "08": {
+    "title": "서버의 큰 외향 전송과 정상 백업 후보",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "prefix": {
+                "data.src_ip": "10.20.40."
+              }
+            },
+            {
+              "range": {
+                "data.flow.bytes_toserver": {
+                  "gte": 10000000
+                }
+              }
+            },
+            {
+              "bool": {
+                "must_not": [
+                  {
+                    "prefix": {
+                      "data.dest_ip": "10.20."
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "destinations": {
+          "terms": {
+            "field": "data.dest_ip",
+            "size": 10,
+            "order": {
+              "up": "desc"
+            }
+          },
+          "aggs": {
+            "up": {
+              "sum": {
+                "field": "data.flow.bytes_toserver"
+              }
+            },
+            "sources": {
+              "terms": {
+                "field": "data.src_ip",
+                "size": 5
+              }
+            },
+            "days": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "day",
+                "time_zone": "+09:00",
+                "min_doc_count": 1
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "09": {
+    "title": "govportal의 404 경로와 점검 후보",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 1,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "agent.name": "govportal"
+              }
+            },
+            {
+              "term": {
+                "data.id": "404"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 20,
+            "order": {
+              "urls": "desc"
+            }
+          },
+          "aggs": {
+            "urls": {
+              "cardinality": {
+                "field": "data.url"
+              }
+            },
+            "agents": {
+              "terms": {
+                "field": "data.user_agent",
+                "size": 5
+              }
+            },
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "desc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "10": {
+    "title": "AI 서버발 내보내기 요청 원문",
+    "method": "GET",
+    "path": "/book3-r15-ch13/_search",
+    "body": {
+      "size": 25,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-31T03:00:00+09:00",
+                  "lt": "2026-10-31T03:03:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "filter": [
+                  {
+                    "term": {
+                      "decoder.name": "web-accesslog"
+                    }
+                  },
+                  {
+                    "term": {
+                      "agent.name": "adminconsole"
+                    }
+                  },
+                  {
+                    "term": {
+                      "data.srcip": "10.20.40.87"
+                    }
+                  },
+                  {
+                    "prefix": {
+                      "data.url": "/api/users/export?"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "urls": {
+          "cardinality": {
+            "field": "data.url"
+          }
+        },
+        "bytes": {
+          "sum": {
+            "field": "data.bytes"
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  }
+}

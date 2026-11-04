@@ -1,0 +1,75 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 10,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-11T22:14:00+09:00",
+              "lt": "2026-10-11T22:15:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "agent.name": "adminconsole"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "sshd"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.srcip": "10.20.70.10"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "decoder.name": "sudo"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.srcuser": "kim.minjun"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "agent.name",
+    "decoder.name",
+    "data",
+    "full_log"
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "title": "13장 종합 조사와 대응 판단",
+  "series": "해킹·침해대응 실무 with Wazuh — 3권",
+  "comments": "R15 전용 데이터·조회 10개·간격 계산을 검증했다. 대응은 모의 판단이며 공용 규칙·서비스·계정·통신 정책을 변경하지 않았다.",
+  "pages": [
+    {
+      "kind": "content",
+      "title": "13장 종합 조사와 대응 판단",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "사용자 PC가 두 달 동안 같은 외부 목적지에 연결했다. 다른 날에는 AI 서버가 관리콘솔의 사용자 내보내기 API를 호출했다. 같은 자료에 정기 점검과 대용량 백업도 들어 있다. 이 네 활동을 각각 조사하고, 조치할 대상과 승인된 작업을 근거로 나눈다."
+        },
+        {
+          "type": "image",
+          "path": "assets/illustrations/chapter13-briefing.png",
+          "caption": "그림 13-1  조사 결과와 대응 범위의 보고",
+          "width_mm": 100
+        },
+        {
+          "type": "p",
+          "text": "R15는 앞 장의 방법을 골라 사용하는 종합 사례이다. 다른 라운드의 사건을 이어 붙이지 않는다. 조사표에는 관찰한 사실, 연결에 필요한 증거, 승인 작업의 범위, 모의 조치와 종료 조건을 남긴다."
+        }
+      ],
+      "break": true,
+      "level": "chapter"
+    },
+    {
+      "kind": "content",
+      "title": "13.1 조사 자료와 완료 조건을 정한다",
+      "blocks": [
+        {
+          "type": "image",
+          "path": "assets/figures/chapter13-decisions.png",
+          "caption": "그림 13-2  종합 조사의 판단 순서",
+          "width_mm": 121
+        },
+        {
+          "type": "p",
+          "text": "kt66 Ubuntu VM 호스트에서 cd ~/hack_ir_book_3로 이동한다. git status --short로 수정 중인 파일을 확인하고 변경이 없을 때 git pull --ff-only로 갱신한다. Python 3와 별도 강의 코드 사본, 2장의 indexer 접속을 준비한다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "조건",
+            "값"
+          ],
+          "rows": [
+            [
+              "라운드 / seed",
+              "R15 / 1515"
+            ],
+            [
+              "기간(KST)",
+              "2026-08-03 00:00 이상 ~ 11-01 00:00 미만"
+            ],
+            [
+              "배율 / 실행 이름",
+              "0.005 / ch13"
+            ],
+            [
+              "전용 인덱스",
+              "book3-r15-ch13"
+            ],
+            [
+              "전체 / 출처별 문서",
+              "105,293건 / 배경 101,387·시나리오 3,906"
+            ]
+          ],
+          "widths": [
+            39,
+            88
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "시나리오 출처에는 정상 점검 350건과 백업 89건도 포함된다. 배경에도 외부 스캔이 섞여 있다. 출처 표시와 악성·정상 판단을 별도 열에 기록한다. 배경을 축소한 이번 자료에서 시나리오 비율은 약 3.71%이다. 원본 강의의 전체 건수나 정상 비율을 그대로 적용하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "prepare_round.py는 로컬 파일을 생성한다. --source는 코드 폴더, --round는 사례, --anchor는 끝 경계, --days는 기간, --scale은 배경 규모, --run-id는 실행 이름, --out은 새 폴더이다. 역슬래시(\\)는 명령을 다음 줄로 잇는다."
+        },
+        {
+          "type": "command",
+          "id": "C03-13-01",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/prepare_round.py \\\n  --source ../hack_ir_with_wazuh_source/purple-agg \\\n  --round r15 --anchor 2026-11-01 --days 90 \\\n  --scale 0.005 --run-id ch13 --out build/r15-ch13",
+          "purpose": "R15 파일을 만든다.",
+          "syntax": "기존 출력 폴더가 있으면 중단한다. 기존 manifest를 확인하거나 새 실행 이름과 폴더를 사용한다.",
+          "result": "total 105293, background 101387, scenario 3906이다."
+        },
+        {
+          "type": "command",
+          "id": "C03-13-02",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/check_dataset.py build/r15-ch13",
+          "purpose": "기간·순서·파일 해시를 검사한다.",
+          "syntax": "인수는 생성 폴더이다. manifest와 bulk·truth·template을 대조한다.",
+          "result": "status pass, events 105293, chronological true를 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "공동 SIEM의 기존 인덱스가 소멸하거나 UUID·건수가 예상 밖으로 바뀌면 적재를 기다린다. 안정 상태를 확인한 뒤 자신의 새 전용 인덱스만 만든다."
+        },
+        {
+          "type": "command",
+          "id": "C03-13-03",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/load_dataset.py build/r15-ch13 \\\n  --url https://10.20.32.110:9200 \\\n  --user admin --insecure",
+          "purpose": "검사한 자료를 새 전용 인덱스에 적재한다.",
+          "syntax": "--url은 실제 indexer 주소, --user는 인증 계정이다. 암호는 실행 뒤 입력한다. --insecure는 자체 서명 실습용이며 신뢰할 CA가 있으면 --ca-cert 경로로 대체한다.",
+          "result": "created와 count가 모두 105293이다. 기존 인덱스에는 중복 적재하지 않는다."
+        },
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "Windows 브라우저에서 kt66 VM의 HTTPS 5601에 접속한다. Indexer management → Dev Tools를 연다.",
+            "examples/chapter13의 요청을 본문 순서대로 입력한다. 마지막 중괄호를 확인하고 요청 안에서 Ctrl+Enter를 누른다.",
+            "200 OK, timed_out: false, _shards.failed: 0을 확인한다. 응답과 원문 _id를 조사표에 연결한다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "완료 산출물은 PC 활동·AI 서비스 활동·승인 작업을 나눈 사건표, 시간표, 증거 목록, 모의 대응 계획이다. examples/chapter13의 case-register.csv·timeline.csv·response-plan.csv를 사본으로 작성한다. 실제 차단 대신 조치 대상·승인 조건·성공 기준을 기록한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.2 문서 프로그램의 자식 프로세스를 조사한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "프로세스는 실행 중인 프로그램이다. 부모 프로세스는 다른 프로세스를 시작한 주체이며 자식 프로세스와 함께 보면 실행 경로를 조사할 수 있다. Windows 보안 이벤트 4688에서 부모·자식 경로와 명령줄을 읽는다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-01",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"agent.name\": \"KT66-WIN-01\"}},\n        {\"term\": {\"data.win.system.eventID\": \"4688\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"parents\": {\n      \"terms\": {\n        \"field\": \"data.win.eventdata.parentProcessName\",\n        \"size\": 20\n      },\n      \"aggs\": {\n        \"children\": {\n          \"terms\": {\n            \"field\": \"data.win.eventdata.newProcessName\",\n            \"size\": 20\n          }\n        }\n      }\n    }\n  }\n}",
+          "purpose": "PC의 부모·자식 조합을 집계한다.",
+          "syntax": "agent.name과 eventID를 고정하고 부모 아래 자식 Terms를 둔다. size 20은 각각 반환할 범주의 최대 수이다. sum_other_doc_count와 오차 필드를 함께 확인한다.",
+          "result": "5379건이다. explorer 부모 5378건 외에 Microsoft Office의 WINWORD.EXE가 PowerShell을 시작한 조합이 한 건 있다. 두 단계의 나머지 수와 오차 경계는 0이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "드문 조합을 찾을 때 건수 오름차순의 작은 상위 목록만 믿으면 분산 샤드의 후보 누락을 놓칠 수 있다. 여기서는 전체 부모·자식 범주가 반환됐는지 확인한 뒤 한 건짜리 조합의 원문을 읽는다. Office 자동화·관리 스크립트 등 승인된 실행과 파일 서명도 대조한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-03",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 30,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-09-02T09:40:00+09:00\",\n              \"lt\": \"2026-09-02T10:31:00+09:00\"\n            }\n          }\n        },\n        {\n          \"bool\": {\n            \"should\": [\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"decoder.name\": \"kt66-mailgw\"}},\n                    {\n                      \"term\": {\n                        \"data.from\": \"hr-notice@kt66-hr.support\"\n                      }\n                    }\n                  ]\n                }\n              },\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"agent.name\": \"KT66-WIN-01\"}},\n                    {\n                      \"term\": {\n                        \"data.win.system.eventID\": \"4688\"\n                      }\n                    }\n                  ]\n                }\n              }\n            ],\n            \"minimum_should_match\": 1\n          }\n        }\n      ]\n    }\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\"timestamp\", \"agent.name\", \"data\", \"full_log\"]\n}",
+          "purpose": "해당 아침의 메일 전달과 PC 실행을 시간순으로 읽는다.",
+          "syntax": "09:40 이상 10:31 미만에 발신 주소가 hr-notice@kt66-hr.support인 메일 또는 PC의 4688을 선택한다. size 30 안에 전체 21건이 반환된다.",
+          "result": "메일 12건과 프로세스 9건이다. 프로세스에는 배경 7건, 10:30:00의 문서 실행과 10:30:06의 PowerShell 실행이 함께 있다.",
+          "long": true
+        },
+        {
+          "type": "table",
+          "head": [
+            "KST / 원문 ID",
+            "관찰"
+          ],
+          "rows": [
+            [
+              "9/2 09:42:15.962\nr15-000034327",
+              "park.jiwoo@kt66.lab 앞으로 메일 전달, status sent"
+            ],
+            [
+              "9/2 10:30:00.000\nr15-000034378",
+              "explorer가 WINWORD.EXE를 실행, 명령줄에 급여명세_정정.docm"
+            ],
+            [
+              "9/2 10:30:06.000\nr15-000034379",
+              "WINWORD.EXE가 powershell.exe를 실행"
+            ]
+          ],
+          "widths": [
+            58,
+            69
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "메일 전달 상태 sent는 게이트웨이의 전달 기록이다. 첨부 파일의 해시·메일 Message-ID·사용자의 열람·다운로드 기록을 확보해 문서 실행과 연결한다. 명령줄의 -nop·-w hidden·-enc는 의심 실행을 조사할 단서이며 여기서는 재실행하지 않는다. 인코딩 문자열 끝의 ...는 생성기의 생략 표기이므로 완전한 페이로드로 복호화했다고 기록하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "targetUserName은 생성 예제의 계정 필드이다. 실제 Windows 원문에서는 이벤트 버전·수집 설정의 계정·로그온 ID·프로세스 ID 필드를 확인한다. 같은 파일명과 부모 경로가 있어도 파일 해시와 프로세스 계보를 추가로 연결한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.3 반복 연결·인증·DNS를 연결한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "PC 주소 10.20.70.10을 flow의 출발지로 고정한다. 웹·SSH의 data.srcip와 flow의 data.src_ip는 서로 다른 필드이다. 날짜 수는 활동이 관측된 날짜의 수이며 전체 기간의 모든 시간에 통신했다는 뜻으로 쓰지 않는다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-02",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"flow\"}},\n        {\"term\": {\"data.src_ip\": \"10.20.70.10\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"destinations\": {\n      \"terms\": {\"field\": \"data.dest_ip\", \"size\": 10},\n      \"aggs\": {\n        \"days\": {\n          \"date_histogram\": {\n            \"field\": \"timestamp\",\n            \"calendar_interval\": \"day\",\n            \"time_zone\": \"+09:00\",\n            \"min_doc_count\": 1\n          }\n        },\n        \"up\": {\"sum\": {\"field\": \"data.flow.bytes_toserver\"}},\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}}\n      }\n    }\n  }\n}",
+          "purpose": "PC의 외부 목적지별 활동 날짜와 전송량을 본다.",
+          "syntax": "destinations 아래 days는 KST 달력 날짜이고 min_doc_count 1은 기록이 있는 날짜만 반환한다. up은 클라이언트에서 서버 방향의 바이트 합이다.",
+          "result": "전체 2851건 중 194.98.0.93은 2850건·60일·3424178바이트이다. 다른 목적지는 한 건이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "2850건의 첫 시각은 9월 2일 10:30:30, 마지막은 10월 31일 23:41:00.154 KST이다. PowerShell 생성 24초 뒤 첫 연결이 놓였으나 flow에는 프로세스 ID가 없다. 실제 연관에는 호스트 네트워크 이벤트의 프로세스·소켓·시각을 사용한다."
+        },
+        {
+          "type": "command",
+          "id": "C03-13-04",
+          "where": "kt66 Ubuntu VM의 호스트 터미널",
+          "text": "python3 tools/flow_intervals.py build/r15-ch13 \\\n  --src 10.20.70.10 --dst 194.98.0.93 --port 443",
+          "purpose": "같은 방향 연결의 인접 기록 간격을 계산한다.",
+          "syntax": "이 도구는 로컬 bulk만 읽는다. --src·--dst·--port로 출발지·목적지·목적 포트를 선택하고 시각순으로 이웃한 기록을 뺀다.",
+          "result": "2849개 간격의 최소 1440.411초, 중앙값 1814.686초, 최대 2159.864초이다."
+        },
+        {
+          "type": "p",
+          "text": "약 24~36분 범위는 생성기의 1440~2160초 균등 추출과 대응한다. 이 자료의 연결은 중단 없이 이어지도록 구성됐다. 실제 주기 분석에서는 재접속·수집 공백·업무 시간·정상 업데이트 서비스와 비교한다. 12장의 실제 HTTP 간격을 이 사례의 정답 주기로 대입하지 않는다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-04",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 10,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-10-11T22:14:00+09:00\",\n              \"lt\": \"2026-10-11T22:15:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"agent.name\": \"adminconsole\"}},\n        {\n          \"bool\": {\n            \"should\": [\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"decoder.name\": \"sshd\"}},\n                    {\"term\": {\"data.srcip\": \"10.20.70.10\"}}\n                  ]\n                }\n              },\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"decoder.name\": \"sudo\"}},\n                    {\"term\": {\"data.srcuser\": \"kim.minjun\"}}\n                  ]\n                }\n              }\n            ],\n            \"minimum_should_match\": 1\n          }\n        }\n      ]\n    }\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\n    \"timestamp\",\n    \"agent.name\",\n    \"decoder.name\",\n    \"data\",\n    \"full_log\"\n  ]\n}",
+          "purpose": "PC에서 관리콘솔로 들어간 인증과 후속 sudo를 읽는다.",
+          "syntax": "adminconsole과 10월 11일 22:14~22:15를 고정한다. PC발 sshd 또는 kim.minjun의 sudo를 OR로 묶는다.",
+          "result": "22:14:00 Accepted password와 30초 뒤 /bin/cat /opt/admin/db.env를 요청한 sudo 원문 두 건이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "메일·PC 실행의 계정은 park.jiwoo이고 서버 로그인은 kim.minjun이다. 계정 이름이 바뀐 지점에서 자격증명 확보 경로를 별도 미확인 항목으로 남긴다. 원문은 비밀번호 인증이며 키 인증으로 바꾸어 해석하지 않는다. sudo의 USER=root는 대상 계정이다. 파일의 실제 읽기 성공·출력 전달·세션 연관은 감사 기록과 세션 ID로 확인한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-05",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 1,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"decoder.name\": \"kt66-dns\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"domains\": {\n      \"terms\": {\n        \"field\": \"data.domain\",\n        \"size\": 20,\n        \"order\": {\"names\": \"desc\"}\n      },\n      \"aggs\": {\n        \"names\": {\"cardinality\": {\"field\": \"data.query\"}},\n        \"sources\": {\"terms\": {\"field\": \"data.srcip\", \"size\": 5}},\n        \"types\": {\"terms\": {\"field\": \"data.qtype\", \"size\": 5}},\n        \"days\": {\n          \"date_histogram\": {\n            \"field\": \"timestamp\",\n            \"calendar_interval\": \"day\",\n            \"time_zone\": \"+09:00\",\n            \"min_doc_count\": 1\n          }\n        }\n      }\n    }\n  },\n  \"sort\": [{\"data.query_len\": \"desc\"}],\n  \"_source\": [\"timestamp\", \"data\", \"full_log\"]\n}",
+          "purpose": "DNS의 고유 이름·출발지·유형·활동 날짜를 비교한다.",
+          "syntax": "도메인 Terms를 고유 query 수 내림차순으로 본다. names는 cardinality 추정치이다. size 1의 원문은 query_len이 가장 긴 한 건이다.",
+          "result": "전체 726건이다. telemetry-kt66.net은 10.20.70.10의 TXT 500건·고유 이름 500개이며 10월 23일과 29일에 각각 250건이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "후보 질의는 44자리 16진수 형태의 레이블과 도메인으로 이루어지며 전체 query_len은 63이다. 이 63은 가장 왼쪽 레이블만의 길이가 아니다. 이름에 담긴 원래 내용·응답·생성 프로세스를 확보해 DNS 터널 가설을 조사한다. 고유 이름이 많다는 이유로 정상 보안 서비스의 동적 질의까지 일괄 차단하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "도메인 Terms 밖에 22건이 남아 있다. 반환한 후보의 분포와 전체 DNS 자료를 구분한다. cardinality 500은 이번 고정 자료에서 원문 이름의 정확한 고유 수와 일치했다. 다른 기간의 임계값 근처 결과는 원문 또는 전체 값 열거로 다시 확인한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.4 AI 서비스의 별도 활동을 재구성한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "AI 서버 10.20.40.87에서 관리콘솔로 향한 요청을 별도 사건 후보로 연다. 앞 절의 사용자 PC와 연결하는 세션·파일·계정 증거는 제공되지 않았다. PC 장기 활동과 AI 서비스 활동의 담당 조사표를 나눈다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-06",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n        {\"term\": {\"data.vhost\": \"admin.kt66.lab\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"sources\": {\n      \"terms\": {\n        \"field\": \"data.srcip\",\n        \"size\": 10,\n        \"order\": {\"response_bytes\": \"desc\"}\n      },\n      \"aggs\": {\n        \"response_bytes\": {\"sum\": {\"field\": \"data.bytes\"}},\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}}\n      }\n    }\n  }\n}",
+          "purpose": "관리콘솔의 응답 합계가 큰 출발지를 찾는다.",
+          "syntax": "web-accesslog와 admin.kt66.lab을 고정하고 response_bytes 합계로 정렬한다. data.bytes는 웹 응답의 기록된 크기이다.",
+          "result": "10.20.40.87에서 온 20건, 합계 12918314바이트이다. 이번 축소 자료에서 관리콘솔 웹 로그는 이 20건뿐이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "정상 관리 요청이 보이지 않는 것은 이번 배경 배율의 결과이다. 정상 요청이 없는 운영 서비스라고 해석하지 않는다. 운영 환경에서는 평상시 관리자·서비스 계정의 요청 수·경로·응답 크기 분포를 함께 확보한다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-07",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 1,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-10-31T03:00:00+09:00\",\n              \"lt\": \"2026-10-31T03:03:00+09:00\"\n            }\n          }\n        },\n        {\n          \"bool\": {\n            \"should\": [\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n                    {\"term\": {\"agent.name\": \"aicompanion\"}},\n                    {\"term\": {\"data.srcip\": \"138.242.102.64\"}}\n                  ]\n                }\n              },\n              {\"term\": {\"data.ai.user\": \"u5520193\"}},\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n                    {\"term\": {\"agent.name\": \"adminconsole\"}},\n                    {\"term\": {\"data.srcip\": \"10.20.40.87\"}},\n                    {\n                      \"prefix\": {\n                        \"data.url\": \"/api/users/export?\"\n                      }\n                    }\n                  ]\n                }\n              },\n              {\n                \"bool\": {\n                  \"filter\": [\n                    {\"term\": {\"data.event_type\": \"flow\"}},\n                    {\"term\": {\"data.src_ip\": \"10.20.40.87\"}},\n                    {\"term\": {\"data.dest_ip\": \"71.212.10.1\"}}\n                  ]\n                }\n              }\n            ],\n            \"minimum_should_match\": 1\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"stages\": {\n      \"filters\": {\n        \"filters\": {\n          \"chat\": {\n            \"bool\": {\n              \"filter\": [\n                {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n                {\"term\": {\"agent.name\": \"aicompanion\"}},\n                {\"term\": {\"data.srcip\": \"138.242.102.64\"}}\n              ]\n            }\n          },\n          \"ai\": {\"term\": {\"data.ai.user\": \"u5520193\"}},\n          \"export\": {\n            \"bool\": {\n              \"filter\": [\n                {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n                {\"term\": {\"agent.name\": \"adminconsole\"}},\n                {\"term\": {\"data.srcip\": \"10.20.40.87\"}},\n                {\"prefix\": {\"data.url\": \"/api/users/export?\"}}\n              ]\n            }\n          },\n          \"out\": {\n            \"bool\": {\n              \"filter\": [\n                {\"term\": {\"data.event_type\": \"flow\"}},\n                {\"term\": {\"data.src_ip\": \"10.20.40.87\"}},\n                {\"term\": {\"data.dest_ip\": \"71.212.10.1\"}}\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}}\n      }\n    },\n    \"tools\": {\"terms\": {\"field\": \"data.ai.tool\", \"size\": 5}}\n  },\n  \"sort\": [{\"timestamp\": \"desc\"}],\n  \"_source\": [\"timestamp\", \"data\"]\n}",
+          "purpose": "입력·AI 기록·내부 요청·외향 전송을 한 시간 창에서 대조한다.",
+          "syntax": "10월 31일 03:00~03:03 안에서 네 조건의 합집합을 검색한다. filters의 각 이름은 관찰 단계이며 first·last는 그 단계의 관측 시각이다. size 1은 시간순 마지막 원문이다.",
+          "result": "101건은 chat 40·ai 40·export 20·out 1이다. AI tool은 http_fetch 20과 none 20이다.",
+          "long": true
+        },
+        {
+          "type": "table",
+          "head": [
+            "관찰(KST)",
+            "시각 / 수"
+          ],
+          "rows": [
+            [
+              "채팅 웹 요청",
+              "03:00:02.864~03:01:40.094 / 40건"
+            ],
+            [
+              "AI 앱 기록",
+              "03:00:02.884~03:01:40.114 / 40건"
+            ],
+            [
+              "관리콘솔 내보내기",
+              "03:00:05.585~03:01:40.494 / 20건"
+            ],
+            [
+              "외향 flow",
+              "03:02:00.094 / 1건"
+            ]
+          ],
+          "widths": [
+            46,
+            81
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "첫 웹 요청부터 외향 flow 관찰까지 117.230초이다. flow의 age 25초와 구분한다. 생성기는 웹 요청 뒤 AI 기록을 20ms, http_fetch가 있는 경우 내부 요청을 400ms 뒤에 둔다. 따라서 앱 기록과 내부 요청의 380ms 차이는 측정한 처리 지연이 아니라 생성 조건이다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-10",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 25,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-10-31T03:00:00+09:00\",\n              \"lt\": \"2026-10-31T03:03:00+09:00\"\n            }\n          }\n        },\n        {\n          \"bool\": {\n            \"filter\": [\n              {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n              {\"term\": {\"agent.name\": \"adminconsole\"}},\n              {\"term\": {\"data.srcip\": \"10.20.40.87\"}},\n              {\"prefix\": {\"data.url\": \"/api/users/export?\"}}\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"urls\": {\"cardinality\": {\"field\": \"data.url\"}},\n    \"bytes\": {\"sum\": {\"field\": \"data.bytes\"}},\n    \"first\": {\"min\": {\"field\": \"timestamp\"}},\n    \"last\": {\"max\": {\"field\": \"timestamp\"}}\n  },\n  \"sort\": [{\"timestamp\": \"asc\"}],\n  \"_source\": [\"timestamp\", \"data\", \"full_log\"]\n}",
+          "purpose": "내보내기 요청의 페이지·응답·원문을 확인한다.",
+          "syntax": "관리콘솔·AI 출발지·내보내기 경로와 짧은 시간 창을 고정한다. size 25로 전체 20건을 시간순 반환한다. urls는 서로 다른 전체 URL 수이다.",
+          "result": "page=0부터 page=19까지 각각 한 건, 모두 GET·200이며 응답 합은 12918314바이트이다.",
+          "long": true
+        },
+        {
+          "type": "image",
+          "path": "assets/screenshots/chapter13/export-detail.png",
+          "caption": "화면 13-1  내보내기 요청의 출발지·응답·페이지",
+          "width_mm": 121
+        },
+        {
+          "type": "p",
+          "text": "화면의 첫 문서는 r15-000104075이다. srcip 10.20.40.87, url의 page=0, id 200, bytes 866174를 full_log의 GET·200·866174와 대조한다. 200 응답의 실제 내용·권한 검사·서비스 요청 ID를 확보해 허용된 내보내기와 범위를 벗어난 요청을 구분한다."
+        },
+        {
+          "type": "p",
+          "text": "외향 flow는 71.212.10.1:443으로 14000000바이트를 보낸 기록이다. 웹 응답 합 12918314와 값이 다르고 두 자료의 측정 단위도 다르다. 동일 데이터의 외부 전달을 확인하려면 내보낸 객체·파일·콘텐츠 해시와 전송 기록을 연결한다. 주입 표지와 blocked false, http_fetch 이름만으로 모든 입력의 공격 성공을 세지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.5 승인된 작업의 범위를 확인한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "큰 전송과 많은 404는 우선 조사할 후보이다. 승인된 작업을 제외할 때는 누가 언제 어떤 대상에 무엇을 허용했는지 확인한다. 예외 목록에 IP 한 개만 저장하면 그 주소의 다른 시간·다른 행위까지 숨길 수 있다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-08",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 0,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"data.event_type\": \"flow\"}},\n        {\"prefix\": {\"data.src_ip\": \"10.20.40.\"}},\n        {\n          \"range\": {\n            \"data.flow.bytes_toserver\": {\"gte\": 10000000}\n          }\n        },\n        {\n          \"bool\": {\n            \"must_not\": [{\"prefix\": {\"data.dest_ip\": \"10.20.\"}}]\n          }\n        }\n      ]\n    }\n  },\n  \"aggs\": {\n    \"destinations\": {\n      \"terms\": {\n        \"field\": \"data.dest_ip\",\n        \"size\": 10,\n        \"order\": {\"up\": \"desc\"}\n      },\n      \"aggs\": {\n        \"up\": {\"sum\": {\"field\": \"data.flow.bytes_toserver\"}},\n        \"sources\": {\n          \"terms\": {\"field\": \"data.src_ip\", \"size\": 5}\n        },\n        \"days\": {\n          \"date_histogram\": {\n            \"field\": \"timestamp\",\n            \"calendar_interval\": \"day\",\n            \"time_zone\": \"+09:00\",\n            \"min_doc_count\": 1\n          }\n        },\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}}\n      }\n    }\n  }\n}",
+          "purpose": "큰 외향 전송의 출발지·목적지·활동 날짜를 비교한다.",
+          "syntax": "서버존 출발지 중 bytes_toserver가 10000000 이상이고 목적지가 10.20.으로 시작하지 않는 flow를 선택한다. 이 주소 조건은 이 실습망의 범위이다.",
+          "result": "90건이다. neobank 10.20.40.83에서 222.164.181.171로 89일간 89건·176980297392바이트, AI 서버에서 71.212.10.1로 한 건·14000000바이트이다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "백업 후보는 8월 4일부터 10월 31일까지 매일 01시, 초 부분 0.281~48.199 사이에 나타난다. 한 번의 전송량은 약 18.12억~21.96억 바이트이다. 90일 창에서 89일만 있는 것은 생성기가 D-89부터 D-1을 넣기 때문이다. 실제 누락일은 작업 스케줄·실패 이력과 대조한다."
+        },
+        {
+          "type": "p",
+          "text": "백업 목적지의 소유·백업 계정·작업 시간·보존 정책·성공 로그를 확인한다. 작업 성공과 함께 표본 복구 결과도 기록한다. 같은 목적지로 전송했더라도 예약 시간 밖 실행·다른 계정·비정상 증가·새 경로는 별도 후보로 남긴다."
+        },
+        {
+          "type": "query",
+          "id": "Q03-13-09",
+          "where": "Windows 브라우저 · Wazuh Dev Tools",
+          "text": "GET /book3-r15-ch13/_search\n{\n  \"size\": 1,\n  \"track_total_hits\": true,\n  \"query\": {\n    \"bool\": {\n      \"filter\": [\n        {\n          \"range\": {\n            \"timestamp\": {\n              \"gte\": \"2026-08-03T00:00:00+09:00\",\n              \"lt\": \"2026-11-01T00:00:00+09:00\"\n            }\n          }\n        },\n        {\"term\": {\"decoder.name\": \"web-accesslog\"}},\n        {\"term\": {\"agent.name\": \"govportal\"}},\n        {\"term\": {\"data.id\": \"404\"}}\n      ]\n    }\n  },\n  \"aggs\": {\n    \"sources\": {\n      \"terms\": {\n        \"field\": \"data.srcip\",\n        \"size\": 20,\n        \"order\": {\"urls\": \"desc\"}\n      },\n      \"aggs\": {\n        \"urls\": {\"cardinality\": {\"field\": \"data.url\"}},\n        \"agents\": {\n          \"terms\": {\"field\": \"data.user_agent\", \"size\": 5}\n        },\n        \"first\": {\"min\": {\"field\": \"timestamp\"}},\n        \"last\": {\"max\": {\"field\": \"timestamp\"}}\n      }\n    }\n  },\n  \"sort\": [{\"timestamp\": \"desc\"}],\n  \"_source\": [\"timestamp\", \"data\", \"full_log\"]\n}",
+          "purpose": "404 경로가 다양한 출발지에서 점검 후보를 찾는다.",
+          "syntax": "govportal의 404만 대상으로 urls 고유 수 내림차순 상위 20개를 반환한다. agents는 User-Agent 값이며 agent.name과 구분한다.",
+          "result": "전체 380건 중 125.42.78.218은 350건·URL 350개이다. 10월 18일 14:00:00.750~14:07:16.591 KST이고 User-Agent는 KT66-Authorized-Scanner를 포함한다.",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "User-Agent는 요청자가 적는 문자열이다. 강의의 점검 허용 목록에는 125.42.78.218이 있으나 승인 시작·종료 시각과 허용 경로를 모두 담고 있지는 않다. 이 사례에서는 허가된 정기 점검이라는 시나리오 설명을 근거로 분류하고, 운영 적용에는 변경 승인서·점검 일정·대상 서비스·금지 동작·담당자 확인을 추가한다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "기록 항목",
+            "점검 / 백업에서 확인할 값"
+          ],
+          "rows": [
+            [
+              "대상",
+              "출발지와 목적지, 서비스·경로 또는 백업 저장소"
+            ],
+            [
+              "기간",
+              "시작·종료·시간대, 반복 일정, 만료일"
+            ],
+            [
+              "허용 작업",
+              "방법·계정·요청률·데이터 범위"
+            ],
+            [
+              "근거",
+              "승인 문서 번호·담당자·변경 이력"
+            ],
+            [
+              "예외 밖 행동",
+              "다른 시간·경로·계정·크기 변화는 재조사"
+            ]
+          ],
+          "widths": [
+            35,
+            92
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "이번 시나리오 출처 3906건 중 점검·백업은 439건이다. 나머지 3467건은 두 의심 활동을 구성하는 합성 관측이다. 메일·웹·앱·flow를 더한 문서 수를 서로 다른 공격 실행 횟수나 피해자 수로 표시하지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.6 대응과 규칙의 범위를 정한다",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "대응 계획은 조치 대상, 필요한 승인, 업무 영향, 실행 담당자, 성공 조건, 원상복구 조건을 함께 적는다. 다음은 이 자료를 이용한 모의 판단이다. 실제 계정 변경·차단·프로세스 종료를 실행하지 않는다."
+        },
+        {
+          "type": "table",
+          "head": [
+            "사건 후보",
+            "우선 확보 / 모의 조치"
+          ],
+          "rows": [
+            [
+              "PC 장기 활동",
+              "문서·메일·프로세스·연결 증거 보존. PC 통신 제한과 계정 세션 점검을 담당자에게 요청한다."
+            ],
+            [
+              "관리 계정 사용",
+              "kim.minjun의 세션·인증 경로·권한·파일 접근 범위를 조사한다. 필요한 세션 종료·자격증명 교체 범위를 정한다."
+            ],
+            [
+              "AI 서비스 활동",
+              "도구 요청 ID·인수·응답·내보내기 객체 보존. 도구 권한·목적지·서비스 계정 접근을 최소 범위로 제한한다."
+            ],
+            [
+              "승인 작업",
+              "일정·대상·계정이 일치한 부분만 예외 처리한다. 범위를 벗어난 관측은 조사 대상으로 남긴다."
+            ]
+          ],
+          "widths": [
+            39,
+            88
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "조치 뒤에는 의심 동작이 줄었는지와 센서가 계속 수집 중인지 함께 확인한다. 연결 0건이라도 센서가 중단됐다면 차단 효과를 계산할 수 없다. PC의 필수 업무, 정상 관리자 로그인, 허용된 AI 조회, 백업·복구 시험을 통과해야 업무 영향까지 평가할 수 있다."
+        },
+        {
+          "type": "h",
+          "text": "원본 규칙을 적용하기 전에 확인할 차이"
+        },
+        {
+          "type": "table",
+          "head": [
+            "원본 항목",
+            "확인할 범위"
+          ],
+          "rows": [
+            [
+              "191501 / 점검 목록",
+              "IP와 웹 부모 규칙의 일치를 사용한다. 승인 기간·서비스·경로의 자동 검사가 추가로 필요하다."
+            ],
+            [
+              "191502 / 백업 억제",
+              "코드는 출발지·목적지를 직접 고정한다. 백업 목록 파일을 읽는 규칙으로 설명하지 않는다."
+            ],
+            [
+              "191503 / PC발 SSH",
+              "성공 인증의 출발지 범위를 본다. 계정 탈취 경로·정상 예외·목적 서버를 추가 확인한다."
+            ],
+            [
+              "191504 / Office 자식",
+              "부모·자식 경로의 단건 조건이다. 문서의 매크로·악성 여부는 파일 증거와 함께 조사한다."
+            ],
+            [
+              "191505~191506",
+              "내보내기 경로 일치와 120초 빈도 조건이다. 고유 page 수를 세는 규칙이 아니다."
+            ]
+          ],
+          "widths": [
+            42,
+            85
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "191506에는 URL의 고유 페이지 수를 비교하는 조건이 없다. 같은 페이지를 반복해도 빈도에 포함될 수 있다. 원고 Q10의 고유 URL 20개와 규칙의 반복 횟수를 구분한다. 같은 출발지·대상·계정·요청의 상관 범위와 경계 시점은 별도 manager 시험에서 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "Suricata의 점검 pass 규칙은 해당 주소·목적지·포트의 패킷 처리에 영향을 준다. Wazuh level 0 억제와 네트워크 차단은 서로 다른 동작이다. 승인 기간을 벗어난 요청까지 통과시키지 않도록 예외 범위를 설계한다. 이 실습에서는 공용 규칙·목록·모니터·자동 대응을 변경하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "로그와 기간을 저장해 조회하는 집계, 입력 이벤트를 처리하는 Wazuh 규칙, 패킷과 흐름을 분석하는 센서는 관측 위치와 조건이 다르다. 장기 사례에서도 개별 악성 프로세스나 요청은 단건 탐지에 걸릴 수 있다. 서명·상관에서 0건을 정상 성공 조건으로 삼지 말고 각 계층의 실제 입력과 적용 규칙을 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "요청 속도가 빠르면 사전 승인된 제한 정책의 가치가 커진다. 자동 조치는 적용 대상·최대 범위·정상 예외·해제 시간·오탐 시 원상복구를 먼저 시험한 경우에 사용한다. 속도만 보고 계정·호스트의 모든 통신을 자동 차단하는 규칙으로 옮기지 않는다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.7 사건표와 인계 자료를 완성한다",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "사건표",
+            "최종 기록 예"
+          ],
+          "rows": [
+            [
+              "PC-01",
+              "9/2 문서·셸 실행, 60일 반복 연결, 10/11 서버 인증, 10/23·29 TXT 질의. 공통 PC 주소가 단서이고 세션·프로세스 연관은 추가 확보한다."
+            ],
+            [
+              "AI-01",
+              "10/31 입력 40·앱 40·내부 요청 20·flow 1. 117.230초의 관측 범위. 요청 ID와 실제 전달 내용은 미확인이다."
+            ],
+            [
+              "AUTH-01",
+              "10/18 점검 350건. 시나리오의 승인 설명·IP 목록과 대조. 운영 예외에는 시간·대상·작업 범위가 필요하다."
+            ],
+            [
+              "AUTH-02",
+              "89일 백업 후보 89건. 시나리오의 정상 백업 설명과 대조. 운영 정상 판정에는 작업·계정·복구 시험을 확인한다."
+            ]
+          ],
+          "widths": [
+            30,
+            97
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "각 문장은 근거 조회와 원문 ID를 가리키게 쓴다. 예를 들어 PC-01의 서버 인증은 Q04와 r15-000080610, AI-01의 첫 내보내기는 Q10과 r15-000104075를 연결한다. 같은 PC 주소만으로 kim.minjun이 문서를 열었다고 서술하지 않는다."
+        },
+        {
+          "type": "p",
+          "text": "인계 묶음에는 manifest·파일 해시·조회 JSON·조회 응답·원문 ID 목록·시간대·판단 기록·미확인 증거·모의 조치 계획을 둔다. 원본은 보존하고 분석 사본에 메모한다. 자료를 전달할 때는 수신자·목적·전달 시각·파일 해시를 기록하고 개인정보·인증정보·실자료 배포 범위를 확인한다."
+        },
+        {
+          "type": "p",
+          "text": "response-plan.csv의 결과 칸에는 이 실습에서는 미실행·모의 판단이라고 적는다. 승인과 실제 실행이 끝난 운영 사건에서는 실행 시각·조치 전후 조건·센서 상태·정상 업무 결과를 추가한다. 감시 기간은 반복 주기와 업무 주기를 포함하도록 정한다. 30분 연결을 1분 관찰한 결과만으로 종료하지 않는다."
+        },
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "PC·AI·승인 작업의 사건표를 각각 완성한다.",
+            "각 사실에 조회 번호·원문 ID·시각·필드를 연결한다.",
+            "추론에 필요한 누락 증거와 확보 담당자를 적는다.",
+            "예외의 유효 범위와 만료·재검토 조건을 기록한다.",
+            "모의 조치의 효과·업무 영향·원상복구 기준을 한 줄씩 작성한다."
+          ]
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "13.8 결과가 다를 때와 원상복구",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "증상",
+            "확인 순서"
+          ],
+          "rows": [
+            [
+              "전체 수가 다르다",
+              "인덱스 이름·manifest의 seed/anchor/days/scale·파일 해시·적재 count를 확인한다."
+            ],
+            [
+              "메일 뒤 실행이 많다",
+              "Q03에는 같은 창의 배경 프로세스도 있다. 전체 수와 선택한 두 실행의 ID를 나눈다."
+            ],
+            [
+              "정상 관리 요청이 없다",
+              "배율과 배경 생성 조건을 확인한다. 운영 정상 기준은 별도 기간에서 확보한다."
+            ],
+            [
+              "시간이 9시간 다르다",
+              "Z는 UTC, +0900은 KST이다. 원문·버킷·화면 시간대와 반개구간 경계를 맞춘다."
+            ],
+            [
+              "예외 후 기록이 사라진다",
+              "수집 상태·인덱스 상태·조회 필터·억제 위치를 확인한다. 자료를 지우거나 다시 적재해 수를 맞추지 않는다."
+            ]
+          ],
+          "widths": [
+            40,
+            87
+          ],
+          "keep": true
+        },
+        {
+          "type": "p",
+          "text": "조사가 끝나면 자신의 전용 인덱스 소유 정보를 확인한다. 아래 mapping의 _meta.book3와 로컬 manifest의 실행 이름·총수·파일 해시를 대조한다. 조사 결과를 보존하고 제거가 필요한 경우에만 정확한 이름으로 DELETE한다. 공용 인덱스나 와일드카드를 사용하지 않는다."
+        },
+        {
+          "type": "code",
+          "text": "GET /book3-r15-ch13/_mapping\n\nDELETE /book3-r15-ch13\n\nGET /book3-r15-ch13/_count",
+          "long": true
+        },
+        {
+          "type": "p",
+          "text": "DELETE는 인덱스 문서를 제거한다. 마지막 _count의 index_not_found_exception으로 제거를 확인한다. 보존하려면 DELETE를 실행하지 않고 보존 기간·담당자를 기록한다. 이 실습에서 적용한 서비스·규칙·자동 대응 변경은 없으므로 공용 구성을 재시작하거나 다른 장의 자료를 되돌릴 필요가 없다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "확인 문제",
+      "blocks": [
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "scenario 3906을 공격 횟수라고 보고하면 어떤 자료가 섞이는가?",
+            "PC의 첫 flow가 PowerShell 생성 24초 뒤인 사실에 무엇을 더 연결해야 하는가?",
+            "AI 서버의 20페이지 요청과 191506의 frequency 조건은 어떻게 다른가?",
+            "백업 목적지 IP가 허용 목록에 있으면 어떤 추가 조건을 확인하는가?"
+          ]
+        },
+        {
+          "type": "h",
+          "text": "해설"
+        },
+        {
+          "type": "p",
+          "text": "1. 점검 350·백업 89와 메일·웹·앱·네트워크의 서로 다른 관측 단위가 섞인다. 출처·악성 판단·관측 단위를 구분한다."
+        },
+        {
+          "type": "p",
+          "text": "2. 프로세스 ID·소켓·실제 접속 이벤트·시각을 연결한다. 시간상 가까움은 조사 단서이다."
+        },
+        {
+          "type": "p",
+          "text": "3. Q10은 서로 다른 전체 URL과 page 0~19 원문을 확인한다. 191506은 선행 규칙의 반복 일치를 세며 고유 페이지 수 조건이 없다."
+        },
+        {
+          "type": "p",
+          "text": "4. 출발 서버·계정·작업 기간·저장소·데이터 범위·작업 성공과 복구 결과를 확인하고 예외 밖 활동을 조사한다."
+        }
+      ],
+      "break": false,
+      "level": "section"
+    },
+    {
+      "kind": "content",
+      "title": "참고자료",
+      "blocks": [
+        {
+          "type": "link",
+          "text": "R15 생성기 — 기준 커밋",
+          "url": "https://github.com/mrgrit/hack_ir_with_wazuh/blob/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg/r15_final.py"
+        },
+        {
+          "type": "link",
+          "text": "R15 규칙과 허용 목록",
+          "url": "https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg/rules/r15"
+        },
+        {
+          "type": "link",
+          "text": "OpenSearch — Terms aggregation",
+          "url": "https://docs.opensearch.org/latest/aggregations/bucket/terms/"
+        },
+        {
+          "type": "link",
+          "text": "Wazuh — Rules syntax",
+          "url": "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html"
+        },
+        {
+          "type": "link",
+          "text": "Wazuh — CDB lists",
+          "url": "https://documentation.wazuh.com/current/user-manual/ruleset/cdb-list.html"
+        },
+        {
+          "type": "link",
+          "text": "13장 복사용 입력과 조사 양식",
+          "url": "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter13"
+        }
+      ],
+      "break": false,
+      "level": "section"
+    }
+  ]
+}

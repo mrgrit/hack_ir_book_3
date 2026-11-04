@@ -1,0 +1,57 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "admin.kt66.lab"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "sources": {
+      "terms": {
+        "field": "data.srcip",
+        "size": 10,
+        "order": {
+          "response_bytes": "desc"
+        }
+      },
+      "aggs": {
+        "response_bytes": {
+          "sum": {
+            "field": "data.bytes"
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      }
+    }
+  }
+}

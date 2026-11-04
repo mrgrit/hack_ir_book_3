@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "chapter": 13,
+  "pages": 34,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter13-briefing.png",
+      "sha256": "4c568ec95a0c6691f21dfd24f06cffe0fb5f2f9e0b71afe640a3cd9187926b37"
+    },
+    {
+      "path": "assets/figures/chapter13-decisions.png",
+      "sha256": "eb9364d78a46524d9500b04a0074dbea989bff6aae10099137aa8e919811e0db"
+    },
+    {
+      "path": "assets/screenshots/chapter13/export-detail.png",
+      "sha256": "18918ecf6444bcc326c78f4a3630ce7730bce3c7da9d89fe6dbf3b0a222127b8"
+    }
+  ],
+  "urls_verified": [
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg/r15_final.py",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/tree/d6a2397fc31517147ddd09f58e0d153bc8cf0588/purple-agg/rules/r15",
+    "https://docs.opensearch.org/latest/aggregations/bucket/terms/",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/cdb-list.html",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter13"
+  ],
+  "queries_match": 10,
+  "commands_match": 4,
+  "files": {
+    "manuscript/volume03-chapter13.docx": "19698eeef3360dfb451d131154152224ab30e1405ac00969669aa93ec538c929",
+    "manuscript/volume03-chapter13.json": "2b1408ff7cee4b729abbdad722627ba8331ea33a6ee0e779c3b8a4b619b73dd6",
+    "examples/chapter13/case-register.csv": "137d84380bb75b7d67a38130f7c877e58b3658b83d0dc7027e612c80e33fa37c",
+    "examples/chapter13/cleanup.http": "90c5e40086e8e94487ea4b435812c71754eeb090463a4db078e9208ff85138fc",
+    "examples/chapter13/commands.sh": "fddd631c8c93494a1c89cf9ff0e5f3eda64849e4cea3ab51884fbd155475e89b",
+    "examples/chapter13/discover.dql": "c1323a105dac98ef4469a3c72124192289511ebbac0f08eaf817522ef2b907aa",
+    "examples/chapter13/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter13/Q03-13-01.http": "f066c75c45108f89b2a426c596b9469c175abdf230fd5aa95e54a1c7cde1bccd",
+    "examples/chapter13/Q03-13-02.http": "3e7bed9f22f1669ab30d6a686ccbef7817534566575525aecc2a96f392f8aff2",
+    "examples/chapter13/Q03-13-03.http": "e01a9119efb4f69fcaf75398643a6e045ce1d69edee44f15bca96d063bbcc24c",
+    "examples/chapter13/Q03-13-04.http": "15fde31424c220c7748eb3ee1e41e8936406d8989d3e0ca68dd8affb734c5d77",
+    "examples/chapter13/Q03-13-05.http": "28279fc95a2e1edb039cbfa564d43fd403a5b9cac88e13538f221d28c692823b",
+    "examples/chapter13/Q03-13-06.http": "144bb49b0ba32146c0f84b37d89e31c91a16b1f0d327eb7f670890df7fbbea74",
+    "examples/chapter13/Q03-13-07.http": "3cc7bef0d4bee7e7206e804a412b3b3f4f0c4465d241be0772d3babae0b23903",
+    "examples/chapter13/Q03-13-08.http": "01af9b4b9502933e5a9ab6ee956d385aba4f69ffaab85d10cc77389e0ec46403",
+    "examples/chapter13/Q03-13-09.http": "ac522139d6d7303d157facc2da2fcc3feaa831796833bbe1bb3e5f62bb7a2f55",
+    "examples/chapter13/Q03-13-10.http": "35757dcf32582f8bb4ee76147e39c4be4e00669386fd711073ffe6127ad96108",
+    "examples/chapter13/queries.json": "574e9f252ecd4f3ac565ca73f8bf50a9df2059e64b29f1b6fd445434b1cc79c2",
+    "examples/chapter13/response-plan.csv": "02e3d1fe2fe803ae93bb99d88378d78b3e4453f97d341f168a84d884941eb769",
+    "examples/chapter13/timeline.csv": "d04e6b9728c08147c7a20be32f292a41b01801c3b48320edbb187bf108f91111"
+  },
+  "qa_pdf_published": false
+}

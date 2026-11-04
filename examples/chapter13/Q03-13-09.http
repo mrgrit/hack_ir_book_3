@@ -1,0 +1,78 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 1,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "agent.name": "govportal"
+          }
+        },
+        {
+          "term": {
+            "data.id": "404"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "sources": {
+      "terms": {
+        "field": "data.srcip",
+        "size": 20,
+        "order": {
+          "urls": "desc"
+        }
+      },
+      "aggs": {
+        "urls": {
+          "cardinality": {
+            "field": "data.url"
+          }
+        },
+        "agents": {
+          "terms": {
+            "field": "data.user_agent",
+            "size": 5
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        }
+      }
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "desc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

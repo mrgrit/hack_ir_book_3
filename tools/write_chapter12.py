@@ -116,4 +116,3 @@ s('참고자료',
 for block in b.pages[-1]['blocks']:
  if block['type']=='link':block.update(title_after=4,url_after=5)
 b.write('공개 PCAP 파일 분석·logtest·실제 조회를 검증했다. 선택 veth 재생과 전용 agent 설정은 설계이며 실행 수치를 제시하지 않는다.',['book3-pcap-ch12'],['data.event_type: http AND data.dest_ip: "5.252.153.241"','data.event_type: http AND data.http.url: "/1517096937"','data.event_type: tls'])
-

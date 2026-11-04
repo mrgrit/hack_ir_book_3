@@ -1,0 +1,4747 @@
+{
+  "01": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 5379,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "parents": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "C:\\Windows\\explorer.exe",
+            "doc_count": 5378,
+            "children": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "C:\\Program Files\\Acrobat.exe",
+                  "doc_count": 807
+                },
+                {
+                  "key": "C:\\Program Files\\notepad.exe",
+                  "doc_count": 782
+                },
+                {
+                  "key": "C:\\Program Files\\chrome.exe",
+                  "doc_count": 781
+                },
+                {
+                  "key": "C:\\Program Files\\WINWORD.EXE",
+                  "doc_count": 762
+                },
+                {
+                  "key": "C:\\Program Files\\OUTLOOK.EXE",
+                  "doc_count": 754
+                },
+                {
+                  "key": "C:\\Program Files\\ms-teams.exe",
+                  "doc_count": 750
+                },
+                {
+                  "key": "C:\\Program Files\\EXCEL.EXE",
+                  "doc_count": 741
+                },
+                {
+                  "key": "C:\\Program Files\\Microsoft Office\\WINWORD.EXE",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "C:\\Program Files\\Microsoft Office\\WINWORD.EXE",
+            "doc_count": 1,
+            "children": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2851,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "destinations": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "194.98.0.93",
+            "doc_count": 2850,
+            "last": {
+              "value": 1793457660154.0,
+              "value_as_string": "2026-10-31T14:41:00.154Z"
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 28
+                },
+                {
+                  "key_as_string": "2026-09-03T00:00:00.000+09:00",
+                  "key": 1788361200000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-04T00:00:00.000+09:00",
+                  "key": 1788447600000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-05T00:00:00.000+09:00",
+                  "key": 1788534000000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-09-06T00:00:00.000+09:00",
+                  "key": 1788620400000,
+                  "doc_count": 46
+                },
+                {
+                  "key_as_string": "2026-09-07T00:00:00.000+09:00",
+                  "key": 1788706800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-08T00:00:00.000+09:00",
+                  "key": 1788793200000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-09-09T00:00:00.000+09:00",
+                  "key": 1788879600000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-10T00:00:00.000+09:00",
+                  "key": 1788966000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-11T00:00:00.000+09:00",
+                  "key": 1789052400000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-12T00:00:00.000+09:00",
+                  "key": 1789138800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-13T00:00:00.000+09:00",
+                  "key": 1789225200000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-09-14T00:00:00.000+09:00",
+                  "key": 1789311600000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-15T00:00:00.000+09:00",
+                  "key": 1789398000000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-16T00:00:00.000+09:00",
+                  "key": 1789484400000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-17T00:00:00.000+09:00",
+                  "key": 1789570800000,
+                  "doc_count": 46
+                },
+                {
+                  "key_as_string": "2026-09-18T00:00:00.000+09:00",
+                  "key": 1789657200000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-19T00:00:00.000+09:00",
+                  "key": 1789743600000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-20T00:00:00.000+09:00",
+                  "key": 1789830000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-21T00:00:00.000+09:00",
+                  "key": 1789916400000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-09-22T00:00:00.000+09:00",
+                  "key": 1790002800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-23T00:00:00.000+09:00",
+                  "key": 1790089200000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-09-27T00:00:00.000+09:00",
+                  "key": 1790434800000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-28T00:00:00.000+09:00",
+                  "key": 1790521200000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-29T00:00:00.000+09:00",
+                  "key": 1790607600000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-09-30T00:00:00.000+09:00",
+                  "key": 1790694000000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-01T00:00:00.000+09:00",
+                  "key": 1790780400000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-02T00:00:00.000+09:00",
+                  "key": 1790866800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-03T00:00:00.000+09:00",
+                  "key": 1790953200000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-04T00:00:00.000+09:00",
+                  "key": 1791039600000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-05T00:00:00.000+09:00",
+                  "key": 1791126000000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-07T00:00:00.000+09:00",
+                  "key": 1791298800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-08T00:00:00.000+09:00",
+                  "key": 1791385200000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-09T00:00:00.000+09:00",
+                  "key": 1791471600000,
+                  "doc_count": 46
+                },
+                {
+                  "key_as_string": "2026-10-10T00:00:00.000+09:00",
+                  "key": 1791558000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-11T00:00:00.000+09:00",
+                  "key": 1791644400000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-12T00:00:00.000+09:00",
+                  "key": 1791730800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-13T00:00:00.000+09:00",
+                  "key": 1791817200000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-14T00:00:00.000+09:00",
+                  "key": 1791903600000,
+                  "doc_count": 46
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-18T00:00:00.000+09:00",
+                  "key": 1792249200000,
+                  "doc_count": 46
+                },
+                {
+                  "key_as_string": "2026-10-19T00:00:00.000+09:00",
+                  "key": 1792335600000,
+                  "doc_count": 50
+                },
+                {
+                  "key_as_string": "2026-10-20T00:00:00.000+09:00",
+                  "key": 1792422000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-21T00:00:00.000+09:00",
+                  "key": 1792508400000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-22T00:00:00.000+09:00",
+                  "key": 1792594800000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-23T00:00:00.000+09:00",
+                  "key": 1792681200000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-24T00:00:00.000+09:00",
+                  "key": 1792767600000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-25T00:00:00.000+09:00",
+                  "key": 1792854000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 49
+                },
+                {
+                  "key_as_string": "2026-10-27T00:00:00.000+09:00",
+                  "key": 1793026800000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-28T00:00:00.000+09:00",
+                  "key": 1793113200000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 47
+                },
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 48
+                },
+                {
+                  "key_as_string": "2026-10-31T00:00:00.000+09:00",
+                  "key": 1793372400000,
+                  "doc_count": 48
+                }
+              ]
+            },
+            "up": {
+              "value": 3424178.0
+            },
+            "first": {
+              "value": 1788312630000.0,
+              "value_as_string": "2026-09-02T01:30:30.000Z"
+            }
+          },
+          {
+            "key": "121.24.17.41",
+            "doc_count": 1,
+            "last": {
+              "value": 1786335452398.0,
+              "value_as_string": "2026-08-10T04:17:32.398Z"
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-10T00:00:00.000+09:00",
+                  "key": 1786287600000,
+                  "doc_count": 1
+                }
+              ]
+            },
+            "up": {
+              "value": 1267.0
+            },
+            "first": {
+              "value": 1786335452398.0,
+              "value_as_string": "2026-08-10T04:17:32.398Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 21,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034315",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\chrome.exe",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "chrome.exe"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T09:40:37.206+0900"
+          },
+          "sort": [
+            1788309637206
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034316",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "park.yejun@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:07 mail kt66-mailgw[8672]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<park.yejun@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:07.523+0900"
+          },
+          "sort": [
+            1788309667523
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034317",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "oh.minseo@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:15 mail kt66-mailgw[8729]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<oh.minseo@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:15.614+0900"
+          },
+          "sort": [
+            1788309675614
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034318",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "kang.chaewon@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:23 mail kt66-mailgw[8782]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<kang.chaewon@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:23.284+0900"
+          },
+          "sort": [
+            1788309683284
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034319",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "kim.siwoo@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:27 mail kt66-mailgw[8810]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<kim.siwoo@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:27.179+0900"
+          },
+          "sort": [
+            1788309687179
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034320",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "kim.jimin@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:35 mail kt66-mailgw[8865]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<kim.jimin@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:35.100+0900"
+          },
+          "sort": [
+            1788309695100
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034321",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "jung.jiyu@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:42 mail kt66-mailgw[8914]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<jung.jiyu@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:42.055+0900"
+          },
+          "sort": [
+            1788309702055
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034322",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "oh.jimin@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:50 mail kt66-mailgw[8972]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<oh.jimin@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:50.318+0900"
+          },
+          "sort": [
+            1788309710318
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034323",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "han.juwon@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:54 mail kt66-mailgw[9003]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<han.juwon@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:54.819+0900"
+          },
+          "sort": [
+            1788309714819
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034324",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "jang.jiwoo@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:41:58 mail kt66-mailgw[9031]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<jang.jiwoo@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:41:58.771+0900"
+          },
+          "sort": [
+            1788309718771
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034325",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "han.minjun@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:42:06 mail kt66-mailgw[9084]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<han.minjun@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:42:06.299+0900"
+          },
+          "sort": [
+            1788309726299
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034326",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "jang.minseo@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:42:12 mail kt66-mailgw[9125]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<jang.minseo@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:42:12.266+0900"
+          },
+          "sort": [
+            1788309732266
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034327",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mail"
+            },
+            "data": {
+              "srcip": "118.61.126.77",
+              "size": 48000,
+              "from": "hr-notice@kt66-hr.support",
+              "from_domain": "kt66-hr.support",
+              "to": "park.jiwoo@kt66.lab",
+              "direction": "in",
+              "status": "sent"
+            },
+            "full_log": "Sep 02 09:42:15 mail kt66-mailgw[9151]: direction=in client=118.61.126.77 from=<hr-notice@kt66-hr.support> to=<park.jiwoo@kt66.lab> size=48000 status=sent",
+            "timestamp": "2026-09-02T09:42:15.962+0900"
+          },
+          "sort": [
+            1788309735962
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034331",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\Acrobat.exe",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "Acrobat.exe"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T09:46:23.637+0900"
+          },
+          "sort": [
+            1788309983637
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034333",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\EXCEL.EXE",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "EXCEL.EXE"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T09:48:04.505+0900"
+          },
+          "sort": [
+            1788310084505
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034346",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\WINWORD.EXE",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "WINWORD.EXE"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T09:52:14.762+0900"
+          },
+          "sort": [
+            1788310334762
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034358",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\notepad.exe",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "notepad.exe"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T09:58:13.837+0900"
+          },
+          "sort": [
+            1788310693837
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034361",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\ms-teams.exe",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "ms-teams.exe"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T10:06:25.220+0900"
+          },
+          "sort": [
+            1788311185220
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034375",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\EXCEL.EXE",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "EXCEL.EXE"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T10:27:48.630+0900"
+          },
+          "sort": [
+            1788312468630
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034378",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Program Files\\Microsoft Office\\WINWORD.EXE",
+                  "parentProcessName": "C:\\Windows\\explorer.exe",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "WINWORD.EXE /n 급여명세_정정.docm"
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T10:30:00.000+0900"
+          },
+          "sort": [
+            1788312600000
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000034379",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "KT66-WIN-01"
+            },
+            "data": {
+              "win": {
+                "eventdata": {
+                  "newProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                  "parentProcessName": "C:\\Program Files\\Microsoft Office\\WINWORD.EXE",
+                  "targetUserName": "park.jiwoo",
+                  "commandLine": "powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQA..."
+                },
+                "system": {
+                  "eventID": "4688",
+                  "computer": "KT66-WIN-01.kt66.lab",
+                  "channel": "Security",
+                  "providerName": "Microsoft-Windows-Security-Auditing"
+                }
+              }
+            },
+            "timestamp": "2026-09-02T10:30:06.000+0900"
+          },
+          "sort": [
+            1788312606000
+          ]
+        }
+      ]
+    }
+  },
+  "04": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000080610",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "adminconsole"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "srcip": "10.20.70.10",
+              "srcport": "34488"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 11 22:14:00 adminconsole sshd[2080]: Accepted password for kim.minjun from 10.20.70.10 port 34488 ssh2",
+            "timestamp": "2026-10-11T22:14:00.000+0900"
+          },
+          "sort": [
+            1791724440000
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000080611",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "adminconsole"
+            },
+            "data": {
+              "srcuser": "kim.minjun",
+              "dstuser": "root",
+              "command": "/bin/cat /opt/admin/db.env"
+            },
+            "decoder": {
+              "name": "sudo"
+            },
+            "full_log": "Oct 11 22:14:30 adminconsole sudo[2290]: kim.minjun : TTY=pts/0 ; PWD=/home/kim.minjun ; USER=root ; COMMAND=/bin/cat /opt/admin/db.env",
+            "timestamp": "2026-10-11T22:14:30.000+0900"
+          },
+          "sort": [
+            1791724470000
+          ]
+        }
+      ]
+    }
+  },
+  "05": {
+    "took": 8,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 726,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000093978",
+          "_score": null,
+          "_source": {
+            "data": {
+              "srcip": "10.20.70.10",
+              "qtype": "TXT",
+              "domain": "telemetry-kt66.net",
+              "query": "0904ba27d06ea93c6c8d005fc7fcf45dd812157b0000.telemetry-kt66.net",
+              "query_len": 63
+            },
+            "full_log": "Oct 23 02:05:04 dns kt66-dns[1931]: query[TXT] 0904ba27d06ea93c6c8d005fc7fcf45dd812157b0000.telemetry-kt66.net from 10.20.70.10",
+            "timestamp": "2026-10-23T02:05:04.525+0900"
+          },
+          "sort": [
+            63
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "domains": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 22,
+        "buckets": [
+          {
+            "key": "telemetry-kt66.net",
+            "doc_count": 500,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "TXT",
+                  "doc_count": 500
+                }
+              ]
+            },
+            "names": {
+              "value": 500
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.10",
+                  "doc_count": 500
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-10-23T00:00:00.000+09:00",
+                  "key": 1792681200000,
+                  "doc_count": 250
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 250
+                }
+              ]
+            }
+          },
+          {
+            "key": "google.com",
+            "doc_count": 21,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 21
+                }
+              ]
+            },
+            "names": {
+              "value": 5
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 16,
+              "buckets": [
+                {
+                  "key": "10.20.70.106",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.122",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.132",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.149",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.151",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-06T00:00:00.000+09:00",
+                  "key": 1785942000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-09T00:00:00.000+09:00",
+                  "key": 1786201200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-10T00:00:00.000+09:00",
+                  "key": 1786287600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-12T00:00:00.000+09:00",
+                  "key": 1786460400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-19T00:00:00.000+09:00",
+                  "key": 1787065200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-25T00:00:00.000+09:00",
+                  "key": 1787583600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-09T00:00:00.000+09:00",
+                  "key": 1788879600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-17T00:00:00.000+09:00",
+                  "key": 1789570800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-18T00:00:00.000+09:00",
+                  "key": 1789657200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-22T00:00:00.000+09:00",
+                  "key": 1790002800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-30T00:00:00.000+09:00",
+                  "key": 1790694000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-01T00:00:00.000+09:00",
+                  "key": 1790780400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-05T00:00:00.000+09:00",
+                  "key": 1791126000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-11T00:00:00.000+09:00",
+                  "key": 1791644400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-25T00:00:00.000+09:00",
+                  "key": 1792854000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-31T00:00:00.000+09:00",
+                  "key": 1793372400000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "microsoft.com",
+            "doc_count": 26,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 26
+                }
+              ]
+            },
+            "names": {
+              "value": 3
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 21,
+              "buckets": [
+                {
+                  "key": "10.20.70.10",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.100",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.11",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.116",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.14",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-08T00:00:00.000+09:00",
+                  "key": 1786114800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-12T00:00:00.000+09:00",
+                  "key": 1786460400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-14T00:00:00.000+09:00",
+                  "key": 1786633200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-19T00:00:00.000+09:00",
+                  "key": 1787065200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-23T00:00:00.000+09:00",
+                  "key": 1787410800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-24T00:00:00.000+09:00",
+                  "key": 1787497200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-26T00:00:00.000+09:00",
+                  "key": 1787670000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-28T00:00:00.000+09:00",
+                  "key": 1787842800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-29T00:00:00.000+09:00",
+                  "key": 1787929200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-14T00:00:00.000+09:00",
+                  "key": 1789311600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-16T00:00:00.000+09:00",
+                  "key": 1789484400000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-23T00:00:00.000+09:00",
+                  "key": 1790089200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-27T00:00:00.000+09:00",
+                  "key": 1790434800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-28T00:00:00.000+09:00",
+                  "key": 1790521200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-29T00:00:00.000+09:00",
+                  "key": 1790607600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-03T00:00:00.000+09:00",
+                  "key": 1790953200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-10T00:00:00.000+09:00",
+                  "key": 1791558000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-20T00:00:00.000+09:00",
+                  "key": 1792422000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-23T00:00:00.000+09:00",
+                  "key": 1792681200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "naver.com",
+            "doc_count": 20,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 20
+                }
+              ]
+            },
+            "names": {
+              "value": 3
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 15,
+              "buckets": [
+                {
+                  "key": "10.20.70.15",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.16",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.164",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.166",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.171",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-04T00:00:00.000+09:00",
+                  "key": 1785769200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-05T00:00:00.000+09:00",
+                  "key": 1785855600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-07T00:00:00.000+09:00",
+                  "key": 1786028400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-10T00:00:00.000+09:00",
+                  "key": 1786287600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-18T00:00:00.000+09:00",
+                  "key": 1786978800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-08T00:00:00.000+09:00",
+                  "key": 1788793200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-18T00:00:00.000+09:00",
+                  "key": 1789657200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-22T00:00:00.000+09:00",
+                  "key": 1790002800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-23T00:00:00.000+09:00",
+                  "key": 1790089200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-28T00:00:00.000+09:00",
+                  "key": 1790521200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-30T00:00:00.000+09:00",
+                  "key": 1790694000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-13T00:00:00.000+09:00",
+                  "key": 1791817200000,
+                  "doc_count": 3
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-21T00:00:00.000+09:00",
+                  "key": 1792508400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-28T00:00:00.000+09:00",
+                  "key": 1793113200000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "github.com",
+            "doc_count": 24,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 24
+                }
+              ]
+            },
+            "names": {
+              "value": 2
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 17,
+              "buckets": [
+                {
+                  "key": "10.20.70.170",
+                  "doc_count": 2
+                },
+                {
+                  "key": "10.20.70.23",
+                  "doc_count": 2
+                },
+                {
+                  "key": "10.20.70.118",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.13",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.130",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-05T00:00:00.000+09:00",
+                  "key": 1785855600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-20T00:00:00.000+09:00",
+                  "key": 1787151600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-22T00:00:00.000+09:00",
+                  "key": 1787324400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-27T00:00:00.000+09:00",
+                  "key": 1787756400000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-08-28T00:00:00.000+09:00",
+                  "key": 1787842800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-29T00:00:00.000+09:00",
+                  "key": 1787929200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-31T00:00:00.000+09:00",
+                  "key": 1788102000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-04T00:00:00.000+09:00",
+                  "key": 1788447600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-14T00:00:00.000+09:00",
+                  "key": 1789311600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-20T00:00:00.000+09:00",
+                  "key": 1789830000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-21T00:00:00.000+09:00",
+                  "key": 1789916400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-02T00:00:00.000+09:00",
+                  "key": 1790866800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-05T00:00:00.000+09:00",
+                  "key": 1791126000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-12T00:00:00.000+09:00",
+                  "key": 1791730800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-24T00:00:00.000+09:00",
+                  "key": 1792767600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-27T00:00:00.000+09:00",
+                  "key": 1793026800000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "ubuntu.com",
+            "doc_count": 16,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 16
+                }
+              ]
+            },
+            "names": {
+              "value": 2
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 11,
+              "buckets": [
+                {
+                  "key": "10.20.70.140",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.141",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.151",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.185",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.194",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-06T00:00:00.000+09:00",
+                  "key": 1785942000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-07T00:00:00.000+09:00",
+                  "key": 1786028400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-14T00:00:00.000+09:00",
+                  "key": 1786633200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-27T00:00:00.000+09:00",
+                  "key": 1787756400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-13T00:00:00.000+09:00",
+                  "key": 1789225200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-15T00:00:00.000+09:00",
+                  "key": 1789398000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-21T00:00:00.000+09:00",
+                  "key": 1789916400000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-10T00:00:00.000+09:00",
+                  "key": 1791558000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-11T00:00:00.000+09:00",
+                  "key": 1791644400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-12T00:00:00.000+09:00",
+                  "key": 1791730800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-14T00:00:00.000+09:00",
+                  "key": 1791903600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-19T00:00:00.000+09:00",
+                  "key": 1792335600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-27T00:00:00.000+09:00",
+                  "key": 1793026800000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "coupang.com",
+            "doc_count": 3,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 3
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.165",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.29",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.83",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-06T00:00:00.000+09:00",
+                  "key": 1785942000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-07T00:00:00.000+09:00",
+                  "key": 1788706800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-15T00:00:00.000+09:00",
+                  "key": 1789398000000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "daum.net",
+            "doc_count": 5,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 5
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.176",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.18",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.217",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.233",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.40",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-07T00:00:00.000+09:00",
+                  "key": 1788706800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-11T00:00:00.000+09:00",
+                  "key": 1789052400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "digicert.com",
+            "doc_count": 9,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 9
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 4,
+              "buckets": [
+                {
+                  "key": "10.20.70.138",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.150",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.160",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.175",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.198",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-05T00:00:00.000+09:00",
+                  "key": 1785855600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-07T00:00:00.000+09:00",
+                  "key": 1786028400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-19T00:00:00.000+09:00",
+                  "key": 1787065200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-24T00:00:00.000+09:00",
+                  "key": 1787497200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-17T00:00:00.000+09:00",
+                  "key": 1789570800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-08T00:00:00.000+09:00",
+                  "key": 1791385200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "googleapis.com",
+            "doc_count": 7,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 7
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 2,
+              "buckets": [
+                {
+                  "key": "10.20.70.11",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.144",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.205",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.217",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.231",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-18T00:00:00.000+09:00",
+                  "key": 1786978800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-06T00:00:00.000+09:00",
+                  "key": 1788620400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-13T00:00:00.000+09:00",
+                  "key": 1789225200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-20T00:00:00.000+09:00",
+                  "key": 1789830000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-07T00:00:00.000+09:00",
+                  "key": 1791298800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "gov.kr",
+            "doc_count": 8,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 8
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 3,
+              "buckets": [
+                {
+                  "key": "10.20.70.10",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.11",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.19",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.200",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.205",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-24T00:00:00.000+09:00",
+                  "key": 1787497200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-31T00:00:00.000+09:00",
+                  "key": 1788102000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-19T00:00:00.000+09:00",
+                  "key": 1789743600000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-30T00:00:00.000+09:00",
+                  "key": 1790694000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-03T00:00:00.000+09:00",
+                  "key": 1790953200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-07T00:00:00.000+09:00",
+                  "key": 1791298800000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "jsdelivr.net",
+            "doc_count": 7,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 7
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 2,
+              "buckets": [
+                {
+                  "key": "10.20.70.155",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.160",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.227",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.249",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.57",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-03T00:00:00.000+09:00",
+                  "key": 1785682800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-06T00:00:00.000+09:00",
+                  "key": 1785942000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-18T00:00:00.000+09:00",
+                  "key": 1786978800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-26T00:00:00.000+09:00",
+                  "key": 1787670000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-04T00:00:00.000+09:00",
+                  "key": 1788447600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-09T00:00:00.000+09:00",
+                  "key": 1791471600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-14T00:00:00.000+09:00",
+                  "key": 1791903600000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "kakao.com",
+            "doc_count": 5,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 5
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.156",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.20",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.250",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.32",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.86",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-09-06T00:00:00.000+09:00",
+                  "key": 1788620400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-08T00:00:00.000+09:00",
+                  "key": 1788793200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-12T00:00:00.000+09:00",
+                  "key": 1789138800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "microsoftonline.com",
+            "doc_count": 10,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 10
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 5,
+              "buckets": [
+                {
+                  "key": "10.20.70.154",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.156",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.20",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.225",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.226",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-07T00:00:00.000+09:00",
+                  "key": 1786028400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-11T00:00:00.000+09:00",
+                  "key": 1786374000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-20T00:00:00.000+09:00",
+                  "key": 1787151600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-30T00:00:00.000+09:00",
+                  "key": 1788015600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-16T00:00:00.000+09:00",
+                  "key": 1789484400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-10T00:00:00.000+09:00",
+                  "key": 1791558000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-18T00:00:00.000+09:00",
+                  "key": 1792249200000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "notion.so",
+            "doc_count": 2,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 2
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.180",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.207",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-11T00:00:00.000+09:00",
+                  "key": 1786374000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-04T00:00:00.000+09:00",
+                  "key": 1791039600000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "npmjs.org",
+            "doc_count": 11,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 11
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 6,
+              "buckets": [
+                {
+                  "key": "10.20.70.101",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.104",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.115",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.131",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.142",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-05T00:00:00.000+09:00",
+                  "key": 1785855600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-27T00:00:00.000+09:00",
+                  "key": 1787756400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-31T00:00:00.000+09:00",
+                  "key": 1788102000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-09T00:00:00.000+09:00",
+                  "key": 1788879600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-27T00:00:00.000+09:00",
+                  "key": 1790434800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-28T00:00:00.000+09:00",
+                  "key": 1790521200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-14T00:00:00.000+09:00",
+                  "key": 1791903600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-22T00:00:00.000+09:00",
+                  "key": 1792594800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "office365.com",
+            "doc_count": 4,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 4
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.70.177",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.178",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.197",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.33",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-27T00:00:00.000+09:00",
+                  "key": 1787756400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-23T00:00:00.000+09:00",
+                  "key": 1792681200000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-10-24T00:00:00.000+09:00",
+                  "key": 1792767600000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "pypi.org",
+            "doc_count": 11,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 11
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 6,
+              "buckets": [
+                {
+                  "key": "10.20.70.105",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.140",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.144",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.152",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.192",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-03T00:00:00.000+09:00",
+                  "key": 1788361200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-08T00:00:00.000+09:00",
+                  "key": 1788793200000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-14T00:00:00.000+09:00",
+                  "key": 1789311600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-17T00:00:00.000+09:00",
+                  "key": 1789570800000,
+                  "doc_count": 2
+                },
+                {
+                  "key_as_string": "2026-09-20T00:00:00.000+09:00",
+                  "key": 1789830000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-07T00:00:00.000+09:00",
+                  "key": 1791298800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "pythonhosted.org",
+            "doc_count": 7,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 7
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 1,
+              "buckets": [
+                {
+                  "key": "10.20.70.165",
+                  "doc_count": 2
+                },
+                {
+                  "key": "10.20.70.121",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.147",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.169",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.188",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-11T00:00:00.000+09:00",
+                  "key": 1786374000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-16T00:00:00.000+09:00",
+                  "key": 1786806000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-28T00:00:00.000+09:00",
+                  "key": 1793113200000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "slack.com",
+            "doc_count": 8,
+            "types": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "A",
+                  "doc_count": 8
+                }
+              ]
+            },
+            "names": {
+              "value": 1
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 3,
+              "buckets": [
+                {
+                  "key": "10.20.70.106",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.153",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.159",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.209",
+                  "doc_count": 1
+                },
+                {
+                  "key": "10.20.70.22",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-23T00:00:00.000+09:00",
+                  "key": 1787410800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-24T00:00:00.000+09:00",
+                  "key": 1787497200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-31T00:00:00.000+09:00",
+                  "key": 1788102000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-06T00:00:00.000+09:00",
+                  "key": 1788620400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-18T00:00:00.000+09:00",
+                  "key": 1789657200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-02T00:00:00.000+09:00",
+                  "key": 1790866800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "06": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 20,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "10.20.40.87",
+            "doc_count": 20,
+            "last": {
+              "value": 1793383300494.0,
+              "value_as_string": "2026-10-30T18:01:40.494Z"
+            },
+            "response_bytes": {
+              "value": 12918314.0
+            },
+            "first": {
+              "value": 1793383205585.0,
+              "value_as_string": "2026-10-30T18:00:05.585Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "07": {
+    "took": 5,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 101,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104174",
+          "_score": null,
+          "_source": {
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "71.212.10.1",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 20000,
+                "bytes_toserver": 14000000,
+                "age": 25
+              }
+            },
+            "timestamp": "2026-10-31T03:02:00.094+0900"
+          },
+          "sort": [
+            1793383320094
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "stages": {
+        "buckets": {
+          "ai": {
+            "doc_count": 40,
+            "last": {
+              "value": 1793383300114.0,
+              "value_as_string": "2026-10-30T18:01:40.114Z"
+            },
+            "first": {
+              "value": 1793383202884.0,
+              "value_as_string": "2026-10-30T18:00:02.884Z"
+            }
+          },
+          "chat": {
+            "doc_count": 40,
+            "last": {
+              "value": 1793383300094.0,
+              "value_as_string": "2026-10-30T18:01:40.094Z"
+            },
+            "first": {
+              "value": 1793383202864.0,
+              "value_as_string": "2026-10-30T18:00:02.864Z"
+            }
+          },
+          "export": {
+            "doc_count": 20,
+            "last": {
+              "value": 1793383300494.0,
+              "value_as_string": "2026-10-30T18:01:40.494Z"
+            },
+            "first": {
+              "value": 1793383205585.0,
+              "value_as_string": "2026-10-30T18:00:05.585Z"
+            }
+          },
+          "out": {
+            "doc_count": 1,
+            "last": {
+              "value": 1793383320094.0,
+              "value_as_string": "2026-10-30T18:02:00.094Z"
+            },
+            "first": {
+              "value": 1793383320094.0,
+              "value_as_string": "2026-10-30T18:02:00.094Z"
+            }
+          }
+        }
+      },
+      "tools": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "http_fetch",
+            "doc_count": 20
+          },
+          {
+            "key": "none",
+            "doc_count": 20
+          }
+        ]
+      }
+    }
+  },
+  "08": {
+    "took": 5,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 90,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "destinations": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "222.164.181.171",
+            "doc_count": 89,
+            "last": {
+              "value": 1793376035360.0,
+              "value_as_string": "2026-10-30T16:00:35.360Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.83",
+                  "doc_count": 89
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-08-04T00:00:00.000+09:00",
+                  "key": 1785769200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-05T00:00:00.000+09:00",
+                  "key": 1785855600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-06T00:00:00.000+09:00",
+                  "key": 1785942000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-07T00:00:00.000+09:00",
+                  "key": 1786028400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-08T00:00:00.000+09:00",
+                  "key": 1786114800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-09T00:00:00.000+09:00",
+                  "key": 1786201200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-10T00:00:00.000+09:00",
+                  "key": 1786287600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-11T00:00:00.000+09:00",
+                  "key": 1786374000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-12T00:00:00.000+09:00",
+                  "key": 1786460400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-13T00:00:00.000+09:00",
+                  "key": 1786546800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-14T00:00:00.000+09:00",
+                  "key": 1786633200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-15T00:00:00.000+09:00",
+                  "key": 1786719600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-16T00:00:00.000+09:00",
+                  "key": 1786806000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-17T00:00:00.000+09:00",
+                  "key": 1786892400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-18T00:00:00.000+09:00",
+                  "key": 1786978800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-19T00:00:00.000+09:00",
+                  "key": 1787065200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-20T00:00:00.000+09:00",
+                  "key": 1787151600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-21T00:00:00.000+09:00",
+                  "key": 1787238000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-22T00:00:00.000+09:00",
+                  "key": 1787324400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-23T00:00:00.000+09:00",
+                  "key": 1787410800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-24T00:00:00.000+09:00",
+                  "key": 1787497200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-25T00:00:00.000+09:00",
+                  "key": 1787583600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-26T00:00:00.000+09:00",
+                  "key": 1787670000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-27T00:00:00.000+09:00",
+                  "key": 1787756400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-28T00:00:00.000+09:00",
+                  "key": 1787842800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-29T00:00:00.000+09:00",
+                  "key": 1787929200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-30T00:00:00.000+09:00",
+                  "key": 1788015600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-08-31T00:00:00.000+09:00",
+                  "key": 1788102000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-01T00:00:00.000+09:00",
+                  "key": 1788188400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-02T00:00:00.000+09:00",
+                  "key": 1788274800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-03T00:00:00.000+09:00",
+                  "key": 1788361200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-04T00:00:00.000+09:00",
+                  "key": 1788447600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-05T00:00:00.000+09:00",
+                  "key": 1788534000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-06T00:00:00.000+09:00",
+                  "key": 1788620400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-07T00:00:00.000+09:00",
+                  "key": 1788706800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-08T00:00:00.000+09:00",
+                  "key": 1788793200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-09T00:00:00.000+09:00",
+                  "key": 1788879600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-10T00:00:00.000+09:00",
+                  "key": 1788966000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-11T00:00:00.000+09:00",
+                  "key": 1789052400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-12T00:00:00.000+09:00",
+                  "key": 1789138800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-13T00:00:00.000+09:00",
+                  "key": 1789225200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-14T00:00:00.000+09:00",
+                  "key": 1789311600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-15T00:00:00.000+09:00",
+                  "key": 1789398000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-16T00:00:00.000+09:00",
+                  "key": 1789484400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-17T00:00:00.000+09:00",
+                  "key": 1789570800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-18T00:00:00.000+09:00",
+                  "key": 1789657200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-19T00:00:00.000+09:00",
+                  "key": 1789743600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-20T00:00:00.000+09:00",
+                  "key": 1789830000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-21T00:00:00.000+09:00",
+                  "key": 1789916400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-22T00:00:00.000+09:00",
+                  "key": 1790002800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-23T00:00:00.000+09:00",
+                  "key": 1790089200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-24T00:00:00.000+09:00",
+                  "key": 1790175600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-25T00:00:00.000+09:00",
+                  "key": 1790262000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-26T00:00:00.000+09:00",
+                  "key": 1790348400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-27T00:00:00.000+09:00",
+                  "key": 1790434800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-28T00:00:00.000+09:00",
+                  "key": 1790521200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-29T00:00:00.000+09:00",
+                  "key": 1790607600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-09-30T00:00:00.000+09:00",
+                  "key": 1790694000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-01T00:00:00.000+09:00",
+                  "key": 1790780400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-02T00:00:00.000+09:00",
+                  "key": 1790866800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-03T00:00:00.000+09:00",
+                  "key": 1790953200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-04T00:00:00.000+09:00",
+                  "key": 1791039600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-05T00:00:00.000+09:00",
+                  "key": 1791126000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-06T00:00:00.000+09:00",
+                  "key": 1791212400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-07T00:00:00.000+09:00",
+                  "key": 1791298800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-08T00:00:00.000+09:00",
+                  "key": 1791385200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-09T00:00:00.000+09:00",
+                  "key": 1791471600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-10T00:00:00.000+09:00",
+                  "key": 1791558000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-11T00:00:00.000+09:00",
+                  "key": 1791644400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-12T00:00:00.000+09:00",
+                  "key": 1791730800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-13T00:00:00.000+09:00",
+                  "key": 1791817200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-14T00:00:00.000+09:00",
+                  "key": 1791903600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-15T00:00:00.000+09:00",
+                  "key": 1791990000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-16T00:00:00.000+09:00",
+                  "key": 1792076400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-17T00:00:00.000+09:00",
+                  "key": 1792162800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-18T00:00:00.000+09:00",
+                  "key": 1792249200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-19T00:00:00.000+09:00",
+                  "key": 1792335600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-20T00:00:00.000+09:00",
+                  "key": 1792422000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-21T00:00:00.000+09:00",
+                  "key": 1792508400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-22T00:00:00.000+09:00",
+                  "key": 1792594800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-23T00:00:00.000+09:00",
+                  "key": 1792681200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-24T00:00:00.000+09:00",
+                  "key": 1792767600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-25T00:00:00.000+09:00",
+                  "key": 1792854000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-26T00:00:00.000+09:00",
+                  "key": 1792940400000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-27T00:00:00.000+09:00",
+                  "key": 1793026800000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-28T00:00:00.000+09:00",
+                  "key": 1793113200000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-29T00:00:00.000+09:00",
+                  "key": 1793199600000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-30T00:00:00.000+09:00",
+                  "key": 1793286000000,
+                  "doc_count": 1
+                },
+                {
+                  "key_as_string": "2026-10-31T00:00:00.000+09:00",
+                  "key": 1793372400000,
+                  "doc_count": 1
+                }
+              ]
+            },
+            "up": {
+              "value": 176980297392.0
+            },
+            "first": {
+              "value": 1785772835229.0,
+              "value_as_string": "2026-08-03T16:00:35.229Z"
+            }
+          },
+          {
+            "key": "71.212.10.1",
+            "doc_count": 1,
+            "last": {
+              "value": 1793383320094.0,
+              "value_as_string": "2026-10-30T18:02:00.094Z"
+            },
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "10.20.40.87",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "days": {
+              "buckets": [
+                {
+                  "key_as_string": "2026-10-31T00:00:00.000+09:00",
+                  "key": 1793372400000,
+                  "doc_count": 1
+                }
+              ]
+            },
+            "up": {
+              "value": 14000000.0
+            },
+            "first": {
+              "value": 1793383320094.0,
+              "value_as_string": "2026-10-30T18:02:00.094Z"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "09": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 380,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104279",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 5,
+              "vhost": "govportal.kt66.lab",
+              "protocol": "GET",
+              "srcip": "219.145.137.113",
+              "bytes": 196,
+              "id": "404",
+              "url": "/phpmyadmin/",
+              "user_agent": "curl/7.88.1"
+            },
+            "full_log": "219.145.137.113 - - [31/Oct/2026:06:10:45 +0900] \"GET /phpmyadmin/ HTTP/1.1\" 404 196 \"-\" \"curl/7.88.1\"",
+            "timestamp": "2026-10-31T06:10:45.581+0900"
+          },
+          "sort": [
+            1793394645581
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 5,
+        "buckets": [
+          {
+            "key": "125.42.78.218",
+            "doc_count": 350,
+            "urls": {
+              "value": 350
+            },
+            "last": {
+              "value": 1792300036591.0,
+              "value_as_string": "2026-10-18T05:07:16.591Z"
+            },
+            "first": {
+              "value": 1792299600750.0,
+              "value_as_string": "2026-10-18T05:00:00.750Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (KT66-Authorized-Scanner)",
+                  "doc_count": 350
+                }
+              ]
+            }
+          },
+          {
+            "key": "110.240.56.156",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1792914062956.0,
+              "value_as_string": "2026-10-25T07:41:02.956Z"
+            },
+            "first": {
+              "value": 1789267698982.0,
+              "value_as_string": "2026-09-13T02:48:18.982Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (l9scan/2.0.)",
+                  "doc_count": 1
+                },
+                {
+                  "key": "python-requests/2.31.0",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "131.76.93.248",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1787758534954.0,
+              "value_as_string": "2026-08-26T15:35:34.954Z"
+            },
+            "first": {
+              "value": 1785773046875.0,
+              "value_as_string": "2026-08-03T16:04:06.875Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Go-http-client/1.1",
+                  "doc_count": 1
+                },
+                {
+                  "key": "python-requests/2.31.0",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "132.218.84.135",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1788752731506.0,
+              "value_as_string": "2026-09-07T03:45:31.506Z"
+            },
+            "first": {
+              "value": 1788614207207.0,
+              "value_as_string": "2026-09-05T13:16:47.207Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (l9scan/2.0.)",
+                  "doc_count": 1
+                },
+                {
+                  "key": "Mozilla/5.0 zgrab/0.x",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "219.145.137.113",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1793394645581.0,
+              "value_as_string": "2026-10-30T21:10:45.581Z"
+            },
+            "first": {
+              "value": 1788720082051.0,
+              "value_as_string": "2026-09-06T18:41:22.051Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (l9scan/2.0.)",
+                  "doc_count": 1
+                },
+                {
+                  "key": "curl/7.88.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "67.6.241.253",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1788874366016.0,
+              "value_as_string": "2026-09-08T13:32:46.016Z"
+            },
+            "first": {
+              "value": 1786678174301.0,
+              "value_as_string": "2026-08-14T03:29:34.301Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)",
+                  "doc_count": 1
+                },
+                {
+                  "key": "python-requests/2.31.0",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "82.14.141.189",
+            "doc_count": 2,
+            "urls": {
+              "value": 2
+            },
+            "last": {
+              "value": 1791761921487.0,
+              "value_as_string": "2026-10-11T23:38:41.487Z"
+            },
+            "first": {
+              "value": 1786170599897.0,
+              "value_as_string": "2026-08-08T06:29:59.897Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 zgrab/0.x",
+                  "doc_count": 2
+                }
+              ]
+            }
+          },
+          {
+            "key": "101.141.7.69",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1793163972568.0,
+              "value_as_string": "2026-10-28T05:06:12.568Z"
+            },
+            "first": {
+              "value": 1793163972568.0,
+              "value_as_string": "2026-10-28T05:06:12.568Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "107.216.48.192",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1792897175484.0,
+              "value_as_string": "2026-10-25T02:59:35.484Z"
+            },
+            "first": {
+              "value": 1792897175484.0,
+              "value_as_string": "2026-10-25T02:59:35.484Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (Linux; Android 14; SM-S918N) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/26.0 Chrome/122.0.0.0 Mobile Safari/537.36",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "12.216.179.181",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1788941871357.0,
+              "value_as_string": "2026-09-09T08:17:51.357Z"
+            },
+            "first": {
+              "value": 1788941871357.0,
+              "value_as_string": "2026-09-09T08:17:51.357Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Go-http-client/1.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "120.207.153.103",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1791623522216.0,
+              "value_as_string": "2026-10-10T09:12:02.216Z"
+            },
+            "first": {
+              "value": 1791623522216.0,
+              "value_as_string": "2026-10-10T09:12:02.216Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "curl/7.88.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "121.27.84.218",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1789817200549.0,
+              "value_as_string": "2026-09-19T11:26:40.549Z"
+            },
+            "first": {
+              "value": 1789817200549.0,
+              "value_as_string": "2026-09-19T11:26:40.549Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "123.198.144.209",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1791837493268.0,
+              "value_as_string": "2026-10-12T20:38:13.268Z"
+            },
+            "first": {
+              "value": 1791837493268.0,
+              "value_as_string": "2026-10-12T20:38:13.268Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "139.96.145.36",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1791954206502.0,
+              "value_as_string": "2026-10-14T05:03:26.502Z"
+            },
+            "first": {
+              "value": 1791954206502.0,
+              "value_as_string": "2026-10-14T05:03:26.502Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "145.170.157.69",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1793192775731.0,
+              "value_as_string": "2026-10-28T13:06:15.731Z"
+            },
+            "first": {
+              "value": 1793192775731.0,
+              "value_as_string": "2026-10-28T13:06:15.731Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Go-http-client/1.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "151.34.203.226",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1788005275420.0,
+              "value_as_string": "2026-08-29T12:07:55.420Z"
+            },
+            "first": {
+              "value": 1788005275420.0,
+              "value_as_string": "2026-08-29T12:07:55.420Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "155.52.160.242",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1792974378908.0,
+              "value_as_string": "2026-10-26T00:26:18.908Z"
+            },
+            "first": {
+              "value": 1792974378908.0,
+              "value_as_string": "2026-10-26T00:26:18.908Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "176.75.123.151",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1791296558519.0,
+              "value_as_string": "2026-10-06T14:22:38.519Z"
+            },
+            "first": {
+              "value": 1791296558519.0,
+              "value_as_string": "2026-10-06T14:22:38.519Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Mozilla/5.0 (l9scan/2.0.)",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "22.243.224.175",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1793098159494.0,
+              "value_as_string": "2026-10-27T10:49:19.494Z"
+            },
+            "first": {
+              "value": 1793098159494.0,
+              "value_as_string": "2026-10-27T10:49:19.494Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Go-http-client/1.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": "27.253.181.243",
+            "doc_count": 1,
+            "urls": {
+              "value": 1
+            },
+            "last": {
+              "value": 1792957748104.0,
+              "value_as_string": "2026-10-25T19:49:08.104Z"
+            },
+            "first": {
+              "value": 1792957748104.0,
+              "value_as_string": "2026-10-25T19:49:08.104Z"
+            },
+            "agents": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "Go-http-client/1.1",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "10": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 20,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104075",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 866174,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=0",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:05 +0900] \"GET /api/users/export?format=json&page=0 HTTP/1.1\" 200 866174 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:05.585+0900"
+          },
+          "sort": [
+            1793383205585
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104080",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 821463,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=1",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:10 +0900] \"GET /api/users/export?format=json&page=1 HTTP/1.1\" 200 821463 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:10.781+0900"
+          },
+          "sort": [
+            1793383210781
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104088",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 631113,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=2",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:15 +0900] \"GET /api/users/export?format=json&page=2 HTTP/1.1\" 200 631113 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:15.029+0900"
+          },
+          "sort": [
+            1793383215029
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104093",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 840176,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=3",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:19 +0900] \"GET /api/users/export?format=json&page=3 HTTP/1.1\" 200 840176 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:19.896+0900"
+          },
+          "sort": [
+            1793383219896
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104098",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 540791,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=4",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:25 +0900] \"GET /api/users/export?format=json&page=4 HTTP/1.1\" 200 540791 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:25.482+0900"
+          },
+          "sort": [
+            1793383225482
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104103",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 782336,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=5",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:30 +0900] \"GET /api/users/export?format=json&page=5 HTTP/1.1\" 200 782336 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:30.621+0900"
+          },
+          "sort": [
+            1793383230621
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104108",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 585737,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=6",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:35 +0900] \"GET /api/users/export?format=json&page=6 HTTP/1.1\" 200 585737 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:35.284+0900"
+          },
+          "sort": [
+            1793383235284
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104113",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 803422,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=7",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:40 +0900] \"GET /api/users/export?format=json&page=7 HTTP/1.1\" 200 803422 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:40.311+0900"
+          },
+          "sort": [
+            1793383240311
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104118",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 404680,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=8",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:45 +0900] \"GET /api/users/export?format=json&page=8 HTTP/1.1\" 200 404680 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:45.261+0900"
+          },
+          "sort": [
+            1793383245261
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104123",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 568950,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=9",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:50 +0900] \"GET /api/users/export?format=json&page=9 HTTP/1.1\" 200 568950 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:50.106+0900"
+          },
+          "sort": [
+            1793383250106
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104128",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 505041,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=10",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:00:56 +0900] \"GET /api/users/export?format=json&page=10 HTTP/1.1\" 200 505041 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:00:56.377+0900"
+          },
+          "sort": [
+            1793383256377
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104133",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 611618,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=11",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:02 +0900] \"GET /api/users/export?format=json&page=11 HTTP/1.1\" 200 611618 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:02.564+0900"
+          },
+          "sort": [
+            1793383262564
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104138",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 713093,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=12",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:06 +0900] \"GET /api/users/export?format=json&page=12 HTTP/1.1\" 200 713093 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:06.081+0900"
+          },
+          "sort": [
+            1793383266081
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104143",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 419629,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=13",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:10 +0900] \"GET /api/users/export?format=json&page=13 HTTP/1.1\" 200 419629 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:10.348+0900"
+          },
+          "sort": [
+            1793383270348
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104148",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 515268,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=14",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:14 +0900] \"GET /api/users/export?format=json&page=14 HTTP/1.1\" 200 515268 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:14.770+0900"
+          },
+          "sort": [
+            1793383274770
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104153",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 837760,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=15",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:20 +0900] \"GET /api/users/export?format=json&page=15 HTTP/1.1\" 200 837760 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:20.467+0900"
+          },
+          "sort": [
+            1793383280467
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104158",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 517110,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=16",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:26 +0900] \"GET /api/users/export?format=json&page=16 HTTP/1.1\" 200 517110 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:26.715+0900"
+          },
+          "sort": [
+            1793383286715
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104163",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 457351,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=17",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:31 +0900] \"GET /api/users/export?format=json&page=17 HTTP/1.1\" 200 457351 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:31.674+0900"
+          },
+          "sort": [
+            1793383291674
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104168",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 681781,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=18",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:36 +0900] \"GET /api/users/export?format=json&page=18 HTTP/1.1\" 200 681781 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:36.609+0900"
+          },
+          "sort": [
+            1793383296609
+          ]
+        },
+        {
+          "_index": "book3-r15-ch13",
+          "_id": "r15-000104173",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 300,
+              "vhost": "admin.kt66.lab",
+              "protocol": "GET",
+              "srcip": "10.20.40.87",
+              "bytes": 814821,
+              "id": "200",
+              "url": "/api/users/export?format=json&page=19",
+              "user_agent": "aicompanion-tools/1.2"
+            },
+            "full_log": "10.20.40.87 - - [31/Oct/2026:03:01:40 +0900] \"GET /api/users/export?format=json&page=19 HTTP/1.1\" 200 814821 \"-\" \"aicompanion-tools/1.2\"",
+            "timestamp": "2026-10-31T03:01:40.494+0900"
+          },
+          "sort": [
+            1793383300494
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "urls": {
+        "value": 20
+      },
+      "last": {
+        "value": 1793383300494.0,
+        "value_as_string": "2026-10-30T18:01:40.494Z"
+      },
+      "bytes": {
+        "value": 12918314.0
+      },
+      "first": {
+        "value": 1793383205585.0,
+        "value_as_string": "2026-10-30T18:00:05.585Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 1,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "kt66-dns"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "domains": {
+      "terms": {
+        "field": "data.domain",
+        "size": 20,
+        "order": {
+          "names": "desc"
+        }
+      },
+      "aggs": {
+        "names": {
+          "cardinality": {
+            "field": "data.query"
+          }
+        },
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 5
+          }
+        },
+        "types": {
+          "terms": {
+            "field": "data.qtype",
+            "size": 5
+          }
+        },
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          }
+        }
+      }
+    }
+  },
+  "sort": [
+    {
+      "data.query_len": "desc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

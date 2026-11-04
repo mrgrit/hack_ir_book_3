@@ -1,0 +1,77 @@
+GET /book3-r15-ch13/_search
+{
+  "size": 25,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-31T03:00:00+09:00",
+              "lt": "2026-10-31T03:03:00+09:00"
+            }
+          }
+        },
+        {
+          "bool": {
+            "filter": [
+              {
+                "term": {
+                  "decoder.name": "web-accesslog"
+                }
+              },
+              {
+                "term": {
+                  "agent.name": "adminconsole"
+                }
+              },
+              {
+                "term": {
+                  "data.srcip": "10.20.40.87"
+                }
+              },
+              {
+                "prefix": {
+                  "data.url": "/api/users/export?"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "urls": {
+      "cardinality": {
+        "field": "data.url"
+      }
+    },
+    "bytes": {
+      "sum": {
+        "field": "data.bytes"
+      }
+    },
+    "first": {
+      "min": {
+        "field": "timestamp"
+      }
+    },
+    "last": {
+      "max": {
+        "field": "timestamp"
+      }
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}
