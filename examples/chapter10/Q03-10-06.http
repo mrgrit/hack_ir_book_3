@@ -1,0 +1,45 @@
+GET /book3-r10-ch10/_search
+{
+  "size": 20,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-31T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "prefix": {
+            "decoder.name": "syscheck"
+          }
+        },
+        {
+          "term": {
+            "agent.name": "mediforum"
+          }
+        },
+        {
+          "term": {
+            "syscheck.path": "/var/www/mediforum/templates/index.html"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "agent.name",
+    "syscheck",
+    "full_log"
+  ]
+}

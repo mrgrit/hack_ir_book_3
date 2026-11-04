@@ -1,0 +1,64 @@
+GET /book3-r10-ch10/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "flow"
+          }
+        },
+        {
+          "term": {
+            "data.src_ip": "10.20.50.60"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "ports": {
+      "terms": {
+        "field": "data.dest_port",
+        "size": 20
+      },
+      "aggs": {
+        "age": {
+          "sum": {
+            "field": "data.flow.age"
+          }
+        },
+        "destinations": {
+          "terms": {
+            "field": "data.dest_ip",
+            "size": 20
+          }
+        },
+        "apps": {
+          "terms": {
+            "field": "data.app_proto",
+            "size": 10
+          }
+        },
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          }
+        }
+      }
+    }
+  }
+}

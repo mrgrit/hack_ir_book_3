@@ -1,0 +1,57 @@
+GET /book3-r10-ch10/_search
+{
+  "size": 30,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-29T13:00:00+09:00",
+              "lt": "2026-10-29T16:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "neobank.kt66.lab"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "times": {
+      "date_histogram": {
+        "field": "timestamp",
+        "fixed_interval": "5m",
+        "time_zone": "+09:00",
+        "min_doc_count": 0
+      },
+      "aggs": {
+        "status": {
+          "terms": {
+            "field": "data.id",
+            "size": 10
+          }
+        }
+      }
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

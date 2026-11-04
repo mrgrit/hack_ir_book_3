@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+agent.name: "govportal" AND syscheck.path: "/srv/share/minwon/*"
+
+data.vhost: "neobank.kt66.lab"
+
+data.src_ip: "10.20.50.60" AND data.event_type: "flow"
