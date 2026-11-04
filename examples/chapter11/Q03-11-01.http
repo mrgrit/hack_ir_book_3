@@ -1,0 +1,39 @@
+GET /book3-r12-ch11/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "exists": {
+            "field": "data.ai.tool"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "tools": {
+      "terms": {
+        "field": "data.ai.tool",
+        "size": 20
+      },
+      "aggs": {
+        "users": {
+          "cardinality": {
+            "field": "data.ai.user"
+          }
+        }
+      }
+    }
+  }
+}

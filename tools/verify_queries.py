@@ -25,8 +25,8 @@ def matches(d,q):
     if op=='exists':return field(d,arg['field']) is not None
     k,v=next(iter(arg.items()));actual=field(d,k)
     if actual is None:return False
-    if op=='term':return actual==v
-    if op=='terms':return actual in v
+    if op=='term':return v in actual if isinstance(actual,list) else actual==v
+    if op=='terms':return any(x in v for x in actual) if isinstance(actual,list) else actual in v
     if op=='prefix':return str(actual).startswith(v)
     if op=='wildcard':return fnmatch.fnmatchcase(str(actual),v)
     if op=='range':

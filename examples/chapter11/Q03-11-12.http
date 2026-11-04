@@ -1,0 +1,62 @@
+GET /book3-r13-ch11/_search
+{
+  "size": 4,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.srcip": "92.10.220.142"
+          }
+        },
+        {
+          "prefix": {
+            "data.url": "/rest/products/search"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "status": {
+      "terms": {
+        "field": "data.id",
+        "size": 10
+      },
+      "aggs": {
+        "max_bytes": {
+          "max": {
+            "field": "data.bytes"
+          }
+        }
+      }
+    }
+  },
+  "sort": [
+    {
+      "data.bytes": "desc"
+    },
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

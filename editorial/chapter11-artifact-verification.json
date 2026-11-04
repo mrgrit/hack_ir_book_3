@@ -1,0 +1,56 @@
+{
+  "status": "pass",
+  "chapter": 11,
+  "pages": 35,
+  "individual_page_visual_review": true,
+  "page_geometry_and_theme_preserved": true,
+  "text_black": true,
+  "images": [
+    {
+      "path": "assets/illustrations/chapter11-repeat.png",
+      "sha256": "23d5c97a01a9513b2157af6edfd80c3d44e98979cde8730dbc5223df4152267b"
+    },
+    {
+      "path": "assets/figures/chapter11-evidence.png",
+      "sha256": "709cdf73b1b79576d4ed171905a829e889e5af2ce2350354f1bc8918a9e0a1cd"
+    },
+    {
+      "path": "assets/screenshots/chapter11/ai-detail.png",
+      "sha256": "d2668c7ba469a3676109aa9b92bdf0ba6c22c1128fe855e8b7657a44c727bf4d"
+    }
+  ],
+  "urls_verified": [
+    "https://drive.google.com/file/d/1UQzoSKuGJtKRFnKliyFUt5DmBPZuLjjH/view",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r12_ai_service.py",
+    "https://github.com/mrgrit/hack_ir_with_wazuh/blob/main/purple-agg/r13_ai_redteam.py",
+    "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+    "https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html",
+    "https://github.com/mrgrit/hack_ir_book_3/tree/main/examples/chapter11"
+  ],
+  "queries_match": 13,
+  "commands_match": 6,
+  "files": {
+    "manuscript/volume03-chapter11.docx": "f06ca82151cd1de3ebb39ec3c9eae2f598e015f8c80939973247b00430690c3b",
+    "manuscript/volume03-chapter11.json": "7c316ec8f324a939a825c0be2e9f281358c2feeb16bc6da5b1435a3a391f17aa",
+    "examples/chapter11/cleanup.http": "a6a8a5b7da764b3099a9616d04535682ba45c1162312bba440d65c5f4256f142",
+    "examples/chapter11/commands.sh": "ecdd369c277ccad7e36a14ceb5689cd32388b834f2ae6ea742edd38e70c7ce40",
+    "examples/chapter11/discover.dql": "83279d6d7502bfc7e2ecaebb54c656cae6923ee8cddb21ffc28668a0158f45ed",
+    "examples/chapter11/investigation.csv": "f6422d80aa799d537012d0f85b050d7697b878190a5ca286029e9dc0c552236a",
+    "examples/chapter11/Q03-11-01.http": "d5ee3ec939d96ed98b2df3c9f627ed3758b552ff30b8dc922d82f0b8f4f643d1",
+    "examples/chapter11/Q03-11-02.http": "6d1bd9b8de00539571e0b1b183312f59a0c0ad26b6c942fe8f47193a93b24a9e",
+    "examples/chapter11/Q03-11-03.http": "c5e2b881734a713d6b3d149325a9442997ced0b631af0839a4c24d8799805f0d",
+    "examples/chapter11/Q03-11-04.http": "207286f1f77c488a3bc9dbd5865a8cf67da95e092a591ffabd8bd710ab74c219",
+    "examples/chapter11/Q03-11-05.http": "51ab862b5c67464c52b758f813ea9aebc02a19e84479cd5db4d77a3b19ec57ff",
+    "examples/chapter11/Q03-11-06.http": "e507aee251007305aba9237d2478b1642ebf7c6803d2c5fd5fd2cd8b071fc5f0",
+    "examples/chapter11/Q03-11-07.http": "9cb569c2727d876fa0dbed27cf443a78d3fda323f180c4d2b1d0b62bd87730d0",
+    "examples/chapter11/Q03-11-08.http": "88efed693c91444b364c0db237911a1338ae67a2e6e6aa4f3d8cd3ccf3fd5354",
+    "examples/chapter11/Q03-11-09.http": "6d285073d5f691c35b8fe42814794e59f171c3c417ce4795bfa7feff1dc180f9",
+    "examples/chapter11/Q03-11-10.http": "85f326411f4ec5f361e57c7f13b84a97baf4ed9ea7a64c14e6bffacd4fc5bcf5",
+    "examples/chapter11/Q03-11-11.http": "4ebbd0fc7a05732b046af4b513d9e5c45194caa48d22f17bf30d6f0fc4c5b290",
+    "examples/chapter11/Q03-11-12.http": "36e511e1075ffb6ee8b2651c4492a215b16553af46c4c360126c839ac8d187c0",
+    "examples/chapter11/Q03-11-13.http": "911923d316594150b57b06e3e222457651ed354d473edb110f113b3ae7be2f82",
+    "examples/chapter11/queries.json": "5b26fa8db777e78c2b831a690274483d75b18d8cf47bc1e4b80622a2ed307970"
+  },
+  "qa_pdf_published": false
+}

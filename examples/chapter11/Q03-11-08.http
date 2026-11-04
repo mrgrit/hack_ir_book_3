@@ -1,0 +1,55 @@
+GET /book3-r13-ch11/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-10-30T04:00:00+09:00",
+              "lt": "2026-10-30T04:15:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "juice.kt66.lab"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "times": {
+      "date_histogram": {
+        "field": "timestamp",
+        "fixed_interval": "1m",
+        "time_zone": "+09:00",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.srcip",
+            "size": 10
+          },
+          "aggs": {
+            "clients": {
+              "terms": {
+                "field": "data.user_agent",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

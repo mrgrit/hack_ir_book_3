@@ -1,0 +1,52 @@
+GET /book3-r12-ch11/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "exists": {
+            "field": "data.ai.tool"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "users": {
+      "terms": {
+        "field": "data.ai.user",
+        "size": 5,
+        "order": {
+          "max_length": "desc"
+        }
+      },
+      "aggs": {
+        "max_length": {
+          "max": {
+            "field": "data.ai.prompt_len"
+          }
+        },
+        "avg_length": {
+          "avg": {
+            "field": "data.ai.prompt_len"
+          }
+        },
+        "tokens": {
+          "sum": {
+            "field": "data.ai.tokens_out"
+          }
+        }
+      }
+    }
+  }
+}

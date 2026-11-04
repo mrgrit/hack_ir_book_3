@@ -1,0 +1,2532 @@
+{
+  "01": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 366,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "tools": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "none",
+            "doc_count": 315,
+            "users": {
+              "value": 147
+            }
+          },
+          {
+            "key": "search",
+            "doc_count": 20,
+            "users": {
+              "value": 19
+            }
+          },
+          {
+            "key": "calculator",
+            "doc_count": 8,
+            "users": {
+              "value": 8
+            }
+          },
+          {
+            "key": "file_read",
+            "doc_count": 8,
+            "users": {
+              "value": 1
+            }
+          },
+          {
+            "key": "calendar",
+            "doc_count": 6,
+            "users": {
+              "value": 6
+            }
+          },
+          {
+            "key": "http_fetch",
+            "doc_count": 6,
+            "users": {
+              "value": 1
+            }
+          },
+          {
+            "key": "shell",
+            "doc_count": 3,
+            "users": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "02": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 366,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": -1,
+        "sum_other_doc_count": 250,
+        "buckets": [
+          {
+            "key": "u7731042",
+            "doc_count": 109,
+            "avg_length": {
+              "value": 4324.8899082568805
+            },
+            "tokens": {
+              "value": 69902.0
+            },
+            "max_length": {
+              "value": 6500.0
+            }
+          },
+          {
+            "key": "u2691863",
+            "doc_count": 1,
+            "avg_length": {
+              "value": 499.0
+            },
+            "tokens": {
+              "value": 211.0
+            },
+            "max_length": {
+              "value": 499.0
+            }
+          },
+          {
+            "key": "u8874725",
+            "doc_count": 1,
+            "avg_length": {
+              "value": 430.0
+            },
+            "tokens": {
+              "value": 319.0
+            },
+            "max_length": {
+              "value": 430.0
+            }
+          },
+          {
+            "key": "u1958535",
+            "doc_count": 3,
+            "avg_length": {
+              "value": 220.33333333333334
+            },
+            "tokens": {
+              "value": 645.0
+            },
+            "max_length": {
+              "value": 414.0
+            }
+          },
+          {
+            "key": "u1603612",
+            "doc_count": 2,
+            "avg_length": {
+              "value": 289.0
+            },
+            "tokens": {
+              "value": 544.0
+            },
+            "max_length": {
+              "value": 363.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "03": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 109,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "states": {
+        "buckets": {
+          "flag_allowed": {
+            "doc_count": 29,
+            "tools": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "none",
+                  "doc_count": 16
+                },
+                {
+                  "key": "file_read",
+                  "doc_count": 7
+                },
+                {
+                  "key": "http_fetch",
+                  "doc_count": 5
+                },
+                {
+                  "key": "shell",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          "flag_blocked": {
+            "doc_count": 64,
+            "tools": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "none",
+                  "doc_count": 64
+                }
+              ]
+            }
+          },
+          "unflagged": {
+            "doc_count": 16,
+            "tools": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "none",
+                  "doc_count": 12
+                },
+                {
+                  "key": "shell",
+                  "doc_count": 2
+                },
+                {
+                  "key": "file_read",
+                  "doc_count": 1
+                },
+                {
+                  "key": "http_fetch",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 17,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000048676",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 519,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 5984,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-25T11:20:10.038+0900"
+          },
+          "sort": [
+            1790302810038
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000048722",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 308,
+                "prompt_len": 5584,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-25T12:20:10.038+0900"
+          },
+          "sort": [
+            1790306410038
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000050324",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 815,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 3996,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-27T01:32:24.269+0900"
+          },
+          "sort": [
+            1790440344269
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000050366",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 211,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 4994,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-27T03:32:24.269+0900"
+          },
+          "sort": [
+            1790447544269
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000050399",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 648,
+                "prompt_len": 2149,
+                "user": "u7731042",
+                "tool": "shell",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-27T04:54:32.791+0900"
+          },
+          "sort": [
+            1790452472791
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000053097",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 665,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2581,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-30T00:27:25.295+0900"
+          },
+          "sort": [
+            1790695645295
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000053128",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 887,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 4339,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-30T01:27:25.295+0900"
+          },
+          "sort": [
+            1790699245295
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000053161",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 577,
+                "prompt_len": 2958,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-30T02:33:16.010+0900"
+          },
+          "sort": [
+            1790703196010
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000056736",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 316,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 3352,
+                "user": "u7731042",
+                "tool": "shell",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-03T18:50:29.123+0900"
+          },
+          "sort": [
+            1791021029123
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000056938",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 463,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2578,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-04T00:25:15.827+0900"
+          },
+          "sort": [
+            1791041115827
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000063528",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 192,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2296,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-11T04:44:21.412+0900"
+          },
+          "sort": [
+            1791661461412
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000064555",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 543,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 1820,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-12T06:40:30.214+0900"
+          },
+          "sort": [
+            1791754830214
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000064587",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 190,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 3303,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-12T07:42:20.608+0900"
+          },
+          "sort": [
+            1791758540608
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000064703",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 721,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 5913,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-12T09:54:36.596+0900"
+          },
+          "sort": [
+            1791766476596
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000069206",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 867,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 5829,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-17T05:12:23.823+0900"
+          },
+          "sort": [
+            1792181543823
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000069532",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 590,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2680,
+                "user": "u7731042",
+                "tool": "file_read",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-17T11:47:18.714+0900"
+          },
+          "sort": [
+            1792205238714
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000069561",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 866,
+                "prompt_len": 4647,
+                "user": "u7731042",
+                "tool": "shell",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-17T12:25:14.655+0900"
+          },
+          "sort": [
+            1792207514655
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "users": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "u7731042",
+            "doc_count": 17
+          }
+        ]
+      }
+    }
+  },
+  "05": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 12,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078303",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 210,
+              "id": "404",
+              "url": "/api/debug",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:06 +0900] \"GET /api/debug HTTP/1.1\" 404 210 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:06.894+0900"
+          },
+          "sort": [
+            1793023806894
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078304",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 210,
+              "id": "404",
+              "url": "/api/debug/",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:18 +0900] \"GET /api/debug/ HTTP/1.1\" 404 210 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:18.172+0900"
+          },
+          "sort": [
+            1793023818172
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078305",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 3800,
+              "id": "200",
+              "url": "/api/debug/config",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:24 +0900] \"GET /api/debug/config HTTP/1.1\" 200 3800 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:24.255+0900"
+          },
+          "sort": [
+            1793023824255
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078306",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 3800,
+              "id": "200",
+              "url": "/api/debug/prompt",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:37 +0900] \"GET /api/debug/prompt HTTP/1.1\" 200 3800 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:37.421+0900"
+          },
+          "sort": [
+            1793023837421
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078307",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 210,
+              "id": "403",
+              "url": "/api/debug/env",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:47 +0900] \"GET /api/debug/env HTTP/1.1\" 403 210 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:47.030+0900"
+          },
+          "sort": [
+            1793023847030
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078308",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 3800,
+              "id": "200",
+              "url": "/api/debug/config",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:10:52 +0900] \"GET /api/debug/config HTTP/1.1\" 200 3800 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:10:52.862+0900"
+          },
+          "sort": [
+            1793023852862
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078309",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 40,
+              "vhost": "ai.kt66.lab",
+              "protocol": "GET",
+              "srcip": "131.110.93.35",
+              "bytes": 3800,
+              "id": "200",
+              "url": "/api/debug/prompt",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [26/Oct/2026:23:11:12 +0900] \"GET /api/debug/prompt HTTP/1.1\" 200 3800 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-26T23:11:12.260+0900"
+          },
+          "sort": [
+            1793023872260
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078359",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "ai.kt66.lab",
+              "protocol": "POST",
+              "srcip": "131.110.93.35",
+              "bytes": 380,
+              "id": "201",
+              "url": "/api/docs/upload",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [27/Oct/2026:01:23:51 +0900] \"POST /api/docs/upload HTTP/1.1\" 201 380 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-27T01:23:51.673+0900"
+          },
+          "sort": [
+            1793031831673
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078360",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "ai.kt66.lab",
+              "protocol": "POST",
+              "srcip": "131.110.93.35",
+              "bytes": 380,
+              "id": "201",
+              "url": "/api/docs/upload",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [27/Oct/2026:01:25:23 +0900] \"POST /api/docs/upload HTTP/1.1\" 201 380 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-27T01:25:23.468+0900"
+          },
+          "sort": [
+            1793031923468
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078361",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "ai.kt66.lab",
+              "protocol": "POST",
+              "srcip": "131.110.93.35",
+              "bytes": 380,
+              "id": "201",
+              "url": "/api/docs/upload",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [27/Oct/2026:01:29:47 +0900] \"POST /api/docs/upload HTTP/1.1\" 201 380 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-27T01:29:47.212+0900"
+          },
+          "sort": [
+            1793032187212
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078362",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "ai.kt66.lab",
+              "protocol": "POST",
+              "srcip": "131.110.93.35",
+              "bytes": 380,
+              "id": "201",
+              "url": "/api/docs/upload",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [27/Oct/2026:01:31:42 +0900] \"POST /api/docs/upload HTTP/1.1\" 201 380 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-27T01:31:42.339+0900"
+          },
+          "sort": [
+            1793032302339
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000078363",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "ai.kt66.lab",
+              "protocol": "POST",
+              "srcip": "131.110.93.35",
+              "bytes": 380,
+              "id": "201",
+              "url": "/api/docs/upload",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            },
+            "full_log": "131.110.93.35 - - [27/Oct/2026:01:36:00 +0900] \"POST /api/docs/upload HTTP/1.1\" 201 380 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\"",
+            "timestamp": "2026-10-27T01:36:00.521+0900"
+          },
+          "sort": [
+            1793032560521
+          ]
+        }
+      ]
+    }
+  },
+  "06": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1380,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "sources": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "10.20.32.51",
+            "doc_count": 1374,
+            "ports": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "80",
+                  "doc_count": 687
+                },
+                {
+                  "key": "9100",
+                  "doc_count": 687
+                }
+              ]
+            }
+          },
+          {
+            "key": "10.20.40.87",
+            "doc_count": 6,
+            "ports": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "80",
+                  "doc_count": 6
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "07": {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 12,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000048676",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 519,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 5984,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-25T11:20:10.038+0900"
+          },
+          "sort": [
+            1790302810038
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000048677",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 2503,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-09-25T11:20:10.518+0900"
+          },
+          "sort": [
+            1790302810518
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000050366",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 211,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 4994,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-27T03:32:24.269+0900"
+          },
+          "sort": [
+            1790447544269
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000050367",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 58159,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-09-27T03:32:24.749+0900"
+          },
+          "sort": [
+            1790447544749
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000053161",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 577,
+                "prompt_len": 2958,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-09-30T02:33:16.010+0900"
+          },
+          "sort": [
+            1790703196010
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000053162",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 9461,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-09-30T02:33:16.490+0900"
+          },
+          "sort": [
+            1790703196490
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000056938",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 463,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2578,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-04T00:25:15.827+0900"
+          },
+          "sort": [
+            1791041115827
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000056939",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 21305,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-10-04T00:25:16.307+0900"
+          },
+          "sort": [
+            1791041116307
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000063528",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 192,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 2296,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-11T04:44:21.412+0900"
+          },
+          "sort": [
+            1791661461412
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000063529",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 17953,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-10-11T04:44:21.892+0900"
+          },
+          "sort": [
+            1791661461892
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000064555",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "aicompanion"
+            },
+            "data": {
+              "srcuser": "u7731042",
+              "srcip": "131.110.93.35",
+              "ai": {
+                "blocked": "false",
+                "tokens_out": 543,
+                "flags": [
+                  "injection_pattern"
+                ],
+                "prompt_len": 1820,
+                "user": "u7731042",
+                "tool": "http_fetch",
+                "latency_ms": 1800
+              }
+            },
+            "timestamp": "2026-10-12T06:40:30.214+0900"
+          },
+          "sort": [
+            1791754830214
+          ]
+        },
+        {
+          "_index": "book3-r12-ch11",
+          "_id": "r12-000064556",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.87",
+              "event_type": "flow",
+              "dest_ip": "10.20.40.86",
+              "proto": "TCP",
+              "app_proto": "http",
+              "dest_port": "80",
+              "flow": {
+                "bytes_toclient": 7373,
+                "bytes_toserver": 420,
+                "age": 1
+              }
+            },
+            "timestamp": "2026-10-12T06:40:30.694+0900"
+          },
+          "sort": [
+            1791754830694
+          ]
+        }
+      ]
+    }
+  },
+  "08": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 543,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "times": {
+        "buckets": [
+          {
+            "key_as_string": "2026-10-30T04:05:00.000+09:00",
+            "key": 1793300700000,
+            "doc_count": 1,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "61.72.125.14",
+                  "doc_count": 1,
+                  "clients": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T04:10:00.000+09:00",
+            "key": 1793301000000,
+            "doc_count": 1,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "61.72.125.14",
+                  "doc_count": 1,
+                  "clients": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)",
+                        "doc_count": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T04:11:00.000+09:00",
+            "key": 1793301060000,
+            "doc_count": 448,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "92.10.220.142",
+                  "doc_count": 448,
+                  "clients": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "python-httpx/0.27.0",
+                        "doc_count": 448
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T04:12:00.000+09:00",
+            "key": 1793301120000,
+            "doc_count": 93,
+            "sources": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "92.10.220.142",
+                  "doc_count": 93,
+                  "clients": {
+                    "doc_count_error_upper_bound": 0,
+                    "sum_other_doc_count": 0,
+                    "buckets": [
+                      {
+                        "key": "python-httpx/0.27.0",
+                        "doc_count": 93
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "09": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 661,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "clients": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "python-httpx/0.27.0",
+            "doc_count": 661
+          }
+        ]
+      },
+      "last": {
+        "value": 1793301145890.0,
+        "value_as_string": "2026-10-29T19:12:25.890Z"
+      },
+      "days": {
+        "buckets": [
+          {
+            "key_as_string": "2026-10-02T00:00:00.000+09:00",
+            "key": 1790866800000,
+            "doc_count": 60,
+            "last": {
+              "value": 1790881374122.0,
+              "value_as_string": "2026-10-01T19:02:54.122Z"
+            },
+            "first": {
+              "value": 1790881320900.0,
+              "value_as_string": "2026-10-01T19:02:00.900Z"
+            }
+          },
+          {
+            "key_as_string": "2026-10-16T00:00:00.000+09:00",
+            "key": 1792076400000,
+            "doc_count": 60,
+            "last": {
+              "value": 1792090974129.0,
+              "value_as_string": "2026-10-15T19:02:54.129Z"
+            },
+            "first": {
+              "value": 1792090920902.0,
+              "value_as_string": "2026-10-15T19:02:00.902Z"
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T00:00:00.000+09:00",
+            "key": 1793286000000,
+            "doc_count": 541,
+            "last": {
+              "value": 1793301145890.0,
+              "value_as_string": "2026-10-29T19:12:25.890Z"
+            },
+            "first": {
+              "value": 1793301060124.0,
+              "value_as_string": "2026-10-29T19:11:00.124Z"
+            }
+          }
+        ]
+      },
+      "first": {
+        "value": 1790881320900.0,
+        "value_as_string": "2026-10-01T19:02:00.900Z"
+      }
+    }
+  },
+  "10": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 601,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "times": {
+        "buckets": [
+          {
+            "key_as_string": "2026-10-30T04:11:00.000+09:00",
+            "key": 1793301060000,
+            "doc_count": 476,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 448
+                },
+                {
+                  "key": "modsecurity",
+                  "doc_count": 28
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T04:12:00.000+09:00",
+            "key": 1793301120000,
+            "doc_count": 117,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "web-accesslog",
+                  "doc_count": 93
+                },
+                {
+                  "key": "modsecurity",
+                  "doc_count": 12
+                },
+                {
+                  "key": "auditd",
+                  "doc_count": 11
+                },
+                {
+                  "key": "json",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key_as_string": "2026-10-30T04:13:00.000+09:00",
+            "key": 1793301180000,
+            "doc_count": 8,
+            "kinds": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "sshd",
+                  "doc_count": 6
+                },
+                {
+                  "key": "auditd",
+                  "doc_count": 1
+                },
+                {
+                  "key": "json",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "11": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 19,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099383",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c id"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301148.933:19081): argc=2 a0=\"sh -c id\"",
+            "timestamp": "2026-10-30T04:12:28.933+0900"
+          },
+          "sort": [
+            1793301148933
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099384",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c uname -a"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301152.386:19085): argc=2 a0=\"sh -c uname -a\"",
+            "timestamp": "2026-10-30T04:12:32.386+0900"
+          },
+          "sort": [
+            1793301152386
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099385",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat /etc/passwd"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301155.502:19088): argc=2 a0=\"sh -c cat /etc/passwd\"",
+            "timestamp": "2026-10-30T04:12:35.502+0900"
+          },
+          "sort": [
+            1793301155502
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099386",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c env"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301158.132:19091): argc=2 a0=\"sh -c env\"",
+            "timestamp": "2026-10-30T04:12:38.132+0900"
+          },
+          "sort": [
+            1793301158132
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099387",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ls -la /app"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301161.109:19094): argc=2 a0=\"sh -c ls -la /app\"",
+            "timestamp": "2026-10-30T04:12:41.108+0900"
+          },
+          "sort": [
+            1793301161108
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099388",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat /app/config/default.yml"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301163.915:19096): argc=2 a0=\"sh -c cat /app/config/default.yml\"",
+            "timestamp": "2026-10-30T04:12:43.914+0900"
+          },
+          "sort": [
+            1793301163914
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099389",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ps aux"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301167.031:19100): argc=2 a0=\"sh -c ps aux\"",
+            "timestamp": "2026-10-30T04:12:47.030+0900"
+          },
+          "sort": [
+            1793301167030
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099390",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ip addr"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301169.826:19102): argc=2 a0=\"sh -c ip addr\"",
+            "timestamp": "2026-10-30T04:12:49.825+0900"
+          },
+          "sort": [
+            1793301169825
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099391",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat ~/.ssh/known_hosts"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301173.742:19106): argc=2 a0=\"sh -c cat ~/.ssh/known_hosts\"",
+            "timestamp": "2026-10-30T04:12:53.742+0900"
+          },
+          "sort": [
+            1793301173742
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099392",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ls ~/.ssh"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301176.562:19109): argc=2 a0=\"sh -c ls ~/.ssh\"",
+            "timestamp": "2026-10-30T04:12:56.562+0900"
+          },
+          "sort": [
+            1793301176562
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099393",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c cat ~/.ssh/id_rsa"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301179.399:19112): argc=2 a0=\"sh -c cat ~/.ssh/id_rsa\"",
+            "timestamp": "2026-10-30T04:12:59.399+0900"
+          },
+          "sort": [
+            1793301179399
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099394",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "juiceshop"
+            },
+            "data": {
+              "audit": {
+                "parent": "/usr/local/bin/node",
+                "auid": "node",
+                "exe": "/bin/sh",
+                "type": "EXECVE",
+                "command": "sh -c ssh -V"
+              }
+            },
+            "decoder": {
+              "name": "auditd"
+            },
+            "full_log": "type=EXECVE msg=audit(1793301182.326:19115): argc=2 a0=\"sh -c ssh -V\"",
+            "timestamp": "2026-10-30T04:13:02.326+0900"
+          },
+          "sort": [
+            1793301182326
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099395",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52224"
+            },
+            "rule": {
+              "level": 5,
+              "description": "sshd: authentication failed.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_failed"
+              ],
+              "mitre": {
+                "id": [
+                  "T1110"
+                ]
+              },
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:08 neobank sshd[29322]: Failed password for deploy from 10.20.40.81 port 52224 ssh2",
+            "timestamp": "2026-10-30T04:13:08.960+0900"
+          },
+          "sort": [
+            1793301188960
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099396",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "neobank"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52240"
+            },
+            "rule": {
+              "level": 3,
+              "description": "sshd: authentication success.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_success"
+              ],
+              "mitre": {
+                "id": [
+                  "T1078",
+                  "T1021"
+                ]
+              },
+              "id": "5715"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:10 neobank sshd[29331]: Accepted password for deploy from 10.20.40.81 port 52240 ssh2",
+            "timestamp": "2026-10-30T04:13:10.160+0900"
+          },
+          "sort": [
+            1793301190160
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099397",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "govportal"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52332"
+            },
+            "rule": {
+              "level": 5,
+              "description": "sshd: authentication failed.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_failed"
+              ],
+              "mitre": {
+                "id": [
+                  "T1110"
+                ]
+              },
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:17 govportal sshd[29380]: Failed password for deploy from 10.20.40.81 port 52332 ssh2",
+            "timestamp": "2026-10-30T04:13:17.278+0900"
+          },
+          "sort": [
+            1793301197278
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099398",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "govportal"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52348"
+            },
+            "rule": {
+              "level": 3,
+              "description": "sshd: authentication success.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_success"
+              ],
+              "mitre": {
+                "id": [
+                  "T1078",
+                  "T1021"
+                ]
+              },
+              "id": "5715"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:18 govportal sshd[29389]: Accepted password for deploy from 10.20.40.81 port 52348 ssh2",
+            "timestamp": "2026-10-30T04:13:18.478+0900"
+          },
+          "sort": [
+            1793301198478
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099399",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52413"
+            },
+            "rule": {
+              "level": 5,
+              "description": "sshd: authentication failed.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_failed"
+              ],
+              "mitre": {
+                "id": [
+                  "T1110"
+                ]
+              },
+              "id": "5716"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:23 mediforum sshd[29424]: Failed password for deploy from 10.20.40.81 port 52413 ssh2",
+            "timestamp": "2026-10-30T04:13:23.531+0900"
+          },
+          "sort": [
+            1793301203531
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099400",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "mediforum"
+            },
+            "data": {
+              "srcuser": "deploy",
+              "srcip": "10.20.40.81",
+              "srcport": "52429"
+            },
+            "rule": {
+              "level": 3,
+              "description": "sshd: authentication success.",
+              "groups": [
+                "syslog",
+                "sshd",
+                "authentication_success"
+              ],
+              "mitre": {
+                "id": [
+                  "T1078",
+                  "T1021"
+                ]
+              },
+              "id": "5715"
+            },
+            "decoder": {
+              "name": "sshd"
+            },
+            "full_log": "Oct 30 04:13:24 mediforum sshd[29433]: Accepted password for deploy from 10.20.40.81 port 52429 ssh2",
+            "timestamp": "2026-10-30T04:13:24.731+0900"
+          },
+          "sort": [
+            1793301204731
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099401",
+          "_score": null,
+          "_source": {
+            "agent": {
+              "name": "ips"
+            },
+            "data": {
+              "src_ip": "10.20.40.83",
+              "event_type": "flow",
+              "dest_ip": "129.158.52.62",
+              "proto": "TCP",
+              "app_proto": "tls",
+              "dest_port": "443",
+              "flow": {
+                "bytes_toclient": 30000,
+                "bytes_toserver": 220000000,
+                "age": 95
+              }
+            },
+            "decoder": {
+              "name": "json"
+            },
+            "timestamp": "2026-10-30T04:13:53.531+0900"
+          },
+          "sort": [
+            1793301233531
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 120,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099377",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "juice.kt66.lab",
+              "protocol": "GET",
+              "srcip": "92.10.220.142",
+              "bytes": 1800000,
+              "id": "200",
+              "url": "/rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users--",
+              "user_agent": "python-httpx/0.27.0"
+            },
+            "full_log": "92.10.220.142 - - [30/Oct/2026:04:12:22 +0900] \"GET /rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users-- HTTP/1.1\" 200 1800000 \"-\" \"python-httpx/0.27.0\"",
+            "timestamp": "2026-10-30T04:12:22.140+0900"
+          },
+          "sort": [
+            1800000,
+            1793301142140
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099378",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "juice.kt66.lab",
+              "protocol": "GET",
+              "srcip": "92.10.220.142",
+              "bytes": 1800000,
+              "id": "200",
+              "url": "/rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users--",
+              "user_agent": "python-httpx/0.27.0"
+            },
+            "full_log": "92.10.220.142 - - [30/Oct/2026:04:12:22 +0900] \"GET /rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users-- HTTP/1.1\" 200 1800000 \"-\" \"python-httpx/0.27.0\"",
+            "timestamp": "2026-10-30T04:12:22.390+0900"
+          },
+          "sort": [
+            1800000,
+            1793301142390
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099379",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "juice.kt66.lab",
+              "protocol": "GET",
+              "srcip": "92.10.220.142",
+              "bytes": 1800000,
+              "id": "200",
+              "url": "/rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users--",
+              "user_agent": "python-httpx/0.27.0"
+            },
+            "full_log": "92.10.220.142 - - [30/Oct/2026:04:12:22 +0900] \"GET /rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users-- HTTP/1.1\" 200 1800000 \"-\" \"python-httpx/0.27.0\"",
+            "timestamp": "2026-10-30T04:12:22.640+0900"
+          },
+          "sort": [
+            1800000,
+            1793301142640
+          ]
+        },
+        {
+          "_index": "book3-r13-ch11",
+          "_id": "r13-000099380",
+          "_score": null,
+          "_source": {
+            "data": {
+              "duration_ms": 900,
+              "vhost": "juice.kt66.lab",
+              "protocol": "GET",
+              "srcip": "92.10.220.142",
+              "bytes": 1800000,
+              "id": "200",
+              "url": "/rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users--",
+              "user_agent": "python-httpx/0.27.0"
+            },
+            "full_log": "92.10.220.142 - - [30/Oct/2026:04:12:22 +0900] \"GET /rest/products/search?q=x%27))/**/uNiOn/**/sElEcT/**/id,email,password,4,5,6,7,8,9/**/FrOm/**/Users-- HTTP/1.1\" 200 1800000 \"-\" \"python-httpx/0.27.0\"",
+            "timestamp": "2026-10-30T04:12:22.890+0900"
+          },
+          "sort": [
+            1800000,
+            1793301142890
+          ]
+        }
+      ]
+    },
+    "aggregations": {
+      "status": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "200",
+            "doc_count": 80,
+            "max_bytes": {
+              "value": 1800000.0
+            }
+          },
+          {
+            "key": "403",
+            "doc_count": 40,
+            "max_bytes": {
+              "value": 199.0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "13": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 702,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "levels": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": 5,
+            "doc_count": 564
+          },
+          {
+            "key": 6,
+            "doc_count": 40
+          }
+        ]
+      },
+      "without_level": {
+        "doc_count": 98
+      }
+    }
+  }
+}

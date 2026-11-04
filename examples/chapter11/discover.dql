@@ -1,0 +1,6 @@
+# 각 검색식을 따로 입력한다.
+data.ai.user: "u7731042"
+
+data.ai.flags: "injection_pattern" AND data.ai.blocked: "false"
+
+data.srcip: "92.10.220.142"

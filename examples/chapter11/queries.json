@@ -1,0 +1,885 @@
+{
+  "01": {
+    "title": "R12 도구 표시와 사용자 수",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "exists": {
+                "field": "data.ai.tool"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "tools": {
+          "terms": {
+            "field": "data.ai.tool",
+            "size": 20
+          },
+          "aggs": {
+            "users": {
+              "cardinality": {
+                "field": "data.ai.user"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "02": {
+    "title": "R12 사용자별 길이와 출력 토큰",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "exists": {
+                "field": "data.ai.tool"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.ai.user",
+            "size": 5,
+            "order": {
+              "max_length": "desc"
+            }
+          },
+          "aggs": {
+            "max_length": {
+              "max": {
+                "field": "data.ai.prompt_len"
+              }
+            },
+            "avg_length": {
+              "avg": {
+                "field": "data.ai.prompt_len"
+              }
+            },
+            "tokens": {
+              "sum": {
+                "field": "data.ai.tokens_out"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "03": {
+    "title": "R12 표지와 차단을 분리한 조건",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.ai.user": "u7731042"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "states": {
+          "filters": {
+            "filters": {
+              "flag_blocked": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "data.ai.flags": "injection_pattern"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.ai.blocked": "true"
+                      }
+                    }
+                  ]
+                }
+              },
+              "flag_allowed": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "data.ai.flags": "injection_pattern"
+                      }
+                    },
+                    {
+                      "term": {
+                        "data.ai.blocked": "false"
+                      }
+                    }
+                  ]
+                }
+              },
+              "unflagged": {
+                "bool": {
+                  "must_not": [
+                    {
+                      "term": {
+                        "data.ai.flags": "injection_pattern"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "aggs": {
+            "tools": {
+              "terms": {
+                "field": "data.ai.tool",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "title": "R12 관리용 도구 표시의 원문",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 20,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "terms": {
+                "data.ai.tool": [
+                  "http_fetch",
+                  "file_read",
+                  "shell"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "users": {
+          "terms": {
+            "field": "data.ai.user",
+            "size": 10
+          }
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "agent.name",
+        "data"
+      ]
+    }
+  },
+  "05": {
+    "title": "R12 디버그와 업로드의 경로 및 응답",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 30,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "ai.kt66.lab"
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "prefix": {
+                      "data.url": "/api/debug"
+                    }
+                  },
+                  {
+                    "prefix": {
+                      "data.url": "/api/docs"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "06": {
+    "title": "R12 관리콘솔로 향한 관측 출발지",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.event_type": "flow"
+              }
+            },
+            {
+              "term": {
+                "data.dest_ip": "10.20.40.86"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "sources": {
+          "terms": {
+            "field": "data.src_ip",
+            "size": 20
+          },
+          "aggs": {
+            "ports": {
+              "terms": {
+                "field": "data.dest_port",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "07": {
+    "title": "R12 http_fetch 표시와 내부 연결의 시각",
+    "method": "GET",
+    "path": "/book3-r12-ch11/_search",
+    "body": {
+      "size": 20,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "data.ai.user": "u7731042"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.ai.tool": "http_fetch"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "data.event_type": "flow"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.src_ip": "10.20.40.87"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.dest_ip": "10.20.40.86"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "agent.name",
+        "data"
+      ]
+    }
+  },
+  "08": {
+    "title": "R13 특정 서비스의 분당 요청과 출발지",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T04:00:00+09:00",
+                  "lt": "2026-10-30T04:15:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.vhost": "juice.kt66.lab"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "times": {
+          "date_histogram": {
+            "field": "timestamp",
+            "fixed_interval": "1m",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "sources": {
+              "terms": {
+                "field": "data.srcip",
+                "size": 10
+              },
+              "aggs": {
+                "clients": {
+                  "terms": {
+                    "field": "data.user_agent",
+                    "size": 10
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "09": {
+    "title": "R13 같은 출발지의 날짜별 범위",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "92.10.220.142"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "days": {
+          "date_histogram": {
+            "field": "timestamp",
+            "calendar_interval": "day",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "first": {
+              "min": {
+                "field": "timestamp"
+              }
+            },
+            "last": {
+              "max": {
+                "field": "timestamp"
+              }
+            }
+          }
+        },
+        "first": {
+          "min": {
+            "field": "timestamp"
+          }
+        },
+        "last": {
+          "max": {
+            "field": "timestamp"
+          }
+        },
+        "clients": {
+          "terms": {
+            "field": "data.user_agent",
+            "size": 20
+          }
+        }
+      }
+    }
+  },
+  "10": {
+    "title": "R13 짧은 본 사건의 관측 종류별 시간표",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T04:10:00+09:00",
+                  "lt": "2026-10-30T04:15:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "term": {
+                      "data.srcip": "92.10.220.142"
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "auditd"
+                          }
+                        },
+                        {
+                          "term": {
+                            "agent.name": "juiceshop"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.audit.parent": "/usr/local/bin/node"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "sshd"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcip": "10.20.40.81"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "data.event_type": "flow"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.src_ip": "10.20.40.83"
+                          }
+                        },
+                        {
+                          "range": {
+                            "data.flow.bytes_toserver": {
+                              "gte": 100000000
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "times": {
+          "date_histogram": {
+            "field": "timestamp",
+            "fixed_interval": "1m",
+            "time_zone": "+09:00",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "kinds": {
+              "terms": {
+                "field": "decoder.name",
+                "size": 20
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "11": {
+    "title": "R13 프로세스와 서버 인증 및 큰 전송 원문",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 30,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-10-30T04:10:00+09:00",
+                  "lt": "2026-10-30T04:15:00+09:00"
+                }
+              }
+            },
+            {
+              "bool": {
+                "should": [
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "auditd"
+                          }
+                        },
+                        {
+                          "term": {
+                            "agent.name": "juiceshop"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.audit.parent": "/usr/local/bin/node"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "decoder.name": "sshd"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.srcip": "10.20.40.81"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "data.event_type": "flow"
+                          }
+                        },
+                        {
+                          "term": {
+                            "data.src_ip": "10.20.40.83"
+                          }
+                        },
+                        {
+                          "range": {
+                            "data.flow.bytes_toserver": {
+                              "gte": 100000000
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ]
+        }
+      },
+      "sort": [
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "agent.name",
+        "decoder.name",
+        "data",
+        "full_log",
+        "rule"
+      ]
+    }
+  },
+  "12": {
+    "title": "R13 검색 경로의 응답 코드와 큰 응답 원문",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 4,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "decoder.name": "web-accesslog"
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "92.10.220.142"
+              }
+            },
+            {
+              "prefix": {
+                "data.url": "/rest/products/search"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "status": {
+          "terms": {
+            "field": "data.id",
+            "size": 10
+          },
+          "aggs": {
+            "max_bytes": {
+              "max": {
+                "field": "data.bytes"
+              }
+            }
+          }
+        }
+      },
+      "sort": [
+        {
+          "data.bytes": "desc"
+        },
+        {
+          "timestamp": "asc"
+        }
+      ],
+      "_source": [
+        "timestamp",
+        "data",
+        "full_log"
+      ]
+    }
+  },
+  "13": {
+    "title": "R13 생성 레벨 값과 필드 없는 문서",
+    "method": "GET",
+    "path": "/book3-r13-ch11/_search",
+    "body": {
+      "size": 0,
+      "track_total_hits": true,
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "range": {
+                "timestamp": {
+                  "gte": "2026-08-03T00:00:00+09:00",
+                  "lt": "2026-11-01T00:00:00+09:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "data.srcip": "92.10.220.142"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "levels": {
+          "terms": {
+            "field": "rule.level",
+            "size": 20
+          }
+        },
+        "without_level": {
+          "filter": {
+            "bool": {
+              "must_not": [
+                {
+                  "exists": {
+                    "field": "rule.level"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+GET /book3-r12-ch11/_search
+{
+  "size": 30,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "decoder.name": "web-accesslog"
+          }
+        },
+        {
+          "term": {
+            "data.vhost": "ai.kt66.lab"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "prefix": {
+                  "data.url": "/api/debug"
+                }
+              },
+              {
+                "prefix": {
+                  "data.url": "/api/docs"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "timestamp": "asc"
+    }
+  ],
+  "_source": [
+    "timestamp",
+    "data",
+    "full_log"
+  ]
+}

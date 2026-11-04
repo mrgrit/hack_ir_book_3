@@ -1,0 +1,83 @@
+GET /book3-r12-ch11/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.ai.user": "u7731042"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "states": {
+      "filters": {
+        "filters": {
+          "flag_blocked": {
+            "bool": {
+              "filter": [
+                {
+                  "term": {
+                    "data.ai.flags": "injection_pattern"
+                  }
+                },
+                {
+                  "term": {
+                    "data.ai.blocked": "true"
+                  }
+                }
+              ]
+            }
+          },
+          "flag_allowed": {
+            "bool": {
+              "filter": [
+                {
+                  "term": {
+                    "data.ai.flags": "injection_pattern"
+                  }
+                },
+                {
+                  "term": {
+                    "data.ai.blocked": "false"
+                  }
+                }
+              ]
+            }
+          },
+          "unflagged": {
+            "bool": {
+              "must_not": [
+                {
+                  "term": {
+                    "data.ai.flags": "injection_pattern"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "aggs": {
+        "tools": {
+          "terms": {
+            "field": "data.ai.tool",
+            "size": 10
+          }
+        }
+      }
+    }
+  }
+}

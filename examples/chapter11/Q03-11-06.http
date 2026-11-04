@@ -1,0 +1,45 @@
+GET /book3-r12-ch11/_search
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "timestamp": {
+              "gte": "2026-08-03T00:00:00+09:00",
+              "lt": "2026-11-01T00:00:00+09:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "data.event_type": "flow"
+          }
+        },
+        {
+          "term": {
+            "data.dest_ip": "10.20.40.86"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "sources": {
+      "terms": {
+        "field": "data.src_ip",
+        "size": 20
+      },
+      "aggs": {
+        "ports": {
+          "terms": {
+            "field": "data.dest_port",
+            "size": 10
+          }
+        }
+      }
+    }
+  }
+}
